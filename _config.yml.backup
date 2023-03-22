@@ -1,14 +1,14 @@
-title:              성철이의 개발공부
-email:              kimsc1218@gmail.com
-description:        개발을 진행하며 습득한 내용을 정리하는 블로그
-author:             김성철
-baseurl:            "/"
-url:                "https://kkimsungchul.github.io/"
+title:              Clean Blog
+email:              your-email@example.com
+description:        A Blog Theme by Start Bootstrap
+author:             Start Bootstrap
+baseurl:            "/startbootstrap-clean-blog-jekyll"
+url:                "https://startbootstrap.github.io"
 
 # Social Profiles
-twitter_username:   
-github_username:    kkimsungchul
-facebook_username:  
+twitter_username:   SBootstrap
+github_username:    StartBootstrap
+facebook_username:  StartBootstrap
 instagram_username:  
 linkedin_username:
 
