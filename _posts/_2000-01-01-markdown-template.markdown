@@ -2,7 +2,7 @@
 layout: post
 title:  "markdown 템플릿 파일 입니다."
 date:   2000-01-01 00:00:00 +0900
-categories: jekyll update
+categories: Template
 ---
 
 여기서부터 내용을 작성해주면 되고

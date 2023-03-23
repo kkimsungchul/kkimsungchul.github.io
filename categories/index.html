@@ -1,0 +1,53 @@
+---
+layout: page
+title: Categories
+permalink: /category/
+type: page
+---
+
+<div class="page clearfix">
+  <div class="left">
+    <h1>{{page.title}}</h1>
+    <hr>
+    <ul>
+      {% for category in site.categories %}
+        <h2 id="{{category | first}}">{{category | first}}</h2>
+        {% for posts in category %}
+          {% for post in posts %}
+            {% if post.url %}
+            <li style="
+                font-size: 15px;
+                margin-left: 2em;
+            ">
+              <a class="title" href="{{ post.url | prepend: site.url }}">
+              <time>
+              {{ post.date | date:"%F" }}
+<!--                요일표시임, 주석제거하면 보임{{ post.date | date: "%a" }}.-->
+              </time>
+              &nbsp; {{ post.title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!--&lt;!&ndash;        {{site.categories}}&ndash;&gt;-->
+<!--{% for eachCategory in  site.categories %}-->
+<!--<h2> {{eachCategory[0]}}</h2>-->
+<!--  {% for post in  eachCategory[1] %}-->
+<!--  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">-->
+<!--    <h2 class="post-title">{{ post.title }}</h2>-->
+<!--  </a>-->
+<!--  {% endfor %}-->
+<!--{% endfor %}-->
+

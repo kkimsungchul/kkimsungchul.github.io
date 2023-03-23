@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Spring boot - @Value 사용하기"
+title:  "Spring boot @Value 사용하기"
 date:   2023-03-23 15:05:00 +0900
 categories: SpringBoot
 ---
