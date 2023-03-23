@@ -3,7 +3,7 @@ email:              kimsc1218@gmail.com
 description:        개발을 진행하며 습득한 내용을 정리하는 블로그
 author:             김성철
 baseurl:            "/"
-url:                "https://kkimsungchul.github.io/"
+url:                "https://kkimsungchul.github.io"
 
 # Social Profiles
 twitter_username:   
@@ -17,7 +17,7 @@ google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
-paginate:           5
+paginate:           10
 paginate_path:      "/posts/page:num/"
 plugins:
   - jekyll-feed
