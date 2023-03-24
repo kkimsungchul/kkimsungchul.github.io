@@ -2,7 +2,7 @@
 layout: post
 title: "[Spring Boot] 인터셉터(Interceptor) 사용하기"
 subtitle: "Spring Boot 인터셉터(Interceptor) 사용하기"
-date: 2023-03-24 08:40:31 +0900
+date: 2023-03-24 12:40:26 +0900
 categories: SpringBoot
 ---
 [ 스프링 부트 - 인터셉터 사용하기 ]

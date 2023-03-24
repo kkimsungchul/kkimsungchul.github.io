@@ -6,5 +6,16 @@
   gtag('js', new Date());
 
   gtag('config', '{{ site.google_analytics }}');
-</script>
 
+  $(document).ready(function(){
+      $(".menuCategories>.categorie-title").click(function(){
+          var submenu = $(this).next("ul");
+          if(submenu.is(":visible")){
+              submenu.slideUp();
+          }else{
+              $(".menuCategories.menuCategories-sidebar").slideUp();
+              submenu.slideDown();
+          }
+      });
+  });
+</script>

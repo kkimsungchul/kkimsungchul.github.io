@@ -1,0 +1,8 @@
+---
+layout: post
+title: "[잡다한 내용] 변수명 짓기"
+subtitle: "잡다한 내용 변수명 짓기"
+date: 2022-06-29 15:49:05 +0900
+categories: 개발지식
+---
+https://www.curioustore.com/#!/util/naming

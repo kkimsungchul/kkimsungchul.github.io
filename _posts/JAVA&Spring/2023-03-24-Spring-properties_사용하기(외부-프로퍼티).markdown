@@ -2,8 +2,8 @@
 layout: post
 title: "[Spring] properties_사용하기(외부 프로퍼티)"
 subtitle: "Spring properties_사용하기(외부 프로퍼티)"
-date: 2023-03-24 08:40:30 +0900
-categories: Spring
+date: 2023-03-24 12:40:26 +0900
+categories: JAVA&Spring
 ---
 [ properties 사용하기 ]
 

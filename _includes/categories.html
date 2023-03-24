@@ -6,7 +6,11 @@
   @media (hover: hover) {
     .mobile-view { margin-left: 1em; }
   }
-
+  .menuCategories {
+    cursor:pointer;
+    padding-inline-start:20px;
+  }
+  .hide{display:none;}
 </style>
 <div class="pc-view" style="position: absolute;
     left: 0;
@@ -15,23 +19,27 @@
     white-space: nowrap;
     width: 19%;">
   <div class="">
-    <ul>
-      {% for category in site.categories %}
-        <h2 id="{{category | first}}">{{category | first}}</h2>
+    <ul class="menuCategories">
+      <!--카테고리 오름차순 정렬 -->
+      {% assign sorted_cats = site.categories | sort %}
+      {% for category in sorted_cats %}
+
+        <h5 class="categorie-title" id="{{category | first}}">{{category | first}}</h5>
+        <ul class="menuCategories menuCategories-sidebar hide">
         {% for posts in category %}
           {% for post in posts %}
             {% if post.url %}
-            <li style="
-                font-size: 15px;
-                margin-left: 2em;
-            ">
-              <a class="title" href="{{ post.url | prepend: site.url }}">
-              &nbsp; {{ post.title }}</a>
+
+            <li style="font-size: 15px;">
+              <a class="title" title="{{ post.title }}" href="{{ post.url | prepend: site.url }}" >&nbsp; {{ post.title }}</a>
             </li>
+
             {% endif %}
           {% endfor %}
         {% endfor %}
+        </ul>
       {% endfor %}
+
     </ul>
   </div>
 </div>

@@ -2,7 +2,7 @@
 layout: post
 title: "[Vue] IF문 사용하기"
 subtitle: "Vue IF문 사용하기"
-date: 2023-03-24 10:39:55 +0900
+date: 2023-03-24 12:40:26 +0900
 categories: Vue
 ---
 [ Vue - If문 사용하기 ] 

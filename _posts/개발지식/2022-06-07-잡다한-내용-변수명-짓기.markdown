@@ -1,8 +1,0 @@
----
-layout: post
-title: "[잡다한 내용] 변수명 짓기"
-subtitle: "잡다한 내용 변수명 짓기"
-date: 2022-06-07 08:36:56 +0900
-categories: 잡다한내용
----
-https://www.curioustore.com/#!/util/naming

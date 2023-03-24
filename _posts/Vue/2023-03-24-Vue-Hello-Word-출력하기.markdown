@@ -2,7 +2,7 @@
 layout: post
 title: "[Vue] Hello Word 출력하기"
 subtitle: "Vue Hello Word 출력하기"
-date: 2023-03-24 10:40:03 +0900
+date: 2023-03-24 12:40:26 +0900
 categories: Vue
 ---
 [ vue.js - Hellow Vue 출력하기 ]
