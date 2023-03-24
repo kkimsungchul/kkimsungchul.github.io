@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "markdown 템플릿 파일 입니다."
+subtitle: "부제목을 입력해주세요"
 date:   2000-01-01 00:00:00 +0900
 categories: Template
 ---
