@@ -2,7 +2,7 @@
 layout: post
 title: "[Github] 깃허브 블로그 만들기(2.템플릿 변경)"
 subtitle: "Github 깃허브 블로그 만들기(2.템플릿 변경)"
-date: 2023-03-24 10:30:35 +0900
+date: 2023-03-24 00:11:23 +0900
 categories: Git
 ---
 [ Github - 깃허브 블로그 만들기 - 템플릿 변경 ]

@@ -2,7 +2,7 @@
 layout: post
 title: "[JavaScript] setInterval 함수 사용하기"
 subtitle: "JavaScript setInterval 함수 사용하기"
-date: 2022-04-08 13:30:31 +0900
+date: 2022-04-08 04:32:07 +0900
 categories: JSP&javascript
 ---
 [ Javascript - setInterval 함수 사용하기 ]

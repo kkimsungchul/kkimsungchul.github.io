@@ -2,7 +2,7 @@
 layout: post
 title: "[API] jenkins, gitlab ,jira API 인증"
 subtitle: "API jenkins, gitlab ,jira API 인증"
-date: 2023-03-24 12:40:26 +0900
+date: 2023-03-24 12:09:18 +0900
 categories: 업무연관개발
 ---
 [API - jenkins, gitlab ,jira API 인증 방법]

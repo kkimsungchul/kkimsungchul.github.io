@@ -2,7 +2,7 @@
 layout: post
 title: "[IIS] URL 재작성 기능 추가"
 subtitle: "IIS URL 재작성 기능 추가"
-date: 2023-03-24 12:40:26 +0900
+date: 2023-03-24 08:41:45 +0900
 categories: ASP
 ---
 # URL 재작성 기능

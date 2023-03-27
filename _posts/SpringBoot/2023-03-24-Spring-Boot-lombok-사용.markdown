@@ -2,7 +2,7 @@
 layout: post
 title: "[Spring Boot] lombok 사용"
 subtitle: "Spring Boot lombok 사용"
-date: 2023-03-24 12:40:26 +0900
+date: 2023-03-24 08:43:38 +0900
 categories: SpringBoot
 ---
 [ 스프링 부트 - lombok 사용]

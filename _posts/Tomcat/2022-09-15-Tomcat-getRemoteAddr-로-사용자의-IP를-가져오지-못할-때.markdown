@@ -2,8 +2,8 @@
 layout: post
 title: "[Tomcat] getRemoteAddr 로 사용자의 IP를 가져오지 못할 때"
 subtitle: "Tomcat getRemoteAddr 로 사용자의 IP를 가져오지 못할 때"
-date: 2022-09-15 11:01:21 +0900
-categories: tomcat
+date: 2022-09-15 08:56:45 +0900
+categories: Tomcat
 ---
 [ Tomcat - getRemoteAddr 로 사용자의 IP를 가져오지 못할 떄 ]
 

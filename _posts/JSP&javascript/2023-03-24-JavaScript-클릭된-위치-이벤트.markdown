@@ -2,7 +2,7 @@
 layout: post
 title: "[JavaScript] 클릭된 위치 이벤트"
 subtitle: "JavaScript 클릭된 위치 이벤트"
-date: 2023-03-24 12:40:26 +0900
+date: 2023-03-24 08:43:04 +0900
 categories: JSP&javascript
 ---
 [ 클릭한 위치 이벤트 ]

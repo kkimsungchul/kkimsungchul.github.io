@@ -1,0 +1,52 @@
+---
+layout: post
+title: "[Jenkins] 젠킨스 배포스크립트(Linux)"
+subtitle: "Jenkins 젠킨스 배포스크립트(Linux)"
+date: 2022-01-17 12:12:54 +0900
+categories: Jenkins
+---
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git credentialsId: 'jenkins_id', url: 'https://github.com/kkimsungchul/stock.git', branch: 'dev'
+            }
+        }
+
+        stage('Clean') {
+            steps {
+				sh "cd '/data/jenkins_home/workspace/Developer Space/D-Space CI BackEnd' && /maven/bin/mvn clean -e -s ./settings.xml"
+            }
+        }
+		stage('Build') {
+			steps {
+				sh "cd '/data/jenkins_home/workspace/Developer Space/D-Space CI BackEnd' && /maven/bin/mvn install -e -s ./settings.xml -Dmaven.test.skip=true"
+			}
+		}
+		stage('Deploy') {
+			steps {
+				sh "cd '/data/jenkins_home/workspace/Developer Space/D-Space CI BackEnd/target' && scp ROOT.war linuxUser@192.168.0.103:/home/linuxUser/"
+			}
+		}
+        stage('Service') {
+			steps{
+				script {
+					def remote = [:]
+					remote.name = 'p-stest-tk1-e07'
+					remote.host = '192.168.0.103'
+					remote.user = 'linuxUser'
+					remote.password = 'linuxPassword'
+					remote.allowAnyHosts = true
+					sshCommand remote: remote, command:"sudo systemctl stop tomcat && sudo sleep 5"
+					sshCommand remote: remote, command:"sudo mv /app/application/ROOT.war /home/linuxUser/ROOT.war_\$(date '+%Y%m%d') && sudo sleep 1"
+					sshCommand remote: remote, command:"sudo rm -rf /app/application/* && sudo sleep 1"
+					sshCommand remote: remote, command:"sudo mv /home/linuxUser/ROOT.war /app/application "
+					sshCommand remote: remote, command:"sudo chown tomcat:tomcat /app/application/ROOT.war && sudo sleep 1"
+					sshCommand remote: remote, command:"sudo systemctl start tomcat"
+				} 
+			}		
+        }
+    }
+}
