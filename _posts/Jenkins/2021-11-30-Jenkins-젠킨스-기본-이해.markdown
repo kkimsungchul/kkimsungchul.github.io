@@ -5,6 +5,7 @@ subtitle: "Jenkins 젠킨스 기본 이해"
 date: 2021-11-30 10:31:33 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [Jenkins - 기본 이해 ]  
   https://ict-nroo.tistory.com/31  
   https://krksap.tistory.com/1377  
@@ -66,3 +67,4 @@ categories: Jenkins
   
   
     
+{% endraw %}

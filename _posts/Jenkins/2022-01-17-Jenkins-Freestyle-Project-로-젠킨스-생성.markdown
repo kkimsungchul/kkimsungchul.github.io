@@ -5,6 +5,7 @@ subtitle: "Jenkins Freestyle Project 로 젠킨스 생성"
 date: 2022-01-17 12:12:54 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ Jenkins - Freestyle Project 생성]  
   
   
@@ -48,3 +49,4 @@ categories: Jenkins
 		  
 	ROOT로 나오는 이유는 내가 프로젝트에서 ROOT 로 설정해놔서 그럼  
 	  
+{% endraw %}

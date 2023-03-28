@@ -5,6 +5,7 @@ subtitle: "Tomcat 톰캣 현재 CMD창에서 실행"
 date: 2023-03-24 06:03:40 +0900  
 categories: Tomcat  
 ---  
+{% raw %}  
 [ 톰캣 현재 CMD창에서 실행 ]  
   
 # 설명  
@@ -30,3 +31,4 @@ categories: Tomcat
   
 위와같이 실행하면 해당 창에서 실행됨  
 종료는 컨트롤+C를 하면 종료가 됨  
+{% endraw %}

@@ -5,6 +5,7 @@ subtitle: "AWS EC2에서 Gradle 빌드하기"
 date: 2022-11-25 07:48:31 +0900  
 categories: Cloud  
 ---  
+{% raw %}  
 [ AWS - 아마존 EC2에서 그래들 프로젝트 컴파일 하기  
   
 	https://may9noy.tistory.com/546  
@@ -157,3 +158,4 @@ categories: Cloud
   
   
   
+{% endraw %}

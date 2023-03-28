@@ -5,6 +5,7 @@ subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기-권한설정-confi
 date: 2023-01-16 01:59:36 +0900  
 categories: Keycloak  
 ---  
+{% raw %}  
 [ Keycloak - Keycloak으로 젠킨스 로그인 하기 - 권한 설정( access type - confidential) ]  
 	https://oingdaddy.tistory.com/249  
 	Jenkins 파일 문제생겻을 경우  
@@ -186,3 +187,4 @@ categories: Keycloak
 	6. 기 등록 되어 있는 "Authenticated Users" 에는 adminster 만 제외한 모든 권한 체크   
   
 	7. save  
+{% endraw %}

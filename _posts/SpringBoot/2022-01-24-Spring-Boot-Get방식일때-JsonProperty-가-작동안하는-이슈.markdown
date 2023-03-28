@@ -5,6 +5,7 @@ subtitle: "Spring Boot Get방식일때 JsonProperty 가 작동안하는 이슈"
 date: 2022-01-24 05:59:26 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ Spring Boot - Get방식일때 JsonProperty 가 작동안하는 이슈 ]  
   
 	  
@@ -52,3 +53,4 @@ categories: SpringBoot
   
 	참고링크 : https://github.com/cloud-barista/cb-tumblebug/issues/489  
 			   https://jojoldu.tistory.com/478  
+{% endraw %}

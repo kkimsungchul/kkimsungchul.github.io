@@ -5,6 +5,7 @@ subtitle: "Effective Java 챕터6. 불필요한 객체 생성을 피하라"
 date: 2023-02-24 08:08:46 +0900  
 categories: EffectiveJava  
 ---  
+{% raw %}  
 [ Effective Java - 챕터6. 불필요한 객체 생성을 피하라 ]  
   
 	똑같은 기능의 객체는 매번 생성하기보다 객체 하나를 재사용하는 편이 나을때가 많다.  
@@ -82,3 +83,4 @@ categories: EffectiveJava
 	거꾸로 아주 무거운 객체가 아닌 담으에야 단순히 객체 생성을 피하고자 객체풀을을 만들지 말자.  
   
 	  
+{% endraw %}

@@ -5,6 +5,7 @@ subtitle: "Jenkins 원격으로 빌드 유발"
 date: 2022-05-18 01:09:46 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ jenkins 원격 빌드 유발 ]  
   
 	# 사용자 API Token 생성  
@@ -60,3 +61,4 @@ categories: Jenkins
 			$ curl -i -X POST https://kimsc1218:11d376523445b369ecbdfa3e6cfc30760e@kscJenkins.com/job/폴더명/job/잡명/build?token=startJob  
 			  
 			  
+{% endraw %}

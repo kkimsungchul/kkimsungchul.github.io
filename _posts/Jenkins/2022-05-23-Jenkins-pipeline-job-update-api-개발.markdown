@@ -5,6 +5,7 @@ subtitle: "Jenkins pipeline job update api 개발"
 date: 2022-05-23 08:36:08 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ Jenkins - pipeline job update api ]  
 	jenkins 에서 pipeline 로 생성한 job 을 수정 해야 할 일이 생김.  
 	API문서를 찾아본 결과 job을 수정하는 APi는 없음  
@@ -106,3 +107,4 @@ categories: Jenkins
 	json: {"description": "cdddd", "properties": {"stapler-class-bag": "true", "hudson-security-AuthorizationMatrixProperty": {}, "org-jenkinsci-plugins-workflow-job-properties-DisableConcurrentBuildsJobProperty": {"specified": false}, "org-jenkinsci-plugins-workflow-job-properties-DisableResumeJobProperty": {"specified": false}, "com-coravy-hudson-plugins-github-GithubProjectProperty": {}, "org-jenkinsci-plugins-workflow-job-properties-DurabilityHintJobProperty": {"specified": false, "hint": "MAX_SURVIVABILITY"}, "org-jenkinsci-plugins-pipeline-modeldefinition-properties-PreserveStashesJobProperty": {"specified": false, "buildCount": "1"}, "jenkins-branch-RateLimitBranchProperty$JobPropertyImpl": {}, "jenkins-model-BuildDiscarderProperty": {"specified": false, "": "0", "strategy": {"daysToKeepStr": "", "numToKeepStr": "", "artifactDaysToKeepStr": "", "artifactNumToKeepStr": "", "stapler-class": "hudson.tasks.LogRotator", "$class": "hudson.tasks.LogRotator"}}, "hudson-model-ParametersDefinitionProperty": {"specified": false}, "org-jenkinsci-plugins-workflow-job-properties-PipelineTriggersJobProperty": {"triggers": {"stapler-class-bag": "true"}}}, "disable": false, "hasCustomQuietPeriod": false, "quiet_period": "5", "displayNameOrNull": "", "": "0", "definition": {"script": "ababababababababababababab", "": ["try sample Pipeline...", "\u0001\u0001"], "sandbox": true, "stapler-class": "org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition", "$class": "org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition"}, "core:apply": "", "Jenkins-Crumb": "1526af24621dca6a8ceb72013e12d29319a49e4b9c294a412f4e8edadd4d8466"}  
 	Submit: 저장  
 		  
+{% endraw %}

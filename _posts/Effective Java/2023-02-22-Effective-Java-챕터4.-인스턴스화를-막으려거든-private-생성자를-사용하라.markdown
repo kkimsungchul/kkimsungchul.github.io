@@ -5,6 +5,7 @@ subtitle: "Effective Java 챕터4. 인스턴스화를 막으려거든 private �
 date: 2023-02-22 08:06:37 +0900  
 categories: EffectiveJava  
 ---  
+{% raw %}  
 [ Effective Java - 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라 ]  
   
   
@@ -65,3 +66,4 @@ categories: EffectiveJava
   
 	또한 상속을 불가능하게 함, 모든 생성자는 명시적이든 묵시적이든 상위클래스의 생성자를 호출하게 되는데,  
 	이를 private 로 선언하면 하위클래스에서 상위클래스의 생성자에 접근할수 있는 방법이 막힘  
+{% endraw %}

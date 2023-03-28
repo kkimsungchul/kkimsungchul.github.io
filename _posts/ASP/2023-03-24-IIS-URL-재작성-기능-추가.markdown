@@ -5,6 +5,7 @@ subtitle: "IIS URL 재작성 기능 추가"
 date: 2023-03-24 08:41:45 +0900  
 categories: ASP  
 ---  
+{% raw %}  
 # URL 재작성 기능  
   
 	* IIS 보안 취약점 조치 할 떄 , 서버 버전 정보 노출이라는 취약점이 있음  
@@ -44,3 +45,4 @@ categories: ASP
 		3. 화면에 표시되는 X-powered-By 를 제거  
   
 		  
+{% endraw %}

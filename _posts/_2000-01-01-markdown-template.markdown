@@ -5,6 +5,8 @@ subtitle: "부제목을 입력해주세요"
 date:   2000-01-01 00:00:00 +0900
 categories: Template
 ---
+{% raw %} 여기 안에 내용을 작성하면 개발코드가 작동하지 않음 {% rawend %}
+
 
 여기서부터 내용을 작성해주면 되고
 파일은 yyyy-mm-dd-파일제목.markdown 이나 yyyy-mm-dd-파일제목.markup 으로 지정

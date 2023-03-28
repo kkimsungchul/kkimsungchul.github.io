@@ -2,11 +2,12 @@
 layout: post  
 title: "[Vue] Vue 프로젝트 생성"  
 subtitle: "Vue Vue 프로젝트 생성"  
-date: 2023-03-24 10:39:06 +0900  
+date: 2023-03-28 06:24:28 +0900  
 categories: Vue  
 ---  
-[ Vue - 프로젝트 생성 ]  
 {% raw %}  
+[ Vue - 프로젝트 생성 ]  
+  
 	참고링크 : https://www.youtube.com/watch?v=b0ImUEsqaAA&t=1s  
   
   
@@ -187,7 +188,4 @@ categories: Vue
   
   
 	=================================================================================================================  
-  
-  
-  
-{% endraw %}  
+{% endraw %}

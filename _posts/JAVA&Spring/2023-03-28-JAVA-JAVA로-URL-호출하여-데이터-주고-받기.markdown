@@ -5,6 +5,7 @@ subtitle: "JAVA JAVA로 URL 호출하여 데이터 주고 받기"
 date: 2023-03-28 05:17:36 +0900  
 categories: JAVA&Spring  
 ---  
+{% raw %}  
   
   
 # Get으로 호출할때의 내용  
@@ -397,3 +398,4 @@ public class Test {
     }  
 }  
   
+{% endraw %}

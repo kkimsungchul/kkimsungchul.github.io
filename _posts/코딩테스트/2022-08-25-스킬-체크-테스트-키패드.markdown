@@ -5,6 +5,7 @@ subtitle: "스킬 체크 테스트 키패드"
 date: 2022-08-25 07:34:09 +0900  
 categories: 코딩테스트  
 ---  
+{% raw %}  
 class Solution {  
     public String solution(int[] numbers, String hand) {  
         String answer = "";  
@@ -79,3 +80,4 @@ class Solution {
         }  
     }  
 }  
+{% endraw %}

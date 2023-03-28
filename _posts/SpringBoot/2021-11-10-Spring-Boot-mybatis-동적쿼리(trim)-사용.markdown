@@ -5,6 +5,7 @@ subtitle: "Spring Boot mybatis 동적쿼리(trim) 사용"
 date: 2021-11-10 15:22:58 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ Mybatis - trim 사용하기 ]  
   
 	https://velog.io/@joyfuljoyful/MyBatis-%EB%8F%99%EC%A0%81%EC%BF%BC%EB%A6%AC-trimwhereset  
@@ -266,3 +267,4 @@ categories: SpringBoot
 	WHERE A=#{A}  
   
 	=================================================================================================================  
+{% endraw %}

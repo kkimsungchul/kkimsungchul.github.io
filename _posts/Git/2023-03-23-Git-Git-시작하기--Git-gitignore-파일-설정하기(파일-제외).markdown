@@ -5,6 +5,7 @@ subtitle: "Git Git 시작하기- Git gitignore 파일 설정하기(파일 제외
 date: 2023-03-23 05:12:25 +0900  
 categories: Git  
 ---  
+{% raw %}  
 참고 URL :  
 	https://m.blog.naver.com/PostView.nhn?blogId=simpolor&logNo=221065977618&proxyReferer=https:%2F%2Fwww.google.com%2F  
 	  
@@ -234,3 +235,4 @@ $RECYCLE.BIN/
 *.lnk  
   
 # End of https://www.gitignore.io/api/java,maven,windows,intellij  
+{% endraw %}

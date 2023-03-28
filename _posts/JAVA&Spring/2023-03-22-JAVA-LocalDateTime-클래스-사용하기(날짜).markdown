@@ -5,6 +5,7 @@ subtitle: "JAVA LocalDateTime 클래스 사용하기(날짜)"
 date: 2023-03-22 05:01:11 +0900  
 categories: JAVA&Spring  
 ---  
+{% raw %}  
 [JAVA - LocalDateTime 클래스 사용하기]  
 	http://blog.eomdev.com/java/2016/04/01/%EC%9E%90%EB%B0%948%EC%9D%98-java.time-%ED%8C%A8%ED%82%A4%EC%A7%80.html  
   
@@ -178,3 +179,4 @@ boolean		isLeapYear()			윤년여부
 	LocalDateTime now = LocalDateTime.now();  
 	DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일 a h시 m분");  
 	String nowString = now.format(dateTimeFormatter);   // 결과 : 2016년 4월 2일 오전 1시 4분  
+{% endraw %}

@@ -2,12 +2,13 @@
 layout: post  
 title: "[Vue] 데이터 바인딩"  
 subtitle: "Vue 데이터 바인딩"  
-date: 2023-03-24 10:37:03 +0900  
+date: 2023-03-28 06:24:15 +0900  
 categories: Vue  
 ---  
+{% raw %}  
 [ Vue - 데이터 바인딩 ]  
 	https://www.youtube.com/watch?v=b0ImUEsqaAA  
-{% raw %}  
+  
 # views 폴더  
 	화면 전체를 차지하는 컴포넌트를 만듬  
 	views 폴더에 생성하는 컴포넌트는 네이밍 룰이 있음  
@@ -748,5 +749,4 @@ categories: Vue
   
   
 	=================================================================================================================  
-  
-{% endraw %}  
+{% endraw %}

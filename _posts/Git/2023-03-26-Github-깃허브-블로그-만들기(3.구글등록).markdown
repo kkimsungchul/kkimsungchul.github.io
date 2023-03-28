@@ -5,6 +5,7 @@ subtitle: "Github 깃허브 블로그 만들기(3.구글등록)"
 date: 2023-03-26 17:20:25 +0900  
 categories: Git  
 ---  
+{% raw %}  
 # 구글 서치 콘솔에 등록  
 	https://search.google.com/search-console/welcome?utm_source=about-page  
   
@@ -35,3 +36,4 @@ categories: Git
   
 # 등록 후 업데이트까지는 몇일 소요된다고 함  
 	  
+{% endraw %}

@@ -5,6 +5,7 @@ subtitle: "Jenkins Jenkins 플러그인 수동 설치"
 date: 2022-02-15 08:12:14 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ Jenkins - 플러그인 수동 설치 ]  
   
 	참고 URL : https://server-engineer.tistory.com/763  
@@ -33,3 +34,4 @@ categories: Jenkins
 	  
 	젠킨스 서비스를 재시작하면, 자동으로 해당 플러그인이 설치되어 있음  
 	  
+{% endraw %}

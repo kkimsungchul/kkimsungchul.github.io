@@ -5,6 +5,7 @@ subtitle: "jenkins Jenkins 에서 사용할수 있는 restAPI 정리"
 date: 2022-05-02 04:07:18 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ Jenkins API 정리 ]  
 	  
 	  
@@ -66,3 +67,4 @@ categories: Jenkins
 	  
 	  
   
+{% endraw %}

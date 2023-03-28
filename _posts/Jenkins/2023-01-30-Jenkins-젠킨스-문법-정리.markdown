@@ -5,6 +5,7 @@ subtitle: "Jenkins 젠킨스 문법 정리"
 date: 2023-01-30 06:06:19 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ Jenkins - 문법 정리 ]  
   
 	https://blog.voidmainvoid.net/104  
@@ -591,3 +592,4 @@ categories: Jenkins
 	}  
 	====================================================================================================  
   
+{% endraw %}

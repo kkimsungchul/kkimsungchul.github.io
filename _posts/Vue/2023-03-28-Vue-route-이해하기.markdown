@@ -2,12 +2,11 @@
 layout: post  
 title: "[Vue] route 이해하기"  
 subtitle: "Vue route 이해하기"  
-date: 2023-03-24 10:39:35 +0900  
+date: 2023-03-28 06:24:46 +0900  
 categories: Vue  
 ---  
-[ Vue- router 이해하기 ]  
 {% raw %}  
-  
+[ Vue- router 이해하기 ]  
 routes : name 은 동일한 값이 있으면 안됨  
   
 componet :   
@@ -84,6 +83,4 @@ componet :
     component: () => import('../views/test-001.vue')  
   }  
  =================================================================================================================  
-  
-  
-{% endraw %}  
+{% endraw %}

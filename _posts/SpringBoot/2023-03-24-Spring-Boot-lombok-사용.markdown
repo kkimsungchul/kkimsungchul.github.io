@@ -5,6 +5,7 @@ subtitle: "Spring Boot lombok 사용"
 date: 2023-03-24 08:43:38 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ 스프링 부트 - lombok 사용]  
   
 # 사용 이유  
@@ -112,3 +113,4 @@ categories: SpringBoot
 		VM Options 에 javaagent:lombok.jar 추가  
 		https://stackoverflow.com/questions/24006937/lombok-annotations-do-not-compile-under-intellij-idea/30125507#30125507  
 		https://stackoverflow.com/questions/9424364/cant-compile-project-when-im-using-lombok-under-intellij-idea  
+{% endraw %}

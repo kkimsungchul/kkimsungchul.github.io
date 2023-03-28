@@ -5,6 +5,7 @@ subtitle: "Gitlab API로 파일 생성 및 수정"
 date: 2022-05-17 05:13:34 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [gitlab - API로 파일 생성 및 수정 ]  
   
 [ Create new file in repository - git 원격지에서 파일 생성 , 커밋 ]  
@@ -152,3 +153,4 @@ categories: Git
 		"file_path": "Jenkinsfile",  
 		"branch": "master"  
 	}  
+{% endraw %}

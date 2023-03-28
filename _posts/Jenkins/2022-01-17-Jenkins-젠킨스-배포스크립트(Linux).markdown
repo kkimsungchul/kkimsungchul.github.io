@@ -5,6 +5,7 @@ subtitle: "Jenkins 젠킨스 배포스크립트(Linux)"
 date: 2022-01-17 12:12:54 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 pipeline {  
     agent any  
   
@@ -50,3 +51,4 @@ pipeline {
         }  
     }  
 }  
+{% endraw %}

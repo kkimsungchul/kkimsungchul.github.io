@@ -5,6 +5,7 @@ subtitle: "Github 깃허브 꾸미기"
 date: 2022-01-14 10:55:48 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [git - 깃허브 꾸미기]  
   
 # GitHub Badge 만들기  
@@ -16,3 +17,4 @@ categories: Git
     
     
    
+{% endraw %}

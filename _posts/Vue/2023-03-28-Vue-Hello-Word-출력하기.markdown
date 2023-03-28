@@ -2,11 +2,11 @@
 layout: post  
 title: "[Vue] Hello Word 출력하기"  
 subtitle: "Vue Hello Word 출력하기"  
-date: 2023-03-24 10:40:03 +0900  
+date: 2023-03-28 06:30:06 +0900  
 categories: Vue  
 ---  
-[ vue.js - Hellow Vue 출력하기 ]  
 {% raw %}  
+[ vue.js - Hellow Vue 출력하기 ]  
   
 # vue.js 로 Hellow Vue 출력하기  
 	아래의 파일을 작성  
@@ -36,7 +36,4 @@ categories: Vue
 	</script>  
 	</html>  
 	==========================================================================================================  
-  
-  
-  
-{% endraw %}  
+{% endraw %}

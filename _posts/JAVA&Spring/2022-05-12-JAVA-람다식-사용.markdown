@@ -5,6 +5,7 @@ subtitle: "JAVA 람다식 사용"
 date: 2022-05-12 07:03:59 +0900  
 categories: JAVA&Spring  
 ---  
+{% raw %}  
 [ JAVA - Lambda 사용하기 ]  
 	https://mangkyu.tistory.com/113  
   
@@ -292,3 +293,4 @@ interface LambdaFunction {
   
   
 =================================================================================================================  
+{% endraw %}

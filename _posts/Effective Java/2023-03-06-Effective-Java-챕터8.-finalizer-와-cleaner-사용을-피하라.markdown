@@ -5,6 +5,7 @@ subtitle: "Effective Java 챕터8. finalizer 와 cleaner 사용을 피하라"
 date: 2023-03-06 05:49:27 +0900  
 categories: EffectiveJava  
 ---  
+{% raw %}  
 [ Effective Java - 챕터8. finalizer 와 cleaner 사용을 피하라 ]  
   
   
@@ -65,3 +66,4 @@ categories: EffectiveJava
 # 요약   
 	finalizer나 cleaner는 안전망 열할이나 중요하지 않은 네이티브 자원 회수용으로만 사용하고  
 	사용하더라도 불확실성과 성능 저하에 주의해야함  
+{% endraw %}

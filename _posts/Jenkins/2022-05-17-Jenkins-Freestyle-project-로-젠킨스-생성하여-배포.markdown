@@ -5,6 +5,7 @@ subtitle: "Jenkins Freestyle project 로 젠킨스 생성하여 배포"
 date: 2022-05-17 05:13:22 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ Jenkins - Freestyle project 로 배포하기 ]  
   
   
@@ -212,3 +213,4 @@ categories: Jenkins
   
   
 		  
+{% endraw %}

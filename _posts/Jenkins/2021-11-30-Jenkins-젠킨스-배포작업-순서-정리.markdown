@@ -5,6 +5,7 @@ subtitle: "Jenkins 젠킨스 배포작업 순서 정리"
 date: 2021-11-30 10:31:33 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [ 젠킨스 배포 적용 방법 ]  
   
 	서버 구성  
@@ -189,3 +190,4 @@ categories: Jenkins
 		  
 		  
   
+{% endraw %}

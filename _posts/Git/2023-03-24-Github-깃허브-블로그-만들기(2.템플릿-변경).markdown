@@ -5,6 +5,7 @@ subtitle: "Github 깃허브 블로그 만들기(2.템플릿 변경)"
 date: 2023-03-24 00:11:23 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [ Github - 깃허브 블로그 만들기 - 템플릿 변경 ]  
 	※ 아래의 내용은 작성하다가 더이상 진행할수 없어서 멈춤  
   
@@ -47,3 +48,4 @@ categories: Git
 	5. bundle exec jekyll serve 명령어 실행  
   
 	  
+{% endraw %}

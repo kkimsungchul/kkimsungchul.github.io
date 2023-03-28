@@ -5,6 +5,7 @@ subtitle: "Spring Boot 그래들 프로젝트 임포트"
 date: 2023-03-24 08:43:55 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ 스프링부트 - 그래들 프로젝트 임포트 ]  
   
 # 임포트 하기  
@@ -47,3 +48,4 @@ categories: SpringBoot
   
   
 https://ooz.co.kr/420  
+{% endraw %}

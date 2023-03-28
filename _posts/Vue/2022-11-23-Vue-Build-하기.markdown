@@ -5,6 +5,7 @@ subtitle: "Vue Build 하기"
 date: 2022-11-23 06:09:25 +0900  
 categories: Vue  
 ---  
+{% raw %}  
 [ Vue - Build 하기 ]   
 	Build 를 하면 해당 프로젝트 폴더 안에 dist 로 폴더가 생성되며  
 	그 안에 HTML파일들이 쭉 생성됨,  
@@ -40,3 +41,4 @@ categories: Vue
 	  
 	  
   
+{% endraw %}

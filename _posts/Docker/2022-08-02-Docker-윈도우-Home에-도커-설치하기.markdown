@@ -5,6 +5,7 @@ subtitle: "Docker 윈도우 Home에 도커 설치하기"
 date: 2022-08-02 00:03:45 +0900  
 categories: Docker  
 ---  
+{% raw %}  
 [ Docker - 윈도우 Home 버전에 도커 설치하기 ]   
   
 # WSL(Windows Subsystem for Linux 2) 설치  
@@ -136,3 +137,4 @@ categories: Docker
 		  
   
   
+{% endraw %}

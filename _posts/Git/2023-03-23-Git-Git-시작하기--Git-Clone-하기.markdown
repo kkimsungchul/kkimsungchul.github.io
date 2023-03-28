@@ -5,6 +5,7 @@ subtitle: "Git Git 시작하기- Git Clone 하기"
 date: 2023-03-23 05:12:18 +0900  
 categories: Git  
 ---  
+{% raw %}  
 # 프로젝트 가져오기  
   
 	프로젝트를 생성할 디렉토리에서 Git bash를 실행 한 후 아래의 명령어 입력   
@@ -77,3 +78,4 @@ categories: Git
   
   
 			  
+{% endraw %}

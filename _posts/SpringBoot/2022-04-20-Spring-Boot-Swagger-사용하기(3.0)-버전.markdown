@@ -5,6 +5,7 @@ subtitle: "Spring Boot Swagger 사용하기(3.0) 버전"
 date: 2022-04-20 02:44:55 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [Spring Boot - Swagger 3.0 버전 사용 ]   
 	  
 	※ Spring boot 2.6.6 버전, swagger 3.0 버전을 사용할 경우 파일 업로드 부분에서 오류가 발생함  
@@ -167,3 +168,4 @@ spring:
   mvc:  
     pathmatch:  
       matching-strategy: ant_path_matcher  
+{% endraw %}

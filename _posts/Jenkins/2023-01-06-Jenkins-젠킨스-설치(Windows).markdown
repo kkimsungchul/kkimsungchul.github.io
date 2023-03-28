@@ -5,6 +5,7 @@ subtitle: "Jenkins 젠킨스 설치(Windows)"
 date: 2023-01-06 07:10:44 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [Jenkins - 윈도우 설치]  
 	  
 	참고링크 : https://lock.tistory.com/2  
@@ -48,3 +49,4 @@ categories: Jenkins
   
   
 	  
+{% endraw %}

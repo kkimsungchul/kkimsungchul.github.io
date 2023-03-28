@@ -5,6 +5,7 @@ subtitle: "Tomcat getRemoteAddr 로 사용자의 IP를 가져오지 못할 때"
 date: 2022-09-15 08:56:45 +0900  
 categories: Tomcat  
 ---  
+{% raw %}  
 [ Tomcat - getRemoteAddr 로 사용자의 IP를 가져오지 못할 떄 ]  
   
 	공식문서 URL : https://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/RemoteIpValve.html  
@@ -35,3 +36,4 @@ categories: Tomcat
 	Nginx 에서 x-forwarded-for 에 사용자의 IP를 추가  
 	  
   
+{% endraw %}

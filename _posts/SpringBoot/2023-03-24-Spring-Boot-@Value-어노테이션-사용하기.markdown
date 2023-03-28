@@ -5,6 +5,7 @@ subtitle: "Spring Boot @Value 어노테이션 사용하기"
 date: 2023-03-24 08:43:19 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ Spring boot - @Value 사용하기 ]  
   
 	https://blog.hodory.dev/2019/05/28/required-a-bean-of-type-that-could-not-be-found/  
@@ -86,3 +87,4 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
+{% endraw %}

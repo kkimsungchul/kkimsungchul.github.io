@@ -5,6 +5,7 @@ subtitle: "AWS EC2에 배포하기 (Nginx 포함)"
 date: 2022-11-28 04:42:08 +0900  
 categories: Cloud  
 ---  
+{% raw %}  
 [ Chat - 백엔드 배포 ]  
   
 # 포트 오픈   
@@ -136,3 +137,4 @@ https://github.com/vuejs/eslint-plugin-vue/issues/1931
 	$ chmod -R 755 chat-front/  
   
   
+{% endraw %}

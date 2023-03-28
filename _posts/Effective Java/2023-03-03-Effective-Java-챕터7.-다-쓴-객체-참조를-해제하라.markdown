@@ -5,6 +5,7 @@ subtitle: "Effective Java 챕터7. 다 쓴 객체 참조를 해제하라"
 date: 2023-03-03 08:23:11 +0900  
 categories: EffectiveJava  
 ---  
+{% raw %}  
 [ Effective Java - 챕터7. 다 쓴 객체 참조를 해제하라 ]  
   
 	JAVA 는 가비지컬렉터가 다 쓴 객체를 알아서 회수해 간다.  
@@ -69,3 +70,4 @@ categories: EffectiveJava
 	이런 누수는 철저한 코드 리뷰나 힙 프로파일러 같은 디버깅 도구를 동원해야만 발견되기도 한다.  
 	그래서 이런 종류의 문제는 예방법을 익혀두는 것이 매우 중요하다.  
   
+{% endraw %}

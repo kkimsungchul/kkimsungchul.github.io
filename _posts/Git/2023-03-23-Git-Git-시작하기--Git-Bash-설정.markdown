@@ -5,6 +5,7 @@ subtitle: "Git Git 시작하기- Git Bash 설정"
 date: 2023-03-23 05:12:52 +0900  
 categories: Git  
 ---  
+{% raw %}  
 참고 URL :  
 	https://secuinfo.tistory.com/entry/tip-github?category=857378  
 	https://secuinfo.tistory.com/entry/Local-Project-GitHub?category=857378  
@@ -122,3 +123,4 @@ categories: Git
   
 	git config credential.helper store  
 	git config credential.helper store --global  
+{% endraw %}

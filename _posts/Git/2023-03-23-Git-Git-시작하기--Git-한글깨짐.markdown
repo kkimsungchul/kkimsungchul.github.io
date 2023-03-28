@@ -5,6 +5,7 @@ subtitle: "Git Git 시작하기- Git 한글깨짐"
 date: 2023-03-23 05:11:53 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [ 깃 한글 깨짐 ]  
   
 	참고 URL : https://ezcocoa.com/2019-09-11-git-encoding-problem/  
@@ -23,3 +24,4 @@ categories: Git
 	다시 git에서 한글을 확인해보자.  
   
 	정상적으로 출력되는 것을 확인 할 수 있다.  
+{% endraw %}

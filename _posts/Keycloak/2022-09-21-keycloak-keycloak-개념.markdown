@@ -5,6 +5,7 @@ subtitle: "keycloak keycloak 개념"
 date: 2022-09-21 10:27:56 +0900  
 categories: Keycloak  
 ---  
+{% raw %}  
 keycloak 자료조사  
 	Redhat에서 개발한 인증 & 인가 오픈소스 솔루션이며, 컨테이너 이미지,  standalone, spring boot 내장 library 등 다양한 형태로 사용 가능한 장점을 가짐.  
   
@@ -56,3 +57,4 @@ keycloak 자료조사
   
   
 	  
+{% endraw %}

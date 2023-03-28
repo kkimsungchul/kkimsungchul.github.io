@@ -5,6 +5,7 @@ subtitle: "IntelliJ 인텔리J - Gradle 버전을 못찾을 때"
 date: 2022-08-17 07:10:29 +0900  
 categories: IDE  
 ---  
+{% raw %}  
 [ IntelliJ - Gradle 버전을 못찾을 때 ]  
   
 	다운로드 링크 : https://services.gradle.org/distributions/gradle-6.7-all.zip  
@@ -63,3 +64,4 @@ categories: IDE
   
   
 	  
+{% endraw %}

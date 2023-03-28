@@ -5,6 +5,7 @@ subtitle: "AWS EC2 방화벽 포트 오픈"
 date: 2022-11-25 07:55:08 +0900  
 categories: Cloud  
 ---  
+{% raw %}  
 [ AWS - 방화벽 포트 오픈 ]  
   
 # 열려 있는 모든 포트 확인  
@@ -30,3 +31,4 @@ categories: Cloud
   
 # AWS 보안 탭에서 인바운드 규칙 허용하기  
 	  
+{% endraw %}

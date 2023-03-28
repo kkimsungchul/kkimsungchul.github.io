@@ -5,6 +5,7 @@ subtitle: "Jenkins Pipeline((Pipeline script from SCM)) 로 젠킨스 배포"
 date: 2022-10-20 00:54:34 +0900  
 categories: Jenkins  
 ---  
+{% raw %}  
 [Jenkins - Pipeline 배포하기 (Pipeline script from SCM)]  
 	  
 	Pipeline script from SCM 을 사용하여 배포하기  
@@ -190,3 +191,4 @@ categories: Jenkins
   
   
 	======================================================================================================  
+{% endraw %}

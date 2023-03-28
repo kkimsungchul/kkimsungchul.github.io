@@ -5,6 +5,7 @@ subtitle: "Spring Boot 테스트를 위한 테이블 생성 쿼리문"
 date: 2021-04-17 19:59:34 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 CREATE TABLE `board` (  
 	`id` INT(11) NOT NULL AUTO_INCREMENT,  
 	`writer` VARCHAR(10) NULL DEFAULT NULL,  
@@ -18,3 +19,4 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB  
 AUTO_INCREMENT=2  
 ;  
+{% endraw %}

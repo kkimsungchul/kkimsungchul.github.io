@@ -5,6 +5,7 @@ subtitle: "Burp Suite 버프스위트 사용하기"
 date: 2022-10-17 06:21:55 +0900  
 categories: 개발지식  
 ---  
+{% raw %}  
 [ Buro Suite - 사용하기 ]  
   
 	버프스위트는 클라이언트와 서버가 주고받는 데이터를 분석하는 도구임  
@@ -60,3 +61,4 @@ categories: 개발지식
   
   
   
+{% endraw %}

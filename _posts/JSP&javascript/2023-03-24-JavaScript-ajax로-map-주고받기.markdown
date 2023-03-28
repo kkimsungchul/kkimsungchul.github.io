@@ -5,6 +5,7 @@ subtitle: "JavaScript ajax로 map 주고받기"
 date: 2023-03-24 08:42:48 +0900  
 categories: JSP&javascript  
 ---  
+{% raw %}  
 [ ajax 로 map 타입 주고받기 ]   
   
   
@@ -52,3 +53,4 @@ categories: JSP&javascript
 			}  
 =================================================================================================================  
   
+{% endraw %}

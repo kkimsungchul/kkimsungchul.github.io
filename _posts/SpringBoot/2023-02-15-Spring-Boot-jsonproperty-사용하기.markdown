@@ -5,6 +5,7 @@ subtitle: "Spring Boot jsonproperty 사용하기"
 date: 2023-02-15 08:29:44 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ jsonproperty 사용하기 ]  
   
 	https://lemontia.tistory.com/905  
@@ -84,3 +85,4 @@ categories: SpringBoot
 	Object Mapper 로 json 데이터를 파싱할때  
 	하위 Map 이나 List 구조에 데이터를 매핑하고 싶으면 @JsonCreator 을 사용하면 된다  
 	@JsonCreator 어노테이션의 mode 속성은 한 개의 파라미터냐(DELEGATING), 여러 개의 파라미터냐(PROPERTIES)에 따라 선택하거나 자동으로 설정되도록 기본값(DEFAULT)으로 둘 수 있다. 일반적으로 기본값으로 두고 사용해도 무리는 없다.  
+{% endraw %}

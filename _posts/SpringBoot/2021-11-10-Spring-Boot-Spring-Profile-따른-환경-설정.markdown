@@ -5,6 +5,7 @@ subtitle: "Spring Boot Spring Profile 따른 환경 설정"
 date: 2021-11-10 15:45:06 +0900  
 categories: SpringBoot  
 ---  
+{% raw %}  
 [ Spring Profile 따른 환경 설정 ]  
 	https://galid1.tistory.com/664  
   
@@ -72,3 +73,4 @@ categories: SpringBoot
   
   
 	  
+{% endraw %}

@@ -5,6 +5,7 @@ subtitle: "Git merge 하기 (머지, 병합)"
 date: 2023-03-24 00:09:58 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [Git - merge 하기]  
   툴에서 그냥 머지하고 푸쉬하면되는데,, 커밋내역이 많아지니까 툴에서 오류가 발생함  
   그래서 git bash 에서 작업함  
@@ -43,3 +44,4 @@ categories: Git
 	git fetch --all  
 	git reset --hard origin/main  
 	git pull origin main  
+{% endraw %}

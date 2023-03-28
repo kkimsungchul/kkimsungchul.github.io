@@ -5,6 +5,7 @@ subtitle: "Github 깃허브 블로그 만들기(1.기본설치)"
 date: 2023-03-23 08:23:18 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [ Github - 깃허브 블로그 만들기 ]  
   
 # jekyll 설치  
@@ -195,3 +196,4 @@ categories: Git
   
 	  
 	  
+{% endraw %}

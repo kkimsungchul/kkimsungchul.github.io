@@ -5,6 +5,7 @@ subtitle: "Docker 컨테이너와 가상머신의 차이"
 date: 2022-07-27 06:24:12 +0900  
 categories: Docker  
 ---  
+{% raw %}  
 [ Docker - 컨테이너와 가상머신의 차이 ]  
 	참고 링크  :   
 		https://born-dev.tistory.com/39  
@@ -146,3 +147,4 @@ categories: Docker
   
   
   
+{% endraw %}

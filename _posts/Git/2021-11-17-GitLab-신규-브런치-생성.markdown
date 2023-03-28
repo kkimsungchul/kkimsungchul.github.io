@@ -5,6 +5,7 @@ subtitle: "GitLab 신규 브런치 생성"
 date: 2021-11-17 11:17:58 +0900  
 categories: Git  
 ---  
+{% raw %}  
 [ 신규 브런치 생성 - 깃랩]  
   
 # 깃랩에서 브런치 생성  
@@ -69,3 +70,4 @@ categories: Git
 		-> Switch to   
 		-> 원하는 브런치명  
 		  
+{% endraw %}

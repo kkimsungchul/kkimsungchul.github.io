@@ -5,6 +5,7 @@ subtitle: "Docker 윈도우에서 WSL2 메모리 점유율 높아지는 현상 �
 date: 2022-07-22 06:05:27 +0900  
 categories: Docker  
 ---  
+{% raw %}  
 [Docker- 윈도우에서 WSL2 메모리 점유율 높아지는 현상 해결하기 ]  
   
 1. 파일탐색기를 열어 주소창에 %USERPROFILE% 입력  
@@ -17,3 +18,4 @@ categories: Docker
 memory=8GB  
 swap=0  
 localhostForwarding=true  
+{% endraw %}

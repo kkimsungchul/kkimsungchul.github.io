@@ -5,6 +5,7 @@ subtitle: "Git Git 시작하기- Git Intellij 연동"
 date: 2023-03-23 05:12:37 +0900  
 categories: Git  
 ---  
+{% raw %}  
 참고 URL :   
 	https://secuinfo.tistory.com/entry/Intellij-Github-Link  
 	https://gbsb.tistory.com/409  
@@ -98,3 +99,4 @@ categories: Git
 	4. 팝업창이 나오면 Git Repository URL , Parent Directory , Directory Nmae 을 입력  
   
   
+{% endraw %}

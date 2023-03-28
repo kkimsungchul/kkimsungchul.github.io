@@ -5,6 +5,7 @@ subtitle: "Effective Java 챕터2. Builder 패턴 사용하기"
 date: 2023-03-06 00:16:56 +0900  
 categories: EffectiveJava  
 ---  
+{% raw %}  
 [ Effective Java - 챕터2. Builder 패턴 사용하기 ]  
 	https://github.com/kkimsungchul/study/blob/master/Spring%20Boot/%5BSpring%20Boot%5D%20lombok%20%EC%82%AC%EC%9A%A9.txt  
 	위의 링크를 보고 lombok을 세팅하면 굳이 아래와 같이 builder 을 가진 클래스를 생성하지 않고  
@@ -362,3 +363,4 @@ categories: EffectiveJava
   
   
 	======================================================================================================  
+{% endraw %}
