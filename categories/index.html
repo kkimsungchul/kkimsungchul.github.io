@@ -11,7 +11,7 @@ type: page
     <hr>
     <ul>
       {% for category in site.categories %}
-        <h2 id="{{category | first}}">{{category | first}}</h2>
+        <h2 id="{{category | first}}">{{category | first}} ({{category[1].size}})</h2>
         {% for posts in category %}
           {% for post in posts %}
             {% if post.url %}
