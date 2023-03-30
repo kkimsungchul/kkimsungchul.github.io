@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라"  
 subtitle: "Effective Java 챕터5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라"  
-date: 2023-02-23 07:49:50 +0900  
+date: 2023-03-29 05:56:23 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터2. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라 ]  
+# Effective Java - 챕터2. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라   
   
 	많은 클래스가 하나 이상의 자원에 의존을 함  
 	책에서는 맞춤법 검사기를 예를 들어서 설명하고 있음  

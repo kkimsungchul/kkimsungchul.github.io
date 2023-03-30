@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터10. equals는 일반 규약을 지켜 재정의 하라-2"  
 subtitle: "Effective Java 챕터10. equals는 일반 규약을 지켜 재정의 하라-2"  
-date: 2023-03-16 01:24:02 +0900  
+date: 2023-03-29 05:56:03 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -2 ]  
+# Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -2   
 	  
 	  
 	- 추이성(transitivity) :  

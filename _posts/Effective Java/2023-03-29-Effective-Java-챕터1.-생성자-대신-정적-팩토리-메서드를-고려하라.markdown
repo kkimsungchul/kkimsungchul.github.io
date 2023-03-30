@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"  
 subtitle: "Effective Java 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"  
-date: 2023-03-16 01:28:56 +0900  
+date: 2023-03-29 05:55:53 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라 ]  
+# Effective Java - 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라   
 	https://hudi.blog/effective-java-static-factory-method/  
 	※ 아래에서 예기하는 정적 팩토리 메소드는 다지안 패턴에서의 팩토리 메소드와는 다르며, 디자인 패턴중에는 이와 일치하는 패턴은 없다.  
   

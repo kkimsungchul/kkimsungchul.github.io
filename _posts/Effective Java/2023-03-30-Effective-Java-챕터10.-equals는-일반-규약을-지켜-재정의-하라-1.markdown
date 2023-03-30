@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터10. equals는 일반 규약을 지켜 재정의 하라-1"  
 subtitle: "Effective Java 챕터10. equals는 일반 규약을 지켜 재정의 하라-1"  
-date: 2023-03-09 08:14:46 +0900  
+date: 2023-03-30 06:28:11 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -1 ]  
+# Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -1   
   
   
 # 이전에 정리해놓은 equals 내용  
@@ -86,7 +86,7 @@ categories: EffectiveJava
 			}  
   
 			@Override  
-			public Boolean equals(Object o){  
+			public boolean equals(Object o){  
 				if(o instanceof CaseInsensitiveString){  
 					return s.equalsIgnoreCase((CaseInsensitiveString)o).s);  
 				}  

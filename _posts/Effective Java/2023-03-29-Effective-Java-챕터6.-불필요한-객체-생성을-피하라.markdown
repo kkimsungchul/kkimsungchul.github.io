@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터6. 불필요한 객체 생성을 피하라"  
 subtitle: "Effective Java 챕터6. 불필요한 객체 생성을 피하라"  
-date: 2023-02-24 08:08:46 +0900  
+date: 2023-03-29 05:56:19 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터6. 불필요한 객체 생성을 피하라 ]  
+# Effective Java - 챕터6. 불필요한 객체 생성을 피하라   
   
 	똑같은 기능의 객체는 매번 생성하기보다 객체 하나를 재사용하는 편이 나을때가 많다.  
   

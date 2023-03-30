@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터3. private 생성자나 열거타입으로 싱글턴임을 보증하라"  
 subtitle: "Effective Java 챕터3. private 생성자나 열거타입으로 싱글턴임을 보증하라"  
-date: 2023-02-22 02:23:21 +0900  
+date: 2023-03-29 05:55:46 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터3. private 생성자나 열거 타입으로 싱글턴임을 보증하라 ]  
+# Effective Java - 챕터3. private 생성자나 열거 타입으로 싱글턴임을 보증하라  
   
   
 # 정적 팩토리 방식  

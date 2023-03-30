@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
 subtitle: "Effective Java 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
-date: 2023-02-22 08:06:37 +0900  
+date: 2023-03-29 05:55:40 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라 ]  
+# Effective Java - 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라  
   
   
 	정적 메소드와 정적 필드만을 담은 클래스를만들때가 있음  

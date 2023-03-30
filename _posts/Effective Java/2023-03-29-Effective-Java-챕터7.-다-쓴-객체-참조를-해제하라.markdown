@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터7. 다 쓴 객체 참조를 해제하라"  
 subtitle: "Effective Java 챕터7. 다 쓴 객체 참조를 해제하라"  
-date: 2023-03-03 08:23:11 +0900  
+date: 2023-03-29 05:56:16 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터7. 다 쓴 객체 참조를 해제하라 ]  
+# Effective Java - 챕터7. 다 쓴 객체 참조를 해제하라   
   
 	JAVA 는 가비지컬렉터가 다 쓴 객체를 알아서 회수해 간다.  
   

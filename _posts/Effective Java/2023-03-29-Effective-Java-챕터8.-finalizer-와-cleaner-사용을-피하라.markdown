@@ -2,11 +2,11 @@
 layout: post  
 title: "[Effective Java] 챕터8. finalizer 와 cleaner 사용을 피하라"  
 subtitle: "Effective Java 챕터8. finalizer 와 cleaner 사용을 피하라"  
-date: 2023-03-06 05:49:27 +0900  
+date: 2023-03-29 05:56:13 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
-[ Effective Java - 챕터8. finalizer 와 cleaner 사용을 피하라 ]  
+# Effective Java - 챕터8. finalizer 와 cleaner 사용을 피하라   
   
   
 # 설명  

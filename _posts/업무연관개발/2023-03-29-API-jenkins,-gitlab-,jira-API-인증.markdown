@@ -2,11 +2,12 @@
 layout: post  
 title: "[API] jenkins, gitlab ,jira API 인증"  
 subtitle: "API jenkins, gitlab ,jira API 인증"  
-date: 2023-03-24 12:09:18 +0900  
+date: 2023-03-29 00:02:37 +0900  
 categories: 업무연관개발  
 ---  
 {% raw %}  
-[API - jenkins, gitlab ,jira API 인증 방법]  
+# API - jenkins, gitlab ,jira API 인증 방법  
+	지라의 경우 miniOrange OAuth Configuration 플러그인도 설치  
   
 # 깃랩  
 	header   
