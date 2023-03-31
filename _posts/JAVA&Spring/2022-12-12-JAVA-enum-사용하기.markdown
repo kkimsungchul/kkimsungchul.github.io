@@ -11,7 +11,6 @@ categories: JAVA&Spring
 =================================================================================================================  
 package com.sungchul.enumtest;  
   
-  
 //기존에 사용하던 방식  
 //class Fruit{  
 //    public static final Fruit APPLE = new Fruit();  
@@ -24,7 +23,6 @@ package com.sungchul.enumtest;
 //    public static final Company APPLE = new Company();  
 //    public static final Company ORACLE = new Company();  
 //}  
-  
   
 enum Fruit{  
     //상수를 만들면서 생성자를 넣어줌  
@@ -43,9 +41,6 @@ enum Fruit{
     public String getColor(){  
         return this.color;  
     }  
-  
-  
-  
   
 }  
   
@@ -69,7 +64,6 @@ public class EnumTestMain{
             System.out.println(f.getColor());  
         }  
   
-  
         Fruit type = Fruit.BANANA;  
         switch (type){  
             case APPLE:  
@@ -83,9 +77,6 @@ public class EnumTestMain{
                 break;  
         }  
   
-  
-  
-  
 //        System.out.println(EnumTest01.RED.getColorInt());  
 //        System.out.println(EnumTest01.RED.getColorString());  
 //        System.out.println(EnumTest01.BLUE.getColorInt());  
@@ -93,8 +84,6 @@ public class EnumTestMain{
     }  
   
 }  
-  
-  
   
 =================================================================================================================  
 {% endraw %}

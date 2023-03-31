@@ -38,7 +38,6 @@ progresses	speeds	return
   
 ※ 공지 - 2020년 7월 14일 테스트케이스가 추가되었습니다.  
   
-  
 ======================================================================================================  
 import java.util.*;  
   
@@ -52,9 +51,9 @@ class Solution {
             progressesQueue.add(progresses[i]);  
             speedsQueue.add(speeds[i]);  
         }  
-          
+  
         while(true){  
-              
+  
             if(progressesQueue.peek()>=100){  
                 int size=progressesQueue.size();  
                 for(int i=0;i<size;i++){  
@@ -68,9 +67,9 @@ class Solution {
                 }  
                 result.add(count);  
                 count=0;  
-                  
+  
             }  
-              
+  
             for(int i=0;i<progressesQueue.size();i++){  
                 int temp = progressesQueue.poll();  
                 int sum = speedsQueue.poll();  
@@ -78,18 +77,16 @@ class Solution {
                 progressesQueue.add(temp);  
                 speedsQueue.add(sum);  
             }  
-              
+  
             if(progressesQueue.size()==0){  
                 break;  
             }  
         }  
-          
-        	  
+  
         int answer[] = new int[result.size()];  
         for(int i=0;i<result.size();i++){  
             answer[i] = result.get(i);  
         }  
-  
   
         return answer;  
     }  

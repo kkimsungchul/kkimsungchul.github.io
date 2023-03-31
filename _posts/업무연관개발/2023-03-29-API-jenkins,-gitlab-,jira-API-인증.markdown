@@ -10,7 +10,7 @@ categories: 업무연관개발
 	지라의 경우 miniOrange OAuth Configuration 플러그인도 설치  
   
 # 깃랩  
-	header   
+	header  
 		key : PRIVATE-TOKEN  
 		value : 깃랩에서 발급받은 토큰 값  
   

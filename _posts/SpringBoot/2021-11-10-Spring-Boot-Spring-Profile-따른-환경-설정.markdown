@@ -13,7 +13,7 @@ categories: SpringBoot
 	DB정보, 포트 정보등이 변경되야 할때가 있음  
 	이때마다 해당 정보들을 변경하거나 주석처리 하는 일이 많으면 안되기떄문에 사용함  
   
-	application.yml 파일에서 상단에 아래와 같이 작성하였고,   
+	application.yml 파일에서 상단에 아래와 같이 작성하였고,  
 	active 이부분만 수정해주면 이제 모든 설정이 변경될거임  
   
 	--- 는 구분자로 나눠주는 역할을 함  
@@ -26,7 +26,6 @@ categories: SpringBoot
 		active : test  
 	---  
   
-  
 	spring :  
 	  profiles: local  
 	  session :  
@@ -36,7 +35,6 @@ categories: SpringBoot
 		url: jdbc:log4jdbc:mysql://localhost:3306/stock?serverTimezone=UTC&characterEncoding=UTF-8  
 		username: sungchul  
 		password: sungchul1234  
-  
   
 	server :  
 	  port : 80  
@@ -63,7 +61,7 @@ categories: SpringBoot
 	  port : 8080  
 	  session:  
 		timeout : 600  
-	  
+  
 	mybatis:  
 	  configuration:  
 		map-underscore-to-camel-case: true  
@@ -71,6 +69,4 @@ categories: SpringBoot
 		jdbc-type-for-null: null  
 	=================================================================================================================  
   
-  
-	  
 {% endraw %}

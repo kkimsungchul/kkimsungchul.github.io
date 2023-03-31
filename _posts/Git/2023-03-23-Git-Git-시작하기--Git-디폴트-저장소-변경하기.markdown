@@ -7,14 +7,11 @@ categories: Git
 ---  
 {% raw %}  
 [ 깃허브 디폴트 저장소 변경하기 ]  
-	  
-	참고 URL : https://dalya-tech.tistory.com/16  
   
+	참고 URL : https://dalya-tech.tistory.com/16  
   
 	개발하다보면 저장소를 변경해야 할 때가 있음  
 	그럴떄 아래의 방법으로 디폴드 저장소를 변경하면됨  
-  
-  
   
 1. 깃허브에 로그인  
   

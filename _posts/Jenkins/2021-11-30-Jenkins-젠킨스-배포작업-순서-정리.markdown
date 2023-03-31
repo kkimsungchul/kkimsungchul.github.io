@@ -18,17 +18,14 @@ categories: Jenkins
 		2. 젠킨스서버에서 저장된 소스를 빌드  
 		3. 빌드된 소스를 톰캣 서버로 배포  
 		4. 톰캣서버에서의 기존 파일 백업 및 배포된 파일 실행  
-	  
-  
-  
   
 [ 서버 설정 ]  
 # 비밀번호 없이 로그인을 하기위한 ssh key 복사  
-	  
+  
 	# 가. Jenkins 서버에 접속하여 ssh key 생성  
 		※ 현재 젠킨스 서버에서 ssh key 는 이미 생성되어 있으며, 키생성을 다시 하면 안됨  
 		※ 배포할 서버에다 id_rsa.pub 파일에 이미 존재하는 키만 넣어주면 됨  
-		  
+  
 		-> ssh userName@192.168.0.97  
 		-> sudo -i  
 		-> 비밀번호입력  
@@ -39,24 +36,22 @@ categories: Jenkins
 		-> vi id_rsa.pub  
 		-> 해당 파일에 있는 내용을 복사  
 		-> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2Gyzhc9PFFJQ0PovjZDnZ/Mvb0MrmBx+DF3sQQI5U+jkYWZ8DH1Xbs6lY8GFhwKvwKONMljdYk2Fu+36GQ/YeTIkGkJzCsP1jviQNBsYedZ4m5Y5tdkZ/Uur14mrJNjZso583ANjF8Cj4LCuiMV3w2aZKi0OcKxphGKy9C+f5xo4pu+wRkLznwwonfIM/sOfiVct3BrAgZ9EcXa2eYxDHDUxmAFB1 jenkins@p-stest-tk1-e02  
-	  
   
 	# 나. 톰캣서버에 접속(배포할 서버)하여 Jenkins 서버의 키 등록  
 		※ root 로그인은 막혀 있기 때문에 userName 계정에 Jenkins 키를 등록함  
-		  
+  
 		-> ssh userName@192.168.0.103  
 		-> cd /home/userName/.ssh  
 		-> vi authorized_keys  
 		-> 해당 파일에 아래에 Jenkins 서버에서 발급한 키를 추가로 등록하고 저장  
   
-  
 # sudo 사용을 위한 sudoers 파일 수정  
 	※ 젠킨스에서 톰캣으로 접속할 때 사용하는 계정은 일반 계정이여서 설정이 필요함, 현재 사용하는 서버들의 sudoers 파일에는 userName 가 포함되어 있지만, 비밀번호를 묻도록 되어있음  
 		비밀번호를 물어보게 되면 스크립트 실행 중 오류가 발생하므로 비밀번호를 묻지 않도록 수정  
-	  
+  
 	# 가. 톰캣서버(배포할 서버)의 sudoers 파일 수정  
 		-> ssh userName@192.168.0.103  
-		-> sudo -i   
+		-> sudo -i  
 		-> 비밀번호 입력  
 		-> visudo /etc/sudoers  
 		-> 아래와 같이 파일 수정 후 파일 저장  
@@ -66,27 +61,24 @@ categories: Jenkins
 			## Allow root to run any commands anywhere  
 			root    ALL=(ALL)       ALL  
 			userName ALL=(ALL)       ALL  
-					  
+  
 			## Same thing without a password  
 			#%wheel ALL=(ALL)       NOPASSWD: ALL  
 			userName ALL=(ALL)       NOPASSWD: ALL  
 			====================================================================================================  
-		  
+  
 [ 젠킨스 설정 ]  
-	  
   
 # credentialsId 설정  
 	※ 현재는 "jenkins_id" 로 ID가 하나 등록되어 있으며 CI Backend 는 정상적으로 작동함  
 		"jenkins_id" 에 등록한 git 계정으로 "https://github.com/kkimsungchul" 에 있는 모든 프로젝트들은 접근이 가능 할 것 같으나, 추후 안될경우 아래의 방법으로 새로 ID를 생성하여 접속  
-  
-  
   
 	# 가. 젠킨스 툴에 로그인 한 뒤 아래의 경로로 이동  
 		Dashboard -> Credentials -> System ->Global credentials (unrestricted) -> Add Credentials  
   
 	# 나. git 로그인 계정 정보를 추가  
 		Add Credentials 클릭 시 정보 입력 화면에서 정보 추가  
-		  
+  
 		Kind : Username with password 선택  
 		Scope : Global 선택  
 		Username : 깃 사용자명  
@@ -96,33 +88,29 @@ categories: Jenkins
   
 		ex)  
 		====================================================================================================  
-		Kind : Username with password   
+		Kind : Username with password  
 		Scope : Global  
 		Username : gitLoginId  
 		Password : gitLoginPassword  
 		ID : kimsc_git  
 		Description : git의 로그인 계정  
 		====================================================================================================  
-			  
   
 # Jenkin Job 생성  
-	  
+  
 	# 가. Jenkins 툴에서 Job 을 생성  
-		1. 젠킨스 접속   
-		2. 기존에 생성되어 있는 젠킨스 폴더로 이동   
+		1. 젠킨스 접속  
+		2. 기존에 생성되어 있는 젠킨스 폴더로 이동  
 		3. 좌측의 "New Item" 클릭  
-		  
+  
 		※4, 5번에서 입력한 값들은 전부다 수정이 가능함  
 		4. Job 생성에 필요한 정보 입력  
 			"Enter an item name" 에는 지정할 Job 명을 입력  
 			포맷은 PipeLine 선택 후 "Ok" 클릭  
-		  
+  
 		5. 구성하는 화면으로 넘어오면 설명 부분에 해당 Job 에 대한 설명을 기재하고 저장 클릭  
   
-  
 # Jenkins 배포 스크립트 작성  
-  
-	  
   
 	Checkout : 깃랩에서 소스를 내려받음  
 	Clean : maven clean 을 실행  
@@ -136,10 +124,9 @@ categories: Jenkins
 			5. war 파일의 소유자와 그룹을 tomcat 으로 변경  
 			6. 톰캣 시작  
   
-	  
 	1. 생성한 job을 클릭 후 "구성" 클릭  
 	2. 하단의 "Pipeline" 부분에서 "Definition" 은 "Pipeline script" 를 선택  
-	3. script 에 아래의 내용을 작성	  
+	3. script 에 아래의 내용을 작성  
 	====================================================================================================  
 	pipeline {  
 		agent any  
@@ -181,13 +168,11 @@ categories: Jenkins
 						sshCommand remote: remote, command:"sudo mv /home/userName/d-space-portal-0.0.1-SNAPSHOT.war /app/application "  
 						sshCommand remote: remote, command:"sudo chown tomcat:tomcat /app/application/d-space-portal-0.0.1-SNAPSHOT.war && sudo sleep 1"  
 						sshCommand remote: remote, command:"sudo systemctl start tomcat"  
-					}   
-				}		  
+					}  
+				}  
 			}  
 		}  
 	}  
 	====================================================================================================  
-		  
-		  
   
 {% endraw %}

@@ -19,7 +19,6 @@ categories: Tomcat
   
 	이럴때는 켜놓은 CMD창에서 해당 톰캣을 실행하게 하면 창이 안꺼지고 모든 실행 로그가 다 기록됨  
   
-  
 # 실행방법  
   
 	1. CMD 창에서 해당 톰캣의 catalina.bat 가 있는 디렉토리로 이동file:/C:/IntellijProject/logSearch/config.properties  
@@ -27,7 +26,6 @@ categories: Tomcat
 	file:/C:/IntellijProject/logSearch/config.properties  
 	2. 해당 창에서 catalina.bat run 명령어 입력  
 	ex ) catalina.bat run  
-  
   
 위와같이 실행하면 해당 창에서 실행됨  
 종료는 컨트롤+C를 하면 종료가 됨  

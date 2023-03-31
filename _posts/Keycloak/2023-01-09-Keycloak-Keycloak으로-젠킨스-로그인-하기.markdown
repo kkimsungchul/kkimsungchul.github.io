@@ -15,14 +15,13 @@ categories: Keycloak
   
 	2. 키클락 설치 및 기본세팅  
 		https://github.com/kkimsungchul/study/blob/master/Keycloak/%5BKeycloak%5D%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%B8%ED%8C%85.txt  
-	  
+  
 	3. Jenkins 관리자 계정을 Keycloak 에 유저로 등록  
   
-  
 # Clients 설정  
-	  
+  
 	1. Keycloak 접속  
-	  
+  
 	2. Realm 을 Demo 로 선택  
   
 	3. 좌측 탭에서 Clients 선택  
@@ -48,9 +47,8 @@ categories: Keycloak
   
 		=================================================================================================================  
   
-  
 # Jenkins - Keycloak Authentication 플러그인 설치  
-	  
+  
 	1. Jenkins 접속  
   
 	2. 좌측의 Jenkins 관리 클릭  
@@ -60,7 +58,6 @@ categories: Keycloak
 	4. Keycloak Authentication 플러그인 검색  
   
 	5. 체크박스 체크 후 하단의 Install without restart 클릭  
-  
   
 # Jenkins - keycloak 정보 설정  
   
@@ -83,11 +80,9 @@ categories: Keycloak
   
 		=================================================================================================================  
   
-  
 # Jenkins - Configure Global Security 설정  
 	※ 해당 작업을 진행 하기전 , Jenkins 관리자 계정의 정보를 Keycloak 에 똑같이 등록  
 		id / pw 를 똑같이 해야 다시 젠킨스에 접속이 가능해짐  
-  
   
 	1. Jenkins 접속  
   
@@ -98,5 +93,4 @@ categories: Keycloak
 	4. Security Realm 에서 "Jenkins own user database" 로 되어있는 것을  
 		"Keycloak Authentication Plugin" 로 변경  
   
-	  
 {% endraw %}

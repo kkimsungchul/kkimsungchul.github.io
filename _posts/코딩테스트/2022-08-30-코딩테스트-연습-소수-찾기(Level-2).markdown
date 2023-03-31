@@ -29,9 +29,6 @@ numbers	return
   
 11과 011은 같은 숫자로 취급합니다.  
   
-  
-  
-  
 ======================================================================================================  
 import java.util.*;  
   
@@ -41,18 +38,17 @@ class Solution {
         String tempNumbers[] = numbers.split("");  
 		List<String> arr = Arrays.asList(tempNumbers);  
 		ArrayList<String> returnArr = new ArrayList<>();  
-          
+  
         //소수배열  
         boolean [] decimal = getDecimal(numbers);  
-          
+  
 		//입력된 숫자로 만든 모든 수  
 		returnArr = result(arr,returnArr,"");  
-          
+  
         //숫자로 변환  
         //changeStringToInt(returnArr);  
         HashSet<Integer> intHashSet = changeStringToInt(returnArr);  
-       
-          
+  
         Iterator iter = intHashSet.iterator();  
         while(iter.hasNext()) {  
             int a = (int)iter.next();  
@@ -61,12 +57,9 @@ class Solution {
             }  
         }  
   
-          
-          
         return answer;  
     }  
-      
-      
+  
     public boolean[] getDecimal(String numbers){  
         //만들수 있는 제일 큰 숫자까지 배열을 선언  
         String tempb[] = numbers.split("");  
@@ -87,23 +80,23 @@ class Solution {
             if(!prime[i]){  
                 // prime[j] 소수가 아닌 표시  
                 for(int j=i*i; j<=N; j+=i) {  
-                    prime[j] = true;                  
+                    prime[j] = true;  
                 }  
-            }          
-        }          
-          
+            }  
+        }  
+  
         return prime;  
-          
+  
     }  
-      
+  
     //입력된 숫자로 만들수 있는 모든 숫자를 구함  
 	public ArrayList<String> result(List<String> arr, ArrayList<String> returnArr, String temp){  
         String loopTemp=temp;  
         for(int i=0;i<arr.size();i++) {  
             loopTemp += arr.get(i);  
-              
+  
             returnArr.add(loopTemp);  
-              
+  
             if(arr.size()!=1){  
                 ArrayList<String> tempArr = new ArrayList<>(arr);  
                 tempArr.remove(i);  
@@ -113,8 +106,8 @@ class Solution {
         }  
   
         return returnArr;  
-    }    
-      
+    }  
+  
 	//입력된 숫자중 0을 제거하여 중복 제거  
     public HashSet<Integer> changeStringToInt(ArrayList<String> stringList){  
         HashSet<Integer> intHashSet = new HashSet<Integer>();  
@@ -124,8 +117,6 @@ class Solution {
         return intHashSet;  
     }  
 }  
-  
-  
   
 =================================================================================================================  
 import java.util.*;  
@@ -140,12 +131,9 @@ class Solution {
 		returnArr = result(arr,returnArr,"");  
         System.out.println(returnArr);  
   
-          
-          
         return answer;  
     }  
-      
-      
+  
     public boolean[] getDecimal(String numbers){  
         //만들수 있는 제일 큰 숫자까지 배열을 선언  
         String tempb[] = numbers.split("");  
@@ -166,23 +154,23 @@ class Solution {
             if(!prime[i]){  
                 // prime[j] 소수가 아닌 표시  
                 for(int j=i*i; j<=N; j+=i) {  
-                    prime[j] = true;                  
+                    prime[j] = true;  
                 }  
-            }          
-        }          
-          
+            }  
+        }  
+  
         return prime;  
-          
+  
     }  
-      
+  
     //입력된 숫자로 만들수 있는 모든 숫자를 구함  
 	public ArrayList<String> result(List<String> arr, ArrayList<String> returnArr, String temp){  
         String loopTemp=temp;  
         for(int i=0;i<arr.size();i++) {  
             loopTemp += arr.get(i);  
-              
+  
             returnArr.add(loopTemp);  
-              
+  
             if(arr.size()!=1){  
                 ArrayList<String> tempArr = new ArrayList<>(arr);  
                 tempArr.remove(i);  
@@ -192,6 +180,6 @@ class Solution {
         }  
   
         return returnArr;  
-    }    
+    }  
 }  
 {% endraw %}

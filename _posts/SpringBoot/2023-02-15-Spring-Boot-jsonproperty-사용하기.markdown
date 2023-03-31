@@ -19,11 +19,10 @@ categories: SpringBoot
 	화면단에서 user_name 을 전송했을때 서버단의 VO에서 userName으로 받고자 한다면  
 	아래와 같이 일일이 매핑해줘야함  
 		ex)vo.setUserName(request.getParameter("user_name"));  
-	  
+  
 	하나두개야 해줄수 있지만 ..많아질경우에는 하기가 힘들어짐  
   
-  
-[ 사용방법 ]   
+[ 사용방법 ]  
   
 # jackson 라이브러리 추가  
 	※ 스프링부트에는 기본적으로 추가되어 있음  
@@ -58,9 +57,7 @@ categories: SpringBoot
 		private String userName;  
 	}  
   
-  
 	=================================================================================================================  
-	  
   
 # 화면으로 값을 전달할떄 null인 값 보내지 않기  
   
@@ -69,18 +66,14 @@ categories: SpringBoot
   
 	아니면 yml 파일에 아래와 같이 기재  
   
-		  
-	Spring :   
-		jackson :   
+	Spring :  
+		jackson :  
 			default-property-inclusion: NON_NULL  
-  
-  
   
 # @JsonCreator  
   
 	https://findmypiece.tistory.com/241  
 	https://jaime-note.tistory.com/15  
-  
   
 	Object Mapper 로 json 데이터를 파싱할때  
 	하위 Map 이나 List 구조에 데이터를 매핑하고 싶으면 @JsonCreator 을 사용하면 된다  

@@ -10,7 +10,7 @@ categories: JAVA&Spring
   
 	https://mangkyu.tistory.com/114  
   
-# Collection의 Stream 생성   
+# Collection의 Stream 생성  
   
 	=================================================================================================================  
 	List<String> list = Arrays.asList("A","B","C","D","E");  
@@ -27,12 +27,11 @@ categories: JAVA&Spring
 	=================================================================================================================  
   
 # 원시 Stream 생성  
-	//원시 스트림 생성 ,int,long,double 가능	  
+	//원시 스트림 생성 ,int,long,double 가능  
 	=================================================================================================================  
 	IntStream intStream = IntStream.range(10,100);  
 	LongStream longStream = LongStream.range(10,100);  
 	=================================================================================================================  
-  
   
 # 가공 - Filter(필터링)  
   
@@ -44,9 +43,8 @@ categories: JAVA&Spring
 	filterStream.forEach(System.out::println);  
 	=================================================================================================================  
   
-  
 # 가공 - Map (데이터 변환)  
-	  
+  
 	=================================================================================================================  
 	//stream 가공, Map 데이터변환  
 	Stream<String> mapStream =  
@@ -54,8 +52,6 @@ categories: JAVA&Spring
 			.map(s ->s.toLowerCase());  
 	mapStream.forEach(System.out::println);  
 	=================================================================================================================  
-  
-  
   
 # 가공 - Sorted (데이터 정렬)  
 	sortStream1 - 오름차순  
@@ -66,14 +62,12 @@ categories: JAVA&Spring
 	Stream<String> sortStream1= sortList.stream()  
 			.sorted();  
 	sortStream1.forEach(System.out::println);  
-	  
+  
 	Stream<String> sortStream2= sortList.stream()  
 			.sorted(Comparator.reverseOrder());  
 	sortStream2.forEach(System.out::println);  
   
 	=================================================================================================================  
-  
-  
   
 # 가공 - Distinct (중복제거)  
   
@@ -85,9 +79,8 @@ categories: JAVA&Spring
 	distinctStream.forEach(System.out::println);  
 	=================================================================================================================  
   
-  
 # 가공 - Peek  (특정 연산 수행)  
-	  
+  
 	=================================================================================================================  
 	int sum = IntStream.of(1,2,3,4,5,6,7,8,9,10)  
 			.peek(System.out::println)  
@@ -95,8 +88,7 @@ categories: JAVA&Spring
 	System.out.println(sum);  
 	=================================================================================================================  
   
-  
-# 가공 - Stream 변환   
+# 가공 - Stream 변환  
 	원시Stream < - > Stream 변환  
 	=================================================================================================================  
 	//stream 가공 , Stream < - > 원시 Stream 변환  
@@ -109,7 +101,6 @@ categories: JAVA&Spring
 			.mapToObj(i->"NUMBER : " + i);  
 	changeStream2.forEach(System.out::println);  
 	=================================================================================================================  
-  
   
 # 소스코드  
 	=================================================================================================================  
@@ -141,7 +132,6 @@ categories: JAVA&Spring
 			Stream<String> filterStream = list.stream()  
 					.filter(name ->name.contains("A"));  
 			filterStream.forEach(System.out::println);  
-  
   
 			//stream 가공, Map 데이터변환  
 			Stream<String> mapStream = list.stream()  
@@ -180,10 +170,8 @@ categories: JAVA&Spring
 					.mapToObj(i->"NUMBER : " + i);  
 			changeStream2.forEach(System.out::println);  
   
-  
 			//stream0.forEach(System.out::println);  
 			//stream4.forEach(System.out::println);  
-  
   
 		}  
   

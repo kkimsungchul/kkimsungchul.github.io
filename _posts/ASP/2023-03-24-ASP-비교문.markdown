@@ -7,18 +7,15 @@ categories: ASP
 ---  
 {% raw %}  
   
-  
 If 비교할값 = 비교할 값 Then  
 	실행할 메소드  
 End If  
-  
   
 # StrComp 를 사용하여 비교  
   
 	strA = "myText"  
   
 	strB = "MyText"  
-  
   
 	If StrComp(strA, strB) = 0 Then  
   
@@ -33,9 +30,6 @@ End If
 		Response.Write strA & " > " & strB  
   
 	EndIf  
-  
-  
-  
   
 # 인트형 비교  
   
@@ -66,7 +60,6 @@ Request("변수명") 으로 받아온 값들은 숫자형이 아니라서 오류
   
 	사용법 : Cint(변수)  
   
-  
 	Clng 함수 : long형으로 변환  
   
 	사용법 : Clng(변수)  
@@ -87,15 +80,12 @@ Request("변수명") 으로 받아온 값들은 숫자형이 아니라서 오류
   
 	사용법 : Cdate(변수)  
   
-  
 	Round() 함수 :  반올림 함수  
   
 			 사용법 : Round(변수)  
   
-  
 	Fix() 함수 :  버림 함수  
   
 		 사용법 : Fix(변수)  
-  
   
 {% endraw %}

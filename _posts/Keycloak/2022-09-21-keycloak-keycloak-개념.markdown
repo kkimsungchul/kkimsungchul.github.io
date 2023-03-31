@@ -16,7 +16,6 @@ keycloak 자료조사
 	LDAP 기반 User Federation  
 	OAuth Provider 역할 (Identity Provider)  
   
-  
 # Shiro 와의 차이점  
 	Shiro 는 세션 기반의 인증 방식을 주로 사용함.  
 	Keycloak 은 OpenID Connect 프로토콜을 사용하여, Client Application 에 대한 access token 과 id token 을 발급할 수 있으며  
@@ -38,12 +37,9 @@ keycloak 자료조사
 	OpenId Connect 는 통합인증, SSO 가 목적  
 	OpenId Connect 는 인증 이 메인이며, OIDC 는 access token 뿐만 아니라, id token(jwt 형태, 누가 인증하고 해당 사람의 정보, 발행자가 누구인지...) 까지 사용  
   
-  
-  
 # OpenID Connect vs OAuth 2.0  
 	https://www.samsungsds.com/kr/insights/oidc.html  
 	https://velog.io/@jakeseo_me/Oauth-2.0%EA%B3%BC-OpenID-Connect-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-%EC%A0%95%EB%A6%AC  
-  
   
 # 참고자료  
 	https://tech.socarcorp.kr/security/2019/07/31/keycloak-sso.html  
@@ -54,7 +50,4 @@ keycloak 자료조사
 	https://www.baeldung.com/spring-boot-keycloak  
 	http://infosec.pusan.ac.kr/wp-content/uploads/2018/10/7.-SSO-ID-federation-%EA%B8%B0%EC%88%A0-at-IoT-platform_ver3.pdf  
   
-  
-  
-	  
 {% endraw %}

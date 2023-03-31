@@ -8,13 +8,10 @@ categories: SpringBoot
 {% raw %}  
 [ Spring Boot - RestControllerAdvice 사용하기 ]  
   
-참고 URL :   
+참고 URL :  
 	https://velog.io/@banjjoknim/RestControllerAdvice  
 	https://mangkyu.tistory.com/204  
 	https://mangkyu.tistory.com/205  
-	  
-	  
-	  
   
 # 구현소스  
   
@@ -40,7 +37,6 @@ categories: SpringBoot
 	import org.springframework.web.bind.annotation.RestController;  
 	import org.springframework.web.bind.annotation.RestControllerAdvice;  
 	import org.springframework.web.client.HttpClientErrorException;  
-  
   
 	@Order(Ordered.HIGHEST_PRECEDENCE)  
 	@RestControllerAdvice(annotations = RestController.class)  
@@ -107,7 +103,6 @@ categories: SpringBoot
 			logger.info(request.toString());  
 			e.printStackTrace();  
   
-  
 			return new ResponseEntity(responseAPI , HttpStatus.INTERNAL_SERVER_ERROR);  
 		}  
   
@@ -121,8 +116,6 @@ categories: SpringBoot
   
 			return new ResponseEntity(responseAPI , HttpStatus.INTERNAL_SERVER_ERROR);  
 		}  
-  
-  
   
 		@ExceptionHandler(value = { AccessDeniedException.class })  
 		public ResponseEntity<ResponseAPI> exceptionHandler(HttpServletRequest request, final AccessDeniedException e)  

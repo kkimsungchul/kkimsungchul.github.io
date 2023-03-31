@@ -7,7 +7,6 @@ categories: JAVA&Spring
 ---  
 {% raw %}  
   
-  
 # Get으로 호출할때의 내용  
 =================================================================================================================  
 String message = t.get("http://localhost:9090/user/info");  
@@ -21,8 +20,7 @@ String message = t.get("http://localhost:9090/user/info");
   
 # Post으로 호출할때의 내용  
 =================================================================================================================  
-post("https://localhost:9090/user/create","{\"userId\": \"kimsungchul\" , \"userName\" : \"김성철\"}");   
-  
+post("https://localhost:9090/user/create","{\"userId\": \"kimsungchul\" , \"userName\" : \"김성철\"}");  
   
 # 사용할 유틸 클래스  
 =================================================================================================================  
@@ -45,7 +43,7 @@ import javax.net.ssl.X509TrustManager;
   
 //Java 로 외부 URL호출하여 데이터 가져오는 클래스  
 public class Test {  
-      
+  
 	/**  
 	 * @param strUrl 호출 URL  
 	 * @return return 값  
@@ -73,9 +71,9 @@ public class Test {
   
             SSLContext sc = SSLContext.getInstance("SSL");  
             sc.init(null, trustAllCerts, new java.security.SecureRandom());  
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());               
-              
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();   
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());  
+  
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();  
             con.setConnectTimeout(5000); //서버에 연결되는 Timeout 시간 설정  
             con.setReadTimeout(5000); // InputStream 읽어 오는 Timeout 시간 설정  
             con.setRequestMethod("GET");  
@@ -86,7 +84,7 @@ public class Test {
              * URL 연결은 입출력에 사용될 수 있다. URL 연결을 출력용으로 사용하려는 경우 DoOutput 플래그를 true로 설정하고,  
              * 그렇지 않은 경우는 false로 설정해야 한다. 기본값은 false이다.  
              */  
-            con.setDoOutput(false);   
+            con.setDoOutput(false);  
   
             StringBuffer sb = new StringBuffer();  
             if (con.getResponseCode() == HttpURLConnection.HTTP_OK){  
@@ -106,13 +104,12 @@ public class Test {
         }finally{  
             if(br != null){try{br.close();}catch(IOException e){}}  
         }  
-          
+  
         return returnString;  
     }  
-	  
-      
+  
     /**  
-     * @param strUrl - 호출 URL   
+     * @param strUrl - 호출 URL  
      * @param jsonMessage - 전달할 데이터  
      * @throws NoSuchAlgorithmException  
      * @throws KeyManagementException  
@@ -123,8 +120,7 @@ public class Test {
   
         try {  
             URL url = new URL(strUrl);  
-              
-              
+  
             TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {  
             	public java.security.cert.X509Certificate[] getAcceptedIssuers() {  
             		return null;  
@@ -139,21 +135,20 @@ public class Test {
   
             SSLContext sc = SSLContext.getInstance("SSL");  
             sc.init(null, trustAllCerts, new java.security.SecureRandom());  
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());   
-              
-              
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());  
+  
             HttpURLConnection con = (HttpURLConnection) url.openConnection();  
             con.setConnectTimeout(5000); //서버에 연결되는 Timeout 시간 설정  
             con.setReadTimeout(5000); // InputStream 읽어 오는 Timeout 시간 설정  
             con.setRequestMethod("POST");  
             con.setRequestProperty("Content-Type", "application/json");  
 //            con.setDoInput(true);  
-            con.setDoOutput(true); //POST 데이터를 OutputStream으로 넘겨 주겠다는 설정   
+            con.setDoOutput(true); //POST 데이터를 OutputStream으로 넘겨 주겠다는 설정  
 //            con.setUseCaches(false);  
 //            con.setDefaultUseCaches(false);  
   
             wr = new OutputStreamWriter(con.getOutputStream());  
-            wr.write(jsonMessage); //json 형식의 message 전달   
+            wr.write(jsonMessage); //json 형식의 message 전달  
             wr.flush();  
   
             StringBuffer sb = new StringBuffer();  
@@ -178,14 +173,8 @@ public class Test {
             if(wr != null){try{wr.close();}catch(IOException e){}}  
         }  
   
-  
     }  
 }  
-  
-  
-  
-  
-  
   
 =================  
 package com.main;  
@@ -202,40 +191,31 @@ public class Main {
 		Test t = new Test();  
 		HashMap<String,String> messageMap = new HashMap();  
 		//message = t.get("https://aaaaaa.co.kr/api/sso/user/check/idms/"kimsc1218);  
-		  
-		  
+  
 		//message = t.post("https://aaaaaa.aa.co.kr/api/sso/user/check/insideCheck","{\"loginId\": \""+username+"\" , \"loginIp\" : \""+loginIp+"\"}");  
-		  
-		  
+  
 		//message  =t.post("https://aaaaaa.aa.co.kr/api/sso/user/check/inside","{\"loginId\": \""+username+"\" , \"loginIp\" : \""+loginIp+"\"}");  
 		if(!message.equals("")) {  
 			message = message.replaceAll("\"", "").replaceAll("\\{", "").replaceAll("\\}", "");  
 			String [] tempMessage = message.split(",");  
 			for(int i=0;i<tempMessage.length;i++) {  
 				messageMap.put((tempMessage[i].split(":"))[0], (tempMessage[i].split(":"))[1]);  
-			}	  
+			}  
 		}  
-		  
   
-		  
-		  
-		  
 		System.out.println(messageMap.get("status"));  
 		System.out.println(messageMap.get("response"));  
 		System.out.println(messageMap.get("errorCode"));  
 		System.out.println(messageMap.get("errorMessage"));  
-		  
+  
 		if(messageMap.get("response").equals("true")) {  
-			  
+  
 		}  
-		  
+  
 		//t.get("https://sungchul.com/auth/admin/serverinfo");  
 	}  
-	  
   
 }  
-  
-  
   
 ==================================================================================================================================================  
 package com.main;  
@@ -257,7 +237,7 @@ import javax.net.ssl.X509TrustManager;
   
 //Java 로 외부 URL호출하여 데이터 가져오는 클래스  
 public class Test {  
-      
+  
 	/**  
 	 * @param strUrl 호출 URL  
 	 * @return return 값  
@@ -285,13 +265,13 @@ public class Test {
   
             SSLContext sc = SSLContext.getInstance("SSL");  
             sc.init(null, trustAllCerts, new java.security.SecureRandom());  
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());               
-              
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();   
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());  
+  
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();  
             con.setConnectTimeout(5000); //서버에 연결되는 Timeout 시간 설정  
             con.setReadTimeout(5000); // InputStream 읽어 오는 Timeout 시간 설정  
             con.setRequestMethod("GET");  
-              
+  
 //            con.setRequestProperty("Content-Type", "application/json");  
   
             /*  
@@ -299,7 +279,7 @@ public class Test {
              * URL 연결은 입출력에 사용될 수 있다. URL 연결을 출력용으로 사용하려는 경우 DoOutput 플래그를 true로 설정하고,  
              * 그렇지 않은 경우는 false로 설정해야 한다. 기본값은 false이다.  
              */  
-            con.setDoOutput(false);   
+            con.setDoOutput(false);  
   
             StringBuffer sb = new StringBuffer();  
             if (con.getResponseCode() == HttpURLConnection.HTTP_OK){  
@@ -319,13 +299,12 @@ public class Test {
         }finally{  
             if(br != null){try{br.close();}catch(IOException e){}}  
         }  
-          
+  
         return returnString;  
     }  
-	  
-      
+  
     /**  
-     * @param strUrl - 호출 URL   
+     * @param strUrl - 호출 URL  
      * @param jsonMessage - 전달할 데이터  
      * @throws NoSuchAlgorithmException  
      * @throws KeyManagementException  
@@ -337,8 +316,7 @@ public class Test {
   
         try {  
             URL url = new URL(strUrl);  
-              
-              
+  
             TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {  
             	public java.security.cert.X509Certificate[] getAcceptedIssuers() {  
             		return null;  
@@ -353,21 +331,20 @@ public class Test {
   
             SSLContext sc = SSLContext.getInstance("SSL");  
             sc.init(null, trustAllCerts, new java.security.SecureRandom());  
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());   
-              
-              
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());  
+  
             HttpURLConnection con = (HttpURLConnection) url.openConnection();  
             con.setConnectTimeout(5000); //서버에 연결되는 Timeout 시간 설정  
             con.setReadTimeout(5000); // InputStream 읽어 오는 Timeout 시간 설정  
             con.setRequestMethod("POST");  
             con.setRequestProperty("Content-Type", "application/json");  
 //            con.setDoInput(true);  
-            con.setDoOutput(true); //POST 데이터를 OutputStream으로 넘겨 주겠다는 설정   
+            con.setDoOutput(true); //POST 데이터를 OutputStream으로 넘겨 주겠다는 설정  
 //            con.setUseCaches(false);  
 //            con.setDefaultUseCaches(false);  
   
             wr = new OutputStreamWriter(con.getOutputStream());  
-            wr.write(jsonMessage); //json 형식의 message 전달   
+            wr.write(jsonMessage); //json 형식의 message 전달  
             wr.flush();  
             System.out.println("### jsonMessage : " + jsonMessage);  
             StringBuffer sb = new StringBuffer();  
@@ -391,9 +368,8 @@ public class Test {
             if(br != null){try{br.close();}catch(IOException e){}}  
             if(wr != null){try{wr.close();}catch(IOException e){}}  
         }  
-          
-        return returnString;  
   
+        return returnString;  
   
     }  
 }  

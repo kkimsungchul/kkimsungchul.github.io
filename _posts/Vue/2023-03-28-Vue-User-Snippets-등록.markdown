@@ -10,7 +10,6 @@ categories: Vue
   
 	VS Code 에서 자주 사용하는 템플릿을 등록해놓아서 편리하게 사용할수 있도록함  
   
-  
 1. File -> Preference > User Snippets 이동  
   
 2. 검색창에 vue 입력 -> vue(vue) 선택  

@@ -29,6 +29,5 @@ categories: SpringBoot
 # 요약  
 	결론적으로, Spring Boot는 Spring을 기반으로 하면서도 더 높은 생산성과 개발자 친화성을 제공하며, 애플리케이션 개발을 더욱 쉽게 만들어줍니다.  
   
-  
 출처 : chat GPT  
 {% endraw %}

@@ -8,7 +8,6 @@ categories: Keycloak
 {% raw %}  
 [keycloak - client_secret 키 값 확인하기 ]  
   
-  
 client_secret 확인 위치  
 -> realm 선택  
 -> clients 에서 원하는 클라이언트 선택  

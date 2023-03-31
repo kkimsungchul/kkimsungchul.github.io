@@ -10,7 +10,6 @@ categories: Git
   
 	참고 URL : https://ezcocoa.com/2019-09-11-git-encoding-problem/  
   
-	  
 # 해결 방안  
   
 	이유는 작성 인코딩 타입이 CP949(Window)로 되어있어 문제가 발생한다.  

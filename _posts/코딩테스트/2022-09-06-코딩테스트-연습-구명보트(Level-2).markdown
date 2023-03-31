@@ -26,8 +26,6 @@ people	limit	return
 [70, 50, 80, 50]	100	3  
 [70, 80, 50]	100	3  
   
-  
-  
 ======================================================================================================  
 import java.util.*;  
   
@@ -37,7 +35,7 @@ class Solution {
         int userEnd=people.length-1;  
         int userStart=0;  
         Arrays.sort(people);  
-          
+  
         while(userStart<=userEnd){  
             if(people[userStart] +people[userEnd]<=limit){  
                 userStart++;  
@@ -47,12 +45,9 @@ class Solution {
                 userEnd--;  
                 answer++;  
             }  
-              
+  
         }  
-          
-          
-          
-          
+  
         return answer;  
     }  
 }  
@@ -66,7 +61,7 @@ class Solution {
         int answer = 0;  
         Arrays.sort(people);  
         ArrayList<Integer> list = new ArrayList();  
-          
+  
         for(int i=0;i<people.length;i++){  
             list.add(people[i]);  
         }  
@@ -80,16 +75,14 @@ class Solution {
                 list.remove(list.size()-1);  
                 answer++;  
             }  
-              
+  
             if(list.size()==1){  
                 answer++;  
                 break;  
             }  
-              
-              
+  
         }  
-          
-          
+  
         return answer;  
     }  
 }  

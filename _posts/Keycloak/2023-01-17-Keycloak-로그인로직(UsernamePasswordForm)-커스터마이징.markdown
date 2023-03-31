@@ -10,13 +10,12 @@ categories: Keycloak
   
 #  사용 이유  
   
-	Keycloak 에서 그냥 암호화를 사용하면 잘됨...(https://github.com/l10178/keycloak-encryption-provider)   
+	Keycloak 에서 그냥 암호화를 사용하면 잘됨...(https://github.com/l10178/keycloak-encryption-provider)  
 	근데 LDAP 연동한 키클락에서는 비밀번호가 틀렷다고 나옴  
 	그래서 LDAP 연동할떄 비밀번호를 보내는 애가 복호화 하기전에 이미 암호화된 값을 가지고 간다고 생각하여  
 	로그인 로직을 커스터마이징 하기로 함  
   
-  
-# 사용한 파일   
+# 사용한 파일  
 	https://github.com/keycloak/keycloak/tree/main/services  
 		※ 위의 경로의 소스를 임포트해야 분석하기 편함  
   
@@ -26,9 +25,7 @@ categories: Keycloak
   
 	위의 링크에 있는 UsernamePasswordForm.java , UsernamePasswordFormFactory.java 두개의 파일을 사용하였음  
   
-  
-  
-# 프로젝트 URL   
+# 프로젝트 URL  
 	https://github.com/kkimsungchul/keycloak-CustomLoginForm  
   
 # 참고한 프로젝트 URL  
@@ -37,7 +34,6 @@ categories: Keycloak
 	위의 프로젝트를 내려받아서 구현하려는 클래스를 변경하여서 재구현 하였음  
 	Gradle 설정도 그렇고 뭔가 자꾸 꼬임. 그래서 위에 프로젝트를 그대로 내려받되  
 	패키지설정부터 다 다시하였음  
-  
   
 # 배포  
 	gradlew 파일이 있는 프로젝트 최상단 경로에서 아래의 명령어 실행  
@@ -50,22 +46,18 @@ categories: Keycloak
 	custom-username-password-form\build\libs  
 	=================================================================================================================  
   
-  
-  
-  
 # 적용  
 	- JAVA 빌드  
 		cd custom-username-password-form  
-		./gradlew shadowJar	  
+		./gradlew shadowJar  
   
 		빌드 후 "KEYCLOAK_HOME/standalone/deployments/" 경로에 복사  
   
 	- JS 빌드  
 		cd password-encryption-provider-js  
 		npm ci && npm run build  
-		  
-		빌드 후 "KEYCLOAK_HOME/themes/base/login/resources/js/" 경로에 복사  
   
+		빌드 후 "KEYCLOAK_HOME/themes/base/login/resources/js/" 경로에 복사  
   
 	- JS 파일 설정  
 		"KEYCLOAK_HOME/themes/base/login/theme.properties" 파일에 아래의 내용 추가  
@@ -77,14 +69,13 @@ categories: Keycloak
 	1. 설치되어 있는 keycloak 를 실행  
 		참고링크 : https://github.com/kkimsungchul/study/blob/master/Keycloak/%5BKeycloak%5D%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%B8%ED%8C%85.txt  
   
-	2. http://localhost:8080/auth/ 접속 후 로그인   
+	2. http://localhost:8080/auth/ 접속 후 로그인  
   
-	  
 	3. 적용할 realm 을 선택  
 		본인은 Demo라는 이름으로 생성한 realm 을 선택함  
-	  
+  
 	4. 좌측 Configure 탭의 Authentication 클릭  
-	  
+  
 	5. Flows 에서 Browser 선택 후 copy 클릭  
   
 	6. 명칭 지정, 난 Copy of browser 로 했음  
@@ -100,10 +91,10 @@ categories: Keycloak
 	11. 적용할 client 의 setting 페이지의 제일 하단부분의 "Authentication Flow Overrides" 를 아래와 같이 설정  
 		Browser Flow : Copy of browse  
 		Direct Grant Flow : Decrypt password <- 이거는 아무거나 해도됨 지금이랑 상관없음  
-		  
-		메뉴위치 :   
-			Configure   
-			-> Clients   
+  
+		메뉴위치 :  
+			Configure  
+			-> Clients  
 			-> my_client (내가 생성 및 적용할 클라이언트)  
 			-> settings  
 			-> Authentication Flow Overrides  
@@ -111,8 +102,6 @@ categories: Keycloak
 		또는 Browser Flow 를 공백으로 두고 Bindings 탭에서 Browser Flow  를 변경해도 됨  
   
 	12. 적용 완료 후 적용한 클라이언트로 로그인 시도  
-  
-  
   
 # CustomUsernamePasswordForm.java 클래스 구현  
   
@@ -152,7 +141,6 @@ categories: Keycloak
 	import java.time.temporal.ChronoUnit;  
 	import java.util.Map;  
   
-  
 	public class CustomUsernamePasswordForm extends UsernamePasswordForm {  
   
 		private static final Logger logger = Logger.getLogger(CustomUsernamePasswordForm.class);  
@@ -172,8 +160,6 @@ categories: Keycloak
 								Response.Status.INTERNAL_SERVER_ERROR  
 						));  
   
-  
-				  
 	//            Response challengeResponse = challenge(context,"서버와 클라이언트의 시간차이가 5분이상일 경우 로그인이 제한됩니다.", "loginTimeout");  
 	//            context.challenge(challengeResponse);  
   
@@ -240,7 +226,6 @@ categories: Keycloak
 			return forms.createLoginUsernamePassword();  
 		}  
   
-  
 		@Override  
 		public boolean configuredFor(KeycloakSession session, RealmModel realm, UserModel user) {  
 			// never called  
@@ -274,7 +259,7 @@ categories: Keycloak
 		private boolean validateTimeout(Map<String, Object> jsonObject,AuthenticationFlowContext context) {  
 			ZonedDateTime dateTime = ZonedDateTime.parse((String) jsonObject.get("timestamp"));  
 			ZonedDateTime now = ZonedDateTime.now();  
-			  
+  
 			//시간차이 계산부분  
 			if(true){  
 			//if (ChronoUnit.MINUTES.between(dateTime, now) > 5) {  
@@ -300,13 +285,11 @@ categories: Keycloak
 		}  
 	}  
   
-  
 	=================================================================================================================  
   
 # CustomUsernamePasswordFormFactory.java 클래스 구현  
-	아래의 파일에서는 getDisplayType() 메소드 부분만 수정하였고   
+	아래의 파일에서는 getDisplayType() 메소드 부분만 수정하였고  
 	그외에는 상단에 PROVIDER_ID 부분과 UsernamePasswordForm 이부분을 수정하였음  
-	  
   
 	=================================================================================================================  
   
@@ -323,7 +306,6 @@ categories: Keycloak
 	import org.keycloak.provider.ProviderConfigProperty;  
   
 	import java.util.List;  
-  
   
 	public class CustomUsernamePasswordFormFactory implements AuthenticatorFactory {  
   
@@ -394,9 +376,6 @@ categories: Keycloak
 		}  
 	}  
   
-  
-  
 	=================================================================================================================  
   
-	  
 {% endraw %}

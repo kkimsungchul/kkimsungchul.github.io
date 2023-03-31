@@ -31,21 +31,19 @@ arr의 모든 원소는 1으로 나누어 떨어집니다. 원소를 오름차�
 입출력 예#3  
 3, 2, 6은 10으로 나누어 떨어지지 않습니다. 나누어 떨어지는 원소가 없으므로 [-1]을 리턴합니다.  
   
-  
-  
 import java.util.*;  
   
 class Solution {  
     public int[] solution(int[] arr, int divisor) {  
         ArrayList<Integer> arrayList = new ArrayList<Integer>();  
-          
+  
         //divisor 으로 나눠지는 값들을 list에 저장  
         for(int i=0;i<arr.length;i++){  
             if(arr[i]%divisor==0){  
                 arrayList.add(arr[i]);  
             }  
         }  
-          
+  
         //list의 크기가 0일경우 나눠지는 값이 없으므로 -1 리턴  
         if(arrayList.size()==0){  
             int[] answer = {-1};  
@@ -59,11 +57,7 @@ class Solution {
             Arrays.sort(answer);  
             return answer;  
         }  
-          
-          
-          
-          
-          
+  
     }  
 }  
 {% endraw %}

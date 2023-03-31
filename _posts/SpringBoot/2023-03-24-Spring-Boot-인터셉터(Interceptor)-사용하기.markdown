@@ -9,14 +9,12 @@ categories: SpringBoot
 [ 스프링 부트 - 인터셉터 사용하기 ]  
 	https://eastglow.github.io/back-end/2019/08/01/Spring-Interceptor-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EA%B2%BD%EC%9A%B0.html  
   
-  
 # 인터셉터 클래스를 생성  
 	HandlerInterceptor 를 구현  
   
 	=====================================================================================================================================================  
   
 	package com.securus.ciim.main.interceptor;  
-  
   
 	import lombok.extern.slf4j.Slf4j;  
 	import org.springframework.stereotype.Component;  
@@ -63,12 +61,7 @@ categories: SpringBoot
 		}  
 	}  
   
-  
-  
 	=====================================================================================================================================================  
-  
-  
-  
   
 # config 클래스를 생성하여 인터페이스를 사용하도록 수정  
 	addPathPatterns() 를 통해서 패턴을 추가할 수 있음  
@@ -77,9 +70,7 @@ categories: SpringBoot
   
 	=====================================================================================================================================================  
   
-  
 	package com.securus.ciim.configuration;  
-  
   
 	import com.securus.ciim.main.interceptor.LoginCheckInterceptor;  
 	import lombok.AllArgsConstructor;  
@@ -102,16 +93,12 @@ categories: SpringBoot
 		}  
 	}  
   
-  
 	=====================================================================================================================================================  
   
-  
-  
 # Service 가 호출이 안되는경우  
-	  
+  
 	위의 로직과 같이 @Component를 사용하고 인터셉터에서 "LoginCheckInterceptor loginCheckInterceptor" 로 사용하면 잘되지만  
 	new LoginCheckInterceptor 를 해서 사용할 경우 안될수가 있음  
-  
   
 	그럴때에는 아래와 같이 @Bean 어노테이션을 사용하고, 인터셉터클래스 위에 @Component 어노테이션을 지워주면 됨  
 	registry.addInterceptor(loginCheckInterceptor) 이부분을 아래와같이 사용하면 스프링에서 관리를 하지못해 서비스레이어를 불러오지 못함  
@@ -123,7 +110,6 @@ categories: SpringBoot
 	=================================================================================================================  
 	package com.securus.ciim.configuration;  
   
-  
 	import com.securus.ciim.main.interceptor.LoginCheckInterceptor;  
 	import lombok.AllArgsConstructor;  
 	import org.springframework.context.annotation.Configuration;  
@@ -133,7 +119,6 @@ categories: SpringBoot
 	@AllArgsConstructor  
 	@Configuration  
 	public class InterceptorConfig extends WebMvcConfigurerAdapter {  
-  
   
 		@Override  
 		public void addInterceptors(InterceptorRegistry registry) {  
@@ -145,21 +130,17 @@ categories: SpringBoot
   
 		@Bean  
 		public LoginCheckInterceptor loginCheckInterceptor(){  
-			  
+  
 			return new LoginCheckInterceptor();  
 		}  
 	}  
   
 	=================================================================================================================  
   
-  
-  
-  
 	위의 소스와 똑같지만 @Component 어노테이션을 지움  
 	=====================================================================================================================================================  
   
 	package com.securus.ciim.main.interceptor;  
-  
   
 	import lombok.extern.slf4j.Slf4j;  
 	import org.springframework.stereotype.Component;  
@@ -205,10 +186,7 @@ categories: SpringBoot
 		}  
 	}  
   
-  
-  
 	=====================================================================================================================================================  
-  
   
 # 리턴값을 화면단으로 상태값을 돌려줘야 하는 경우  
   
@@ -217,7 +195,6 @@ categories: SpringBoot
 	=====================================================================================================================================================  
   
 	package com.securus.ciim.main.interceptor;  
-  
   
 	import lombok.extern.slf4j.Slf4j;  
 	import org.springframework.stereotype.Component;  
@@ -269,8 +246,6 @@ categories: SpringBoot
   
 		}  
 	}  
-  
-  
   
 	=====================================================================================================================================================  
                                                                                                                                         

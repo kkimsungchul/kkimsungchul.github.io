@@ -6,15 +6,14 @@ date: 2023-03-29 05:56:10 +0900
 categories: EffectiveJava  
 ---  
 {% raw %}  
-# Effective Java - 챕터9. try-finally보다는 try-with-resources 를 사용하라   
+# Effective Java - 챕터9. try-finally보다는 try-with-resources 를 사용하라  
   
 	자바 라이브러리에서는 close 메소드를 호출해 직접 닫아줘야 하는 자원들이 많음  
 	InputStream , OutputStream , java.sql.Connection 등이 있음  
 	자원 닫기는 클라ㅏ이언트가 놓치기 쉬워서 예측할 수 없는 성능 문제로 이어지기도 함  
 	이러한 자원 중 상당수가 안전망으로 finalizer 를 활용하고 있지만 finalizer는 그리 믿을만하지 못함 (챕터8 참고)  
-	  
-	전통적으로 자원이 제대로 닫힘을 보장하는 수단으로는 try-finally가 쓰였음  
   
+	전통적으로 자원이 제대로 닫힘을 보장하는 수단으로는 try-finally가 쓰였음  
   
 		- try-finally 을 사용한 예제 코드이며, 최선의 방책이 아닌 코드  
 		=================================================================================================================  
@@ -32,7 +31,7 @@ categories: EffectiveJava
 		- 위의 방식에서 자원을 추가로 사용한 코드  
 		=================================================================================================================  
 		static void copy(String src, String dst)throws IOException {  
-			  
+  
 			Input Stream in new FileInputStream(src);  
 			try{  
 				OutputStream out = new FileOutputStream(dst);  
@@ -47,13 +46,13 @@ categories: EffectiveJava
 				}finally{  
 					out.close();  
 				}  
-			  
+  
 			}finally{  
 				in.close();  
 			}  
-			  
+  
 		}  
-		=================================================================================================================		  
+		=================================================================================================================  
   
 	위와같이 작성했을 경우 예외는 try 블록과 finally 블록에서 모두 발생할 수 있는데, 기기에 물리적인 문제가 생긴다면 firstLineOfFile 메서드 안에서  
 	readLine 메소드가 예외를 던지고 같은 이유로 close 메소드도 실패함  
@@ -67,8 +66,6 @@ categories: EffectiveJava
 	단순히 void를 반환하는 close 메소드를 하나만 덩그러니 정의한 인터페이스이며,  
 	자바 라이브러리와 서드파티 라이브러리들의 수많은 클래스와 인터페이스가 이미 AutoCloseable을 구현하거나 확장해줬음  
   
-  
-  
 		- try-with-resources 코드  
 		=================================================================================================================  
 		static String firstLineOfFile(String path)throws IOException {  
@@ -77,13 +74,13 @@ categories: EffectiveJava
 			}  
 		}  
 		=================================================================================================================  
-	  
+  
 		- 복수의 자원을 처리하는 try-with-resources 코드  
 		=================================================================================================================  
 		static void copy(String src, String dst)throws IOException {  
 			try(Input Stream in new FileInputStream(src);  
 				OutputStream out = new FileOutputStream(dst)){  
-				  
+  
 				byte[] buf = new byte[BUFFER_SIZE];  
 				int n;  
   
@@ -107,7 +104,6 @@ categories: EffectiveJava
 			}  
 		}  
 		=================================================================================================================  
-  
   
 # 정리  
 	꼭 회수해야 하는 자원을 다룰 때는 try-finally 말고, try-with-resources 를 사용하자.  

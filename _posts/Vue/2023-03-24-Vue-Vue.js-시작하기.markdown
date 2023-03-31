@@ -9,15 +9,13 @@ categories: Vue
 [ Vue.js 시작하기 ]  
 	참고 링크 : https://ojava.tistory.com/185  
   
-  
 # Node.js 설치  
 	Node.js 를 설치하면 NPM 은 자동으로 설치됨  
   
 	다운로드 링크 : https://nodejs.org/ko/  
   
-  
 # Vue.js 설치  
-	  
+  
 	1. 명령프롬프트를 관리자 권한으로 실행  
   
 	2. npm install vue 명령어 실행  
@@ -36,7 +34,6 @@ categories: Vue
 	npm notice Run npm install -g npm@9.1.1 to update!  
 	npm notice  
   
-  
 	=================================================================================================================  
   
 # Vue.js 의 CLI 설치  
@@ -48,19 +45,16 @@ categories: Vue
 	1. 크롬 시작  
   
 	2. Vue.js devtools 확장도구 설치  
-	  
-	3. vetur 확장도구 설치  
   
+	3. vetur 확장도구 설치  
   
 # VS Code 에 Extensions 추가  
   
-	View   
+	View  
 	-> Extensions 클릭  
 	(컨트롤 + 시프트 + X)  
   
 	또는 (컨트롤 + 시프트 + P) 후 Command Palette 를 켜서  
 	Extensions: install Extensions 를 켜도 됨  
-  
-  
   
 {% endraw %}

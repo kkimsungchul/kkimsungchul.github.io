@@ -19,7 +19,7 @@ categories: SpringBoot
   
 	1. application.yml 파일에 원하는 변수명으로 설정을 먼저 함  
 	=================================================================================================================  
-	  
+  
 	test :  
 	  testword1 : hihi  
 	  testword2 : byebye  
@@ -34,7 +34,7 @@ categories: SpringBoot
 	@AllArgsConstructor  
 	@RequestMapping("/test")  
 		public class TestController {  
-		  
+  
 			ParsingService parsingService;  
 			CSVService csvService;  
   
@@ -44,15 +44,14 @@ categories: SpringBoot
 	=================================================================================================================  
   
 	3. 오류발생...  
-	오류메시지	  
+	오류메시지  
 	=================================================================================================================  
 	Consider defining a bean of type 'java.lang.String' in your configuration.  
 	=================================================================================================================  
   
-  
 # 분석  
 	구글링해본 결과 저기 상단에 있는 URL이 젤 처음나오고, 나랑 똑같았음..  
-	  
+  
 	난 개발할때 lombok 을 사용해서 개발하고있는데,  
 	@AllArgsConstructor 어노테이션을 사용하여서 자동으로 의존성 주입을 받고있었음  
 	해당 어노테이션을 사용하면, @Autowired 를 붙이지 않아도 되서 좀더 깔끔해보이기도 했음  
@@ -65,7 +64,6 @@ categories: SpringBoot
   
 	솔직히 나도 @Value 하면 끝날줄 알았음,, 남들 다 그캐했으니까  
 	근데 그 남들은 다 @Autowired를 쓰고잇는건 안봣네..  
-  
   
 # 해결  
 	@AllArgsConstructor 어노테이션을 지우고, 서비스들위에 직접 @Autowired를 명시해줌  

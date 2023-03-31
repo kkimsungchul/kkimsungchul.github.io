@@ -9,12 +9,10 @@ categories: JAVA&Spring
 [ JAVA - Stream 사용하기 - 결과 ]  
 	https://mangkyu.tistory.com/114  
   
-  
-  
 # Max(최대값) , Min(최소값) , Sum(합계) , Average(평균) , Count(갯수)  
 	Stream의 요소들의 최대값,최소값등을 구할 수 있음  
 	max , min , average 는 비어있는 값을 측정 할 수 없으므로 Optional 클래스를 사용함  
-	  
+  
 	=================================================================================================================  
 	//Min 최소값  
 	OptionalInt min = IntStream.of(3,5,6,7,8,3,2,1).min();  
@@ -30,12 +28,10 @@ categories: JAVA&Spring
 	System.out.print("평균값 : ");  
 	IntStream.of(1,2,3,4,5,6,7,8,9,10).average().ifPresent(System.out::println);  
   
-  
 	//sum 총합  
 	long sum = IntStream.of(1,2,3,4,5,6,7,8).sum();  
 	System.out.print("총합 : ");  
 	System.out.println(sum);  
-  
   
 	//count 갯수  
 	long count = IntStream.of(1,2,3,4,5,6,7,8).count();  
@@ -43,15 +39,12 @@ categories: JAVA&Spring
 	System.out.println(count);  
 	=================================================================================================================  
   
-	  
-  
 # collect - 데이터 수집  
   
 	Stream의 요소들을 List, Set , Map 등의 다른 종류의 결과로 생성하고 싶을 경우에 collect 함수를 사용  
-	  
-	  
+  
 # collect - Collectors.toList() 결과를 List로 반환  
-	  
+  
 	=================================================================================================================  
         //value 값만 뽑아서 리스트 생성  
         List<String> resultValueList = test01List.stream()  
@@ -64,7 +57,6 @@ categories: JAVA&Spring
                 .collect(Collectors.toList());  
         System.out.println(resultSeqList);  
 	=================================================================================================================  
-  
   
 # collect - Collectors.joining() stream 에서 작업한 결과를 하나의 String 으로 붙일때 사용  
   
@@ -107,12 +99,11 @@ categories: JAVA&Spring
         System.out.println("### sum1 : " + sum1);  
 	=================================================================================================================  
   
-  
 # collect - Collectors.groupingBy()  
 	Stream 에서 작업한 결과를 특정 그룹으로 묶을 때 사용  
 	결과는 Map 으로 반환받게 됨  
 	groupingBy 는 함수형 인터페이스 Function을 필요로 함  
-	  
+  
 	=================================================================================================================  
         //seq가 같은 값인 VO끼리 묶음  
         Map<Integer , List<TestVO1>> collectorMap = test03List.stream()  
@@ -120,8 +111,6 @@ categories: JAVA&Spring
         System.out.println("### collectorMap");  
         System.out.println(collectorMap);  
 	=================================================================================================================  
-  
-  
   
 # collect - Collectors.partitioningBy()  
 	함수형 인터페이스 Predicate 를 받아 Boolean key 값으로 partitioning 함  
@@ -132,7 +121,6 @@ categories: JAVA&Spring
         System.out.println("### collectorMap2");  
         System.out.println(collectorMap2);  
 	=================================================================================================================  
-  
   
 # match - 조건검사  
 	anyMatch: 1개의 요소라도 해당 조건을 만족하는가  
@@ -156,9 +144,8 @@ categories: JAVA&Spring
   
 	=================================================================================================================  
 		 List<String> names = Arrays.asList("Hi", "Hellow", "Kimsungchul");  
-		strList.stream().forEach(System.out::println);	  
+		strList.stream().forEach(System.out::println);  
 	=================================================================================================================  
-  
   
 # 소스코드  
 	=================================================================================================================  
@@ -186,12 +173,10 @@ categories: JAVA&Spring
 				System.out.print("평균값 : ");  
 				IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).average().ifPresent(System.out::println);  
   
-  
 				//sum 총합  
 				long sum = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8).sum();  
 				System.out.print("총합 : ");  
 				System.out.println(sum);  
-  
   
 				//count 갯수  
 				long count = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8).count();  
@@ -235,7 +220,6 @@ categories: JAVA&Spring
 						.collect(Collectors.joining(" "));  
 				System.out.println(listToString02);  
   
-  
 				//결과값을 하나의 스트링으로 생성하면서, 중간에 콤마와 시작과 끝지점에  ( ) 를 추가함  
 				String listToString03 = test01List.stream()  
 						.map(TestVO1::getValue)  
@@ -271,7 +255,6 @@ categories: JAVA&Spring
 				System.out.println("### collectorMap2");  
 				System.out.println(collectorMap2);  
   
-  
 				List<String> strList = Arrays.asList("Hi", "Hellow", "Kimsungchul");  
 				boolean anyMatch = strList.stream().anyMatch(name -> name.contains("H"));  
 				boolean allMatch = strList.stream().allMatch(name -> name.length() > 3);  
@@ -282,7 +265,6 @@ categories: JAVA&Spring
   
 				strList.stream().forEach(System.out::println);  
 				test03List.stream().forEach(TestVO1::getSeq);  
-  
   
 			}  
 		}  
@@ -330,6 +312,6 @@ categories: JAVA&Spring
 					return false;  
 				}  
 			}  
-		}	  
+		}  
 	=================================================================================================================  
 {% endraw %}

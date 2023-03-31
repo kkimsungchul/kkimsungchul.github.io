@@ -14,8 +14,6 @@ categories: Keycloak
 	그외 오류 관련 링크  
 		https://tech.osci.kr/2020/04/21/k8s%EC%99%80-spinnaker-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/  
   
-  
-  
 # 중요 참고 사항  
 	※ keycloak json 을 이용한 방법과 동시 적용시 젠킨스 로그인이 불가능함, 꼭 하나만 적용  
 	이전에 access type 을 confidential 로 젠킨스와 연동했었으면 새로 클라이언트를 생성하고 할것  
@@ -24,8 +22,6 @@ categories: Keycloak
 	https://github.com/kkimsungchul/study/blob/master/Keycloak/%5BKeycloak%5D%20Keycloak%EC%9C%BC%EB%A1%9C%20%EC%A0%A0%ED%82%A8%EC%8A%A4%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%95%98%EA%B8%B0-%EA%B6%8C%ED%95%9C%EC%84%A4%EC%A0%95.txt  
   
 	위 두개를 적용하지 않고 바로 Jenkins 에 적용하면됨, 위 두개를 적용할 경우 로그인이 안되서 젠킨스 재설치를 해야함  
-  
-  
   
 # keycloak - Cilent 생성  
   
@@ -40,10 +36,10 @@ categories: Keycloak
 		※ jenkins URL 을 넣으면 됨  
   
 # keycloak - Cilent 수정  
-	  
-	- Cilent Protocal 을 openid-connect   
-	  
-	- Access Type 를 confidential   
+  
+	- Cilent Protocal 을 openid-connect  
+  
+	- Access Type 를 confidential  
   
 	- Valid Redirect URIs 에 keycloak URL 추가  
 		(기존에는 jenkins 만 추가되어 있었음)  
@@ -58,17 +54,16 @@ categories: Keycloak
   
 # keycloak - Credentials 확인  
 	※ 해당값은 설정을 다시할때마다 계속바뀜  
-	  
+  
 	1. 좌측탭에서 clients 클릭  
   
 	2. 우측탭에서 Credentials 클릭  
-	  
+  
 	3. Secret 에 표시되는 키값을 확인 후 저장  
 		3761841c-a8bb-46ad-b31f-44ad10a4d36d  
-	  
   
 # Keycloak - Endpoints 정보 확인  
-	  
+  
 	1. realm 에서 Demo 선택  
   
 	2. 좌측 탭에서 Realm Settings 클릭  
@@ -77,14 +72,9 @@ categories: Keycloak
   
 	4. 클릭하면 이동되는 URL을 보관  
 		http://localhost:8080/auth/realms/demo/.well-known/openid-configuration  
-		  
-		  
+  
 		sso_dev 렐름  
 		http://localhost:8080/auth/realms/sso-dev/.well-known/openid-configuration  
-  
-  
-  
-  
   
 # keycloak - Mappers 설정  
 	1. 좌측탭에서 clients 클릭  
@@ -95,14 +85,12 @@ categories: Keycloak
   
 	4. Create 버튼을 클릭  
 		Name  : group-membership  
-		  
+  
 		Mapper Type : Group Membership  
   
 		Token Claim Name : group-membership  
-		  
+  
 		그밑에 옵션들은 전부다 on으로 두고 생성  
-  
-  
   
 # Jenkins - Role-based Authorization 플러그인 설치  
 	※ 굳이 설치 안해도 됨  
@@ -114,8 +102,6 @@ categories: Keycloak
   
 	4. Role-based Authorization 플러그인 설치  
   
-  
-  
 # Jenkins - OpenId Connect Authentication 플러그인 설치  
   
 	1. Jenkins 접속  
@@ -126,7 +112,6 @@ categories: Keycloak
   
 	4. OpenId Connect Authentication 플러그인 설치  
   
-  
 # Jenkins - config.xml 파일 백업  
 	※ 백업해두자  실수하면 되돌릴수 없다고 한다  
   
@@ -136,9 +121,8 @@ categories: Keycloak
 		~/.jenkins/config.xml  
 	파일명 : config.xml  
   
-  
 # Jenkins - Configure Global Security 설정 -1  
-	  
+  
 	1. Security Realm 항목에서 Login with Openid Connect 선택  
   
 	2. 아래의 정보 입력  
@@ -147,17 +131,16 @@ categories: Keycloak
 			※ 해당 값은 keycloak 에서 활성화 비활성화시마다 바뀌니까 확인을 해야함  
   
 		Configuration mode : Automatic configuration 선택  
-		Well-known configuration endpoint :   
+		Well-known configuration endpoint :  
 			http://localhost:8080/auth/realms/demo/.well-known/openid-configuration  
-	  
+  
 	3. 저장  
   
-  
 # Jenkins - Configure Global Security 설정 -2  
-	  
+  
 	1. 아래의 정보를 변경  
 		Automatic configuration - > Manual configuration 변경  
-	  
+  
 	2. 아래의 정보를 입력  
   
 		Post logout redirect URL : http://localhost:7070/  
@@ -167,15 +150,12 @@ categories: Keycloak
 		Full name field name : preferred_username  
 		Groups field name : group-membership  
   
-  
-  
 # Jenkins - 권한 설정  
 	이전에 설치한 "Role-based Authorization" 플러그인으로 권한관리를 할수 있지만,  
 	내가 원하는거는 관리자를 제외한 사용자는 모든것들을 사용할수 있도록 하는것을 원했음  
-	  
   
 	1. jenkins 접속  
-	  
+  
 	2. jenkins 관리 클릭  
   
 	3. Configure Global Security 클릭  
@@ -184,7 +164,7 @@ categories: Keycloak
   
 	5. 선택 후 Add user 를 클릭 후 admin 을 추가 한 뒤 모든 권한 체크  
   
-	6. 기 등록 되어 있는 "Authenticated Users" 에는 adminster 만 제외한 모든 권한 체크   
+	6. 기 등록 되어 있는 "Authenticated Users" 에는 adminster 만 제외한 모든 권한 체크  
   
 	7. save  
 {% endraw %}

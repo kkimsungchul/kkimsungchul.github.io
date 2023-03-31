@@ -7,7 +7,6 @@ categories: 코딩테스트
 ---  
 {% raw %}  
   
-  
 이중우선순위큐  
 문제 설명  
 이중 우선순위 큐는 다음 연산을 할 수 있는 자료구조를 말합니다.  
@@ -49,10 +48,6 @@ operations	return
 PriorityQueue  
 우선순위 큐로 사용해서 풀면된다고함  
   
-  
-  
-  
-  
 힙으로 구현해서 풀어야한다고 하는데  
 리스트로 정렬해서 풀엇음..  
   
@@ -63,7 +58,7 @@ class Solution {
     public int[] solution(String[] operations) {  
         int[] answer = new int[2];  
         ArrayList<Integer> list = new ArrayList<Integer>();  
-          
+  
         for(int i=0;i<operations.length;i++){  
             if(operations[i].substring(0,1).equals("I")){  
                 //System.out.println(operations[i]);  
@@ -77,21 +72,21 @@ class Solution {
             }else if(operations[i].equals("D -1")){  
                 if(list.size()>0){  
                     list.remove(0);  
-                }                  
+                }  
                 //System.out.println(operations[i]);  
             }  
         }  
-          
+  
         if(list.size()==0){  
             answer[0]=0;  
             answer[1]=0;  
         }else{  
             answer[0]=list.get(list.size()-1);  
             answer[1]=list.get(0);  
-              
+  
         }  
         //System.out.println(list);  
-          
+  
         return answer;  
     }  
 }  

@@ -12,12 +12,12 @@ categories: Jenkins
   
 # 아래의 경로로 이동  
 	Dashboard -> Credentials -> System ->Global credentials (unrestricted) -> Add Credentials  
-	  
+  
 	http://localhost:7070/credentials/store/system/domain/_/newCredentials  
   
 # git 로그인 계정 정보를 추가  
 	Add Credentials 클릭 시 정보 입력 화면에서 정보 추가  
-	  
+  
 	Kind : Username with password 선택  
 	Scope : Global 선택  
 	Username : 깃 사용자명  
@@ -27,20 +27,19 @@ categories: Jenkins
   
 	ex)  
 	====================================================================================================  
-	Kind : Username with password   
+	Kind : Username with password  
 	Scope : Global  
 	Username : gitLoginId  
 	Password : gitLoginPassword  
 	ID : kimsc_git  
 	Description : git의 로그인 계정  
 	====================================================================================================  
-	  
   
 # 사용방법  
 	젠킨스에서 깃 체크아웃을 받을 때, 아래와 같이 작성해서 받으면 됨  
-	  
+  
 	git credentialsId: 'kimsc_git', url: 'https://github.com/kkimsungchul/stock.git', branch: 'master'  
-	  
+  
 	ex)  
 	====================================================================================================  
 	pipeline {  
@@ -51,7 +50,7 @@ categories: Jenkins
 				steps {  
 					git credentialsId: 'kimsc_git', url: 'https://github.com/kkimsungchul/stock.git', branch: 'master'  
 				}  
-			}	  
+			}  
 		}  
 	}  
 {% endraw %}

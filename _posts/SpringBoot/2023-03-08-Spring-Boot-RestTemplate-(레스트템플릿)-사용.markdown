@@ -10,9 +10,9 @@ categories: SpringBoot
   
 	다른사이트에서 제공해주는 레스트풀API(restful api)에 접속하여 값 가져올 때 사용함.  
 	화면단에서 ajax 로 호출해서 사용해도 되지만, 서버단에서 원하는 데이터를 정제한 뒤에 화면단에 뿌려주기 위함  
-	SSLContext 설정부분은 인증서 오류를 안뜨게 하기 위해서   
+	SSLContext 설정부분은 인증서 오류를 안뜨게 하기 위해서  
   
-# 참고사이트   
+# 참고사이트  
 	https://vmpo.tistory.com/27  
 	https://sooin01.tistory.com/entry/RestTemplate-%EC%82%AC%EC%9A%A9%EB%B2%95  
 	https://advenoh.tistory.com/46  
@@ -22,9 +22,6 @@ categories: SpringBoot
 	쿼리스트링  
 	https://recordsoflife.tistory.com/32  
 	https://m.blog.naver.com/PostView.nhn?blogId=mk1126sj&logNo=221032571275&proxyReferer=https:%2F%2Fwww.google.com%2F  
-  
-  
-  
   
 	전달받은 값(body)를 캐스팅 하는 방법  
 	https://luvstudy.tistory.com/52  
@@ -36,8 +33,6 @@ categories: SpringBoot
 	=================================================================================================================  
 	implementation('org.apache.httpcomponents:httpclient:4.5')  
 	=================================================================================================================  
-	  
-  
   
 # 서비스로직에 레스트템플릿 구현  
 	HttpComponentsClientHttpRequestFactory 를 생성하여, 세션타임아웃 설정  
@@ -88,9 +83,7 @@ categories: SpringBoot
         return coinVO;  
     }  
   
-  
 	=================================================================================================================  
-	  
   
 	아래의 소스는 pki 오류를 예방하는 코드, 인증서 오류가 발생해도 무시하고 진행할수 있도록 해줌  
 	=================================================================================================================  
@@ -116,7 +109,6 @@ categories: SpringBoot
 	import org.apache.http.impl.client.CloseableHttpClient;  
 	import org.apache.http.impl.client.HttpClients;  
   
-  
 	@Configuration  
 	public class RestTemplateConfig {  
 		@Bean  
@@ -129,7 +121,7 @@ categories: SpringBoot
 		public RestTemplate restTemplate()  
 				throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {  
 	        TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;  
-	    
+  
 			//Ignore self-signed certification  
 			SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom()  
 					.loadTrustMaterial(null, acceptingTrustStrategy)  
@@ -137,24 +129,20 @@ categories: SpringBoot
   
 			//Ignore host name verification  
 			SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext, NoopHostnameVerifier.INSTANCE);  
-	   
+  
 			CloseableHttpClient httpClient = HttpClients.custom()  
 					.setSSLSocketFactory(csf)  
 					.build();  
-	   
+  
 			HttpComponentsClientHttpRequestFactory requestFactory =  
 					new HttpComponentsClientHttpRequestFactory();  
-	   
+  
 			requestFactory.setHttpClient(httpClient);  
 			RestTemplate restTemplate = new RestTemplate(requestFactory);  
 			return restTemplate;  
 		}  
 	}  
 	=================================================================================================================  
-  
-  
-  
-  
   
 # 애는 ssl 오류 남  
 	=================================================================================================================  
@@ -180,7 +168,6 @@ categories: SpringBoot
 	import org.apache.http.impl.client.CloseableHttpClient;  
 	import org.apache.http.impl.client.HttpClients;  
   
-  
 	@Configuration  
 	public class RestTemplateConfig {  
 		@Bean  
@@ -193,7 +180,7 @@ categories: SpringBoot
 		public RestTemplate restTemplate()  
 				throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {  
 //        TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;  
-	    
+  
 			//Ignore self-signed certification  
 			SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom()  
 					.loadTrustMaterial(null, new TrustSelfSignedStrategy())  
@@ -201,14 +188,14 @@ categories: SpringBoot
   
 			//Ignore host name verification  
 			SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext, NoopHostnameVerifier.INSTANCE);  
-	   
+  
 			CloseableHttpClient httpClient = HttpClients.custom()  
 					.setSSLSocketFactory(csf)  
 					.build();  
-	   
+  
 			HttpComponentsClientHttpRequestFactory requestFactory =  
 					new HttpComponentsClientHttpRequestFactory();  
-	   
+  
 			requestFactory.setHttpClient(httpClient);  
 			RestTemplate restTemplate = new RestTemplate(requestFactory);  
 			return restTemplate;  

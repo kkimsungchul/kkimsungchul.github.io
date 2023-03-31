@@ -9,11 +9,11 @@ categories: SpringBoot
 [ Spring boot - No cached version available for offline mode 라이브러리 갑자기 안됨 ]  
   
 # 오류메시지  
-	  
+  
 	Could not download jsoup-1.11.3.jar (org.jsoup:jsoup:1.11.3): No cached version available for offline mode  
   
 # 증상  
-	  
+  
 	Gradle 을 통해서 추가한 라이브러리들이 전부다 사용할수 없다고 표시되었음.  
 	인터넷도 잘되고, 다른컴퓨터에서도 잘되는 왜? 라고 생각함  
   

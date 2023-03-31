@@ -7,14 +7,11 @@ categories: SpringBoot
 ---  
 {% raw %}  
 [Spring Boot  - Springsecurity 사용하기]  
-	  
+  
 	스프링에서 제공해주는 스프링시큐리티로 로그인 및 권한부분 구현  
-	  
+  
 	* 스프링시큐리티 적용  
 		https://dkyou.tistory.com/15?category=877213  
-  
-		  
-  
   
 # gradle 에 라이브러리 추가  
   
@@ -23,15 +20,13 @@ categories: SpringBoot
     implementation 'org.springframework.security:spring-security-test'  
     implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'  
   
-  
-  
 # 스프링 시큐리티 config 작성  
   
 	진짜 아래같이 작성만 하면 끝임  
 	사용자가 로그인한 계정에 따라서 권한을 부여하는것임.  
 	저 위에 블로그 들어가면 잘 설명되어있음  
   
-	스웨거를 사용한다면  "/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**"   
+	스웨거를 사용한다면  "/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**"  
 	이부분을 permitAll()에 추가하자  
 	=================================================================================================================  
 	package com.sungchul.stock.config.security;  
@@ -53,7 +48,6 @@ categories: SpringBoot
 	@Slf4j  
 	public class SecurityConfig extends WebSecurityConfigurerAdapter {  
   
-  
 		@Override  
 		public void configure(AuthenticationManagerBuilder auth) throws Exception {  
   
@@ -61,8 +55,6 @@ categories: SpringBoot
 	        auth.inMemoryAuthentication().withUser("user").password(password).roles("USER");  
 	        auth.inMemoryAuthentication().withUser("manager").password(password).roles("MANAGER");  
 	        auth.inMemoryAuthentication().withUser("admin").password(password).roles("ADMIN");  
-  
-			  
   
 		}  
   
@@ -87,28 +79,22 @@ categories: SpringBoot
 					.antMatchers("/findText").authenticated() //인증이 있어야 접근 가능  
 					.anyRequest().authenticated()  
 					.and()  
-					//아래의 옵션을 적용하면 Springsecurity 의 기본 로그인 페이지를 사용함   
+					//아래의 옵션을 적용하면 Springsecurity 의 기본 로그인 페이지를 사용함  
 					//url : http://localhost:8080/login  
 					.formLogin();  
 		}  
   
-  
 	}  
   
-  
 	=================================================================================================================  
-  
   
 # 로그아웃  
 	URL 뒤에 /logout 붙이면 로그아웃 됨  
 	localhost/logout  
   
-  
 # 블로그 발췌  
 	=================================================================================================================  
 	- @Configuration, @EnableWebSecurity 어노테이션을 추가해줘서 이게 시큐리티 설정을 해주는 클래스다~라는 것을 알려주는 것 같습니다.  
-  
-	   
   
 	- AuthenticationManagerBuilder 객체 오버 라이딩은 가상의 계정을 만들어 주는 설정입니다.  
   
@@ -116,11 +102,7 @@ categories: SpringBoot
   
 	- 그 후 각각의 계정을 생성하고, 권한을 부여해주었습니다.  
   
-	   
-  
 	- Bean을 주입한 PasswordEncoder는 BCryptPasswordEncoder라는 스프링 시큐리티 자체 인코딩을 이용하여 암호화해줍니다.  
-  
-	   
   
 	- HttpSecurity 객체 오버 라이딩은 시큐리티 설정의 핵심 부분으로, 각각의 권한에. antMatchers("controller mapping url명"). permitAll()이나, hasRole("권한명")으로 연결되어있습니다.  
   
@@ -130,50 +112,49 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-  
 # springsecurity 에서 사용하는 내장함수  
 	https://offbyone.tistory.com/91  
 	※ 일반적인 내장 표현식을 정리하였습니다.  
-	  
-#hasRole([role])				  
+  
+#hasRole([role])  
 	현재 로그인된 사용자가 지정된 role을 가지고 있으면 true를 반환합니다. 제공된 role이 'ROLE_'로 시작하지 않으면 기본적으로 'ROLE_'를 추가합니다. 이것은 DefaultWebSecurityExpressionHandler에서 defaultRolePrefix를 수정하여 커스터마이즈할 수 있습니다.  
   
-#hasAnyRole([role1,role2])	  
+#hasAnyRole([role1,role2])  
 	현재 로그인된 사용자가 콤마(,)로 분리하여 주어진 role들 중 하나라도 가지고 있으면 true를 반환합니다. 제공된 role이 'ROLE_'로 시작하지 않으면 기본적으로 'ROLE_'를 추가합니다. 이것은 DefaultWebSecurityExpressionHandler에서 defaultRolePrefix를 수정하여 커스터마이즈할 수 있습니다.  
   
-#hasAuthority([authority])	  
+#hasAuthority([authority])  
 	현재 로그인된 사용자가 지정된 권한이 있으면 true를 반환합니다.  
   
-#hasAnyAuthority([authority1,authority2])	  
+#hasAnyAuthority([authority1,authority2])  
 	현재 로그인된 사용자가 콤마(,)로 분리하여 주어진 권한들중 하나라도 가지고 있으면 true를 반환합니다.  
   
-#principal							  
+#principal  
 	현재 사용자를 나타내는 principal 객체에 직접 접근할 수 있습니다.  
   
-#authentication					  
+#authentication  
 	SecurityContext로 부터 얻은 Authentication 객체에 직접 접근할 수 있습니다.  
   
-#permitAll					  
+#permitAll  
 	항상 true로 평가 됩니다.  
   
-#denyAll					  
+#denyAll  
 	항상 false로 평가 됩니다.  
   
-#isAnonymous()					  
+#isAnonymous()  
 	현재 사용자가 익명사용자(로그인 안됨) 사용자이면 true를 반환합니다.  
   
-#isRememberMe()					  
+#isRememberMe()  
 	현재 로그인된 사용자가 remember-me 사용자이면 true를 반환합니다.(로그인 정보 기억 기능에 의한 사용자)  
   
-#isAuthenticated()				  
+#isAuthenticated()  
 	현재 사용자가 로그인된 사용자라면 true를 반환합니다.  
   
-#isFullyAuthenticated()						  
+#isFullyAuthenticated()  
 	로그인 정보 기억(remember-me)이 아니라 아이디/비밀번호를 입력하여 로그인 했다면 true를 반환합니다.  
   
-#hasPermission(Object target, Object permission)			  
+#hasPermission(Object target, Object permission)  
 	사용자가 주어진 권한으로 제공된 대상에 액세스 할 수 있으면 true 를 반환합니다. 예, hasPermission(domainObject, 'read')  
   
-#hasPermission(Object targetId, String targetType, Object permission)		  
+#hasPermission(Object targetId, String targetType, Object permission)  
 	사용자가 주어진 권한으로 제공된 대상에 액세스 할 수 있으면 true 를 반환합니다. 예, hasPermission(1, 'com.example.domain.Message', 'read')  
 {% endraw %}

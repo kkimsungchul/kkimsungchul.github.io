@@ -31,8 +31,6 @@ cdcd	0
   
 ※ 공지 - 2020년 6월 8일 테스트케이스가 추가되었습니다.  
   
-  
-  
 ======================================================================================================  
 import java.util.*;  
   
@@ -40,9 +38,9 @@ class Solution
 {  
     public int solution(String s){  
         int answer = -1;  
-          
+  
         ArrayList<Character> arr = new ArrayList<Character>();  
-          
+  
         for(int i=0;i<s.length();i++){  
             if(arr.size()==0){  
                 arr.add(s.charAt(i));  
@@ -53,13 +51,11 @@ class Solution
                     arr.add(s.charAt(i));  
                 }  
             }  
-              
-        }  
-          
-        answer = (arr.size()>0) ? 0 : 1;  
-          
   
-          
+        }  
+  
+        answer = (arr.size()>0) ? 0 : 1;  
+  
         return answer;  
     }  
 }  

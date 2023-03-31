@@ -7,15 +7,13 @@ categories: SpringBoot
 ---  
 {% raw %}  
 [ Spring boot - RestAPI 방식으로 파일 업로드 ]  
-	  
+  
 	Spring Boot 2.6.6 버전에서는 아래와 같이 두개의 오류가 남..  
-	  
+  
 	1. org.springframework.web.multipart.MultipartException: Current request is not a multipart request  
 	2. Nullpoint Exception  
   
 	걍 왜나는지 모르겠음.. 버전을 2.5.6 으로 낮추고 스웨거도 2.9.2를 사용하면 오류가 발생하지 않음..  
-  
-  
   
 # 컨트롤러 작성  
   
@@ -41,15 +39,13 @@ categories: SpringBoot
 		}  
 	}  
   
-  
 	=================================================================================================================  
-	  
   
 # application.yml 파일 작성  
 	enabled true 로 지정하고, 파일 업로드 경로를 지정  
   
 	=================================================================================================================  
-	spring :   
+	spring :  
 	  servlet:  
 		multipart:  
 		  enabled : true  

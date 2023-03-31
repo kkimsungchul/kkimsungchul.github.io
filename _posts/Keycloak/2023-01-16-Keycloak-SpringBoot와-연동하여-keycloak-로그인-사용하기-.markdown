@@ -6,30 +6,25 @@ date: 2023-01-16 03:05:38 +0900
 categories: Keycloak  
 ---  
 {% raw %}  
-[ keycloak - 스프링부트와 연동하여 키클락 로그인 사용하기 ]   
+[ keycloak - 스프링부트와 연동하여 키클락 로그인 사용하기 ]  
   
 https://oingdaddy.tistory.com/196  
   
 # 키클락 설정  
 	https://github.com/kkimsungchul/study/blob/master/Keycloak/%5BKeycloak%5D%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%B8%ED%8C%85.txt  
 	파일 참고  
-	  
-  
   
 # 프로젝트 생성  
 	* maven 사용  
-	name : keycloak   
-	  
+	name : keycloak  
   
 	아래의 디펜던시 선택 후 생성  
 		Spring boot DevTool  
 		Lombok  
-		Spring Web   
-  
+		Spring Web  
   
 # application.properties 변경  
 	application.properties  ->  application.yml 로 확장자 변경  
-  
   
 # Spring security 추가  
 	※ 처음에 추가해도 되는데 추가를 안해서 지금 추가했음  
@@ -42,14 +37,13 @@ https://oingdaddy.tistory.com/196
         </dependency>  
 	=================================================================================================================  
   
-  
 	* 그래들의 경우 아래의 내용추가  
 	=================================================================================================================  
 	implementation 'org.springframework.boot:spring-boot-starter-security'  
 	=================================================================================================================  
   
 # keycolak.version 추가  
-	  
+  
 	pom.xml 파일을 열어서 <keycloak.version>15.1.1</keycloak.version> 추가  
 	=================================================================================================================  
 	<properties>  
@@ -81,15 +75,14 @@ https://oingdaddy.tistory.com/196
 	=================================================================================================================  
   
 # keycloak 클라이언트 생성  
-	  
+  
 	1. keycloak 접속  
   
 	2. 좌측탭에서 realm 을 선택 후 Clients 클릭  
   
 	3. create 클릭  
   
-	4. Client id 에 spring 입력 후 생성   
-  
+	4. Client id 에 spring 입력 후 생성  
   
 # keycloak 클라이언트 설정  
   
@@ -103,8 +96,6 @@ https://oingdaddy.tistory.com/196
   
 	5. Valid Redirect URIs 과 Web Origins 에 Sprig 의 URL을 입력 후 저장  
 		http://localhost:18080/*  
-  
-  
   
 # keycloak.json 파일 생성  
 	1. 클라이언트 선택  
@@ -126,11 +117,9 @@ https://oingdaddy.tistory.com/196
 	}  
 	=================================================================================================================  
   
-  
 	※ json 파일이 아닌 다른방식(yml 이나 properties 파일을 사용할 경우 아래의 링크 참조  
 		https://www.programcreek.com/java-api-examples/?api=org.keycloak.adapters.KeycloakDeploymentBuilder  
 		https://www.programcreek.com/java-api-examples/?code=quarkusio%2Fquarkus%2Fquarkus-master%2Fextensions%2Fkeycloak-authorization%2Fruntime%2Fsrc%2Fmain%2Fjava%2Fio%2Fquarkus%2Fkeycloak%2Fpep%2Fruntime%2FKeycloakPolicyEnforcerAuthorizer.java  
-  
   
 # application.yml 파일 작성  
 	※ 아래에 추가한 내용들은 keycloak.json 에 작성한 내용과 똑같음  
@@ -153,17 +142,11 @@ https://oingdaddy.tistory.com/196
 		root: INFO  
 		com.sumgchul.keycloak: DEBUG  
   
-  
 	spring:  
 	  main:  
 		allow-circular-references : true  
   
-  
-  
-  
-  
 	=================================================================================================================  
-  
   
 # KeycloakSecurityConfig.java 파일 작성  
   
@@ -244,8 +227,6 @@ https://oingdaddy.tistory.com/196
 # Test 컨트롤러 작성  
 	=================================================================================================================  
 package com.sungchul.keycloak.controller;  
-  
-  
   
 import com.fasterxml.jackson.databind.ObjectMapper;  
 import com.sungchul.keycloak.service.RestService;  
@@ -332,7 +313,6 @@ public class TestController {
   
     }  
   
-  
     @RequestMapping("/userInfo")  
     public ResponseEntity<HashMap<String,Object>> userInfo(){  
         HashMap<String,Object> resultMap = new HashMap<>();  
@@ -356,32 +336,26 @@ public class TestController {
   
                 Access access= accessToken.getRealmAccess();  
   
-  
                 System.out.println("### accessToken getGivenName : " + accessToken.getGivenName());  
                 System.out.println("### accessToken getEmail : " + accessToken.getEmail());  
                 System.out.println("### accessToken getRealmAccess : " + accessToken.getRealmAccess());  
                 List<String> realmRoleList = new ArrayList<>(access.getRoles());  
                 System.out.println(realmRoleList);  
   
-  
                 resultMap.put("accessToken.getGivenName",accessToken.getGivenName());  
                 resultMap.put("accessToken.getEmail",accessToken.getEmail());  
                 resultMap.put("accessToken.getRealmAccess",accessToken.getRealmAccess());  
                 resultMap.put("accessToken.realmRoleList",realmRoleList);  
   
-  
             }  
         }  
-  
   
         return ResponseEntity.ok(resultMap);  
     }  
   
 }  
   
-	=================================================================================================================	  
-  
-  
+	=================================================================================================================  
   
 # 테스트  
 	1. 스프링 실행  

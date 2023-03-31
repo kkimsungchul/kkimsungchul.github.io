@@ -46,8 +46,8 @@ pipeline {
 					sshCommand remote: remote, command:"sudo mv /home/linuxUser/ROOT.war /app/application "  
 					sshCommand remote: remote, command:"sudo chown tomcat:tomcat /app/application/ROOT.war && sudo sleep 1"  
 					sshCommand remote: remote, command:"sudo systemctl start tomcat"  
-				}   
-			}		  
+				}  
+			}  
         }  
     }  
 }  

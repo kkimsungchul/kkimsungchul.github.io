@@ -11,44 +11,40 @@ categories: Jenkins
 	윈도우 환경에서 실제 사용할 배포 스크립트를 작성함  
   
 # credentialsId  등록  
-	  
+  
 	1. Jenkins 접속  
 		http://localhost:9090  
-	  
+  
 	2. Jenkins 관리 페이지 이동 (Jenkins관리 클릭)  
 		http://localhost:9090/manage  
-	  
+  
 	3. Jenkins 관리 화면에서 Manager Credentials 클릭  
 		http://localhost:9090/credentials/  
-	  
+  
 	4. Storess scoped to Jenkins 밑에서 Domains 항목에 마우스를 대면 아래 화살표가 나옴  
 		아래 화살표 클릭 흐 Add credentials 클릭  
-		  
+  
 		Kind : Username with password 선택  
 		Scope : Global 선택  
-		Username : 깃 사용자명   
+		Username : 깃 사용자명  
 		Password : 깃 비밀번호  
 		ID : pipeline 에서 사용할 ID  
-		Description : 설명	  
-  
-  
-  
+		Description : 설명  
   
 # Jenkins 배포 스크립트 작성  
 	※ 작성 전 톰캣을 윈도우 서비스에 등록해놔야 함  
 		https://github.com/kkimsungchul/study/blob/master/tomcat/%5BTomcat%5D%20%EC%9C%88%EB%8F%84%EC%9A%B0%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%20%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0.txt  
   
 	1. Jenkins 화면의 좌측에서 새로운 item 클릭  
-	  
+  
 	2. Folder 선택 후 폴더명 입력 한 뒤 폴더 생성  
-	  
+  
 	3. 생성한 폴더에 들어가서 New Item 선택  
-	  
+  
 	4. Job 명을 입력 한 후 Pipeline 선택 후 OK 클릭  
-	  
+  
 	5. 하단의 Pipeline 에서 아래의 스크립트 입력  
   
-	  
 	==================================================================================================================================================  
 	pipeline {  
 		agent any  
@@ -58,7 +54,7 @@ categories: Jenkins
 				steps {  
 					git credentialsId: 'kimsc1218', url: 'https://github.com/kkimsungchul/stock.git', branch: 'master'  
 				}  
-			}	  
+			}  
 			stage('build') {  
 				steps {  
 					bat './gradlew.bat clean build'  
@@ -69,7 +65,7 @@ categories: Jenkins
 					bat """  
 					net stop Tomcat8  
 					"""  
-					  
+  
 				}  
 			}  
 			stage('backup') {  
@@ -79,7 +75,7 @@ categories: Jenkins
 					del ROOT  
 					rename ROOT.war ROOTwar.backup.%date%  
 					"""  
-					  
+  
 				}  
 			}  
 			stage('depoly') {  
@@ -88,7 +84,7 @@ categories: Jenkins
 					cd C:/ProgramData/Jenkins/.jenkins/workspace/JenkinsTest/gitTest/build/libs  
 					move ROOT.war C:/apache-tomcat-8.0.30/webapps  
 					"""  
-					  
+  
 				}  
 			}  
 			stage('service_start') {  
@@ -96,28 +92,23 @@ categories: Jenkins
 					bat """  
 					net start Tomcat8  
 					"""  
-					  
+  
 				}  
-			}		  
-			  
+			}  
+  
 		}  
 	}  
 	==================================================================================================================================================  
-	  
+  
 	※ windowns 명령어 사용시 bat 안에 여러줄로 기재.  
 		아래와 같이 입력 시 연속적인 실행이 아닌 각각 행을 실행하도록 되어 있어서 두번째 라인부터는 위에서 이동한 경로가 아닌 해당 jenkins 의 root 경로에서 실행됨  
 		bat "cd C:/ProgramData/Jenkins/.jenkins/workspace/JenkinsTest/gitTest/build/libs"  
 		bat "move ROOT.war C:/apache-tomcat-8.0.30/webapps"  
-		  
-	  
-	  
   
 	6. 입력 후 해당 Job 으로 이동 한 뒤에 Build Now 클릭  
-	  
+  
 	7. 빌드가 완료되면 아래의 폴더에 war 파일이 생성되고, 톰캣디렉토리로 이동됨  
 		C:/ProgramData/Jenkins/.jenkins/workspace/JenkinsTest/gitTest/build/libs  
-	  
-	  
   
 	※ 오류가 날수 있는 부분에 대해서는 catchError로 감싸주면 된다  
 		https://de-vraag.com/ko/66222675  
@@ -129,7 +120,7 @@ categories: Jenkins
 						bat """  
 						docker rmi stock  
 						"""  
-					}	  
+					}  
 				}  
 			}  
 			======================================================================================================  

@@ -6,9 +6,7 @@ date: 2022-03-08 06:19:01 +0900
 categories: SpringBoot  
 ---  
 {% raw %}  
-[SpringBoot - interceptor로 IP차단 구현]	  
-	  
-  
+[SpringBoot - interceptor로 IP차단 구현]  
   
 # IpAddressAccessInterceptor 클래스  
 	해당 클래스는 인터셉터 클래스로, 사용자의 IP를 체크하여 접근이 불가능한 IP일 경우에는 접근을 허용하지 않도록 함  
@@ -21,28 +19,27 @@ categories: SpringBoot
 	import org.springframework.beans.factory.annotation.Autowired;  
 	import org.springframework.web.servlet.HandlerInterceptor;  
 	import org.springframework.web.servlet.ModelAndView;  
-	  
+  
 	public class IpAddressAccessInterceptor implements HandlerInterceptor  {  
   
 		private static final Logger LOGGER = LoggerFactory.getLogger(IpAddressAccessInterceptor.class);  
-		  
+  
 		@Autowired  
 		IpAddressAccessService ipAddressAccessService;  
   
 		@Override  
 		public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)  
 				throws Exception {  
-			  
+  
 			String getIp  = request.getHeader("X-Forwarded-For");  
 			LOGGER.info("### header X-Forwarded-For IP : " ,getIp);  
-			  
+  
 			if(!ipAddressAccessService.checkIpAddress(getIp)) {  
 				String statusMsg = "접근이 불가능한 IP 입니다";  
 				response.sendError(200,statusMsg);  
 				return false;  
 			}  
-			  
-			  
+  
 			return HandlerInterceptor.super.preHandle(request, response, handler);  
 		}  
   
@@ -58,34 +55,26 @@ categories: SpringBoot
 				throws Exception {  
 			HandlerInterceptor.super.afterCompletion(request, response, handler, ex);  
 		}  
-		  
   
-		  
-	}	  
-	  
-	  
-	  
+	}  
+  
 	==================================================================================================================================================  
-	  
-	  
-	  
+  
 # IpAddressAccessService 클래스  
-		  
+  
 	- getIpAddressWhiteList() 메소드는 DB에서 화이트 리스트를 불러오도록 하였음  
 		화이트리스트는 "168.123.0.0" , "10.200.54.0" 같이 들어있으며, 0이 아닌 부분이 일치해야 허용됨  
-	  
+  
 	- checkIpAddress() 메소드는 사용자의 IP와 DB에 있는 IP를 비교하도록 하였음  
-		ex)   
+		ex)  
 			DB IP : 168.123.0.0  
 			User IP : 168.123.10.1  
 			위와같은 경우에는 DB에 저장된 IP의 0번째 이전두번째 . 앞까지인 168.123 과 사용자의 IP 두번째 앞인 168.123이 같은지 비교,  
 			0이 나오기 전까지가 일치하는지 비교하도록 하였음  
-			  
-		전부다 일치할 경우 하단에서 j==cut 이 같으므로 true 를 리턴하도록 하였음	  
-	  
-	==================================================================================================================================================	  
   
+		전부다 일치할 경우 하단에서 j==cut 이 같으므로 true 를 리턴하도록 하였음  
   
+	==================================================================================================================================================  
   
 	import java.util.List;  
 	import org.springframework.beans.factory.annotation.Autowired;  
@@ -99,11 +88,10 @@ categories: SpringBoot
   
 		@Autowired  
 		IpAddressAccessMapper ipAddressAccessMapper;  
-		  
-		  
+  
 		/**  
 		 * IP화이트리스트 목록 조회  
-		 *   
+		 *  
 		 * @param  
 		 * @return ipAddressWhiteList  
 		 */  
@@ -111,18 +99,17 @@ categories: SpringBoot
 			List<String> ipAddressWhiteList =  ipAddressAccessMapper.getIpAddressWhiteList();  
 			return ipAddressWhiteList;  
 		}  
-		  
-		  
+  
 		/**  
 		 * 사용자IP와 화이트리스트 IP 체크  
-		 *   
+		 *  
 		 * @param  
 		 * @return ipAddressWhiteList  
 		 */  
 		public boolean checkIpAddress(String ip) {  
 			List<String> ipAddressWhiteList = getIpAddressWhiteList();  
 			ip="168.248.253.4";  
-			String splitIp[] = ip.split("\\.");   
+			String splitIp[] = ip.split("\\.");  
 			int cut=0;  
   
 			//ipAddressWhiteList 반복  
@@ -149,10 +136,8 @@ categories: SpringBoot
 			}  
 			return false;  
 		}  
-		  
-		  
   
 	}  
-	  
-	==================================================================================================================================================	  
+  
+	==================================================================================================================================================  
 {% endraw %}

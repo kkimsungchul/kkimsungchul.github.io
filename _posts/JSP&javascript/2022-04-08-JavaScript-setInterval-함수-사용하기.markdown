@@ -13,7 +13,7 @@ categories: JSP&javascript
 	setInterval(함수명,지연시간) 이며, 지연시간은 ms단위임 (1000 = 1초)  
 	setInterval안에 들어가는 함수명은 move_px() 를 입력하는게 아닌 move_px 명만 입력해야하며,  
 	내장함수로 작성을 해도 됨  
-	  
+  
 	멈추는 방법은 clearInterval(setInterval변수명)으로하며,  
 	setInterval을 변수에 담아놓은 뒤, 정지시킬때 clearInterval(setInterval변수명)로 호출하면 정지가 됨  
   
@@ -48,9 +48,7 @@ categories: JSP&javascript
 			interval = setInterval(move_px,200);  
 		}  
   
-  
 	</script>  
-  
   
 	</head>  
   
@@ -64,8 +62,6 @@ categories: JSP&javascript
 	</body>  
   
 	</html>  
-  
-  
   
 	=================================================================================================================  
 {% endraw %}

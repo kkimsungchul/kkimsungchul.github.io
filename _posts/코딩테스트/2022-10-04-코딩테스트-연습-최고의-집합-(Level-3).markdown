@@ -46,7 +46,7 @@ n	s	result
 class Solution {  
     public int[] solution(int n, int s) {  
         int[] answer = {};  
-          
+  
         //만들지 못하는 수 계산  
         if(s/n==0){  
             answer = new int[1];  
@@ -56,10 +56,10 @@ class Solution {
             answer = new int[n];  
         }  
         //계산 시작  
-          
+  
         int quotient  = s/n;  
         int remainder = s%n;  
-        //99 ,5 -> 19, 4   
+        //99 ,5 -> 19, 4  
   
         if(remainder==0){  
             for(int i=0;i<n;i++){  
@@ -71,15 +71,15 @@ class Solution {
                     answer[i]=quotient+1;  
                     remainder--;  
                 }else{  
-                    answer[i]=quotient;      
+                    answer[i]=quotient;  
                 }  
-                  
+  
             }  
         }  
-          
+  
         //System.out.println("quotient : " + quotient);  
         //System.out.println("remainder : " + remainder);  
-          
+  
         return answer;  
     }  
 }  

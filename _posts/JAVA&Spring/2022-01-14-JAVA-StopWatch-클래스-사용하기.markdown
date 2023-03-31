@@ -8,24 +8,18 @@ categories: JAVA&Spring
 {% raw %}  
 [JAVA - StopWatch 클래스 사용하기]  
   
-  
 	일단 해당 클래스는 Spring Core 2.5.6 에 포함되어 있음  
 	근데 난 저거 다 쓸꺼도 아니고.. 스탑워치만 필요해서 해당 클래스를 그냥 빼와서 사용함  
   
-  
 # 사용법  
-	  
+  
 	아래와같이 사용하면면 됨  
-	  
+  
 	StopWatch stopWatch1 = new StopWatch();  
 	stopWatch2.start();  
 	//시간을 측정할 작업  
 	stopWatch2.stop();  
 	System.out.println(stopWatch2.getTotalTimeNanos());  
-  
-  
-  
-  
   
 ※ 아래의 클래스를 추가하여서 그대로 사용하면 됨  
 ==================================================================================================================================================  
@@ -45,13 +39,10 @@ categories: JAVA&Spring
  * limitations under the License.  
  */  
   
-  
 import java.text.NumberFormat;  
 import java.util.ArrayList;  
 import java.util.List;  
 import java.util.concurrent.TimeUnit;  
-  
-  
   
 /**  
  * Simple stop watch, allowing for timing of a number of tasks, exposing total  
@@ -91,17 +82,15 @@ public class StopWatch {
 	private long startTimeNanos;  
   
 	/** Name of the current task. */  
-	  
+  
 	private String currentTaskName;  
   
-	  
 	private TaskInfo lastTaskInfo;  
   
 	private int taskCount;  
   
 	/** Total running time. */  
 	private long totalTimeNanos;  
-  
   
 	/**  
 	 * Construct a new {@code StopWatch}.  
@@ -121,7 +110,6 @@ public class StopWatch {
 	public StopWatch(String id) {  
 		this.id = id;  
 	}  
-  
   
 	/**  
 	 * Get the ID of this {@code StopWatch}, as specified on construction.  
@@ -143,7 +131,6 @@ public class StopWatch {
 	public void setKeepTaskList(boolean keepTaskList) {  
 		this.keepTaskList = keepTaskList;  
 	}  
-  
   
 	/**  
 	 * Start an unnamed task.  
@@ -206,7 +193,7 @@ public class StopWatch {
 	 * @since 4.2.2  
 	 * @see #isRunning()  
 	 */  
-	  
+  
 	public String currentTaskName() {  
 		return this.currentTaskName;  
 	}  
@@ -254,7 +241,6 @@ public class StopWatch {
 		return this.lastTaskInfo;  
 	}  
   
-  
 	/**  
 	 * Get the total time in nanoseconds for all tasks.  
 	 * @since 5.2  
@@ -299,7 +285,6 @@ public class StopWatch {
 		}  
 		return this.taskList.toArray(new TaskInfo[0]);  
 	}  
-  
   
 	/**  
 	 * Get a short description of the total running time.  
@@ -359,7 +344,6 @@ public class StopWatch {
 		return sb.toString();  
 	}  
   
-  
 	private static long nanosToMillis(long duration) {  
 		return TimeUnit.NANOSECONDS.toMillis(duration);  
 	}  
@@ -367,7 +351,6 @@ public class StopWatch {
 	private static double nanosToSeconds(long duration) {  
 		return duration / 1_000_000_000.0;  
 	}  
-  
   
 	/**  
 	 * Nested class to hold data about one task executed within the {@code StopWatch}.  

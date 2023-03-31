@@ -6,22 +6,20 @@ date: 2023-03-24 08:40:31 +0900
 categories: SpringBoot  
 ---  
 {% raw %}  
-[ SpringBoot - JUnit5 사용하기 ]   
+[ SpringBoot - JUnit5 사용하기 ]  
 	https://www.youtube.com/watch?v=SFVWo0Z5Ppo&t=589s  
   
 # 테스트  
   
-	https://goddaehee.tistory.com/210?category=367461   
+	https://goddaehee.tistory.com/210?category=367461  
   
  # 통합테스트  
   
-	https://goddaehee.tistory.com/211?category=367461   
+	https://goddaehee.tistory.com/211?category=367461  
   
 # 컨트롤러 단위테스트 어노테이션 및 설명  
   
-		https://goddaehee.tistory.com/212?category=367461   
-  
-   
+		https://goddaehee.tistory.com/212?category=367461  
   
 	https://frozenpond.tistory.com/82  
   
@@ -37,17 +35,13 @@ categories: SpringBoot
   
 			스프링의 모든 빈을 로드하여 테스트하는 방식인 @SpringBootTest어노테이션 대신 컨트롤러 관련 코드만 테스트하고자 할때 사용하는 어노테이션입니다.  
   
-   
-  
 		@Autowired  
   
 		MockMvc mvc;  
   
 			컨트롤러의 api를 테스트하는 용도인 MockMvc 객체를 주입받습니다.  
   
-			perform(httpMethod)로 실행하며 andExpect, andDo, andReturn등으로 동작을 확인하는 방식입니다.   
-  
-   
+			perform(httpMethod)로 실행하며 andExpect, andDo, andReturn등으로 동작을 확인하는 방식입니다.  
   
 		@MockBean  
   
@@ -61,67 +55,39 @@ categories: SpringBoot
   
 			해당 객체 내부에서 의존하는 객체와 메서드들은 모두 가짜이며 실패하지만 않을뿐 기존에 정해진 동작을 수행하지 하지 않습니다.  
   
-		   
-  
 		given(memberService.list()).willReturn(members);  
   
 			가짜객체가 원하는 행위를 할 수 있도록 정의해줍니다.(given when 등을 사용합니다.)  
   
 			memberService의 list() 메서드를 실행시키면 members를 리턴해달라는 요청입니다.  
   
-   
-  
 		andExpect(content().string(containsString("John")));  
   
-			리턴받은 body에 John이라는 문자열이 존재하는지를 확인합니다.   
+			리턴받은 body에 John이라는 문자열이 존재하는지를 확인합니다.  
   
 			given을 통해 mock객체의 예상한 행위가 정상적으로 동작했는지를 확인합니다.  
-  
-		   
   
 		verify(memberService).insert(member);  
   
 			해당 메서드가 실행됐는지를 검증해줍니다.  
   
-   
-  
 	====================================================================================================  
-  
-   
-  
-   
-  
-   
-  
-   
   
 # 컨트롤러 단위테스트 실제 진행  
   
-   
-  
-	아래는 실제로 컨트롤러, 서비스를 생성 한 뒤에   
+	아래는 실제로 컨트롤러, 서비스를 생성 한 뒤에  
   
 	단위테스트를 진행해본 내용임  
-  
-	  
-  
-		  
   
 		※ 블로그에 정리되어있지 않은 내용  
   
 		mvc.perform( 이부분에는 httpMethod 뿐만이 아니라, 전달할 값과 전달할 값의 타입을 지정할 수 잇음 )  
-  
-		  
-  
-	  
   
 	UnitTest.java  
   
 	====================================================================================================  
   
 		package com.example.demo.unitTest;  
-  
-   
   
 		import static org.assertj.core.api.Assertions.assertThat;  
  		import javax.servlet.http.HttpServletResponse;  
@@ -136,58 +102,47 @@ categories: SpringBoot
 		import com.example.demo.testService.TestService;  
 		import lombok.AllArgsConstructor;  
 		import lombok.extern.slf4j.Slf4j;  
-		import static org.hamcrest.Matchers.containsString;   
-		import static org.mockito.BDDMockito.given;   
-		import static org.mockito.Mockito.verify;   
-		import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;   
-		import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;   
-		import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;   
+		import static org.hamcrest.Matchers.containsString;  
+		import static org.mockito.BDDMockito.given;  
+		import static org.mockito.Mockito.verify;  
+		import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;  
+		import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;  
+		import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;  
 		import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;  
-  
-   
   
 		//테스트를 할 컨트롤러를 지정  
 		@WebMvcTest(TestController.class)  
 		@Slf4j  
 		public class UnitTest {  
-			  
+  
 			@Autowired  
 			MockMvc mvc;  
   
 			@MockBean  
 			TestService testService;  
-		  
   
 			@Test  
 			@DisplayName("테스트 메소드 실행")  
 			void excelTest() throws Exception{  
 				log.info("test in");  
 				String setString ="hihi";  
-				  
+  
 				given(testService.tempString(setString)).willReturn(setString);  
-				  
+  
 				System.out.println("### 메소드호출" + testService.tempString(setString));  
 				mvc.perform(get("/test").contentType("text/plain;charset=UTF-8").content(setString))  
 					.andExpect(status().isOk())  
 					.andExpect(content().string(containsString("hihi")));  
-				  
-				  
+  
 				String returnstring = testService.tempString(setString);  
-				  
+  
 				//assertThat(setString.equals("zz"));  
 				System.out.println("### 스트링출력" +returnstring);  
 			}  
-			  
+  
 		}  
-	  
   
 	====================================================================================================  
-  
-	  
-  
-	  
-  
-	  
   
 	TestService.java  
 	====================================================================================================  
@@ -197,7 +152,6 @@ categories: SpringBoot
 		import lombok.AllArgsConstructor;  
 		import lombok.extern.slf4j.Slf4j;  
 		import org.springframework.stereotype.Service;  
-  
   
 		@Slf4j  
 		@AllArgsConstructor  
@@ -209,23 +163,13 @@ categories: SpringBoot
 			}  
 		}  
   
-   
-  
 	====================================================================================================  
-  
-	  
-  
-	  
-  
-	  
   
 	TestController.java  
   
 	====================================================================================================  
   
 		package com.example.demo.testController;  
-  
-   
   
 		import java.io.IOException;  
 		import java.util.HashMap;  
@@ -242,7 +186,7 @@ categories: SpringBoot
 		@AllArgsConstructor  
 		@RestController  
 		public class TestController {  
-	  
+  
 			TestService testService;  
   
 			@GetMapping("/test")  
@@ -252,21 +196,11 @@ categories: SpringBoot
   
 			}  
   
-   
-  
 		}  
-  
-		  
   
 	====================================================================================================  
   
-	  
-  
-	  
-  
 # 서비스 단위테스트 어노테이션 및 설명  
-  
-   
   
 	https://frozenpond.tistory.com/83?category=1175501  
   
@@ -292,15 +226,11 @@ categories: SpringBoot
   
 				생성자 주입을 사용해야 편하게 사용 가능합니다  
   
-				스프링을 띄우지 않으므로 MockBean을 사용할때보다 빠릅니다.	  
-  
-	  
+				스프링을 띄우지 않으므로 MockBean을 사용할때보다 빠릅니다.  
   
 		@BeforeEach  
   
 			@Test 어노테이션이 붙은 메서드들이 실행되기 전에 실행되는 메서드입니다.  
-  
-		  
   
 		testService = new TestService();  
   
@@ -310,15 +240,9 @@ categories: SpringBoot
   
 		@Mock을 사용하여 mapper를 생성하여 서비스를 생성할때 직접 주입해줍니다.  
   
-		   
-  
-   
-  
 		MockitoAnnotations.initMocks(this);  
   
 			@Mock이 붙은 객체를 생성, 초기화해달라는 명령입니다.  
-  
-   
   
 		@SpringBootTest  
   
@@ -328,17 +252,11 @@ categories: SpringBoot
   
 			MockBean어노테이션을 사용하게되면 빈객체를 치환하여 DB에 접근하지 않게 됩니다.  
   
-   
-  
 		@MockBean  
   
 			스프링에 해당 객체를 빈으로 등록해달라는 요청입니다.  
   
 			같은이름의 빈이 있었다면 MockBean으로 치환됩니다.  
-  
-   
-  
-   
   
 		가짜객체를 만들어 서비스단을 테스트할때는  
   
@@ -350,27 +268,23 @@ categories: SpringBoot
   
 		MockBean보다는 Mock을 사용하는게 좋을것 같습니다.  
   
-	  
-  
 	====================================================================================================  
   
-  
 # Chat GPT 내용  
-	  
+  
 	- JUnit 를 사용해야 하는 이유와 예제 코드를 보여줘  
   
 	- 테스트 자동화  
 		JUnit을 사용하면 테스트를 자동화할 수 있습니다. 테스트 케이스를 작성하고 실행하면, JUnit이 자동으로 결과를 분석하여 테스트 결과를 알려줍니다.  
 		이를 통해 개발자는 테스트를 반복적으로 수행하며 코드를 수정하고, 테스트 결과를 분석하면서 품질을 향상시킬 수 있습니다.  
-	  
+  
 	- 빠른 피드백  
 		JUnit을 사용하면 개발자는 빠른 피드백을 받을 수 있습니다. 테스트를 자주 수행하면서 코드를 수정하면, 테스트 결과를 즉시 확인할 수 있습니다.  
 		이를 통해 개발자는 문제를 빠르게 발견하고 수정하여 품질을 높일 수 있습니다.  
-		  
+  
 	- 품질 향상  
 		JUnit을 사용하면 개발자는 테스트를 통해 코드의 품질을 높일 수 있습니다. 테스트를 작성하면서 코드를 검증하고, 불필요한 코드를 제거하며, 코드의 구조를 개선할 수 있습니다.  
-		  
-		  
+  
 	- 예제 코드  
 		아래는 JUnit 예제 코드입니다. 아래 코드는 덧셈을 수행하는 간단한 계산기 클래스(Calculator)를 테스트하는 코드입니다.  
 		=================================================================================================================  
@@ -380,7 +294,7 @@ categories: SpringBoot
 		import static org.junit.Assert.assertEquals;  
   
 		public class CalculatorTest {  
-			  
+  
 			@Test  
 			public void testAdd() {  
 				Calculator calculator = new Calculator();  

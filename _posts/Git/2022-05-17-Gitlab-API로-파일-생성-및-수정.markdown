@@ -10,18 +10,14 @@ categories: Git
   
 [ Create new file in repository - git 원격지에서 파일 생성 , 커밋 ]  
   
-	git api document   
+	git api document  
 		https://docs.gitlab.com/ee/api/repository_files.html#create-new-file-in-repository  
-  
-  
-  
-  
   
 # API에 사용하는 데이터  
   
 	id					integer or string	yes		The ID or URL-encoded path of the project owned by the authenticated user.  
 		- 프로젝트 ID  
-	  
+  
 	file_path			string				yes		URL-encoded full path to new file. For example: lib%2Fclass%2Erb.  
 		- 파일경로/파일명 으로 작성하면되고, 최상단일 경우에는 파일명만 작성  
 	branch				string				yes		Name of the new branch to create. The commit is added to this branch.  
@@ -36,22 +32,20 @@ categories: Git
 		- 커밋 메시지  
 	execute_filemode	boolean				no		Enables or disables the execute flag on the file. Can be true or false.  
   
-  
 # dataType  
 	Content-Type : application/json  
   
 # header  
 	PRIVATE-TOKEN : b5YwwNGd_PneL1VDA6yz  
-	  
   
 # data  
-	  
+  
 	- API문서에 기재  
 		{  
-			"branch": "master",   
-			"author_email": "author@example.com",   
+			"branch": "master",  
+			"author_email": "author@example.com",  
 			"author_name": "Firstname Lastname",  
-			"content": "some content",   
+			"content": "some content",  
 			"commit_message": "create a new file"  
 		}  
   
@@ -65,16 +59,14 @@ categories: Git
 	ex)  
 		{  
 			"branch": "master",  
-			"content": "생성할 파일 안에 기재할 내용",   
+			"content": "생성할 파일 안에 기재할 내용",  
 			"commit_message": "파일업로드"  
 		}  
   
-  
-# url   
+# url  
 	POST giturl/projects/:id/repository/files/:file_path  
 	ex)  
 		https://gitlaburl/api/v4/projects/1740/repository/files/Jenkinsfile  
-	  
   
 # 성공  
 	{  
@@ -86,9 +78,6 @@ categories: Git
 	{  
 		"message": "A file with this name already exists"  
 	}  
-		  
-  
-  
   
 [ Update existing file in repository - git 원격지에서 파일 수정]  
 	https://docs.gitlab.com/ee/api/repository_files.html#update-existing-file-in-repository  
@@ -105,26 +94,23 @@ categories: Git
 	commit_message		string				yes		The commit message.  
 	last_commit_id		string				no		Last known file commit ID.  
 	execute_filemode	boolean				no		Enables or disables the execute flag on the file. Can be true or false.  
-	  
   
 # dataType  
 	Content-Type : application/json  
   
 # header  
-	PRIVATE-TOKEN : b5YwwNGd_PneL1VDA6yz	  
-	  
-  
+	PRIVATE-TOKEN : b5YwwNGd_PneL1VDA6yz  
   
 # data  
 	- API문서에 기재  
 		{  
-			"branch": "master",   
-			"author_email": "author@example.com",   
+			"branch": "master",  
+			"author_email": "author@example.com",  
 			"author_name": "Firstname Lastname",  
-			"content": "some content",   
+			"content": "some content",  
 			"commit_message": "update file"  
-		}	  
-	  
+		}  
+  
 	- 최소 필수 데이터  
 		{  
 			branch : "브런치명"  
@@ -135,19 +121,15 @@ categories: Git
 	ex)  
 		{  
 			"branch": "master",  
-			"content": "수정할 파일의 내용",   
+			"content": "수정할 파일의 내용",  
 			"commit_message": "기존 파일 수정"  
 		}  
   
-  
-  
-  
-  
-# url   
+# url  
 	PUT /projects/:id/repository/files/:file_path  
 	ex)  
 		https://gitlaburl/api/v4/projects/1740/repository/files/Jenkinsfile  
-	  
+  
 # 성공  
 	{  
 		"file_path": "Jenkinsfile",  

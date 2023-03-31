@@ -8,16 +8,14 @@ categories: Keycloak
 {% raw %}  
 [ Keycloak - js 파일 적용(javascript) ]  
   
-  
 # JS 파일위치  
 	아래의 경로에 넣으면 됨  
-	경로 :KEYCLOAK_HOME/themes/base/login/resources/js/   
-  
+	경로 :KEYCLOAK_HOME/themes/base/login/resources/js/  
   
 	ex) C:\Users\USER\Desktop\kimsc\개발\keycloak-16.1.1\keycloak-16.1.1\themes\base\login\resources\js  
   
 # 설정 파일 위치  
-	  
+  
 	경로 : KEYCLOAK_HOME/themes/base/login/theme.properties  
 	위의 파일을 열어서 아래의 내용을 추가  
 	=================================================================================================================  

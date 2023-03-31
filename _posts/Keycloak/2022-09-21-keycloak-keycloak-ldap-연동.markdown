@@ -38,11 +38,9 @@ keycloak admin - user federation - ldap 선택 후 아래와 같은 정보 입�
 	Bind DN : {LDAP 관리자계정 Username}  
 	Bind Credential : {LDAP 관리자계정 Password}  
   
-  
 # Advanced Settings  
 	Enable StartTLS : OFF  
 	Use Truststore SPI : Only for ldaps  
-  
   
 # Sync Settings  
 	Batch Size : 1000  

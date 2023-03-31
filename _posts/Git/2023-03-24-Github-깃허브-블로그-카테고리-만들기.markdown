@@ -7,7 +7,7 @@ categories: Git
 ---  
 {% raw %}  
   
-# 참고 링크   
+# 참고 링크  
 	https://hoisharka.github.io/jekyll/2017/12/03/jekyll-category-002/  
 	https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=tty4032&logNo=221495829172  
 	https://devyurim.github.io/development%20environment/github%20blog/2018/08/07/blog-6.html  
@@ -21,8 +21,6 @@ categories: Git
 	{"Template"=>[#  
 	, #], "Git"=>[#], "SpringBoot"=>[#, #]}  
 	======================================================================================================  
-  
-  
   
 	해당 내용들은 내가 포스틀 작성할때 위에 넣어준 카테고리들임  
   
@@ -48,7 +46,6 @@ categories: Git
 		---  
   
 	======================================================================================================  
-  
   
 # categories 페이지 만들기  
 	1. 최상위 경로에 categories 폴더 생성  
@@ -88,7 +85,6 @@ categories: Git
 		</div>  
 		======================================================================================================  
   
-  
 # 좌측에 표시할 카테고리 네비게이션 만들기  
 	1. _includes 폴더에 categories.html 파일 생성  
   
@@ -116,5 +112,5 @@ categories: Git
   </div>  
 </div>  
 	======================================================================================================  
-	  
+  
 {% endraw %}

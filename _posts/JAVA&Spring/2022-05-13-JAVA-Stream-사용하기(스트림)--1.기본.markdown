@@ -17,7 +17,7 @@ categories: JAVA&Spring
 	- 원본 데이터를 변경하지 않음  
 		스트림으로 생성한 데이터는 원본데이터가 아닌 원본데이터를 조회하여 별도의 요소들로 스트림을 생성함  
 		원본데이터를 읽기만 하며, 수정,정렬 등의 작업은 하지않음  
-	  
+  
 	- 일회용임  
 		한번 사용이 끝나면 다시 사용할수 없으며, 다시 사용하고 싶으면 스트림을 다시 생성해줘야함  
 		닫힌 스트림을 사용하면 IllegalStateException 발생함  
@@ -36,11 +36,9 @@ categories: JAVA&Spring
 			String[] nameArray = {"kimsungchul", "yanghyeuny", "egiljung","1"};  
 			List<String> nameList = Arrays.asList(nameArray);  
   
-  
 			// 별도의 스트림을 생성하여서 정렬  
 			Stream<String> nameStream = nameList.stream();  
 			Stream<String> arrayStream = Arrays.stream(nameArray);  
-  
   
 			//스트림 사용  
 			// 복사한 데이터를 출력  
@@ -83,10 +81,6 @@ categories: JAVA&Spring
   
 		}  
   
-  
-  
 	=================================================================================================================  
   
-  
-	  
 {% endraw %}

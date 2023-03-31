@@ -30,20 +30,18 @@
       <!--카테고리 오름차순 정렬 -->
       {% assign sorted_cats = site.categories | sort %}
       {% for category in sorted_cats %}
-
         <h5 class="categorie-title" id="{{category | first}}">{{category | first}} ({{category[1].size}})</h5>
         <ul class="menuCategories menuCategories-sidebar hide">
-        {% for posts in category %}
-          {% for post in posts %}
-            {% if post.url %}
+          {% assign sorted_post = category[1]%}
+            {% for post in sorted_post %}
+              {% if post.url %}
 
-            <li style="font-size: 15px;">
-              <a class="title" title="{{ post.title }}" href="{{ post.url | prepend: site.url }}" >&nbsp; {{ post.title }}</a>
-            </li>
+              <li style="font-size: 15px;">
+                <a class="title" title="{{ post.title }}" href="{{ post.url | prepend: site.url }}" >&nbsp; {{ post.title }}</a>
+              </li>
 
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
+              {% endif %}
+            {% endfor %}
         </ul>
       {% endfor %}
 

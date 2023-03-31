@@ -8,16 +8,13 @@ categories: 캠핑장예약확인프로그램개발
 {% raw %}  
 [ Springboot - 텔레그램 연동 ]  
   
-  
 https://elfinlas.github.io/2019/08/15/telegram-spring-boot/  
 https://junesker.tistory.com/9  
-  
-  
   
 	sendTelegramMessage 메소드를 호출하면 텔레그램 방으로 메시지가 전송됨  
 	채팅방 아이디는 "2022.09.14_텔레그램 봇 생성.txt" 파일을 참고해서 가져옴,  
 	내꺼랑 혜니꺼만 해놨음  
-	  
+  
 	=================================================================================================================  
 	package com.sungchul.camping.telegram;  
   
@@ -29,10 +26,8 @@ https://junesker.tistory.com/9
 	import java.net.URL;  
 	import java.util.ArrayList;  
   
-  
 	@Service("telegramService")  
 	public class TelegramService {  
-  
   
 		/**  
 		 * 텔레그램 메시지 발송  
@@ -43,7 +38,6 @@ https://junesker.tistory.com/9
 			ArrayList<String> chatIdList = new ArrayList<>();  
 			chatIdList.add("5633077612");       //나  
 			chatIdList.add("5592564880");       //혜니  
-  
   
 			BufferedReader in = null;  
   
@@ -67,8 +61,6 @@ https://junesker.tistory.com/9
 			}  
 		}  
 	}  
-  
-  
   
 	=================================================================================================================  
 {% endraw %}

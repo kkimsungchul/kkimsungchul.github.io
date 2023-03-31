@@ -1,0 +1,19 @@
+---  
+layout: post  
+title: "[ASP] 세션 값 저장"  
+subtitle: "ASP 세션 값 저장"  
+date: 2023-03-31 01:54:53 +0900  
+categories: ASP  
+---  
+{% raw %}  
+# ASP 세션에 값 저장 삭제  
+  
+# 값 저장  
+  
+Session("searchStrBoardValue")=searchStrBoardValue  
+  
+# 값 삭제  
+  
+Session.Contents.Remove("searchStrBoardValue")  
+  
+{% endraw %}

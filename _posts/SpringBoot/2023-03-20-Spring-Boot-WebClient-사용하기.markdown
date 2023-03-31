@@ -8,51 +8,47 @@ categories: SpringBoot
 {% raw %}  
 [ SpringBoot - WebClient 사용하기 ]  
   
-# 참고 URL   
+# 참고 URL  
 	https://velog.io/@yyong3519/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-WebClient  
 	https://annajin.tistory.com/101  
 	https://gngsn.tistory.com/154  
 	https://dejavuhyo.github.io/posts/spring-webclient-vs-resttemplate/  
-	  
+  
 	Spring mono / webflux 개념  
 		https://devuna.tistory.com/108  
-  
   
 # RestTemplate 동작 원리  
 	※ 출처 : https://velog.io/@yyong3519/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-WebClient  
   
 	RestTemplate은 Multi-Thread와 Blocking 방식을 사용  
-	  
+  
 	Hread Pool은 요청자 어플리케이션 구동 시에 미리 만들어 놓음  
-	  
+  
 	Request는 먼저 Queue에 쌓이고 가용한 쓰레드가 있으면 그 쓰레드에 할당되어 처리됨  
-	  
+  
 	즉 1요청 당 1스레드가 할당됨.  
-	  
+  
 	각 쓰레드에서는 Blocking 방식으로 처리되어 응답이 올때까지 그 스레드는 다른 요청에 할당 될 수 없음  
   
-	요청을 처리할 쓰레드가 있으면 아무런 문제가 없지만,   
+	요청을 처리할 쓰레드가 있으면 아무런 문제가 없지만,  
 	쓰레드가 다 차는 경우 이후의 요청은 Queue에 대기하게 됨  
   
-	대부분의 문제는 네트워킹이나 DB와의 통신에서 생기는데   
-	이런 문제가 여러 쓰레드에서 발생하면 가용한 쓰레드수가 현저하게 줄어들게 되고,   
+	대부분의 문제는 네트워킹이나 DB와의 통신에서 생기는데  
+	이런 문제가 여러 쓰레드에서 발생하면 가용한 쓰레드수가 현저하게 줄어들게 되고,  
 	결국 전체 서비스는 매우 느려지게 됨.  
-  
   
 # Webclient 동작 원리  
 	Spring WebClient 는 Single Thread와 Non-Blocking 방식을 사용함  
-	  
+  
 	Core 당 1개의 Thread를 이용한다  
   
-  
 # 사용 이유  
-	  
+  
 	1000명까지는 비슷하지만 동시사용자가 늘수록 RestTemplate은 급격하게 느려지는것을 볼 수 있음  
-	  
+  
 	Spring 커뮤니티에서는 RestTemplate을 이미 Depreciated시키고 WebClient를 사용할것을 강력히 권고하고 있음  
   
 	뭐.. 이제 RestTemplate 안쓴다니까 써야지 이후 버전에서는 삭제된다고 함  
-  
   
 # GPT 가 설명해준 Resttemplate 와 webflux의 차이점  
 	RestTemplate과 WebFlux는 둘 다 Spring Framework에서 제공하는 HTTP 클라이언트 라이브러리로, RESTful 웹 서비스와 상호작용하는 데 사용됩니다. 그러나 이 두 가지 라이브러리는 서로 다른 방식으로 동작하며 각각의 특징이 있습니다.  
@@ -71,9 +67,6 @@ categories: SpringBoot
   
 	결론적으로, RestTemplate은 기존의 동기적인 방식으로 HTTP 요청을 처리하는 데 사용되고, WebFlux는 비동기 및 Reactive Programming 모델을 사용하여 높은 처리량과 확장성을 제공하는 데 사용됩니다.  
   
-  
-  
-  
 	RestTemplate과 WebFlux는 모두 Spring 프레임워크에서 HTTP 요청을 처리하는 데 사용되는 라이브러리입니다. 그러나 RestTemplate은 Blocking I/O를 사용하고, WebFlux는 Non-Blocking I/O를 사용합니다.  
   
 	Blocking I/O는 I/O 작업이 완료될 때까지 스레드를 차단(block)하고, Non-Blocking I/O는 I/O 작업이 완료될 때까지 스레드를 차단하지 않습니다. 이는 많은 동시 요청을 처리할 때 큰 차이를 만들 수 있습니다.  
@@ -83,7 +76,6 @@ categories: SpringBoot
 	반면에 WebFlux는 Non-Blocking I/O를 사용하므로, 하나의 요청에 대해 스레드 차단이 없으며 적은 수의 스레드로 많은 요청을 처리할 수 있습니다. 이는 더 빠른 응답 시간과 높은 처리량을 제공할 수 있습니다.  
   
 	따라서 RestTemplate은 작은 규모의 애플리케이션에서 사용하기에 적합하며, WebFlux는 대규모 애플리케이션에서 사용하기에 더 적합합니다. 그러나 이는 모든 상황에 해당하지는 않으므로, 애플리케이션의 요구사항에 따라 선택해야 합니다.  
-  
   
 # webclient , webflux , resttemplate 차이점  
   
@@ -103,12 +95,9 @@ categories: SpringBoot
   
 	따라서, WebClient는 Non-Blocking I/O를 사용하는 HTTP Client로서, WebFlux와 함께 Reactive Programming 모델을 사용하여 비동기적으로 데이터를 처리할 수 있습니다. WebFlux는 Non-Blocking Web Framework로서, Reactive Streams API를 지원하며, Reactive Programming 모델을 사용하여 비동기적으로 데이터를 처리할 수 있습니다. RestTemplate은 Blocking I/O를 사용하는 HTTP Client로서, 간단한 API를 제공합니다. 각각의 라이브러리  
   
-  
 # WebClient 생성 방법  
-	  
   
 # 응답값 요청 방법  
-  
   
 	- GET 방식  
   
@@ -124,7 +113,6 @@ categories: SpringBoot
 			System.out.println("### response : " + response);  
 		}  
 		=================================================================================================================  
-  
   
 		-- 응답  
 		=================================================================================================================  
@@ -167,7 +155,7 @@ categories: SpringBoot
 		}  
   
 		=================================================================================================================  
-		  
+  
 		-- 응답  
 		=================================================================================================================  
 		@PostMapping("/post")  
@@ -176,7 +164,6 @@ categories: SpringBoot
 			HashMap<String,Object> map = new HashMap<>();  
 			map.put("message" , "POST success");  
 			map.put("data" , dataMap);  
-  
   
 			return new ResponseEntity(map, HttpStatus.OK);  
   
@@ -201,7 +188,7 @@ categories: SpringBoot
   
 		}  
 		=================================================================================================================  
-		  
+  
 		--응답  
 		=================================================================================================================  
 		@PutMapping("/put")  
@@ -225,7 +212,7 @@ categories: SpringBoot
   
 		}  
 		=================================================================================================================  
-		  
+  
 		-- 응답  
 		=================================================================================================================  
 		@DeleteMapping("/delete/{data}")  
@@ -234,7 +221,6 @@ categories: SpringBoot
 			return new ResponseEntity("DELETE SUCCESS", HttpStatus.OK);  
 		}  
 		=================================================================================================================  
-			  
   
 	- 공통  
 		=================================================================================================================  
@@ -246,18 +232,14 @@ categories: SpringBoot
   
 	- 메소드 설명  
 		uri("https://sungchul.com/get?key=hi") - baseURI 및 파라미터를 지정해주는 부분  
-		  
+  
 		retrieve() - 응답값을 받게 해주는 메소드  
-		  
+  
 		bodyToMono(String.class) - response body를 String 타입으로 받게 해줌  
 			리턴받을 타입을 기재하면 해당 클래스 타입으로 리턴을 받을 수 있음  
-		  
-		block() - webclient는 기본적으로 비동기 방식인데 block메서드를 이용해 동기 방식으로 바꿔준다.   
+  
+		block() - webclient는 기본적으로 비동기 방식인데 block메서드를 이용해 동기 방식으로 바꿔준다.  
 				block을 붙여줘야 string으로 바꿀 수 있다고 한다.  
-  
-  
-  
-  
   
 # Builder 에 들어갈수 있는 옵션  
   

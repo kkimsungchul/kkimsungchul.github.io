@@ -9,7 +9,7 @@ categories: Vue
 [ Vue- router 이해하기 ]  
 routes : name 은 동일한 값이 있으면 안됨  
   
-componet :   
+componet :  
 	어떠한 컴포넌트를 연결할지 정보를 담고 있음  
 	import 를 해서 넣을수 있고  
 	화살표함수 를 사용해서 넣을수 있음  
@@ -55,22 +55,9 @@ componet :
 		component: () => import(/* webpackChunkName: "ababab"  , webpackPrefetch : true */ '../views/AboutView.vue')  
 		=================================================================================================================  
   
-  
-	  
-  
-	  
-  
-  
-		  
-  
-  
-  
-  
-  
 =================================================================================================================  
 1. views 폴더 밑에 vue 파일 생성  
 	test-001.vue  
-  
   
 2. App.vue 파일에 아래의 내용 추가  
 	<router-link to="/test">test001</router-link>  

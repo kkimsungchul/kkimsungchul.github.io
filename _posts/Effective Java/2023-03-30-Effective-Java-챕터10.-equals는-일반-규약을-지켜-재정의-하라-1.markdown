@@ -6,35 +6,29 @@ date: 2023-03-30 06:28:11 +0900
 categories: EffectiveJava  
 ---  
 {% raw %}  
-# Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -1   
-  
+# Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -1  
   
 # 이전에 정리해놓은 equals 내용  
 	https://github.com/kkimsungchul/study/blob/master/Spring%20Boot/%5BSpring%20Boot%5D%20equals%20%EC%82%AC%EC%9A%A9%EB%B2%95%20%EB%B0%8F%20%EC%83%9D%EA%B0%81.txt  
-  
   
 # 내용 정리  
 	equals 는 재정의 할 경우 문제가 발생할 여지가 많아서 재정의 하지 않는것이 최선이다.  
 	만약 아래의 경우중 하나라도 해당된다면 재정의 하지 않는것이 최선이다.  
   
-  
 		1. 각 인스턴스가 본질적으로 고유하다.  
 			값을 표현하는게 아니라 동작하는 개체를 표현하는 클래스가 여기에 해당됨  
 			Thread가 좋은 예로, Object의 equals 메소드는 이러한 클래스에 딱 맞게 구현되어 있음  
-		  
+  
 		2. 인스턴스의 '논리적 동치성(logical equality)'을 검사할 일이 없다.  
 			예시로 java.util.regex.Pattern 은 equals 를 재정의해서 두 Pattern의 인스턴스가 같은 정규표현식을 나타내는지를 검사하는, 즉 논리적 동치성을 검사하는 방법도 있음  
 			하지만 설계자는 클라이언트가 이 방식을 원하지 않거나 애초에 필요하지 않다고 판단할 수도 있다  
 			설계자가 후자로 판단했다면 Object의 기본 equals 만으로 해결이 됨  
   
-		  
 		3. 상위 클래스에서 재정의한 equals 가 하위 클래스에서 똑 들어맞는다.  
 			대부분의 Set 구현체는 AbstractSet이 구현한 equals 를 상속받아 쓰고,  
 			List 구현체들은 AbstractList로부터, Map 구현체들은 AbstractMap으로 부터 상속받아 그대로 쓴다.  
   
-  
 		4. 클래스가 private 이거나 package-private 이고 equals 메소드를 호출할 일이 없을때  
-  
   
 	그럼 equals 를 재정의 해야 할때는 객체 식별성이 아니라 논리적 동치성을 확인해야 할때 상위 클래스의 equals 가 논리적 동치성을 비교하도록 재정의되지 않았을 때 하면 된다.  
   
@@ -54,7 +48,7 @@ categories: EffectiveJava
   
 		=================================================================================================================  
 		- 반사성(reflexivity) : null이 아닌 모든 참조값 x에 대해, x.equals(x) 는 true 다.  
-		  
+  
 		- 대칭성(symmetry) : null이 아닌 모든 참조값 x,y에 대해 x.equals(y)가 true면 y.equals(x)도 true 다.  
   
 		- 추이성(transitivity) : null이 아닌 모든 참조값 x , y , z 에 대해 x.equals(y)가 true이고 y.equals(z)도 true이면 x.equals(z)도 true다.  
@@ -66,13 +60,12 @@ categories: EffectiveJava
 	Object 명세에서 말하는 동치관계는 집합을 서로 같은 원소들로 이뤄진 부분 집합으로 나누는 연산이다.  
 	이 부분집합을 동치류(equivalence class;동치클래스)라 한다.  
 	equals 메소드가 쓸모 있으려면 모든 원소가 같은 동치류에 속한 어떤 원소와도 서로 교환할 수 있어야 한다.  
-	  
   
 	- 반사성(reflexivity) :  
 		객체는 자기 자신과 같아야 한다는 뜻  
 		이 요건을 어긴 클래스의 인스턴스를 컬레션에 넣은 다음 contains 메소드를 호출하면 방금 넣은 인스턴스가 없다고 나온다.  
   
-	- 대칭성(symmetry) :   
+	- 대칭성(symmetry) :  
 		두 객체는 서로에 대한 동치 여부에 똑같이 답해야 한다.  
 		반사성 요건과 달리 대칭성 요건을 잘못하면 어길수 있다.  
 		대소문자를 구별하지 않는 문자열을 구현한 다음 클래스를 예로 보자  
@@ -90,14 +83,13 @@ categories: EffectiveJava
 				if(o instanceof CaseInsensitiveString){  
 					return s.equalsIgnoreCase((CaseInsensitiveString)o).s);  
 				}  
-				  
+  
 				if( o instanceof String){	//한 방향으로만 작동함  
 					return s.equalsIgnoreCase( (String)o);  
 				}  
   
 				return false;  
 			}  
-  
   
 		=================================================================================================================  
   
@@ -119,7 +111,7 @@ categories: EffectiveJava
   
 		@Override  
 		public boolean equals(Object o){  
-			return o instanceof CaseInsensitiveString &&   
+			return o instanceof CaseInsensitiveString &&  
 				((CaseInsensitiveString) o).s.equalsIgnoreCase(s);  
 		}  
   

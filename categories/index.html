@@ -10,7 +10,9 @@ type: page
     <h1>{{page.title}}</h1>
     <hr>
     <ul>
-      {% for category in site.categories %}
+      <!--카테고리 오름차순 정렬 -->
+      {% assign sorted_cats = site.categories | sort %}
+      {% for category in sorted_cats %}
         <h2 id="{{category | first}}">{{category | first}} ({{category[1].size}})</h2>
         {% for posts in category %}
           {% for post in posts %}

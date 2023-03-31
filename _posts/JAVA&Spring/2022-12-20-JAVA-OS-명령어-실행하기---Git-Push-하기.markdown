@@ -11,13 +11,12 @@ categories: JAVA&Spring
 	gitlab에서 특정 코드를 내려받아서 다른 프로젝트에 푸쉬하기.  
 	운영체제 명령어를 사용하였으며 리눅스 기반임  
   
-  
 =================================================================================================================  
     /**  
   
      * GitLab 브랜치 조회  
   
-     *   
+     *  
   
      * @param gitProjectId  
   
@@ -31,12 +30,10 @@ categories: JAVA&Spring
   
         try {  
   
-        	  
         	List<Map<String, Object>> gitLabBranchList = (List<Map<String, Object>>) callGetRestApi(uri, makeHttpHeader(gitLabPrivateToken), null);  
   
             return gitLabBranchList;  
   
-              
         }catch(HttpClientErrorException.NotFound e) {  
   
         	return null;  
@@ -51,8 +48,6 @@ categories: JAVA&Spring
   
     }  
   
-      
-      
     /**  
   
      * GitLab Template 프로젝트의 파일URL 조회  
@@ -67,7 +62,6 @@ categories: JAVA&Spring
   
     public HashMap<String,String> getTemplateFile(long projectId){  
   
-    	  
     	List<Map<String, Object>> releasesList = getGitLabProjectReleases(String.valueOf(projectId), null);  
   
     	String downloadCommand ="";  
@@ -104,7 +98,6 @@ categories: JAVA&Spring
   
     				downloadUrl = tempMap.get("url");  
   
-    				  
     				String temp[] = downloadUrl.split("/");  
   
     				fileName = temp[temp.length-1];  
@@ -131,7 +124,6 @@ categories: JAVA&Spring
   
     }  
   
-      
     /**  
   
      * 생성한 프로젝트에 GitLab Template 추가  
@@ -146,7 +138,7 @@ categories: JAVA&Spring
   
     	HashMap<String,String> templateMap = getTemplateFile(templateId);  
   
-		//푸쉬할 프로젝트 정보    	  
+		//푸쉬할 프로젝트 정보  
   
         long gitProjectId = Long.parseLong(gitProjectMap.get("id").toString());  
   
@@ -156,8 +148,6 @@ categories: JAVA&Spring
   
 		String projectPushUrl ="https://"+gitAdminId+":"+gitAdmintoken+"@" + gitUrl.replaceAll("https://", "");  
   
-		  
-		  
 		String path="/tomcat/module_temp/"+gitProjectId+"_"+gitProjectName;  
   
 		String folderName = templateMap.get("fileName").replaceAll(".tar.gz", "");  
@@ -166,10 +156,8 @@ categories: JAVA&Spring
   
 		String tagName = templateMap.get("tagName");  
   
-		  
 		CreateGitLabTemplateVO createGitLabTemplateVO = new CreateGitLabTemplateVO();  
   
-		  
 		createGitLabTemplateVO.setProjectId(projectId);  
   
 		createGitLabTemplateVO.setGitId(gitProjectId);  
@@ -182,8 +170,6 @@ categories: JAVA&Spring
   
 		createGitLabTemplateVO.setCreatedBy(keyCloakSession.getLoginId());  
   
-		  
-		  
 		//프로젝트 폴더 생성  
   
 		String makeDirectoryCommand = "mkdir -p "+path;  
@@ -193,8 +179,6 @@ categories: JAVA&Spring
 		//ShellCommand.shellCmd(makeDirectoryCommand);  
   
 		ShellCommand.execute(makeDirectoryCommand);  
-  
-  
   
 		//모듈 다운로드  
   
@@ -206,7 +190,6 @@ categories: JAVA&Spring
   
 		ShellCommand.execute(downloadCommand);  
   
-		  
 		//모듈 권한 변경  
   
 		String chmodCommand = "cd "+path+" && " + "chmod -R 755 "+templateMap.get("fileName");  
@@ -217,8 +200,6 @@ categories: JAVA&Spring
   
 		ShellCommand.execute(chmodCommand);  
   
-		  
-		  
 		//모듈 압축 해제  
   
 		//tar -xzvf auth-20221021-1.tar.gz  
@@ -228,7 +209,6 @@ categories: JAVA&Spring
 		LOGGER.info("### decompressCommand : " + decompressCommand);  
   
 		ShellCommand.execute(decompressCommand);  
-  
   
 		//git init git 버전 2.28 이상 - start  
   
@@ -242,7 +222,6 @@ categories: JAVA&Spring
   
 		//git init git 버전 2.28 이상 -end  
   
-		  
 		//git init git 버전 2.28 미만 -start  
   
 		String projectPath =  path +"/"+folderName;  
@@ -261,8 +240,6 @@ categories: JAVA&Spring
   
 		//git init git 버전 2.28 미만 -end  
   
-		  
-		  
 		//git config name  
   
 		String gitConfigNameCommand = "cd "+projectPath+" && git config user.name \""+keyCloakSession.getUserInfo().getName()+"\"";  
@@ -271,7 +248,6 @@ categories: JAVA&Spring
   
 		ShellCommand.execute(gitConfigNameCommand);  
   
-		  
 		//git config email  
   
 		String gitConfigMailCommand = "cd "+projectPath+" && git config user.email \""+keyCloakSession.getUserInfo().getEmail()+"\"";  
@@ -280,9 +256,6 @@ categories: JAVA&Spring
   
 		ShellCommand.execute(gitConfigMailCommand);  
   
-		  
-		  
-		  
 		//git remote  
   
 		String gitRemoteCommand = "cd "+projectPath+" && git remote add origin "+projectPushUrl;  
@@ -291,25 +264,22 @@ categories: JAVA&Spring
   
 		ShellCommand.execute(gitRemoteCommand);  
   
-		  
 		//git add  
   
 		String gitAddCommand = "cd "+projectPath+" && git add .";  
   
 		LOGGER.info("### gitAddCommand : " + gitAddCommand);  
   
-		ShellCommand.execute(gitAddCommand);   
+		ShellCommand.execute(gitAddCommand);  
   
-		  
 		//git commit  
   
 		String gitCommitCommand = "cd "+projectPath+" && git commit -am '"+moduleName+ " " + tagName +" 템플릿 생성 완료'";  
   
 		LOGGER.info("### gitCommitCommand : " + gitCommitCommand);  
   
-		ShellCommand.execute(gitCommitCommand);   
+		ShellCommand.execute(gitCommitCommand);  
   
-		  
 		//git push  
   
 		String gitPushCommand = "cd "+projectPath+" && git push -u origin master";  
@@ -318,15 +288,9 @@ categories: JAVA&Spring
   
 		ShellCommand.execute(gitPushCommand);  
   
-		  
 		return createGitLabTemplateVO;  
   
-    	  
-    	  
     }  
-  
-  
-  
   
 =================================================================================================================  
 {% endraw %}

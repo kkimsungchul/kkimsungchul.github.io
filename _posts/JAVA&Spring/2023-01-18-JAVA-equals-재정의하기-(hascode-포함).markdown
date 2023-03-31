@@ -7,7 +7,7 @@ categories: JAVA&Spring
 ---  
 {% raw %}  
 [ JAVA - equals 재정의 하기 ]  
-	  
+  
 # 사용 이유  
 	JAVA에서 개발을 하다보면 객체끼리 비교해야 할 경우가 있음  
 	아래의 코드를 직접 실행해보면 둘다 거짓이 출력됨  
@@ -16,7 +16,7 @@ categories: JAVA&Spring
 		MemberVO b = new MemberVO();  
   
 		if(a==b){  
-			"참1";	  
+			"참1";  
 		}else{  
 			"거짓1";  
 		}  
@@ -30,7 +30,6 @@ categories: JAVA&Spring
   
 	equals 는 주소값이 같은지를 비교한다.  
 	실제로 안에 있는 값이 같은지를 비교하기위해서는 equals 를 재정의 해야함  
-  
   
 # 재정의 한 코드  
 	MemberVO를 Builder 패턴으로 만들어서 equals 메소드와 hashcode 메소드를 재정의했음  

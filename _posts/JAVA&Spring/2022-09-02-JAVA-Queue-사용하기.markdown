@@ -7,25 +7,23 @@ categories: JAVA&Spring
 ---  
 {% raw %}  
 [ JAVA - Queue 사용하기 ]  
-	  
-  
   
 # Queue 선언  
-	Queue 선언에는 LinkedList 를 사용해서 선언해야 함	  
+	Queue 선언에는 LinkedList 를 사용해서 선언해야 함  
 		Queue<Integer> queue = new LinkedList<>();  
-	  
+  
 	또한 선언하면서 부터 값을 넣어줄 수 있음  
 		Queue<Integer> queueTemp = new LinkedList<Integer>(Arrays.asList(1, 2, 3));  
-	  
+  
 # Queue에 값 추가  
 	값 추가는 아래의 두가지 방법으로 가능함  
 		Queue.add(값);  
 		Queue.offer(값);  
-	  
+  
 	add메소드의 경우에는 실패하면 IllegalStateException 를 반환함  
   
 # Queue 값 꺼내기 - 삭제x  
-	  
+  
 	peek 메소드를 통해서 제일 앞에있는 값을 꺼내며, 삭제하거나 지우지 않음  
 		Queue.peek()  
   
@@ -33,7 +31,7 @@ categories: JAVA&Spring
 	아래의 방법은 값을 꺼낸후 해당 값을 삭제함  
 		queue.poll();  
 		queue.remove();  
-	  
+  
 	꺼내올 값이 없는 경우 poll은 null을  
 	remove는 NoSuchElement 을 반환함  
   
@@ -41,7 +39,7 @@ categories: JAVA&Spring
 	Queue.size() 메소드를 사용하여 해당 Queue의 크기를 할수 있음  
   
 # 전체 출력  
-	  
+  
 	System.out.println(queue); 를 통해서 전체 출력을 할수 있지만, 들어있는 순서로 출력하기위해서  
 	Iterator 클래스를 사용함  
   
@@ -49,7 +47,6 @@ categories: JAVA&Spring
 		while (iterator.hasNext()){  
 			System.out.println(iterator.next());  
 		}  
-  
   
 # Queue 초기화  
 	아래의 메소드를 통하여 Queue에 있는 모든 값을 삭제하고 초기화함  
@@ -73,7 +70,6 @@ public class QueueTest {
         Queue<Integer> queueTemp = new LinkedList<Integer>(Arrays.asList(1, 2, 3));  
         System.out.println(" queueTemp : " + queueTemp);  
   
-  
        //Queue에 값 추가 , add 또는 offer를 사용해서 추가함  
         queue.add(1);  
         queue.add(2);  
@@ -94,11 +90,8 @@ public class QueueTest {
         System.out.println("queue.peek() : " + queue.peek());  
         System.out.println("queue.peek() : " + queue.peek());  
   
-  
-  
         //Queue의 크기를 구함  
         System.out.println("queue.size() : " + queue.size());  
-  
   
         System.out.println("queue : " + queue);  
   
@@ -108,14 +101,8 @@ public class QueueTest {
             System.out.println(iterator.next());  
         }  
   
-  
-  
         //Queue 초기화  
         queue.clear();  
-  
-  
-  
-  
   
    }  
 }  

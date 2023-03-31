@@ -11,7 +11,7 @@ categories: JAVA&Spring
   
 # 사용하게된 이유  
 	Jenkins API를 사용하는데.. 개불편함  
-	  
+  
 	현재 구조는 아래와 같음  
 	======================================================================================================  
 	0. 최상위폴더  
@@ -27,12 +27,12 @@ categories: JAVA&Spring
 			10.잡  
 		11.잡  
 	======================================================================================================  
-	  
+  
 	이거를 한번에 가져오고싶은데, jenkins에서는 한번에 한댑스의 목록만가져올수가있음  
 	말그대로 한번호출하면 1,5,11  
 	1. 폴더에서 한번 들어가면 2, 4  
 	5. 폴더에서 한번 들어가면 6, 10  
-	이런식임..   
+	이런식임..  
   
 	폴더일 경우에는 하위에 폴더나 잡이 또 생길수 있고,잡일경우에는 더이상 하위에 생길수가 없음  
   
@@ -44,9 +44,8 @@ categories: JAVA&Spring
 		4. 3에서 가져온 목록에 폴더가 있다면 해당 폴더 명으로 목록을 가져온다.  
 		5. 폴더밑에 아무것도 없거나, 폴더가 없을떄까지 진행한다.  
   
-	  
 	젠킨스 API는 아래와 같은 구조로 목록을 제공해줌  
-		JenkinsURL/job/폴더명/api/json	  
+		JenkinsURL/job/폴더명/api/json  
 		ex) http://sungchul.jenkins.com/job/0. 최상위폴더/api/json  
 	이렇게 조회하게되면 1.폴더 , 5.폴더 , 11. 잡이 리턴됨  
   
@@ -54,9 +53,8 @@ categories: JAVA&Spring
 		JenkinsURL/job/폴더명/job/하위폴더명/api/json  
 		ex) http://sungchul.jenkins.com/job/0. 최상위폴더/job/1.폴더/api/json  
 	이렇게 하면 이제 1. 폴더 밑에 있는 2.폴더, 4. 잡이 조회됨  
-	  
-	이것을 반복하면서 트리구조로 목록을 가져오려고 함  
   
+	이것을 반복하면서 트리구조로 목록을 가져오려고 함  
   
 [ 실제 작성 코드]  
 재귀함수를 사용하여서, 하위목록이 있을 경우 계속 호출하게 작성하였음  
@@ -77,7 +75,7 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
 			String statusMsg = DbMessageManager.getMessage("I0001", "ko");  
 			ApiResponseEntity message = new ApiResponseEntity(statusMsg, jenkins, null, null);  
   
-			return new ResponseEntity<ApiResponseEntity>(message, HttpStatus.OK);     
+			return new ResponseEntity<ApiResponseEntity>(message, HttpStatus.OK);  
 		}  
 		====================================================================================================  
   
@@ -106,7 +104,6 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
 	    }  
 	    ====================================================================================================  
   
-  
 		전달받은 uri를 기준으로 하위목록 전체를 조회하여 트리구조로 리턴  
 		====================================================================================================  
 		/**  
@@ -134,8 +131,6 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
 		====================================================================================================  
   
 	# 맵퍼  
-  
-  
   
 	# VO  
 		NewJenkinsParamVO , 젠킨스에서 전달해준 값을을 화면으로 보내는데 사용하는 VO  
@@ -169,8 +164,6 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
   
 			@ApiModelProperty(name = "newJenkinsJobList", value = "job 목록", dataType = "String")  
 			public ArrayList<NewJenkinsParamVO> jobs;  
-  
-  
   
 			public NewJenkinsParamVO() {  
 				super();  
@@ -226,7 +219,6 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
 					e.printStackTrace();  
 				}  
   
-  
 			}  
 			public String getJenkinsFolderName() {  
 				return jenkinsFolderName;  
@@ -271,12 +263,6 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
 			}  
 		}  
   
-  
-  
-  
-  
 		====================================================================================================  
-  
-  
   
 {% endraw %}

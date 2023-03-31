@@ -8,23 +8,21 @@ categories: Cloud
 {% raw %}  
 [ Chat - 백엔드 배포 ]  
   
-# 포트 오픈   
+# 포트 오픈  
   
 	$ sudo iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT  
 	$ sudo iptables -I OUTPUT 1 -p tcp --dport 8000 -j ACCEPT  
 	$ sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT  
 	$ sudo iptables -I OUTPUT 1 -p tcp --dport 80 -j ACCEPT  
   
-  
 	포트 오픈 시 AWS 보안그룹에서 추가로 포트 오픈해줘야함  
   
 # 소스 내려받기  
-	  
+  
 	$ mkdir chat_backend  
 	$ cd chat_backend  
 	$ git clone https://github.com/kkimsungchul/chat-backend.git  
 	$ chmod -R 755 chat-backend  
-  
   
 # 빌드  
 	빌드시에는 테스트 생략  
@@ -35,7 +33,6 @@ categories: Cloud
   
 	$ cd /home/ec2-user/chat_backend/chat-backend/build/libs  
 	$ nohup java -jar find-chat-0.0.1-SNAPSHOT.jar &  
-  
   
 # 새로운 소스 내려받기  
   
@@ -70,11 +67,11 @@ categories: Cloud
 	=================================================================================================================  
   
 # nginx repo 추가 후 확인  
-	  
+  
 	yum info nginx  
   
 # Nginx 설치  
-	  
+  
 	sudo yum install nginx  
   
 # nginx 버전 확인  
@@ -84,14 +81,12 @@ categories: Cloud
 	nginx version: nginx/1.22.1  
 	=================================================================================================================  
   
-  
-  
 # Nginx 시작  
   
 	sudo systemctl start nginx  
   
 # Nginx 종료  
-	  
+  
 	sudo systemctl stop nginx  
   
 # 배포파일 복사  
@@ -99,24 +94,19 @@ categories: Cloud
   
 	sudo cp -r /home/ec2-user/chat_front/chat-front/dist /usr/share/nginx  
   
-# 기존파일 백업	  
+# 기존파일 백업  
 	sudo mv html html_backup  
   
 # 신규파일 폴더명 변경  
 	sudo mv dist html  
   
-  
-  
-  
-  
-  
 ※ 아래의 내용은 오류가 나서 안됨  
 [ Vue 설치하기 ]  
 	https://threeyears.tistory.com/161  
 # 설치  
-	$ sudo yum install -y gcc-c++ make   
-	$ curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -   
-	  
+	$ sudo yum install -y gcc-c++ make  
+	$ curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -  
+  
 	sudo yum install -y nodejs  
   
 	sudo npm install -g express-generator  
@@ -124,17 +114,15 @@ https://github.com/vuejs/eslint-plugin-vue/issues/1931
   
 [ Chat - 프론트 배포 ]  
   
-  
 # 포트 오픈  
 	$ sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT  
-	$ sudo iptables -I OUTPUT 1 -p tcp --dport 80 -j ACCEPT	  
+	$ sudo iptables -I OUTPUT 1 -p tcp --dport 80 -j ACCEPT  
   
-# 코드 내려받기   
+# 코드 내려받기  
   
 	$ mkdir chat-front  
 	$ cd chat-front  
 	$ git clone https://github.com/kkimsungchul/chat-front.git  
 	$ chmod -R 755 chat-front/  
-  
   
 {% endraw %}

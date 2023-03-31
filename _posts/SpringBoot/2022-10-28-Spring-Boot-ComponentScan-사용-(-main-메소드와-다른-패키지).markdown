@@ -10,38 +10,33 @@ categories: SpringBoot
   
 	스프링에서는 config.xml 파일에 아래와 같이 ComponentScane 을 설정해줬었음  
 		<context:component-scan base-package="com.sungchul.main">  
-	  
+  
 	스프링부트에서는 위와같이 xml을 사용하기보단 yml 파일이나 @Config 어노테이션으로 설정을 많이 함  
   
 	또한 스프링에서는 메인클래스가 별도로 클래스 내에서 보이지 않기 때문에 스캔할 클래스들을 위와같이 전부다 설정하면 되었지만  
-	  
-	스프링부트에서는 main 클래스가 위치한 패키지 밑에 컨트롤러를 만들어야 기본적으로 작동을 하고,  
-	  
-	그외에는 별도의 basepackage 를 지정해 줘야 작동함  
   
+	스프링부트에서는 main 클래스가 위치한 패키지 밑에 컨트롤러를 만들어야 기본적으로 작동을 하고,  
+  
+	그외에는 별도의 basepackage 를 지정해 줘야 작동함  
   
 #  기본 스프링부트 형태  
   
 	스프링부트 프로젝트 생성시 기본적으로 생성되는 "xxxApplilcation" 클래스에 추가하면 됨  
 	xxx는 사용자가 생성한 프로젝트 명에따라서 결정되므로 매번 바뀜  
-	  
+  
 	=================================================================================================================  
 	package com.sungchul.main;  
   
-	  
 	@SpringBootApplication  
 	public class xxxApplication{  
 		public static void main(String[]args){  
 		SpringApplication.run(xxxApplication.class, args);  
 	}  
   
-  
 	=================================================================================================================  
-	  
+  
 	위를 보면 패키지가 com.sungchul.main 로 되어있는 것을 알수 있음  
 	그래서 com.sungchul.main 패키지 밑에 controller나 service 를 생성하면 자동적으로 읽어옴,  
-  
-  
   
 # 다른 패키지의 컨트롤러 사용  
 	위의 기본 형태에서 com.sungchul.main 밑에 controller 을 생성하면 아무런 문제가 없음  
@@ -51,7 +46,7 @@ categories: SpringBoot
   
 	@RestController  
 	public class SungchulController{  
-		  
+  
 		@GetMapping("/hi")  
 		public String temp(){  
 			return "zzz hihihi";  
@@ -60,9 +55,8 @@ categories: SpringBoot
 	}  
 	=================================================================================================================  
   
-  
 	위와같이 생성한 뒤 실행해서 localhost:8080/hi 로 접속하면 404 not found가 뜸  
-	  
+  
 	오류가 뜨는 이유는 main 클래스가 있는 패키지나 하위패키지가 아닌 완전 별도의 패키지에 존재하기 때문임  
   
 	이럴경우 메인클래스가 있는 패키지 밑으로 이동하는게 권장된다고 함  

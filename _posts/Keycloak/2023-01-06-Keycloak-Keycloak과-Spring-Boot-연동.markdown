@@ -8,21 +8,17 @@ categories: Keycloak
 {% raw %}  
 [ Keycloak과 Spring Boot 연동 ]  
   
-  
 # 프로젝트 생성  
 	* maven 사용  
-	name : keycloak   
-	  
+	name : keycloak  
   
 	아래의 디펜던시 선택 후 생성  
 		Spring boot DevTool  
 		Lombok  
-		Spring Web   
-  
+		Spring Web  
   
 # application.properties 변경  
 	application.properties  ->  application.yml 로 확장자 변경  
-  
   
 # Spring security 추가  
 	※ 처음에 추가해도 되는데 추가를 안해서 지금 추가했	음  
@@ -35,14 +31,13 @@ categories: Keycloak
         </dependency>  
 	=================================================================================================================  
   
-  
 	* 그래들의 경우 아래의 내용추가  
 	=================================================================================================================  
 	implementation 'org.springframework.boot:spring-boot-starter-security'  
 	=================================================================================================================  
   
 # keycolak.version 추가  
-	  
+  
 	pom.xml 파일을 열어서 <keycloak.version>9.0.2</keycloak.version> 추가  
 	=================================================================================================================  
 	<properties>  
@@ -70,7 +65,7 @@ categories: Keycloak
 	=================================================================================================================  
   
 # KeycloakSecurityConfig 클래스 생성  
-	  
+  
 	경로 : keycloak\src\main\java\com\sungchul\keycloak\config  
 	파일명 : KeycloakSecurityConfig.java  
 	=================================================================================================================  
@@ -130,13 +125,10 @@ categories: Keycloak
 		}  
 	}  
   
-  
-  
 	=================================================================================================================  
-	  
   
 # TestController 클래스 생성  
-	  
+  
 	경로 : C:\IntellijProject\keycloak\src\main\java\com\sungchul\keycloak\controller\  
 	파일명 : TestController.java  
 	=================================================================================================================  
@@ -153,7 +145,7 @@ categories: Keycloak
 	@RestController  
 	@RequestMapping("/test")  
 	public class TestController {  
-		  
+  
 		@RequestMapping(value = "/permitAll", method = RequestMethod.GET)  
 		public ResponseEntity<String> permitAll() {  
 			return ResponseEntity.ok("누구나 접근이 가능합니다.\n");  
@@ -181,19 +173,17 @@ categories: Keycloak
   
 	=================================================================================================================  
   
-  
-  
 # application.yml 파일 수정  
   
 	아래 작성하는 내용에 대한 정보는  
 	keycloak 에서 생성한 clien 의 installation  탭에서 확인이 가능함  
   
-	※아래의 부분은 오류가 발생해서 추가한 내용   
+	※아래의 부분은 오류가 발생해서 추가한 내용  
 	참고링크 : https://stackoverflow.com/questions/70207564/spring-boot-2-6-regression-how-can-i-fix-keycloak-circular-dependency-in-adapte  
 	spring:  
 	  main:  
 		allow-circular-references : true  
-	  
+  
 	=================================================================================================================  
   
 	server:  
@@ -214,23 +204,21 @@ categories: Keycloak
 		root: INFO  
 		com.sumgchul.keycloak: DEBUG  
   
-  
 	spring:  
 	  main:  
 		allow-circular-references : true  
   
 	=================================================================================================================  
   
-  
 # 테스트  
-	  
+  
 	1. curl -X GET "http://localhost:9999/test/permitAll"  
-		누구나 접근 가능   
+		누구나 접근 가능  
 		-성공  
-	  
+  
 	2. curl -X GET "http://localhost:9999/test/authenticated"  
-		  
-		2-1.   
+  
+		2-1.  
 			curl -X POST "http://localhost:8080/auth/realms/demo/protocol/openid-connect/token" ^  
 			--header "Content-Type:application/x-www-form-urlencoded" ^  
 			--data-urlencode "grant_type=password" ^  
@@ -239,13 +227,13 @@ categories: Keycloak
 			--data-urlencode "username=sungchul" ^  
 			--data-urlencode "password=admin"  
   
-		2-2.   
+		2-2.  
 			액세스토큰 : eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPdGViQldzSmdhRWozeXVaMGZlbTVWclFmbkZpcDlLczE5aVN6anBybGw0In0.eyJleHAiOjE2NDQ0MjkxMjQsImlhdCI6MTY0NDM5MzEyNCwianRpIjoiZTE5MjA0YjgtZGFjMi00ZTlhLTkwNjgtMjU1MTRhZTNiZmY5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RlbW8iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNzNkNWYwOWUtZTY2Ny00YjA2LTgwZDctMTk3ZDM1NzQyNmQ0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXlfY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjgzNjI3NmM1LTAxMDgtNDUxZS05OTdiLWNkMjcyMjRjYTJiMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1kZW1vIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibXlfY2xpZW50Ijp7InJvbGVzIjpbIlJPTEVfVVNFUiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiODM2Mjc2YzUtMDEwOC00NTFlLTk5N2ItY2QyNzIyNGNhMmIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoia2ltIHN1bmdjaHVsIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3VuZ2NodWwiLCJnaXZlbl9uYW1lIjoia2ltIiwiZmFtaWx5X25hbWUiOiJzdW5nY2h1bCIsImVtYWlsIjoia2ltc2MxMjE4QGdtYWlsLmNvbSJ9.jx6pdr87_wjURnbcq9fAqmwB7k0lq3nODwBieTqtkk6QVoSCU5yXqlKaajFSUShb_jh0jq3yVL5NVmqiRaqLmHb_Y55wrs4dCUbbjKdJXTBLP7W4xSOEwlm81PtZYfoCMcU5pmKAkbEUllDJxjSsbkM2SPkWl9Y7DMTT1SgTlBMHsxabwLI_O-6rUzkEVyL2v7ALX1MqTAsuyLVlF8ckgEIWzFHh1f325oJFlnStoAvw_bcTa5z1rIUgDN7quPLGwsnj6Y1M-5Ezfm7I932L4nWYQIbWvJRtpVkD7x8eOhDtyfmE_UG80LhiYyqbgJwWxzgeM9Q_jUmG3DGMIB_xFw  
   
-		2-3.   
+		2-3.  
 			curl -X GET "http://localhost:9999/test/authenticated" ^  
-			--header "Authorization : Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPdGViQldzSmdhRWozeXVaMGZlbTVWclFmbkZpcDlLczE5aVN6anBybGw0In0.eyJleHAiOjE2NDQ0MjkxMjQsImlhdCI6MTY0NDM5MzEyNCwianRpIjoiZTE5MjA0YjgtZGFjMi00ZTlhLTkwNjgtMjU1MTRhZTNiZmY5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RlbW8iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNzNkNWYwOWUtZTY2Ny00YjA2LTgwZDctMTk3ZDM1NzQyNmQ0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXlfY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjgzNjI3NmM1LTAxMDgtNDUxZS05OTdiLWNkMjcyMjRjYTJiMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1kZW1vIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibXlfY2xpZW50Ijp7InJvbGVzIjpbIlJPTEVfVVNFUiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiODM2Mjc2YzUtMDEwOC00NTFlLTk5N2ItY2QyNzIyNGNhMmIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoia2ltIHN1bmdjaHVsIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3VuZ2NodWwiLCJnaXZlbl9uYW1lIjoia2ltIiwiZmFtaWx5X25hbWUiOiJzdW5nY2h1bCIsImVtYWlsIjoia2ltc2MxMjE4QGdtYWlsLmNvbSJ9.jx6pdr87_wjURnbcq9fAqmwB7k0lq3nODwBieTqtkk6QVoSCU5yXqlKaajFSUShb_jh0jq3yVL5NVmqiRaqLmHb_Y55wrs4dCUbbjKdJXTBLP7W4xSOEwlm81PtZYfoCMcU5pmKAkbEUllDJxjSsbkM2SPkWl9Y7DMTT1SgTlBMHsxabwLI_O-6rUzkEVyL2v7ALX1MqTAsuyLVlF8ckgEIWzFHh1f325oJFlnStoAvw_bcTa5z1rIUgDN7quPLGwsnj6Y1M-5Ezfm7I932L4nWYQIbWvJRtpVkD7x8eOhDtyfmE_UG80LhiYyqbgJwWxzgeM9Q_jUmG3DGMIB_xFw"			  
-		  
+			--header "Authorization : Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPdGViQldzSmdhRWozeXVaMGZlbTVWclFmbkZpcDlLczE5aVN6anBybGw0In0.eyJleHAiOjE2NDQ0MjkxMjQsImlhdCI6MTY0NDM5MzEyNCwianRpIjoiZTE5MjA0YjgtZGFjMi00ZTlhLTkwNjgtMjU1MTRhZTNiZmY5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RlbW8iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNzNkNWYwOWUtZTY2Ny00YjA2LTgwZDctMTk3ZDM1NzQyNmQ0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXlfY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjgzNjI3NmM1LTAxMDgtNDUxZS05OTdiLWNkMjcyMjRjYTJiMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1kZW1vIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibXlfY2xpZW50Ijp7InJvbGVzIjpbIlJPTEVfVVNFUiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiODM2Mjc2YzUtMDEwOC00NTFlLTk5N2ItY2QyNzIyNGNhMmIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoia2ltIHN1bmdjaHVsIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3VuZ2NodWwiLCJnaXZlbl9uYW1lIjoia2ltIiwiZmFtaWx5X25hbWUiOiJzdW5nY2h1bCIsImVtYWlsIjoia2ltc2MxMjE4QGdtYWlsLmNvbSJ9.jx6pdr87_wjURnbcq9fAqmwB7k0lq3nODwBieTqtkk6QVoSCU5yXqlKaajFSUShb_jh0jq3yVL5NVmqiRaqLmHb_Y55wrs4dCUbbjKdJXTBLP7W4xSOEwlm81PtZYfoCMcU5pmKAkbEUllDJxjSsbkM2SPkWl9Y7DMTT1SgTlBMHsxabwLI_O-6rUzkEVyL2v7ALX1MqTAsuyLVlF8ckgEIWzFHh1f325oJFlnStoAvw_bcTa5z1rIUgDN7quPLGwsnj6Y1M-5Ezfm7I932L4nWYQIbWvJRtpVkD7x8eOhDtyfmE_UG80LhiYyqbgJwWxzgeM9Q_jUmG3DGMIB_xFw"  
+  
 		2-4. 실패  
 			※ curl 로 테스트 불가,  
 			https://stackoverflow.com/questions/58593645/tomcat-9-header-line-does-not-conform-to-rfc-7230?rq=1  
@@ -260,9 +248,8 @@ categories: Keycloak
 			로그인한 사람 누구나 가능합니다.  
 			- 성공  
   
-  
 	3. curl -X GET "http://localhost:9999/test/admin"  
-		  
+  
 		3-1.  
 			curl -X POST "http://localhost:8080/auth/realms/demo/protocol/openid-connect/token" ^  
 			--header "Content-Type:application/x-www-form-urlencoded" ^  
@@ -271,10 +258,10 @@ categories: Keycloak
 			--data-urlencode "client_secret=XafEZWyEQDgd0rmn86rO4H7K674l5zM9" ^  
 			--data-urlencode "username=sungchul" ^  
 			--data-urlencode "password=admin"  
-		  
+  
 			액세스토큰 : eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPdGViQldzSmdhRWozeXVaMGZlbTVWclFmbkZpcDlLczE5aVN6anBybGw0In0.eyJleHAiOjE2NDQ0MjkxMjQsImlhdCI6MTY0NDM5MzEyNCwianRpIjoiZTE5MjA0YjgtZGFjMi00ZTlhLTkwNjgtMjU1MTRhZTNiZmY5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RlbW8iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNzNkNWYwOWUtZTY2Ny00YjA2LTgwZDctMTk3ZDM1NzQyNmQ0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXlfY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjgzNjI3NmM1LTAxMDgtNDUxZS05OTdiLWNkMjcyMjRjYTJiMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1kZW1vIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibXlfY2xpZW50Ijp7InJvbGVzIjpbIlJPTEVfVVNFUiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiODM2Mjc2YzUtMDEwOC00NTFlLTk5N2ItY2QyNzIyNGNhMmIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoia2ltIHN1bmdjaHVsIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3VuZ2NodWwiLCJnaXZlbl9uYW1lIjoia2ltIiwiZmFtaWx5X25hbWUiOiJzdW5nY2h1bCIsImVtYWlsIjoia2ltc2MxMjE4QGdtYWlsLmNvbSJ9.jx6pdr87_wjURnbcq9fAqmwB7k0lq3nODwBieTqtkk6QVoSCU5yXqlKaajFSUShb_jh0jq3yVL5NVmqiRaqLmHb_Y55wrs4dCUbbjKdJXTBLP7W4xSOEwlm81PtZYfoCMcU5pmKAkbEUllDJxjSsbkM2SPkWl9Y7DMTT1SgTlBMHsxabwLI_O-6rUzkEVyL2v7ALX1MqTAsuyLVlF8ckgEIWzFHh1f325oJFlnStoAvw_bcTa5z1rIUgDN7quPLGwsnj6Y1M-5Ezfm7I932L4nWYQIbWvJRtpVkD7x8eOhDtyfmE_UG80LhiYyqbgJwWxzgeM9Q_jUmG3DGMIB_xFw  
   
-		3-2. postman 으로 실행   
+		3-2. postman 으로 실행  
 			Get : http://localhost:9999/test/admin  
 			Headers  
 				key : Authorization  
@@ -288,8 +275,8 @@ categories: Keycloak
 				"error": "Forbidden",  
 				"message": "Forbidden",  
 				"path": "/test/admin"  
-			}		  
-		  
+			}  
+  
 		3-3. sungchul 계정이 아닌 admin 계정으로 실행  
 			curl -X POST "http://localhost:8080/auth/realms/demo/protocol/openid-connect/token" ^  
 			--header "Content-Type:application/x-www-form-urlencoded" ^  
@@ -301,7 +288,7 @@ categories: Keycloak
   
 			액세스 토큰 : eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPdGViQldzSmdhRWozeXVaMGZlbTVWclFmbkZpcDlLczE5aVN6anBybGw0In0.eyJleHAiOjE2NDQ0MzAxMTMsImlhdCI6MTY0NDM5NDExMywianRpIjoiNjAxMTIyYWQtOTBmMi00ODcxLThkZTYtYWMxMjY1YmIyNTlmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RlbW8iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZDNhY2E5NDktODk1My00OGM5LTgxMDgtNzBhNTYxMjVmZjJkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXlfY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjMyYzFmMTQ3LTIyMTgtNGU1Ni1iNWVlLWVkZjg4NGVkZGQyYiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1kZW1vIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibXlfY2xpZW50Ijp7InJvbGVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfQURNSU4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjMyYzFmMTQ3LTIyMTgtNGU1Ni1iNWVlLWVkZjg4NGVkZGQyYiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.XnyBmkXtVUjaRUaOd4xRZXwMXS2iPHOzTnCefF7qJoDZ595wMgZ3ae4ZTcEl6OFau0_qcSHoiSwoDNklvflURUE1aZ0voJImLPkXYbTkjYnepjlYVmve5PTHwclpDBvRHQhNsbn-yV9wLpA9uqlamKgu3PlYK8iRhSpLYjBvTTEIxCm1a4IKqRJIp4Z9Xg7k6YTqqt-I0d39BpUQ8Y8vdcaVwcHxkFmPYU6-TuRm8qolumnKR2k4znCvn145cucKyPc5dH2ExO4o2Rc0AL2ttS9O7lQeMJwpL330h04CDlIQAOTYgWoQWj6lFEG1fnXh9eaUmpdndYhrxF2XlCguYA  
   
-		3-4. postman 으로 실행   
+		3-4. postman 으로 실행  
 			Get : http://localhost:9999/test/admin  
 			Headers  
 				key : Authorization  
@@ -309,20 +296,9 @@ categories: Keycloak
   
 			- 성공  
   
-  
 	4. curl -X GET "http://localhost:9999/test/user"  
-		-성공   
+		-성공  
 			3번 항목에서 발급받은 토큰을 사용하여 테스트  
-		  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 토큰 요청  
   
@@ -333,6 +309,5 @@ curl -X POST "http://localhost:8080/auth/realms/demo/protocol/openid-connect/tok
 --data-urlencode "client_secret=JBFLaz1mgZKPwYNqE9Tfyf0c3b2mnkOl" ^  
 --data-urlencode "username=sungchul" ^  
 --data-urlencode "password=admin"  
-  
   
 {% endraw %}

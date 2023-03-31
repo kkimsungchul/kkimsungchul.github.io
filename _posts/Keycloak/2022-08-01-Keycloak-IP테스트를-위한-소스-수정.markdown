@@ -8,14 +8,12 @@ categories: Keycloak
 {% raw %}  
 암호화 테스트  
   
-  
-클라이언트   
--> account   
--> Authentication Flow Overrides   
--> Browser Flow   
--> decrypt password   
+클라이언트  
+-> account  
+-> Authentication Flow Overrides  
+-> Browser Flow  
+-> decrypt password  
 저장  
-  
   
 외부에서 로컬들어오기  
   

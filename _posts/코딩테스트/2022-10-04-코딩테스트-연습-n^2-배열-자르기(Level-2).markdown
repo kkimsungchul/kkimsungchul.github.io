@@ -26,7 +26,6 @@ n	left	right	result
 3	2	5	[3,2,2,3]  
 4	7	14	[4,3,3,3,4,4,4,4]  
   
-  
 ======================================================================================================  
 import java.util.*;  
   
@@ -38,7 +37,7 @@ class Solution {
         long temp=0;  
         left = left+1;  
         right = right+1;  
-          
+  
         for(long i=left;i<=right;i++){  
             if(i%n==0){             //i를n으로 나눴을때 나머지가 0이라면  
                 temp=n;             //temp 는 0  
@@ -51,13 +50,10 @@ class Solution {
             answer[index]=(int)temp;  
             index++;  
         }  
-          
-          
+  
         return answer;  
     }  
 }  
-  
-  
   
 - 오답 메모리 초과  
 ======================================================================================================  
@@ -73,7 +69,7 @@ class Solution {
         //2차원 배열 생성  
         for(int i=0;i<twoDimensionalArray.length;i++){  
             for(int j=0;j<twoDimensionalArray.length;j++){  
-                  
+  
                 //해당입력의 규칙은 2차원배열의 index 중 큰수에+1을 하면 일치함  
                 //ex) [0,2] [2,0] [2,1] [2,2] 에는 3이들어가고  
                 //[1,0] [1,1] [0,1] 에는 2가 들어감  
@@ -84,7 +80,7 @@ class Solution {
                 }else{  
                     twoDimensionalArray[i][j] = i+1;  
                 }  
-                  
+  
                 //count 가 left와 right 범위에 있다면, 바로전에 생성한 값을 리턴할 배열에 넣어줌  
                 //index는 0부터 시작해서 아래의 if문을 탈때만 추가함  
                 if(left<=count&& count<=right){  
@@ -97,7 +93,7 @@ class Solution {
                 }  
                 //count 를 생성하여, 순차적으로 배열에 값을 넣을때마다 증가시킴  
                 count++;  
-                  
+  
             }  
         }  
         //출력테스트  
@@ -107,7 +103,7 @@ class Solution {
             }  
             System.out.println();  
         }  
-          
+  
         return answer;  
     }  
 }  

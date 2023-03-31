@@ -7,17 +7,16 @@ categories: JAVA&Spring
 ---  
 {% raw %}  
 [JAVA] Stream 사용하기(스트림)- 4. 리스트 비교하기  
-	  
+  
 	https://kyhyuk.tistory.com/m/184  
 	사용하게된 이유는 두개의 리스트를 비교해서 DB에 Insert Update Delete 를 해줘야함  
 		※ 없으면 insert , 변경되었으면 update , 제거되었으면 delete  
 	newList는 신규 데이터 리스트,  
 	oldList는 기존 DB에 있는 데이터 리스트  
   
-	  
 # 소스코드  
   
-	=================================================================================================================	  
+	=================================================================================================================  
 	package com.sungchul;  
   
 	import java.util.ArrayList;  
@@ -46,7 +45,7 @@ categories: JAVA&Spring
 			Stream.of(newList).forEach(System.out::println);  
   
 			//seq만을 가져와서 비교, oldList만 존재하는 데이터  
-			List<TestVO> noneMatchList = oldList.stream()   
+			List<TestVO> noneMatchList = oldList.stream()  
 					.filter(n -> newList.stream()  
 							.noneMatch(o -> n.getSeq() == o.getSeq()))  
 					.collect(Collectors.toList());  

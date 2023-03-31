@@ -11,15 +11,12 @@ categories: Docker
   
 	도커 컨테이너를 실행해서 Nginx 를 띄어볼려고함  
   
-  
-  
 1. 웹브라우저에서 아래의 URL 접속  
 	http://127.0.0.1:4567/  
-	  
+  
 	- 사이트에 연결할 수 없음이 표시됨  
   
 2. Windows Terminal 실행  
-	  
   
 3. 도커 실행 상태 확인  
 	wsl -l -v  
@@ -38,7 +35,7 @@ categories: Docker
   
 8. 도커 컨테이너 삭제  
 	docker rm -f 1e900b8ddd3f  
-	  
+  
 	※ 컨테이너 아이디는 docker ps 명령어로 가져온 아이디를 적어주면 됨  
-	  
+  
 {% endraw %}

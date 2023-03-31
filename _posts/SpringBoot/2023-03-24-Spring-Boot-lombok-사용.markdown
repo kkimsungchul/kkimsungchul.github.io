@@ -12,7 +12,6 @@ categories: SpringBoot
 	getter , setter , tostring 등을 만들지 않아도 됨  
 	여러가지 기능이 있으나 현재는 위에의 기능만 사용함  
   
-  
 # 그래들에 롬북 추가  
   
 	build.gradle 파일을 열어서 dependencies에 아래의 내용을 추가  
@@ -22,7 +21,7 @@ categories: SpringBoot
   
 		testCompileOnly 'org.projectlombok:lombok:1.18.20'  
 		testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'  
-	  
+  
 	※ 추가 예시  
 	=====================================================================================================================================================  
   
@@ -43,34 +42,29 @@ categories: SpringBoot
 	=====================================================================================================================================================  
   
 # 인텔리J 플러그인 추가  
-	  
+  
 	1. 컨트롤 + 알트 + S 동시에 입력 ( 인텔리J 설정창)  
 	2. 좌측에서 Plugins 선택  
 	3. 검색창에 Lombok 검색  
 	4. 설치 후 인텔리J 재시작  
   
-	  
 # 사용하기  
   
 	1. 생성한 VO의 클래스명 상단에 @Data 를 선언  
 	2.import 는 import lombok.Data;  
-	  
+  
 	=====================================================================================================================================================  
 		@Data  
 		public class UserVO {  
   
 			private String dept_name;            //웹에서 받아온 부서명  
   
-  
 	=====================================================================================================================================================  
   
 	* 해당 라이브러리 사용시 getter , setter , toString 을 만들 필요가 없음  
   
-  
-  
-  
 # Builder 사용  
-	  
+  
 	보통 셋 해서 작성할때  
 	Class class = new Class();  
 	class.setName("값");  
@@ -82,9 +76,8 @@ categories: SpringBoot
 		.name(name)  
 		.age(age)  
 		.build();  
-	  
-	위와같이 사용이 가능함.  
   
+	위와같이 사용이 가능함.  
   
 # 롬북 안될떄  
   
@@ -107,9 +100,8 @@ categories: SpringBoot
   
 		밑져야 본전이라는 생각에 이젠 반쯤 자포자기한 심정으로 바꿔주고... gradle refresh 해주고,,, 또 죄없는 intelliJ만 껐다가 켰지만 역시나 해결되지 않았다.  
   
-	  
 	4.VM Options 추가  
-		Build , Excution, Deployment -> compiler -> ActionScript & Flex Compiler   
+		Build , Excution, Deployment -> compiler -> ActionScript & Flex Compiler  
 		VM Options 에 javaagent:lombok.jar 추가  
 		https://stackoverflow.com/questions/24006937/lombok-annotations-do-not-compile-under-intellij-idea/30125507#30125507  
 		https://stackoverflow.com/questions/9424364/cant-compile-project-when-im-using-lombok-under-intellij-idea  

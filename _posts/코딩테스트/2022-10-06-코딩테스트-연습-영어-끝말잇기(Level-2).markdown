@@ -46,8 +46,6 @@ n	words	result
 입출력 예 #1  
 3명의 사람이 끝말잇기에 참여하고 있  
   
-  
-  
 ======================================================================================================  
 import java.util.*;  
   
@@ -61,9 +59,9 @@ class Solution {
         //contains  
         //add  
         for(int i=0; i<words.length;i++){  
-              
+  
             if(i!=0){  
-                  
+  
                 //중복된 단어를 얘기하는지 확인  
                 if(hashSet.contains(words[i])){  
                     answer[0] = userNumber;  
@@ -72,7 +70,7 @@ class Solution {
                 }else{  
                     hashSet.add(words[i]);  
                 }  
-                  
+  
                 //마지막 끝말잇기의 규칙이 맞는지 확인  
                 if(!lastChar.equals(words[i].substring(0,1))){  
                     answer[0] = userNumber;  
@@ -81,19 +79,19 @@ class Solution {
                 }else{  
                     lastChar = words[i].substring(words[i].length()-1);  
                 }  
-                  
-            //맨처음일때      
+  
+            //맨처음일때  
             }else{  
                 lastChar = words[i].substring(words[i].length()-1);  
                 hashSet.add(words[i]);  
             }  
-              
+  
             userNumber++;  
             if(userNumber>n){  
                 userNumber=1;  
                 loopCount++;  
             }  
-              
+  
         }  
   
         return answer;  

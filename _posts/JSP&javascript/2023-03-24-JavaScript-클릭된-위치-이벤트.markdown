@@ -8,7 +8,6 @@ categories: JSP&javascript
 {% raw %}  
 [ 클릭한 위치 이벤트 ]  
   
-  
 # 전체 페이지에서 좌표 가져오기  
   
 	자바스크립트에서 마우스로 클릭한 위치를 찾아야 할 때가 있음  
@@ -23,7 +22,6 @@ categories: JSP&javascript
   
 	=================================================================================================================  
   
-  
 # 현재 표시되는 화면에서만 좌표 가져오기  
   
 	event.clientX, event.clientY는 브라우저 클라이언트 영역의 좌측상단을 기준으로 측정된 좌표이며  
@@ -36,7 +34,5 @@ categories: JSP&javascript
 	이를 일치시키려면 클라이언트 좌표에 스크롤 된 양을 더해서 계산에 포함시켜야 함  
 	document.getElementById(obj).style.left = event.clientX + document.body.scrollLeft + ‘px’;  
 	document.getElementById(obj).style.top = event.clientY + document.body.scrollTop + ‘px’;  
-  
-  
   
 {% endraw %}

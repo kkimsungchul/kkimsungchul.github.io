@@ -19,7 +19,7 @@ categories: Git
 # 사용자 이름 변경  
   $git config --global user.name 변경할 이름  
   ex) git config --global user.name 김성철  
-   
+  
 # 사용자 이메일 변경  
   $git config --global user.email 변경할 이메일  
   ex_ git config --global user.email kimsc1218@gmail.com  

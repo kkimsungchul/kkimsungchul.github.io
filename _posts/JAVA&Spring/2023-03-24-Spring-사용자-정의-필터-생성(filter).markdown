@@ -7,42 +7,35 @@ categories: JAVA&Spring
 ---  
 {% raw %}  
 [ web.xml 에 사용자 정의 필터 삽입 ]  
-	  
+  
 	참고 URL : https://jwchoi85.tistory.com/54  
 			https://m.blog.naver.com/PostView.nhn?blogId=tyboss&logNo=70048135045&proxyReferer=https%3A%2F%2Fwww.google.com%2F  
 			https://m.blog.naver.com/PostView.nhn?blogId=weekamp&logNo=220458872665&proxyReferer=https%3A%2F%2Fwww.google.com%2F  
-			  
+  
 			* 필터 설명  
 			https://jun-itworld.tistory.com/28  
-			  
+  
 			* 필터 순서  
 			https://dololak.tistory.com/599  
-  
   
 XSS 필터 작성  
 #################################################################################################################  
   
 	# 사용자 정의 필터 작성  
-		  
+  
 		사용자 정의 필터를 만들때는 Filter 를 구현해야 함  
 		init , doFilter, destroy 세개를 작성해야 함  
 		init 에서 사용하는 Request 와 Response 의 경우에는 servletRequest, ServletResponse 임 (HttpServletRequest 가 아님)  
-  
   
 		필터 파일에서 chain.doFilter() 에 매게변수로 넣어주는 값중 첫번째는 직접 구현해서 만든 필터파일이며, HttpServletRequestWrapper 클래스를 상속받아서 구현하되, 넘겨주는 변수타입은  
 		HttpServletRequest 임  
   
 		두번째 매게변수로는 ServletResponse 를 넣어주면 됨  
   
-  
 		아래의 메소드들을 구현하면 됨  
 		public String[] getParameterValues(String parameter) {}  
 		public String getParameter(String parameter) {}  
 		public String getHeader(String name) {}  
-  
-  
-  
-  
   
 		# XSS 필터로 사용할 자바파일 작성  
   
@@ -59,7 +52,6 @@ XSS 필터 작성
 		import javax.servlet.ServletRequest;  
 		import javax.servlet.ServletResponse;  
 		import javax.servlet.http.HttpServletRequest;  
-  
   
 		public class FilterTest implements Filter {  
   
@@ -81,18 +73,13 @@ XSS 필터 작성
 			}  
 		}  
   
-  
-  
 		=================================================================================================================  
-  
-  
   
 		# XSS 필터를 작성  
   
 		=================================================================================================================  
   
 		package securus.common.util;  
-  
   
 		import javax.servlet.http.HttpServletRequest;  
 		import javax.servlet.http.HttpServletRequestWrapper;  
@@ -148,24 +135,18 @@ XSS 필터 작성
 			}  
 		}  
   
-  
 		=================================================================================================================  
   
 #################################################################################################################  
   
-  
-  
 CilckJackFilter 필터 작성  
 #################################################################################################################  
-  
-  
   
 	# 클릭재킹 취약점에서 사용할 필터를 작성  
 	=================================================================================================================  
 	import javax.servlet.*;  
 	import javax.servlet.http.HttpServletResponse;  
 	import java.io.IOException;  
-  
   
 	/**  
 	 * Created by kimsc on 2019-02-20.  
@@ -204,22 +185,13 @@ CilckJackFilter 필터 작성
 	}  
 	=================================================================================================================  
   
-  
-  
-  
-  
 #################################################################################################################  
-  
-  
-  
-  
   
 #################################################################################################################  
   
 # web.xml 에 필터 등록  
   
 	* 필터는 web.xml 에 기재해논 순서대로 작동함 위에서 부터 아래로 <filer-mapping> 의 순서대로 진행하게 되어있음  
-  
   
 	=================================================================================================================  
   
@@ -232,8 +204,6 @@ CilckJackFilter 필터 작성
 		<filter-name>FilterTest</filter-name>  
 		<url-pattern>/*</url-pattern>  
 	</filter-mapping>  
-	  
-  
   
     <!-- Clickjacking Start-- -->  
     <filter>  
@@ -249,7 +219,6 @@ CilckJackFilter 필터 작성
         <url-pattern>*.do</url-pattern>  
     </filter-mapping>  
     <!-- Clickjacking End -->  
-	  
   
 =================================================================================================================                                                                                                                                                                                                                            
 {% endraw %}

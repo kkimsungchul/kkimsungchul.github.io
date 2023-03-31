@@ -14,7 +14,6 @@ categories: JAVA&Spring
   
 	그리고 파일 업로드시에는 최상단에 YMAL 태그가 삽입이 되어있어야 해서 아래의 공통모듈을 만들어서 업로드에 사용하였음  
   
-  
 # Main 클래스  
 	=================================================================================================================  
 	package com.main;  
@@ -52,8 +51,6 @@ categories: JAVA&Spring
   
 	//        fileUtilClass.insertYmlTag(null);  
   
-  
-  
 			System.out.println("## 파일 전체 탐색 시작");  
 			dirList = fileUtilClass.getDirList(path);  
 			targetDirList = fileUtilClass.getDirList(targetPath);  
@@ -70,7 +67,6 @@ categories: JAVA&Spring
 				fileList.addAll(fileUtilClass.getFilePathAndNameList(tempPath));  
 			}  
   
-  
 			System.out.println("## 파일 전체 출력");  
 			for(String fileName : fileList){  
 				System.out.println(fileName);  
@@ -82,7 +78,6 @@ categories: JAVA&Spring
   
 			}  
   
-  
 			System.out.println("## 파일의 모든 정보 출력");  
 			for(String dirName : dirList){  
 				tempPath = path+"\\"+dirName;  
@@ -93,18 +88,14 @@ categories: JAVA&Spring
 				System.out.println(map);  
 			}  
   
-  
 			//모든 파일 정보 fileAttributeList  
 			//모든 디렉토리 정보 dirList  
-  
   
 			System.out.println("## 블로그 폴더 전체 삭제");  
 			for(String targetDirName : targetDirList){  
 				blogDeleteDirPath = targetPath+"\\"+targetDirName;  
 				fileUtilClass.deleteDirectoryAndFile(blogDeleteDirPath);  
 			}  
-  
-  
   
 			System.out.println("## 블로그 폴더에 디렉토리 생성");  
 			for(String dirName : dirList){  
@@ -143,10 +134,8 @@ categories: JAVA&Spring
 	import java.nio.file.*;  
 	import java.util.*;  
   
-  
 	//파일유틸  
 	public class FileUtilClass {  
-  
   
 		/**  
 		 * 디렉토리 탐색  
@@ -169,8 +158,6 @@ categories: JAVA&Spring
 			return dirList;  
 		}  
   
-  
-  
 		/**  
 		 * 파일명 가져오기, txt , markdown 확장자만 가져옴  
 		 * @param directory 디렉토리 경로  
@@ -186,9 +173,6 @@ categories: JAVA&Spring
 			}  
 			return files;  
 		}  
-  
-  
-  
   
 		/**  
 		 * 절대경로+파일명 가져오기  
@@ -237,8 +221,6 @@ categories: JAVA&Spring
 			}  
 			return fileAttributeList;  
 		}  
-  
-  
   
 		/**  
 		 * 디렉토리 생성  
@@ -295,7 +277,6 @@ categories: JAVA&Spring
 			return newFilePath;  
 		}  
   
-  
 		/**  
 		 * 파일명 변경, 블로그에 맞는 템플릿 파일명으로 변경  
 		 * @param fileName 파일명  
@@ -337,7 +318,7 @@ categories: JAVA&Spring
 				}  
 			}  
 		}  
-		  
+  
 		/**  
 		 * 파일 인코딩 타입 확인  
 		 * @param file 타입을 확인할 파일  
@@ -359,15 +340,13 @@ categories: JAVA&Spring
 			return encoding == null?"UTF-8":encoding;  
 		}  
   
-  
 	//{  
 	// path=C:\Users\USER\Desktop\kimsc\0.깃허브-개발공부\Vue\[Vue] 파일 업로드.txt,  
-	// fileName=[Vue] 파일 업로드.txt,   
-	// lastModifiedTime=2023-03-24T10:38:38.66808Z,   
-	// targetDirPath=C:\IntellijProject\kkimsungchul.github.io\_posts\Vue,   
+	// fileName=[Vue] 파일 업로드.txt,  
+	// lastModifiedTime=2023-03-24T10:38:38.66808Z,  
+	// targetDirPath=C:\IntellijProject\kkimsungchul.github.io\_posts\Vue,  
 	// newFilePath=C:\IntellijProject\kkimsungchul.github.io\_posts\Vue\2023-03-24-Vue-파일-업로드.markdown  
 	// }  
-  
   
 		/**  
 		 * Github에 업로드할 파일에 yaml 태그 입력  
@@ -384,7 +363,6 @@ categories: JAVA&Spring
 				lines.add(0,createYmlTagMap.get("title"));  
 				lines.add(0,"layout: post");  
 				lines.add(0,"---");  
-  
   
 				File file = new File(createYmlTagMap.get("filePath"));  
 				FileWriter fileWriter = new FileWriter(file);  
@@ -422,7 +400,6 @@ categories: JAVA&Spring
   
 			title = title + "\"" +fileMap.get("fileName").toString().replaceAll(".txt","")+"\"";  
   
-  
 			date = date + fileMap.get("lastModifiedTime").toString().replaceAll("T"," ");  
 			date = date.substring(0,25) + " +0900";  
 			//2019-03-26T08:06:08Z  
@@ -430,7 +407,6 @@ categories: JAVA&Spring
 			String[] temp = fileMap.get("targetDirPath").toString().split("\\\\");  
 			categories = categories + temp[temp.length-1].replaceAll(" ","");  
 			//categories = categories + fileMap.get("fileName").toString().substring(fileMap.get("fileName").toString().indexOf("\\[")+2,fileMap.get("fileName").toString().indexOf("]")).replaceAll(" ","");  
-  
   
 			String tempSubtitle = fileMap.get("fileName").toString();  
 			subtitle = subtitle + title.replaceAll("\\[","").replaceAll("]","").replaceAll("title:","").trim();  
@@ -445,8 +421,6 @@ categories: JAVA&Spring
 			return createYmlTagMap;  
   
 		}  
-  
-  
   
 	}  
 	=================================================================================================================  

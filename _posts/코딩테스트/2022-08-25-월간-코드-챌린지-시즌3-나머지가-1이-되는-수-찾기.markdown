@@ -24,19 +24,18 @@ n	result
   
 12를 11로 나눈 나머지가 1이고, 11보다 작은 자연수 중에서 문제의 조건을 만족하는 수가 없으므로, 11을 return 해야 합니다.  
   
-  
 class Solution {  
     public int solution(int n) {  
         int answer = 0;  
         for(int i=2;i<n;i++){  
-              
+  
             if(n%i==1){  
                 answer=i;  
                 break;  
             }  
-              
+  
         }  
-          
+  
         return answer;  
     }  
 }  

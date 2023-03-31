@@ -10,7 +10,6 @@ categories: JAVA&Spring
   
 	https://kadosholy.tistory.com/126  
   
-  
 # Server 코드  
   
 	=================================================================================================================  
@@ -45,7 +44,6 @@ categories: JAVA&Spring
 					System.out.println("Client connection waiting");  
 					socket = serverSocket.accept();  
   
-  
 					ReceiveThread receiveThread = new ReceiveThread(socket);  
 					receiveThread.start();  
   
@@ -63,13 +61,11 @@ categories: JAVA&Spring
 						System.out.println("Server socket error");  
 					}  
   
-  
 				}  
 			}  
   
 		}  
 	}  
-  
   
 	class ReceiveThread extends Thread {  
   
@@ -128,13 +124,9 @@ categories: JAVA&Spring
 			}  
 		}  
   
-  
 	}  
   
-  
 	=================================================================================================================  
-  
-  
   
 # Client 코드  
   
@@ -186,7 +178,6 @@ categories: JAVA&Spring
 		}  
 	}  
   
-  
 	class SendThread extends Thread {  
 		Socket socket = null;  
 		String name;  
@@ -202,7 +193,6 @@ categories: JAVA&Spring
 		public void run(){  
 			try{  
   
-  
 				//최초 1회 사용자의 이름을 서버에 전송  
 				PrintStream out = new PrintStream(socket.getOutputStream());  
 				out.println(name);  
@@ -216,14 +206,13 @@ categories: JAVA&Spring
 					if("exit".equalsIgnoreCase(outputMessage)){  
 						break;  
 					}  
-					  
+  
 				}  
   
 			}catch (Exception e){  
 				e.printStackTrace();  
 			}  
 		}  
-  
   
 	}  
 	=================================================================================================================  

@@ -12,8 +12,6 @@ categories: IDE
 		오류가 나는 버전을 위에서 다운받으면됨, 6.7버전이 없어서 다운받은거고  
 		그외에 버전은 gradle-6.7-all.zip 에서 버전에 맞게 숫자바꾸면됨  
   
-  
-  
 # 오류 발생  
 	The specified Gradle distribution 'https://services.gradle.org/distributions/gradle-6.7-all.zip' does not exist.  
   
@@ -21,16 +19,15 @@ categories: IDE
   
 #  해결방안 1  
 	오류에서 찾지 못하는 그래들 버전을 미리 다운로드 받아 놓아야함  
-	  
   
 	1. 인텔리J 에서 Gradle 의 서비스 디렉토리경로를 확인  
-		File   
-		-> Settings   
+		File  
+		-> Settings  
 		-> build, Execution,Depoloyment  
 		-> Gradle 클릭  
 		-> 해당 화면에서 Service directory path 에 적혀있는 경로 확인  
 			ex) C:/Users/USER/.gradle  
-	  
+  
 	2. 해당 경로로 이동  
 		C:/Users/USER/.gradle/  
 	3. 해당경로에서 아래의 경로로 추가 이동  
@@ -42,26 +39,22 @@ categories: IDE
 			gradle-5.6.4-all  
 			gradle-5.6.4-bin  
 			gradle-6.7-all  
-			gradle-6.7-bin   
+			gradle-6.7-bin  
 		등 다양하게 있음  
   
 	5. 툴로 돌아와서 재실행  
-  
   
 # 해결방안 2  
   
 	1. 오류 발생한 버전을 내려받음  
   
-	2. 프로젝트경로에서   
+	2. 프로젝트경로에서  
 		gradle/wrapper 경로 밑에 dists 폴더 생성  
-	  
+  
 	3. 생성한 dists 폴더에 다운받은 gradle.zip 파일을 추가  
   
 	4. gradle-wrapper.properties 설정파일을 열어서 gradle 경로 수정  
 		#distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-all.zip  
 		distributionUrl=dists/gradle-6.7-all.zip  
   
-  
-  
-	  
 {% endraw %}

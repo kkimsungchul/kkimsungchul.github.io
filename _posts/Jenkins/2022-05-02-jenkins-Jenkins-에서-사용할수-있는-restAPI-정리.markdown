@@ -7,8 +7,7 @@ categories: Jenkins
 ---  
 {% raw %}  
 [ Jenkins API 정리 ]  
-	  
-	  
+  
 	API url 호출  
 	기본적인 URL 형식은 아래와 같습니다.  
 	http://[jenkins url]/[원하는 경로]/[api]/[Action]?[Condition]  
@@ -34,10 +33,8 @@ categories: Jenkins
 		[GET] http:// [jenkins url] / job / [JOBNAME] / lastStableBuild / cobertura / api / json  
 		[GET] http:// [jenkins url] / job / [JOBNAME] / lastStableBuild / checkstlyaresult / api / json  
 		[GET] http:// [jenkins url] / job / [JOBNAME] / lastStableBuild / testReport / api / json  
-	  
   
 	※ 출처: https://tomining.tistory.com/148 [마이너의 일상]  
-  
   
 	- job 삭제  
 		[GET] http:// [jenkins url] / job / [JOBNAME] / doDelete  
@@ -45,10 +42,9 @@ categories: Jenkins
 	- job 빌드 로그  
 		[GET] http:// [jenkins url] / job / [JOBNAME] / lastBuild / lotText / progressiveText  
 		[GET] http:// [jenkins url] / job / [JOBNAME] / [build number] / lotText / progressiveText  
-		  
+  
 	- 이름변경  
 		http:// [jenkins url] / job / [JOBNAME] / doRename?newName=[RENAME]  
-  
   
 # Blue ocean API  
 	https://github.com/jenkinsci/blueocean-plugin/tree/master/blueocean-rest  
@@ -56,15 +52,11 @@ categories: Jenkins
 	- build list  
 		https://jenkins.sungchul.com/blue/rest/organizations/jenkins/pipelines/sungchulJenkinsFolder/sungchulJob1/runs/?start=0&limit=26  
 		start , limit 로 시작위치와 가져올 갯수를 지정할 수 있음 (내림차순)  
-	  
+  
 	- build log  
 		https://jenkins.sungchul.com/blue/rest/organizations/jenkins/pipelines/sungchulJenkinsFolder/pipelines/sungchulJob1/runs/47/nodes/29/steps/33/log/  
-		  
-  
   
 # Jenkins API  
 	http://cdancy.github.io/jenkins-rest/docs/javadoc/com/cdancy/jenkins/rest/features/JobsApi.html  
-	  
-	  
   
 {% endraw %}

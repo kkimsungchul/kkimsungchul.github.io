@@ -17,7 +17,7 @@ categories: Keycloak
 # 키클락 모듈 설정  
 	※ 기존의 암호화모듈과 같은 "Authenticator" 클래스를 구현해야하므로,  
 	기존 암호화 모듈에서 아래의 내용만 수정함.  
-	참고파일 :   
+	참고파일 :  
 		[Keycloak] Keycloak 암호화 적용하기.txt  
   
 	=================================================================================================================  
@@ -37,8 +37,6 @@ categories: Keycloak
   
 	=================================================================================================================  
   
-  
-  
 # 로그인 페이지 수정 (기존 테마 수정)  
   
 	경로 : C:\Users\USER\Desktop\kimsc\개발\keycloak-16.1.1\keycloak-16.1.1\themes\base\login  
@@ -56,10 +54,9 @@ categories: Keycloak
 # 로그인 페이지 수정 (새로운 테마로 적용)  
   
 	※ 키클락 설정에서도 로그인 테마를 수정 할 수 있는 부분이 있음  
-		기존파일을 수정하지않고, 새로운 테마로 사용할 경우   
+		기존파일을 수정하지않고, 새로운 테마로 사용할 경우  
 		http://localhost:8080/auth/admin/master/console/#/realms/demo/theme-settings  
-		  
-	  
+  
 	- 키클락 테마 페이지에 파일 생성  
 		경로 : C:\Users\USER\Desktop\kimsc\개발\keycloak-16.1.1\keycloak-16.1.1\themes  
 		폴더명 : custom  
@@ -70,14 +67,10 @@ categories: Keycloak
 		1. 테마를 변경하려는 realms를 선택  
 		2. Realm Settings 페이지에서 theme 선택  
 		3. 해당페이지에서 테마들을 custom 으로 변경  
-		  
-  
-  
   
 # 라이브러리 배포  
 	경로 : C:\Users\USER\Desktop\kimsc\개발\keycloak-16.1.1\keycloak-16.1.1\standalone\deployments  
 	위의 경로에 키클락 모듈을 업로드함  
-  
   
 # 키클락 세팅  
   
@@ -90,13 +83,13 @@ categories: Keycloak
   
 		2. 로그인 후 Demo realms을 선택  
 			http://localhost:8080/auth/admin/master/console/#/realms/demo  
-		  
+  
 		3. 좌측의 authentication 메뉴 진입  
 			http://localhost:8080/auth/admin/master/console/#/realms/demo/authentication/flows  
   
 		4. flows 에서 "browser" 를 카피하여 편한 이름으로 생성  
 			Copy of browser and Decrypt Password  
-		  
+  
 		5. Browser - Conditional OTP 삭제  
   
 		6. "Copy Of Browser And Decrypt Password Forms " 이름의 auth Type 에서 Actions 을 클릭하여  
@@ -110,9 +103,8 @@ categories: Keycloak
 		http://localhost:8080/auth/admin/master/console/#/realms/demo/clients  
   
 	2. settings 탭의 제일 하단 " Authentication Flow Overrides"에서 Browser Flow 와 Direct Grant Flow 를  
-		아까 생성한 "Copy Of Browser And Decrypt Password Forms"로 변경   
-	  
-	  
+		아까 생성한 "Copy Of Browser And Decrypt Password Forms"로 변경  
+  
 # 로그인 시도  
   
 	URL : http://localhost:8080/auth/realms/demo/account/#/  
@@ -121,9 +113,7 @@ categories: Keycloak
 	IP는 잘찍힘.  
 	다만 로그인로직쪽에서 오류가 발생하는데, 이부분은 키클락 세팅부분에서 오류가 발생하는것 같음  
   
-  
 # CMD로 로그인 테스트  
-  
   
 curl -X POST "http://localhost:8080/auth/realms/demo/protocol/openid-connect/token" ^  
 --header "Content-Type:application/x-www-form-urlencoded" ^  

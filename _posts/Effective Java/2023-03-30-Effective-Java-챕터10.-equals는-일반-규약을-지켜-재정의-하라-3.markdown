@@ -6,11 +6,10 @@ date: 2023-03-30 07:41:11 +0900
 categories: EffectiveJava  
 ---  
 {% raw %}  
-# Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -3   
-	  
+# Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -3  
+  
 	지금까지의 내용을 종합해서 양질의 equals 메소드를 구현하는 방법을 정리하면 아래와 같다.  
   
-		  
 		1. == 연사자를 사용해 입력이 자기 자신의 참조인지 확인한다.  
 			자기 자신이면 true를 반환한다.  
 			이는 단순한 성능 최적화용으로, 비교 작업이 복잡한 상황일 때 값어치를 한다.  
@@ -29,7 +28,6 @@ categories: EffectiveJava
 			2단계에서 인터페이스를 사용했다면 입력의 필드 값을 가져올 때도 그 인터페이스의 메서드를 사용해야 한다.  
 			타입이 클래스라면 접근권한테 따라 해당 필드에 직접 접근할 수도 있다.  
   
-	  
 	float 와 double을 제외한 기본 타입 필드는 == 연산자로 비교하고,  
 	참조 타입 필드는 각각의 equals 메소드로, float 와 double 필드는 각각 정적 메서드인 Float.compare(float , float) 와 Double.compare(double ,double) 로 비교한다.  
 	float와 double을 특별 취급하는 이유는 Float.NaN , -0.0f , 특수한 부동소수 값등을 다뤄야 하기 때문이다.  
@@ -41,7 +39,7 @@ categories: EffectiveJava
 	이런 필드는 정적 메소드인 Objects.equals(object , object)로 비교해 NullPointerException 발생을 예방하자.  
   
 	앞서의 CaseInsensitiveString 예처럼 비교하기가 아주 복잡한 필드를 가진 클래스도 있다.  
-	이럴 때는 그 필드의 표준형(canonical form)을 저장해둔 후 표준형끼리 비교하면 훨씬 경제적이다. 이 기법은 특히 불변클래스에 제격이다.   
+	이럴 때는 그 필드의 표준형(canonical form)을 저장해둔 후 표준형끼리 비교하면 훨씬 경제적이다. 이 기법은 특히 불변클래스에 제격이다.  
 	가변 객체라면 값이 바뀔 때마다 표준형을 최신 상태로 갱신해줘야 한다.  
   
 	어떤 필드를 먼저 비교하느냐가  equals의 성능을 좌우하기도 한다.  
@@ -55,15 +53,14 @@ categories: EffectiveJava
 		- 대칭적인가?  
   
 		- 추이성이 있는가?  
-		  
-		- 일관적인가?  
-	  
-	반사성과 null-아님 조건도 만족해야 하지만 이 둘이 문제되는 경우는 별로없다.  
   
+		- 일관적인가?  
+  
+	반사성과 null-아님 조건도 만족해야 하지만 이 둘이 문제되는 경우는 별로없다.  
   
 	마지막 주의사항으로는  
 		- equals 를 재정의 할 땐 hashCode 도 반드시 재정의 하자  
-		  
+  
 		- 너무 복잡하게 해결하려 들지 말자  
 			필드들의 동치성만 검사해도 equals 규약을 어렵지 않게 지킬 수 있다.  
 			오히려 너무 공격적으로 파고들다가 문제를 일으키기도 한다.  
@@ -79,25 +76,19 @@ categories: EffectiveJava
 				}  
 				=================================================================================================================  
 			위 메소드는 Object.equals를 재정의 한게 아닌 다중정의 한 것이다.  
-			  
+  
 			기본 equals를 그대로 둔 채로 추가한 것일지라도, 이처럼 타입을 구체적으로 명시한 equals 는 오히려 해가 된다.  
 			@Override 어노테이션의 오류를 내게 하고 보안측면에서도 잘못된 정보를 준다.  
   
-	  
 	equals(hashCode포함)를 작성하고 ㅔㅌ스트 하는 일은 지루하고 이를테스트 하는 코드도 항상 뻔하다.  
 	다행이 이 작업을 대신해줄 오픈소스가 있으니, 바로 구글이 만든 AutoValue 프레임워크다.  
-	클래스에 어노테이션 하나만 추가하면 AutoValue가 이 메소드들을 알아서 작성해주며,   
+	클래스에 어노테이션 하나만 추가하면 AutoValue가 이 메소드들을 알아서 작성해주며,  
 	해당 어노테이션을 추가하면 개발자가 직접 작성하는 것과 근본적으로 똑같은 코드를 만들어 준다.  
-  
-  
-  
   
 # 요약 정리  
 	꼭 필요한 경우가 아니면 equals 를 재정의 하지 말자  
 	많은 경우에 Object의 equals 가 원하는 비교를 정확히 수행해준다.  
 	재정의해야 할 때는 그 클래스의 핵심 필드 모두를 빠짐없이, 다섯 가지 규약을 확실히 지켜가며 비교해야 한다  
-  
-  
   
 # 테스로 작성한 equals 메소드 재정의와 테스트  
   
@@ -117,20 +108,17 @@ categories: EffectiveJava
 			System.out.println("### equalsTestVO1.equals(equalsTestVO2) : " + equalsTestVO1.equals(equalsTestVO2));  
 			System.out.println("### equalsTestVO3.equals(equalsTestVO4) : " + equalsTestVO3.equals(equalsTestVO4));  
 			System.out.println();  
-			  
+  
 			//아래에 테스트를 위해서 equals 메소드를 재정의 한 부분에서 userName 을빼보자  
-			//equalsTestVO2 와 equalsTestVO4 은 phone number는 같아도이름은 다르지만 같다고 나온다   
+			//equalsTestVO2 와 equalsTestVO4 은 phone number는 같아도이름은 다르지만 같다고 나온다  
 			System.out.println("### equalsTestVO1.equals(equalsTestVO3) : " + equalsTestVO1.equals(equalsTestVO3));  
 			System.out.println("### equalsTestVO2.equals(equalsTestVO4) : " + equalsTestVO2.equals(equalsTestVO4));  
-			  
+  
 		}  
   
 	}  
   
-  
 	=================================================================================================================  
-  
-  
   
 	테스트를 위한 equals 를 재정의한 EqualsTestVO 클래스  
 	=================================================================================================================  

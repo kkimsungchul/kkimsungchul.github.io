@@ -16,17 +16,15 @@ https://dev-jwblog.tistory.com/20
 	=================================================================================================================  
 	This problem's caused by a bug in Springfox. It's making an assumption about how Spring MVC is set up that doesn't always hold true. Specifically, it's assuming that MVC's path matching will use the Ant-based path matcher and not the PathPattern-based matcher. PathPattern-based matching has been an option for some time now and is the default as of Spring Boot 2.6.  
   
-	As described in Spring Boot 2.6's release notes, you can restore the configuration that Springfox assumes will be used by setting spring.mvc.pathmatch.matching-strategy to ant-path-matcher in your application.properties file. Note that this will only work if you are not using Spring Boot's Actuator. The Actuator always uses PathPattern-based parsing, irrespective of the configured matching-strategy. A change to Springfox will be required to if you want to use it with the Actuator in Spring Boot 2.6 and later.	  
-	  
-	  
-	=================================================================================================================  
+	As described in Spring Boot 2.6's release notes, you can restore the configuration that Springfox assumes will be used by setting spring.mvc.pathmatch.matching-strategy to ant-path-matcher in your application.properties file. Note that this will only work if you are not using Spring Boot's Actuator. The Actuator always uses PathPattern-based parsing, irrespective of the configured matching-strategy. A change to Springfox will be required to if you want to use it with the Actuator in Spring Boot 2.6 and later.  
   
+	=================================================================================================================  
   
 # swagger 라이브러리 추가  
-	  
+  
 	gradle 파일에 아래의 내용을 추가  
 	=================================================================================================================  
-      
+  
 	compile 'io.springfox:springfox-swagger2:2.9.2'  
     compile 'io.springfox:springfox-swagger-ui:2.9.2'  
   
@@ -51,10 +49,8 @@ https://dev-jwblog.tistory.com/20
   
 	=================================================================================================================  
   
-  
 # 접속  
 	http://localhost:8080/swagger-ui.html  
-  
   
 # 설명 적용  
   
@@ -99,7 +95,6 @@ https://dev-jwblog.tistory.com/20
   
 	=================================================================================================================  
   
-  
 # CSRF 토큰 컨트롤러 생성  
   
 	swagger 사용시 http://localhost:/csrf 404 오류메시지가 출력되어서 구현함  
@@ -115,7 +110,6 @@ https://dev-jwblog.tistory.com/20
   
 	import javax.servlet.http.HttpServletRequest;  
   
-  
 	//swagger 사용시 http://localhost:/csrf 404 오류메시지가 출력되어서 구현함  
 	//https://stackoverflow.com/questions/55582023/when-loading-the-swagger-ui-html-page-a-request-is-made-to-hostport-and-host  
 	@Controller  
@@ -128,17 +122,15 @@ https://dev-jwblog.tistory.com/20
   
 	=================================================================================================================  
   
-  
 # 오류발생  
   
 	Spring boot 2.6버전 이후에 spring.mvc.pathmatch.matching-strategy 값이 ant_apth_matcher에서 path_pattern_parser로 변경되면서 몇몇 라이브러리(swagger포함)에 오류가 발생  
-	  
   
 	-오류메시지  
 	=================================================================================================================  
 	org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException  
 	=================================================================================================================  
-	  
+  
 	- 조치방법  
 	application.properties 파일일 경우 아래의 옵션 추가  
 	=================================================================================================================  

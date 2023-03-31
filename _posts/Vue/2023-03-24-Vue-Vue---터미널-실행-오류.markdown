@@ -8,10 +8,8 @@ categories: Vue
 {% raw %}  
 [ Vue - 터미널 실행 오류 ]  
   
-  
 # 오류메시지  
-	vue : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\Users\USER\AppData\Roaming\npm\vue.ps1 파일을 로드할 수 없습니다.   
-  
+	vue : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\Users\USER\AppData\Roaming\npm\vue.ps1 파일을 로드할 수 없습니다.  
   
 # 윈도우 정책 확인  
   
@@ -23,7 +21,6 @@ categories: Vue
 	PS C:\Users\USER> Get-ExecutionPolicy  
 	Restricted  
 	=================================================================================================================  
-  
   
 # 윈도우 정책 변경  
   

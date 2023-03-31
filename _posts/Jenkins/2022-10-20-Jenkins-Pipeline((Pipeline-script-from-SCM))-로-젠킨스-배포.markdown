@@ -7,34 +7,33 @@ categories: Jenkins
 ---  
 {% raw %}  
 [Jenkins - Pipeline 배포하기 (Pipeline script from SCM)]  
-	  
+  
 	Pipeline script from SCM 을 사용하여 배포하기  
-	  
   
 # Pipeline 작성  
 	가. Pipeline 생성  
 		새로운 Item을 클릭하여 Pipeline 로 생성  
   
 	나. Pipeline 부분 설정  
-		1. Definition :   
+		1. Definition :  
 			Pipeline script from SCM 로 선택  
-		  
-		2. SCM :   
+  
+		2. SCM :  
 			Git 선택  
-		  
-		3. Repository URL   
+  
+		3. Repository URL  
 			https://github.com/kkimsungchul/stock.git  
-		  
+  
 		4. Credentials  
 			아래의 URL을 보고 생성한 키를 등록  
 			https://github.com/kkimsungchul/study/blob/master/Jenkins/%5BJenkins%5D%20credentials%20%EB%93%B1%EB%A1%9D%20%EB%B0%8F%20%EC%82%AC%EC%9A%A9.txt  
-		  
-		5. Branches to build :   
+  
+		5. Branches to build :  
 			브런치 명 입력  
-			  
-		6. Script Path:   
+  
+		6. Script Path:  
 			JenkinsFile 입력  
-		  
+  
 	다. 프로젝트 폴더에 JenkinsFile 파일 생성하여 아래의 스크립트 입력  
 		경로 : https://github.com/kkimsungchul/stock/blob/master/JenkinsFile  
 			- 아래의 경우 오류가 발생함  
@@ -50,7 +49,7 @@ categories: Jenkins
 					steps {  
 						git credentialsId: 'kimsc1218', url: 'https://github.com/kkimsungchul/stock.git', branch: 'master'  
 					}  
-				}	  
+				}  
 				stage('build') {  
 					steps {  
 						bat './gradlew.bat clean build'  
@@ -61,7 +60,7 @@ categories: Jenkins
 						bat """  
 						net stop Tomcat8  
 						"""  
-						  
+  
 					}  
 				}  
 				stage('backup') {  
@@ -71,7 +70,7 @@ categories: Jenkins
 						del ROOT  
 						rename ROOT.war ROOTwar.backup.%date%  
 						"""  
-						  
+  
 					}  
 				}  
 				stage('depoly') {  
@@ -80,7 +79,7 @@ categories: Jenkins
 						cd C:/ProgramData/Jenkins/.jenkins/workspace/JenkinsTest/gitTest/build/libs  
 						move ROOT.war C:/apache-tomcat-8.0.30/webapps  
 						"""  
-						  
+  
 					}  
 				}  
 				stage('service_start') {  
@@ -88,20 +87,18 @@ categories: Jenkins
 						bat """  
 						net start Tomcat8  
 						"""  
-						  
-					}  
-				}		  
-				  
-			}  
-		}		  
-		==================================================================================================================================================  
   
+					}  
+				}  
+  
+			}  
+		}  
+		==================================================================================================================================================  
   
 # Jenkinsfile 로 배포  
   
 	======================================================================================================  
 	import java.text.SimpleDateFormat  
-  
   
 	def remote = [:]  
 	def download_command = ""  
@@ -118,13 +115,13 @@ categories: Jenkins
 		environment {  
 			ARTIFACT_ID = readMavenPom().getArtifactId()  
 			VERSION = readMavenPom().getVersion()  
-			PACKGING = readMavenPom().getPackaging()   
+			PACKGING = readMavenPom().getPackaging()  
 			GROUP_ID = readMavenPom().getGroupId()  
 			NEXUS_ARTIFACT_URL = 'https://sungchul.xyz/upload/'  
 			DELIVERY_FILE_NAME = 'stock'  
-			DELIVERY_FILE_EXTENSION = '.tar'          
+			DELIVERY_FILE_EXTENSION = '.tar'  
 		}  
-		  
+  
 		parameters {  
 			credentials(  
 				credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl',  
@@ -146,18 +143,17 @@ categories: Jenkins
 						file_name = DELIVERY_FILE_NAME+"-"+now+DELIVERY_FILE_EXTENSION  
 						upload_url = NEXUS_ARTIFACT_URL  
 						tar_command = 'cd target && tar cvf '+ file_name + ' stock.war '  
-						tar_upload_command = "cd target && curl -u ${NEXUS_ID}:${NEXUS_PW} --upload-file "+file_name+" "+upload_url   
+						tar_upload_command = "cd target && curl -u ${NEXUS_ID}:${NEXUS_PW} --upload-file "+file_name+" "+upload_url  
 						snapshot_upload_command = "cd target && curl -u ${NEXUS_ID}:${NEXUS_PW} --upload-file stock.war "+upload_url  
-						  
-						  
+  
 						cd_url1 = "curl -X POST https://${CD_ID}:${CD_TOKEN}@jenkinscd.sungchul.xyz/job/sungchulFolder/job/stock/buildWithParameters?token=run"  
-						  
+  
 					}  
 					echo file_name  
 					echo upload_url  
 				}  
-			}      
-		  
+			}  
+  
 			stage("Build") {  
 				steps {  
 					withMaven(mavenSettingsConfig: 'Maven_config') {  
@@ -168,7 +164,7 @@ categories: Jenkins
 			}  
 			stage("Delivery To Nexus") {  
 				steps {  
-					  
+  
 					sh "pwd"  
 					sh  tar_command  
 					sh "cd target && ls -al"  
@@ -176,19 +172,17 @@ categories: Jenkins
 					//sh tar_upload_command  
 					echo snapshot_upload_command  
 					sh snapshot_upload_command  
-					  
-				}   
+  
+				}  
 			}  
 			stage("Deploy") {  
 				steps {  
 					sh cd_url1  
 				}  
-			}	          
-			  
+			}  
+  
 		}  
 	}  
-  
-  
   
 	======================================================================================================  
 {% endraw %}

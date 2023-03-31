@@ -6,24 +6,22 @@ date: 2023-03-28 06:21:39 +0900
 categories: Vue  
 ---  
 {% raw %}  
-[ Vue - axios 사용하기 ]   
+[ Vue - axios 사용하기 ]  
 	https://ux.stories.pe.kr/138  
   
-  
 # axios는?  
-	axios는 ajax 등의 웹 통신 기능을 제공하는 라이브러리   
-  
+	axios는 ajax 등의 웹 통신 기능을 제공하는 라이브러리  
   
 # ajax 와 axios 의 차이점  
   
 	axios와 ajax는 둘 다 HTTP 통신을 할 수 있는 JavaScript 라이브러리입니다. 그러나 차이점이 있습니다.  
-	1. axios는 Promise 기반의 라이브러리로, 일반적인 XMLHttpRequest 객체를 사용하지 않고,   
+	1. axios는 Promise 기반의 라이브러리로, 일반적인 XMLHttpRequest 객체를 사용하지 않고,  
 	비동기 작업을 쉽게 처리할 수 있도록 해줍니다.  
   
 	2. ajax는 XMLHttpRequest 객체를 사용하여, HTTP 통신을 하는 JavaScript 라이브러리입니다.  
-	  
+  
 	3. axios는 기본적으로 브라우저와 Node.js에서 모두 사용이 가능하다. ajax는 브라우저에서만 사용 가능.  
-	  
+  
 	4. axios는 설정이 쉽고, 일반적인 요청을 쉽게 처리할 수 있도록 다양한 기능을 제공합니다. ajax는  
   
 # 사용방법  
@@ -44,24 +42,22 @@ categories: Vue
     }  
 	=================================================================================================================  
   
-  
 # 설치  
-	  
+  
 	아래의 명령어 실행  
 		npm install axios --save --legacy-peer-deps  
   
-	  
 	뭐 사람들은 아래의 명령어로 된다고 하는데 난 오류 뿜뿜임  
 	=================================================================================================================  
 	PS C:\Users\USER\Desktop\kimsc\0.깃허브- 개발공부\Vue\Vue-Study_File\vue\project> npm install axios  
 	npm ERR! code ERESOLVE  
 	npm ERR! ERESOLVE could not resolve  
-	npm ERR!   
-	npm ERR! While resolving: @vue/eslint-config-standard@6.1.0      
+	npm ERR!  
+	npm ERR! While resolving: @vue/eslint-config-standard@6.1.0  
 	npm ERR! Found: eslint-plugin-vue@8.7.1  
 	npm ERR! node_modules/eslint-plugin-vue  
 	npm ERR!   dev eslint-plugin-vue@"^8.0.3" from the root project  
-	npm ERR!   
+	npm ERR!  
 	npm ERR! Could not resolve dependency:  
 	npm ERR! peer eslint-plugin-vue@"^7.0.0" from @vue/eslint-config-standard@6.1.0  
 	npm ERR!   peer eslint-plugin-vue@"^7.0.0" from @vue/eslint-config-standard@6.1.0  
@@ -79,10 +75,8 @@ categories: Vue
   
 	=================================================================================================================  
   
-  
-  
 # 실행  
-	  
+  
 	axios를 사용하려는 파일에서 import 를 해야함  
 	main.js 에 하는게 아님  
 	=================================================================================================================  
@@ -141,10 +135,8 @@ categories: Vue
 		}  
 		</script>  
   
-  
 	=================================================================================================================  
-			  
-	  
+  
 	아래의 오류는 import 를 하지 않아서 발생한 오류임  
 	=================================================================================================================  
 	 ERROR  Failed to compile with 1 error                                                                                                                                  오후 5:27:44  

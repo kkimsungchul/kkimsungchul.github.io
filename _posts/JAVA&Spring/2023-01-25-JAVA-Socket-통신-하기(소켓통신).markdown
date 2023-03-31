@@ -8,14 +8,11 @@ categories: JAVA&Spring
 {% raw %}  
 [ JAVA - Socket 통신하기 ]  
   
-	참고링크 :   
+	참고링크 :  
 		https://kadosholy.tistory.com/125  
-  
-  
   
 	데이터 전송의 기본 단위는 바이트(byte)로 문자의 경우 데이터 전송시 문자를 바이트로 변환하고 수신시 문자로 변환이 필요함  
 	java 에서는 이 변환을 해주는 클래스로 InputStreamReader 와 OutputStreamWriter 이있음  
-  
   
 # Server 코드  
   
@@ -73,7 +70,6 @@ categories: JAVA&Spring
   
 				}  
   
-  
 			}catch (Exception e){  
 				e.printStackTrace();  
 			} finally {  
@@ -91,15 +87,9 @@ categories: JAVA&Spring
 		}  
 	}  
   
-  
-  
 	=================================================================================================================  
   
-  
-  
-  
 # Client 코드  
-  
   
 	=================================================================================================================  
   
@@ -139,8 +129,6 @@ categories: JAVA&Spring
 						break;  
 					}  
   
-  
-  
 				}  
   
 			}catch (Exception e){  
@@ -158,15 +146,11 @@ categories: JAVA&Spring
 		}  
 	}  
   
-  
 	=================================================================================================================  
-  
   
 #################################################################################################################  
   
 [ Chat GPT 가 만들어준 코드 ]  
-  
-  
   
 # Server 코드  
   
@@ -178,31 +162,31 @@ categories: JAVA&Spring
   
 		public static void main(String[] args) throws IOException {  
   
-			// 포트번호   
+			// 포트번호  
 			int portNumber = 12345;  
-			  
-			// 서버 소켓 생성   
+  
+			// 서버 소켓 생성  
 			ServerSocket serverSocket = new ServerSocket(portNumber);  
-			  
-			// 클라이언트 접속 대기   
+  
+			// 클라이언트 접속 대기  
 			Socket clientSocket = serverSocket.accept();  
-			  
-			// 입력 스트림   
+  
+			// 입력 스트림  
 			BufferedReader in = new BufferedReader(  
 				new InputStreamReader(clientSocket.getInputStream()));  
-			  
-			// 출력 스트림   
+  
+			// 출력 스트림  
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);  
-			  
-			// 입력받은 데이터   
+  
+			// 입력받은 데이터  
 			String inputLine;  
-			  
-			// 데이터 읽기   
+  
+			// 데이터 읽기  
 			while ((inputLine = in.readLine()) != null) {  
 				out.println("메시지 수신: " + inputLine);  
 			}  
-			  
-			// 스트림 닫기   
+  
+			// 스트림 닫기  
 			in.close();  
 			out.close();  
 			clientSocket.close();  
@@ -210,9 +194,7 @@ categories: JAVA&Spring
 		}  
 	}  
   
-  
 	=================================================================================================================  
-  
   
 # Cilent 코드  
   
@@ -225,31 +207,31 @@ categories: JAVA&Spring
   
 		public static void main(String[] args) throws IOException {  
   
-			// 서버 주소   
+			// 서버 주소  
 			String serverHostname = "localhost";  
-			  
-			// 포트번호   
+  
+			// 포트번호  
 			int portNumber = 12345;  
-			  
-			// 소켓 생성   
+  
+			// 소켓 생성  
 			Socket echoSocket = new Socket(serverHostname, portNumber);  
-			  
-			// 입력 스트림   
+  
+			// 입력 스트림  
 			BufferedReader in = new BufferedReader(  
 				new InputStreamReader(echoSocket.getInputStream()));  
-			  
-			// 출력 스트림   
+  
+			// 출력 스트림  
 			PrintWriter out = new PrintWriter(echoSocket.getOutputStream(), true);  
-			  
-			// 데이터 전송   
+  
+			// 데이터 전송  
 			out.println("Hello, World!");  
-			  
-			// 서버로부터 응답 받기   
+  
+			// 서버로부터 응답 받기  
 			System.out.println("서버 응답: " + in.readLine());  
-			  
-			// 스트림 닫기   
+  
+			// 스트림 닫기  
 			out.close();  
 			in.close();  
-		     
+  
 	=================================================================================================================  
 {% endraw %}

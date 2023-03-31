@@ -8,8 +8,6 @@ categories: JAVA&Spring
 {% raw %}  
 [ JAVA - OS 명령어 자바에서 실행하기 ]  
   
-  
-  
 # 코드 - 1  
   
 	=================================================================================================================  
@@ -25,19 +23,14 @@ categories: JAVA&Spring
   
 	import java.util.List;  
   
-  
 	import org.slf4j.Logger;  
   
 	import org.slf4j.LoggerFactory;  
   
-  
-  
 	public class ShellCommand {  
   
-	     
 		private static final Logger LOGGER = LoggerFactory.getLogger(ShellCommand.class);  
   
-		  
 	//	public static void shellCmd(String command){  
   
 	//		try {  
@@ -68,7 +61,6 @@ categories: JAVA&Spring
   
 	//	}  
   
-		  
 		public static void execute(String cmd) {  
   
 			Process process = null;  
@@ -89,7 +81,6 @@ categories: JAVA&Spring
   
 			List<String> cmdList = new ArrayList<String>();  
   
-	   
 			// 운영체제 구분 (window, window 가 아니면 무조건 linux 로 판단)  
   
 			if (System.getProperty("os.name").indexOf("Windows") > -1) {  
@@ -112,28 +103,22 @@ categories: JAVA&Spring
   
 			String[] array = cmdList.toArray(new String[cmdList.size()]);  
   
-	   
 			try {  
   
-	   
 				// 명령어 실행  
   
 				process = runtime.exec(array);  
   
-				  
-				  
 				// shell 실행이 정상 동작했을 경우  
   
 				successBufferReader = new BufferedReader(new InputStreamReader(process.getInputStream(), "EUC-KR"));  
   
-	   
 				while ((msg = successBufferReader.readLine()) != null) {  
   
 					successOutput.append(msg + System.getProperty("line.separator"));  
   
 				}  
   
-	   
 				// shell 실행시 에러가 발생했을 경우  
   
 				errorBufferReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), "EUC-KR"));  
@@ -153,7 +138,6 @@ categories: JAVA&Spring
 	//            process.getInputStream().close();  
   
 	//            process.getOutputStream().close();  
-  
   
 				// 프로세스의 수행이 끝날때까지 대기  
   
@@ -177,7 +161,6 @@ categories: JAVA&Spring
   
 				}  
   
-	   
 				// shell 실행시 에러가 발생  
   
 				if (errorFlag) {  
@@ -190,8 +173,6 @@ categories: JAVA&Spring
   
 				}  
   
-				  
-				  
 			} catch (IOException e) {  
   
 				LOGGER.error("### ShellCommand execute - IOException");  
@@ -212,21 +193,13 @@ categories: JAVA&Spring
   
 		}  
   
-		  
 	}  
-  
-  
   
 	=================================================================================================================  
   
+# 코드 -2  
   
-  
-  
-  
-  
-# 코드 -2   
-  
-	참고링크 :   
+	참고링크 :  
 		https://cofs.tistory.com/365  
   
 		참고링크에 있는 코드를 거의 그대로 사용했으며  
@@ -235,12 +208,12 @@ categories: JAVA&Spring
   
 	=================================================================================================================  
 	public class CommandLineExecutor {  
-	   
+  
 		public static void main(String[] args) {  
 			// 실행  
 			CommandLineExecutor.execute("ipconfig");  
 		}  
-	   
+  
 		/**  
 		 * cmd 명령어 실행  
 		 *  
@@ -256,7 +229,7 @@ categories: JAVA&Spring
 			String msg = null; // 메시지  
 			boolean errorFlag = false;  
 			List<String> cmdList = new ArrayList<String>();  
-	   
+  
 			// 운영체제 구분 (window, window 가 아니면 무조건 linux 로 판단)  
 			if (System.getProperty("os.name").indexOf("Windows") > -1) {  
 				cmdList.add("cmd");  
@@ -268,29 +241,29 @@ categories: JAVA&Spring
 			// 명령어 셋팅  
 			cmdList.add(cmd);  
 			String[] array = cmdList.toArray(new String[cmdList.size()]);  
-	   
+  
 			try {  
-	   
+  
 				// 명령어 실행  
 				process = runtime.exec(array);  
-	   
+  
 				// shell 실행이 정상 동작했을 경우  
 				successBufferReader = new BufferedReader(new InputStreamReader(process.getInputStream(), "EUC-KR"));  
-	   
+  
 				while ((msg = successBufferReader.readLine()) != null) {  
 					successOutput.append(msg + System.getProperty("line.separator"));  
 				}  
-	   
+  
 				// shell 실행시 에러가 발생했을 경우  
 				errorBufferReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), "EUC-KR"));  
 				while ((msg = errorBufferReader.readLine()) != null) {  
 					errorOutput.append(msg + System.getProperty("line.separator"));  
 					errorFlag=true;  
 				}  
-	   
+  
 				// 프로세스의 수행이 끝날때까지 대기  
 				process.waitFor();  
-	   
+  
 				// shell 실행이 정상 종료되었을 경우  
 				if (process.exitValue() == 0) {  
 					System.out.println("성공");  
@@ -300,14 +273,14 @@ categories: JAVA&Spring
 					System.out.println("비정상 종료");  
 					System.out.println(errorOutput.toString());  
 				}  
-	   
+  
 				// shell 실행시 에러가 발생  
 				if (errorFlag) {  
 					// shell 실행이 비정상 종료되었을 경우  
 					System.out.println("오류");  
 					System.out.println(errorOutput.toString());  
 				}  
-	   
+  
 			} catch (IOException e) {  
 				e.printStackTrace();  
 			} catch (InterruptedException e) {  
@@ -322,16 +295,11 @@ categories: JAVA&Spring
 				}  
 			}  
 		}  
-	   
+  
 	}  
 	=================================================================================================================  
   
-  
-  
 	#################################################################################################################  
-  
-  
-  
   
 =================================================================================================================  
   
@@ -347,19 +315,14 @@ import java.util.ArrayList;
   
 import java.util.List;  
   
-  
 import org.slf4j.Logger;  
   
 import org.slf4j.LoggerFactory;  
   
-  
-  
 public class ShellCommand {  
   
-     
 	private static final Logger LOGGER = LoggerFactory.getLogger(ShellCommand.class);  
   
-	  
 //	public static void shellCmd(String command){  
   
 //		try {  
@@ -390,7 +353,6 @@ public class ShellCommand {
   
 //	}  
   
-	  
     public static void execute(String cmd) {  
   
         Process process = null;  
@@ -411,7 +373,6 @@ public class ShellCommand {
   
         List<String> cmdList = new ArrayList<String>();  
   
-   
         // 운영체제 구분 (window, window 가 아니면 무조건 linux 로 판단)  
   
         if (System.getProperty("os.name").indexOf("Windows") > -1) {  
@@ -434,28 +395,22 @@ public class ShellCommand {
   
         String[] array = cmdList.toArray(new String[cmdList.size()]);  
   
-   
         try {  
   
-   
             // 명령어 실행  
   
             process = runtime.exec(array);  
   
-              
-              
             // shell 실행이 정상 동작했을 경우  
   
             successBufferReader = new BufferedReader(new InputStreamReader(process.getInputStream(), "EUC-KR"));  
   
-   
             while ((msg = successBufferReader.readLine()) != null) {  
   
                 successOutput.append(msg + System.getProperty("line.separator"));  
   
             }  
   
-   
             // shell 실행시 에러가 발생했을 경우  
   
             errorBufferReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), "EUC-KR"));  
@@ -475,7 +430,6 @@ public class ShellCommand {
 //            process.getInputStream().close();  
   
 //            process.getOutputStream().close();  
-  
   
             // 프로세스의 수행이 끝날때까지 대기  
   
@@ -499,7 +453,6 @@ public class ShellCommand {
   
             }  
   
-   
             // shell 실행시 에러가 발생  
   
             if (errorFlag) {  
@@ -512,8 +465,6 @@ public class ShellCommand {
   
             }  
   
-              
-              
         } catch (IOException e) {  
   
         	LOGGER.error("### ShellCommand execute - IOException");  
@@ -534,9 +485,7 @@ public class ShellCommand {
   
     }  
   
-	  
 }  
-  
   
 =================================================================================================================  
 {% endraw %}

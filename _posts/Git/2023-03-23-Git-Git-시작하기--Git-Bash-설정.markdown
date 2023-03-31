@@ -10,100 +10,91 @@ categories: Git
 	https://secuinfo.tistory.com/entry/tip-github?category=857378  
 	https://secuinfo.tistory.com/entry/Local-Project-GitHub?category=857378  
   
-  
 # Git Bash 실행 및 설정  
   
 	#바탕화면에서 우클릭 후 "Git Bash here" 클릭  
   
-	# 사용자 정보 입력   
+	# 사용자 정보 입력  
   
-		$ git config --global user.name "kimsc1218"   
-		$ git config --global user.email "kimsc1218@gmail.com"   
+		$ git config --global user.name "kimsc1218"  
+		$ git config --global user.email "kimsc1218@gmail.com"  
   
-	# 쉘 color 지정   
-		$ git config --global color.ui "auto"   
+	# 쉘 color 지정  
+		$ git config --global color.ui "auto"  
   
-	# 사설 인증서를 사용할 경우 ssl 검증을 클라이언트에서 하지 않음   
+	# 사설 인증서를 사용할 경우 ssl 검증을 클라이언트에서 하지 않음  
   
-		$ git config --global --bool --add http.sslVerify false   
+		$ git config --global --bool --add http.sslVerify false  
   
-	# Http POST 요청 버퍼 사이즈를 설정   
+	# Http POST 요청 버퍼 사이즈를 설정  
   
-		$ git config --global http.postBuffer 524288000   
+		$ git config --global http.postBuffer 524288000  
   
-	#UTF-8 설정 (Windows만 해당됨)   
+	#UTF-8 설정 (Windows만 해당됨)  
   
-		$ git config --global i18n.commitEncoding cp949   
-		$ git config --global i18n.logOutputEncoding cp949   
+		$ git config --global i18n.commitEncoding cp949  
+		$ git config --global i18n.logOutputEncoding cp949  
   
-	#intelliJ연동을 위해 ignored 기능 설정(Global Scope)   
+	#intelliJ연동을 위해 ignored 기능 설정(Global Scope)  
   
-		$ vi ~/.gitignore_global   
+		$ vi ~/.gitignore_global  
   
-			target   
-			build   
-			bin   
-			.git   
-			.svn   
-			*.class   
-			*.bak   
+			target  
+			build  
+			bin  
+			.git  
+			.svn  
+			*.class  
+			*.bak  
   
 		$ git config --global core.excludesfile ~/.gitignore_global  
-  
-  
-  
   
 # 로컬 프로젝트를 깃허브에 등록  
   
 	#프로젝트 폴더에서 우클릭 후 "Git Bash here" 클릭  
   
-	# Git 초기화   
-		$ git init   
+	# Git 초기화  
+		$ git init  
   
-	# Local Project를 Add를 통해 Staging to index   
-		$ git add .   
+	# Local Project를 Add를 통해 Staging to index  
+		$ git add .  
   
-	# Staging을 실제 Local Repository로 저장   
-		$ git commit -m "First Commit to existed local project"   
+	# Staging을 실제 Local Repository로 저장  
+		$ git commit -m "First Commit to existed local project"  
   
-	# Remote Repository로 Push를 위한 원격 브런치 URL설정 및 확인   
+	# Remote Repository로 Push를 위한 원격 브런치 URL설정 및 확인  
 		$ git remote add origin https://github.com/kkimsungchul/if_buy.git  
-		$ git remote -v   
+		$ git remote -v  
   
-	# Local to Remote Repository Push   
+	# Local to Remote Repository Push  
 		$ git push origin master  
-  
-  
-  
-  
   
 # 원격에서 프로젝트 가져오기  
   
 	# 원격 브런치 연결  
 		$ git remote [로컬저장소] [브런치URL]  
 			git remote origin https://github.com/kkimsungchul/study.git  
-		  
-	# 체크아웃   
+  
+	# 체크아웃  
 		$ git checkout [브랜치명]  
 			git checkout master  
-		  
+  
 	# did not match any file(s) known to git 오류 발생  
 		아래의 명령어를 입력  
 		$ git remote update  
-		$ git fetch   
-	  
+		$ git fetch  
+  
 	# 현재 브런치 확인 - 로컬  
 		git branch -a  
-	  
+  
 	# 현재 브런치 확인 - 원격  
 		git branch -r  
-  
   
 # 깃 브런치 이름 변경  
 	$ git init  
   
 	$ git remote origin https://github.com/kkimsungchul/study.git  
-	  
+  
 	$ git remote -v  
   
 	$ git remote update  
@@ -115,9 +106,8 @@ categories: Git
 	$ git branch -m [기존이름] [변경할이름]  
   
 		$ git branch -m	master main  
-	  
-	$ git push origin :master  
   
+	$ git push origin :master  
   
 # 깃 계정 안물어 보게 하기  
   

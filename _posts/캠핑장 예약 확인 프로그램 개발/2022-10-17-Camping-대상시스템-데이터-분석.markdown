@@ -8,9 +8,6 @@ categories: 캠핑장예약확인프로그램개발
 {% raw %}  
 https://booking.ddnayo.com/booking-calendar-status?accommodationId=13676&groupId=&isPriceCalendar=true&channelCode=0030  
   
-  
-						  
-						  
 						"date": "2022-10-02",  
                         "displayDate": "10/2",  
                         "dayOfWeek": 7,  
@@ -18,8 +15,6 @@ https://booking.ddnayo.com/booking-calendar-status?accommodationId=13676&groupId
                         "seasonType": "0003",  
                         "seasonName": "준성수기",  
                         "dayTypeName": "공휴일전날",  
-  
-  
   
                         "date": "2022-10-03",  
                         "displayDate": "10/3",  
@@ -30,19 +25,14 @@ https://booking.ddnayo.com/booking-calendar-status?accommodationId=13676&groupId
                         "dayTypeName": "주중",  
                         "holidayName": "개천절",  
   
-  
-  
-  
-  
 https://booking.ddnayo.com/booking-calendar-api/reservation/temp  
 세션 아이디 발급  
-  
   
 channelCode=0030				애는 고정  
 accommodationId:13676			애도 고정  
   
 stayDays 						몇일 숙박할건지, 1이 기본값  
-startDate , checkInDate			입실 날짜   
+startDate , checkInDate			입실 날짜  
 roomId							묶을려고 하는 캠핑사이트 고유 ID  
 	단독오토 1 : 161476  
 	단독오토 2 : 161477  
@@ -53,8 +43,6 @@ roomId							묶을려고 하는 캠핑사이트 고유 ID
 	단독오토 7 : 161482  
 	단독오토 8 : 161483  
 	단독오토 9 : 161484  
-  
-  
   
 {  
 "channelCode":"0030",  
@@ -74,8 +62,6 @@ roomId							묶을려고 하는 캠핑사이트 고유 ID
 "others":[  
 ]  
 }  
-  
-  
   
 {  
 "channelCode":"0030",  
@@ -115,11 +101,8 @@ roomId							묶을려고 하는 캠핑사이트 고유 ID
 ]  
 }  
   
-  
-  
 =================================================================================================================  
 https://booking.ddnayo.com/booking-calendar-api/payment/pg/temporary?_=1663128293156  
-  
   
 # Request Headers  
 :authority: booking.ddnayo.com  
@@ -143,8 +126,6 @@ sec-fetch-dest: empty
 sec-fetch-mode: cors  
 sec-fetch-site: same-origin  
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36  
-  
-  
   
 # payload  
   
@@ -198,7 +179,6 @@ user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 =================================================================================================================  
 https://booking.ddnayo.com/booking-calendar-api/payment/pg/temporary?_=1663129690608  
   
-  
 #header  
 :authority: booking.ddnayo.com  
 :method: POST  
@@ -221,7 +201,6 @@ sec-fetch-dest: empty
 sec-fetch-mode: cors  
 sec-fetch-site: same-origin  
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36  
-  
   
 # payload  
 {  
@@ -271,15 +250,12 @@ user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 "toTempId":"26359052"  
 }  
   
-  
-  
 =================================================================================================================  
   
 아래 URL요청 후 "reservationNo" 번호를 발급받고  
 해당 번호를 위에 넣고 예약하면 될듯  
   
 https://booking.ddnayo.com/booking-calendar-api/payment/13676/gateway?useCoupon=false&channelCode=0030&_=1663129829324  
-  
   
 {  
 "success":true,  
@@ -317,7 +293,6 @@ https://booking.ddnayo.com/booking-calendar-api/payment/13676/gateway?useCoupon=
 "errorString":"",  
 "failed":false  
 }  
-  
   
 https://booking.ddnayo.com/booking-calendar-api/payment/13676/gateway?useCoupon=false&channelCode=0030&_=1663130075788  
   
@@ -358,12 +333,10 @@ https://booking.ddnayo.com/booking-calendar-api/payment/13676/gateway?useCoupon=
 "failed":false  
 }  
   
-  
 =================================================================================================================  
 https://booking.ddnayo.com/booking-calendar-api/payment/13676/cart?sessionId=47c9dcf0-38e3-4488-8a62-1bf82be89911&channelCode=0030&fromTempId=26359324&toTempId=26359324&_=1663130074001  
   
 tempId : reservationRoomTempId  
-  
   
 {  
 "success":true,  

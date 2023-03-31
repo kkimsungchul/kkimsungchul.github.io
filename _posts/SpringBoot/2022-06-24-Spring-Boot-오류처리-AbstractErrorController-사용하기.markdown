@@ -7,30 +7,27 @@ categories: SpringBoot
 ---  
 {% raw %}  
 [ SpringBoot - AbstractErrorController 사용하기 ]  
-	  
+  
 	참고링크 : https://giantdwarf.tistory.com/24  
 				https://mangkyu.tistory.com/204  
   
 	스프링에서 오류에 대한 핸들링을 담당함  
-	웹 브라우저에서 예외가 발생하면 errorHtml()을 거쳐 ViewResolver를 통해 에러 페이지가 반환되고,   
-	브라우저가 아닌 곳(Postman, Curl, 서버 등)에서 요청을 한다면 error()를 거쳐 에러 메세지을 받게 됨   
+	웹 브라우저에서 예외가 발생하면 errorHtml()을 거쳐 ViewResolver를 통해 에러 페이지가 반환되고,  
+	브라우저가 아닌 곳(Postman, Curl, 서버 등)에서 요청을 한다면 error()를 거쳐 에러 메세지을 받게 됨  
 	에러 경로는 기본적으로 /error로 정의되어 있으며 properties에서 server.error.path로 변경할 수 있음  
   
-  
 # 해당 클래스를 적용 전과 적용 후를 비교  
-	  
+  
 	적용 전  
 	=================================================================================================================  
 	{  
 	  "timestamp": "2022-06-16T01:43:47.110+00:00",  
 	  "status": 500,  
 	  "error": "Internal Server Error",  
-	  "trace": "java.lang.ArithmeticException: / by zero\r\n\tat com.sungchul.etc.test.controller.TestController.getReservationList(TestController.java:25)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\r\n\tat   
+	  "trace": "java.lang.ArithmeticException: / by zero\r\n\tat com.sungchul.etc.test.controller.TestController.getReservationList(TestController.java:25)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\r\n\tat  
 		....  
   
 	=================================================================================================================  
-  
-  
   
 	적용 후  
 	=================================================================================================================  
@@ -43,14 +40,9 @@ categories: SpringBoot
 	}  
 	=================================================================================================================  
   
-  
-  
-  
-  
-  
 # 구현 소스  
   
-	파일명 :   
+	파일명 :  
 	=================================================================================================================  
   
 	package com.sungchul.etc.config.error.controller;  
@@ -72,7 +64,6 @@ categories: SpringBoot
 	import org.springframework.web.bind.annotation.ExceptionHandler;  
 	import org.springframework.web.bind.annotation.RequestMapping;  
 	import org.springframework.web.servlet.ModelAndView;  
-  
   
 	@Controller  
 	@RequestMapping("${server.error.path:${error.path:/error}}") // server.error.path를 불러오고, error.path를 불러오고 없을 경우 '/error'로 설정한다.  
@@ -127,12 +118,9 @@ categories: SpringBoot
 			return ResponseEntity.status(status).build();  
 		}  
   
-  
 	}  
   
-  
 	=================================================================================================================  
-  
   
 #  설정파일  
 	always 또는 never 를 사용하면되며  
@@ -151,7 +139,6 @@ categories: SpringBoot
 		include-exception: true  
 		whitelabel:  
 		  enabled: true  
-  
   
 	=================================================================================================================  
 {% endraw %}

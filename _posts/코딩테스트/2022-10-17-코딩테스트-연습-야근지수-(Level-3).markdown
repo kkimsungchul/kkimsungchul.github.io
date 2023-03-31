@@ -30,8 +30,6 @@ n=1일 때, 남은 일의 작업량이 [2,1,2]라면 야근 지수를 최소화�
   
 남은 작업량이 없으므로 피로도는 0입니다.  
   
-  
-  
 실패, 작업시간 초과  
 ======================================================================================================  
 import java.util.*;  
@@ -39,8 +37,8 @@ import java.util.*;
 class Solution {  
     public long solution(int n, int[] works) {  
         long answer = 0;  
-          
-        //야근시간만큼 반복          
+  
+        //야근시간만큼 반복  
         for(int i=0;i<n;i++){  
             //제일큰 작업시간이 0일경우, 모든작업이 완료됐으므로 0을 리턴  
             if(works[works.length-1]==0){  
@@ -51,14 +49,13 @@ class Solution {
             //제일큰 작업시간에서 1을뺀 후 다시 정렬  
             Arrays.sort(works);  
         }  
-          
+  
         //남은 작업량을 제곱하여 리턴  
         for(int i=0;i<works.length;i++){  
             //System.out.println(works[i]);  
             answer += (long)works[i]*works[i];  
         }  
-          
-          
+  
         return answer;  
     }  
 }  

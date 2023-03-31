@@ -6,28 +6,23 @@ date: 2023-03-24 08:40:31 +0900
 categories: JSP&javascript  
 ---  
 {% raw %}  
-[ jqTree ]   
+[ jqTree ]  
   
 ※ 문제발생  
 	jqtree 랑 jquery-ui랑 혼용불가  
 ※ 해결  
 	jQuery.noConflict(true); 를 선언하여서 사용  
 	* 참고 문서 : " [JavaScript] jquery_다른버전 두개 동시에 사용하기.txt "  
-   
-# 참고 URL   
+  
+# 참고 URL  
 	https://m.blog.naver.com/PostView.nhn?blogId=galma73&logNo=80198151598&proxyReferer=https%3A%2F%2Fwww.google.com%2F  
 	https://www.jqueryscript.net/demo/jQuery-Plugin-for-Tree-Widget-jqTree/#demo  
 	http://mbraak.github.io/jqTree/  
-  
-  
-  
   
 # 선언  
   
 	<script src="/common/bootstrap/js/tree/tree.jquery.js"></script>  
 	<link rel="stylesheet" href="/common/bootstrap/css/tree/jqtree.css">  
-  
-  
   
 # 데이터 형식  
 	* JSON 형식의 데이터를 사용하며 데이터형식은 아래와 같음  
@@ -51,7 +46,6 @@ categories: JSP&javascript
 			}  
 		];  
   
-	  
 	ex) [{  
             dept_par_id: "0",  
             id: "100000",  
@@ -131,9 +125,6 @@ categories: JSP&javascript
             ]  
     }];  
   
-  
-  
-  
 # 사용  
   
 		$("#deptTree").tree({  
@@ -143,8 +134,7 @@ categories: JSP&javascript
 			dragAndDrop: true  
 		})  
   
-  
-# ex 01   
+# ex 01  
   
      /*        var deptData = "";  
                 $.ajax({  

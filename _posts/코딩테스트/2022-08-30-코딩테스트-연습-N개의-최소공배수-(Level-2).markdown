@@ -18,8 +18,6 @@ arr	result
 [2,6,8,14]	168  
 [1,2,3]	6  
   
-  
-  
 =================================================================================================================  
 import java.util.*;  
   
@@ -29,11 +27,11 @@ class Solution {
         Arrays.sort(arr);  
         int max = arr[arr.length-1];  
         System.out.println(max);  
-          
+  
         while(true){  
-              
+  
             for(int i=0;i<arr.length-1;i++){  
-                  
+  
                 if(max%arr[i]!=0){  
                     break;  
                 }else if(i==arr.length-2){  
@@ -41,7 +39,7 @@ class Solution {
                 }  
             }  
             max = max+arr[arr.length-1];  
-              
+  
         }  
   
     }  

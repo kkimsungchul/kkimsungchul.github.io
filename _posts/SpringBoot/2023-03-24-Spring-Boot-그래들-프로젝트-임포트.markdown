@@ -11,12 +11,10 @@ categories: SpringBoot
 # 임포트 하기  
 	파일 -> 오픈 -> 프로젝트명 클릭  
   
-  
 # 오류발생  
 	Warning:Unable to make the module: if_buy, related gradle configuration was not found. Please, re-import the Gradle project and try again.  
   
 	그래들 프로젝트 임포트 할떄 발생하는에러  
-  
   
 - 해결방안 1  
 	1. IntelliJ 메뉴에서 [View - Tool Windows - Gradle] 클릭  
@@ -39,13 +37,6 @@ categories: SpringBoot
 	변경 후 버전  
 	=================================================================================================================  
 	distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.4-all.zip  
-  
-  
-  
-  
-  
-  
-  
   
 https://ooz.co.kr/420  
 {% endraw %}

@@ -6,8 +6,7 @@ date: 2023-03-29 05:56:13 +0900
 categories: EffectiveJava  
 ---  
 {% raw %}  
-# Effective Java - 챕터8. finalizer 와 cleaner 사용을 피하라   
-  
+# Effective Java - 챕터8. finalizer 와 cleaner 사용을 피하라  
   
 # 설명  
   
@@ -33,37 +32,34 @@ categories: EffectiveJava
   
 	또한 finalizer 동작 중 발생한 예외는 무시되며 처리할 작업이 남았더라도 그 순간 종료된다.  
   
-  
 # 실제 사용되는 곳  
 	약 2가지가 있다고 책에 기재되어 있으며  
-	  
+  
 	1. 자원의 소유자가 close 메서도를 호출하지 않는 것에 대한 대비한 안전망 역할  
 		자바 라이브러리의 일부 클래스에서 finalizer 를 제공하며  
 		FileInputStream , FileOutputStream , ThreadPoolExecutor가 대표적임  
-	  
+  
 	2. 네이티브 피어(native peer)와 연결된 객체에서 사용  
 		네이티브 피어란 일반 자바 객체가 네이티브 메소드를 통해 기능을 위임한 네이티브 객체를 말함  
 		네이티브 피어는 자바 객체가 아니니 가비지 컬렉터는 그 존재를 알지 못함  
 		그 결과 자바 피어를 회수 할 때 네이티브 객체까지 회수하지 못함  
 		cleaner나 finalizer 가 나서스 처리하기에 적당한 작업임  
-		  
+  
 		단 성능저하를 감당할수 있고, 네이티브 피어가 심각한 자원을 가지고 있지 않을 때에만 해당함  
 		그게 아니라면 close 메소드를 사용해야 함  
-  
   
 # 대체 방안  
   
 	AutoCloseable 를 구현하고 클라이언트에서 인스턴스를 다 쓰고 나면 close메소드를 호출하면 됨  
   
-  
 # 사용해야 하지 말아햘 이유 정리  
   
 	- 일단은 속도가 지독하게 느리다.  
 		속도는 약 5배 느리짐 ( 책 예제 설명에 기재되어 있음)  
-	  
+  
 	- finalizer 를 사용한 클래스는 finalizer 공격에 노출되어 보안문제를 일으킴  
-	  
-# 요약   
+  
+# 요약  
 	finalizer나 cleaner는 안전망 열할이나 중요하지 않은 네이티브 자원 회수용으로만 사용하고  
 	사용하더라도 불확실성과 성능 저하에 주의해야함  
 {% endraw %}

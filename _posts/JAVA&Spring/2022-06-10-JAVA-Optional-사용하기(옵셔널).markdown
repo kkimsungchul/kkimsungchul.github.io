@@ -9,16 +9,15 @@ categories: JAVA&Spring
 [ JAVA - Optional 사용하기 ]  
   
 # Optional  
-	https://hbase.tistory.com/212   
+	https://hbase.tistory.com/212  
 	https://mangkyu.tistory.com/70  
 	https://mangkyu.tistory.com/203  
-	  
+  
 	NPE(NullPointerException) 방지가 주된 목적인 Wrapper 클래스  
 	결과값에 null이 올수 있고, null 로 인해서 오류가 발생할 가능성이 있을때 사용하면 된다.  
-	  
+  
 	Wrapper 클래스 이기때문에 많이사용하면 성능 저하가 발생할 수 있음  
 	또한 NPE 대신 NoSuchElementException 오류가 발생 할 수 있음  
-  
   
 		Optinal.empty() : 데이터가 없는 빈 Optinal 객체 생성  
 		Optional.ofNullable(data) : 데이터가 없을 경우 빈 객체 생성  
@@ -27,7 +26,7 @@ categories: JAVA&Spring
 		orElse() : 가져오려는 데이터가 없을 경우 지정한 값을 가져옴  
 		Supplier<T> 인터페이스를 활용하여 orElseGet()메소드 사용  
 		Supplier<T> 인터페이스를 활용하여 orElseThrow()메소드 사용 (데이터가 없는 경우 지정한 예외 발생)  
-	  
+  
 	테스트 코드  
 	=================================================================================================================  
 	package com.sungchul;  
@@ -35,12 +34,10 @@ categories: JAVA&Spring
 	import java.io.*;  
 	import java.util.*;  
   
-  
 	public class OptionalTestClass {  
   
 		public static void main(String[] args) throws NumberFormatException, IOException {  
 			ClassName<String,Integer> className = new ClassName<>();  
-  
   
 			//빈 객체 생성  
 			Optional<ClassName> optionalClassNameTest1 = Optional.empty();  
@@ -58,7 +55,6 @@ categories: JAVA&Spring
 			String test = optionalClassNameTest4.map(ClassName::getTest1).orElse("값없음");  
 			System.out.println("### test : " + test);  
   
-  
 			//아래와같이 ifPresent 함수를 사용하여서 null일경우 값을 넣어줄수 있다  
 			// null 출력  
 			Optional.of(className)  
@@ -71,7 +67,6 @@ categories: JAVA&Spring
 					.map(ClassName::getTest1)  
 					.ifPresent(n-> className.setTest2(n));  
 			System.out.println("### Not null test2 : "+ className.getTest2());  
-  
   
 		}  
 	}  
@@ -116,7 +111,6 @@ categories: JAVA&Spring
 			return "소문자변환";  
 		}  
 	}  
-  
   
 	=================================================================================================================  
 {% endraw %}

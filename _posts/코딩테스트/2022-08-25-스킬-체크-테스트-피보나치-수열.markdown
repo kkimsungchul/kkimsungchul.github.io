@@ -26,7 +26,6 @@ n	return
 3	2  
 5	5  
   
-  
 class Solution {  
     public int solution(int n) {  
         int answer = 0;  
@@ -40,8 +39,7 @@ class Solution {
             a=b%1234567;  
             b=answer;  
         }  
-          
-          
+  
         return answer;  
     }  
 }  

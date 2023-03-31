@@ -14,11 +14,6 @@ categories: SpringBoot
 	https://toycoms.tistory.com/37  
 	https://velog.io/@chullll/Spring-Security-CORS  
   
-  
-  
-  
-  
-  
 # WebConfig 클래스 생성후 아래의 메소드들 추가  
 	기본적인 Default 값은 아래와 같음  
 		Allow all origins.  
@@ -26,9 +21,8 @@ categories: SpringBoot
 		Allow all headers.  
 		Set max age to 1800 seconds (30 minutes).  
   
-		  
 		- addMapping() 으로 CORS를 적용할 URL 패턴을 정의  
-		  
+  
 		- allowedOrigins() 자원 공유를 허락할 Origin을 지정할수 있음  
 			.allowedOrigins("*"); 로 해서 전부다 줄수 있고 아래처럼 특정 URL만 줄수도 있음  
 			.allowedOrigins("http://localhost:8080" , "http://localhost:7070");  
@@ -47,40 +41,34 @@ categories: SpringBoot
 					.allowedOrigins("*")  
 					.allowedMethods("POST" , "GET")  
 					.maxAge(6000);  
-				  
+  
 			}  
   
 		}  
   
 		=================================================================================================================  
   
-  
-  
-  
-  
 # 어노테이션으로 사용하기  
 	메소드나 클래스명 위에 어노테이션으로 쓰면되며  
 	origins, methods, maxAge, allowedHeaders 옵션을 다 줄수 있음  
 	=================================================================================================================  
-	ex)   
+	ex)  
 		@CrossOrigin(origins="*")  
 		public class TestController{  
-			  
+  
 			@CrossOrigin(origins = "*", allowedHeaders = "*")  
 			@GetMapping("/userInfo")  
 			public String getUserInfo (){  
   
 	=================================================================================================================  
   
-  
 #################################################################################################################  
   
-  
 # Spring Security 설정  
-	스프링 시큐리티를 사용한다면 아래와같이 설정을 해줄수가 있다	  
+	스프링 시큐리티를 사용한다면 아래와같이 설정을 해줄수가 있다  
 	WebSecurityConfig 클래스 안에 아래와 메소드를 정의 하고 configure 메소드에 해당 내용을 추가하면 된다  
   
-	- CORS 설정 메소드 corsConfigurationSource	  
+	- CORS 설정 메소드 corsConfigurationSource  
 	=================================================================================================================  
 	@Bean  
 	CorsConfigurationSource corsConfigurationSource() {  
@@ -90,14 +78,13 @@ categories: SpringBoot
 		configuration.setAllowedMethods(Arrays.asList("HEAD","POST","GET","DELETE","PUT"));  
 		configuration.setAllowedHeaders(Arrays.asList("*"));  
 		configuration.setAllowCredentials(true);  
-		  
+  
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  
 		source.registerCorsConfiguration("/**", configuration);  
 		return source;  
 	}  
   
 	=================================================================================================================  
-  
   
 	- corsConfigurationSource 메소드를 적용  
 	=================================================================================================================  
@@ -130,8 +117,6 @@ categories: SpringBoot
     }  
 	=================================================================================================================  
   
-  
-  
 	- 다르게 구현한 corsConfigurationSource 설정  
 	=================================================================================================================  
 	@Bean  
@@ -147,13 +132,11 @@ categories: SpringBoot
 	}  
 	=================================================================================================================  
   
-  
 	※ Spring MVC 와 Security 을 둘 다 사용한다면  
-		만약 Spring MVC의 CORS 지원을 사용한다면,   
-		Spring Security의 CorsConfigurationSource 설정을 생략(omit)할 수 있다.   
+		만약 Spring MVC의 CORS 지원을 사용한다면,  
+		Spring Security의 CorsConfigurationSource 설정을 생략(omit)할 수 있다.  
 		Spring Security는 Spring MVC에서 제공되어지는 CORS 설정을 자동으로 탐지하여 활용(leverage)할 것이다.  
 		출처 : https://letsmakemyselfprogrammer.tistory.com/89  
-  
   
 # Nginx 설정  
   
@@ -172,8 +155,6 @@ categories: SpringBoot
   
 		}  
 	=================================================================================================================  
-	  
-  
   
 	https://enable-cors.org/server_nginx.html  
   
@@ -210,7 +191,6 @@ categories: SpringBoot
 			add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;  
 		 }  
 	}  
-  
   
 	=================================================================================================================  
 {% endraw %}

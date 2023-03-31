@@ -32,8 +32,6 @@ n	result
 4	11  
 ※ 공지 - 2022년 9월 5일 제한사항이 수정되었습니다.  
   
-  
-  
 ======================================================================================================  
   
 import java.util.*;  
@@ -43,7 +41,7 @@ class Solution {
         String answer = "";  
         ArrayList<Integer> list = new ArrayList<Integer>();  
         while(true){  
-              
+  
             if(n>3){  
                 int temp=n%3;  
                 n=n/3;  
@@ -59,7 +57,7 @@ class Solution {
                 list.add(n);  
                 break;  
             }  
-              
+  
         }  
         //System.out.println(list);  
         for(int i=list.size()-1;i>=0;i--){  
@@ -68,13 +66,13 @@ class Solution {
             }else{  
                 answer+=list.get(i);  
             }  
-              
+  
         }  
         return answer;  
     }  
-      
+  
     public String notation(int a){  
-          
+  
         return "";  
     }  
 }  

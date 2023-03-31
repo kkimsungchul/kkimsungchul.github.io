@@ -39,8 +39,7 @@ phone_book	return
   
 2021년 3월 4일, 테스트 케이스가 변경되었습니다. 이로 인해 이전에 통과하던 코드가 더 이상 통과하지 않을 수 있습니다.  
   
-  
-아래걸로 햇음.. 복붙이지 뭐   
+아래걸로 햇음.. 복붙이지 뭐  
 =================================================================================================================  
   
 import java.util.*;  
@@ -51,26 +50,21 @@ class Solution {
         for(int i = 0 ; i < phone_book.length ; i++){  
             map.put(phone_book[i],i);  
         }  
-              
   
 		//phone_book만큼 for문돔  
         for(int i = 0 ; i < phone_book.length ; i++){  
-			  
   
             for(int j = 1 ; j < phone_book[i].length() ; j++ ){  
 				//가져온 키값을 잘라서 해당 값을 키로 가지고 있는 애를 찾음  
                 if(map.containsKey(phone_book[i].substring(0,j))){  
-                    return false;   
-                }    
+                    return false;  
+                }  
             }  
         }  
-              
-                  
+  
         return answer;  
     }  
 }  
-  
-  
   
 =================================================================================================================  
 import java.util.*;  
@@ -85,7 +79,7 @@ class Solution {
             return false;  
         }  
         String[] arr = hashSet.toArray(new String[0]);  
-          
+  
         for(String num : arr){  
             iterator = hashSet.iterator();	// Iterator 사용  
             while(iterator.hasNext()) {//값이 있으면 true 없으면 false  
@@ -93,7 +87,7 @@ class Solution {
                 if(num.indexOf(temp1)==0 || temp1.indexOf(num)==0){  
                     count++;  
                     if(count==2){  
-                        return false;      
+                        return false;  
                     }  
                 }  
             }  
@@ -104,14 +98,12 @@ class Solution {
     }  
 }  
   
-  
-  
 =================================================================================================================  
 import java.util.*;  
   
 class Solution {  
     public boolean solution(String[] phone_book) {  
-          
+  
         boolean answer = true;  
         HashSet<String> hashSet = new HashSet<String>(Arrays.asList(phone_book));  
         if(phone_book.length!=hashSet.size()){  
@@ -126,14 +118,12 @@ class Solution {
                 }else if(arr[j].indexOf(arr[i])==0 || arr[i].indexOf(arr[j])==0){  
                     return false;  
                 }  
-                  
+  
             }  
         }  
         return answer;  
     }  
 }  
-  
-  
   
 해시셋 -> 배열 후 정렬 사용 효율성3,4 X  
 =================================================================================================================  
@@ -141,17 +131,17 @@ import java.util.*;
   
 class Solution {  
     public boolean solution(String[] phone_book) {  
-          
+  
         boolean answer = true;  
         TreeSet<String> hashSet = new TreeSet<String>();  
         for(String num : phone_book){  
             if(hashSet.contains(num)){  
                 return false;  
             }  
-            hashSet.add(num);              
+            hashSet.add(num);  
         }  
         String[] arr = hashSet.toArray(new String[0]);  
-          
+  
         Arrays.sort(arr);  
         for(int i=0;i<arr.length-1;i++){  
   
@@ -161,14 +151,12 @@ class Solution {
                 }else if(arr[j].indexOf(arr[i])==0){  
                     return false;  
                 }  
-                  
+  
             }  
         }  
         return answer;  
     }  
 }  
-  
-  
   
 해시셋 사용, 효율성 3,4 통과X  
 =================================================================================================================  
@@ -192,18 +180,14 @@ class Solution {
                     if(num.indexOf(temp1)==0 || temp1.indexOf(num)==0){  
                         return false;  
                     }  
-                }                  
+                }  
             }  
-            hashSet.add(num);      
+            hashSet.add(num);  
         }  
-          
-          
-          
+  
         return true;  
     }  
 }  
-  
-  
   
 배열 + 해시셋 사용, 효율성 3,4 통과X  
 =================================================================================================================  
@@ -229,29 +213,25 @@ class Solution {
                 if(num.indexOf(temp)==0){  
                     count++;  
                 }  
-                  
+  
                 if(count==2){  
                     answer=false;  
                     break;  
                 }  
-                  
+  
             }  
             if(!answer){  
                 break;  
             }  
             count=0;  
-              
+  
         }  
-          
+  
         return answer;  
     }  
 }  
   
-  
-  
-  
-  
-HashSet 사용, 효율성 3,4통과X ,   
+HashSet 사용, 효율성 3,4통과X ,  
 =================================================================================================================  
 import java.util.*;  
   
@@ -290,13 +270,10 @@ class Solution {
             hashSet2.remove(temp1);  
             count=0;  
         }  
-          
+  
         return answer;  
     }  
 }  
-  
-  
-  
   
 효율성 3,4 통과 x  
 =================================================================================================================  
@@ -305,7 +282,7 @@ import java.util.*;
 class Solution {  
     public boolean solution(String[] phone_book) {  
         boolean answer = true;  
-          
+  
         for(int i=0;i<phone_book.length;i++){  
             for(int j=i+1;j<phone_book.length;j++){  
                 if((phone_book[j].indexOf(phone_book[i])==0 || phone_book[i].indexOf(phone_book[j])==0) && i!=j){  
@@ -313,18 +290,15 @@ class Solution {
                     break;  
                 }  
             }  
-              
+  
             if(!answer){  
                 break;  
             }  
-              
-              
+  
         }  
         return answer;  
     }  
 }  
-  
-  
   
 효율성 통과X  
 =================================================================================================================  
@@ -333,8 +307,7 @@ import java.util.*;
 class Solution {  
     public boolean solution(String[] phone_book) {  
         boolean answer = true;  
-          
-          
+  
         //버블정렬로 문자열이 짧은애들이 앞으로 오도록 수정  
         for(int i=1;i<phone_book.length;i++){  
             for(int j=0;j<phone_book.length-i;j++){  
@@ -345,7 +318,7 @@ class Solution {
                 }  
             }  
         }  
-          
+  
         for(int i=0;i<phone_book.length-1;i++){  
             for(int j=i+1;j<phone_book.length;j++){  
                 if(phone_book[j].indexOf(phone_book[i])==0){  
@@ -357,8 +330,7 @@ class Solution {
                 break;  
             }  
         }  
-          
-          
+  
         //System.out.println(Arrays.toString(phone_book));  
         return answer;  
     }  
