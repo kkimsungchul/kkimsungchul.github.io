@@ -2,7 +2,7 @@
 layout: post  
 title: "[Effective Java] 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
 subtitle: "Effective Java 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
-date: 2023-03-29 05:55:40 +0900  
+date: 2023-03-29 09:58:58 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  

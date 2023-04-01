@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] Spring과 SpringBoot의 차이"  
 subtitle: "Spring Boot Spring과 SpringBoot의 차이"  
-date: 2023-03-29 05:54:00 +0900  
+date: 2023-03-29 09:58:58 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

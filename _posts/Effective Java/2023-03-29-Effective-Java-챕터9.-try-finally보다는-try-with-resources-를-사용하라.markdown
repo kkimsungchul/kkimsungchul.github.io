@@ -2,7 +2,7 @@
 layout: post  
 title: "[Effective Java] 챕터9. try-finally보다는 try-with-resources 를 사용하라"  
 subtitle: "Effective Java 챕터9. try-finally보다는 try-with-resources 를 사용하라"  
-date: 2023-03-29 05:56:10 +0900  
+date: 2023-03-29 09:58:58 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  

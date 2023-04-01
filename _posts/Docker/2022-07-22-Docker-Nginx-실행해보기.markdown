@@ -2,7 +2,7 @@
 layout: post  
 title: "[Docker] Nginx 실행해보기"  
 subtitle: "Docker Nginx 실행해보기"  
-date: 2022-07-22 00:38:30 +0900  
+date: 2022-07-22 10:55:35 +0900  
 categories: Docker  
 ---  
 {% raw %}  

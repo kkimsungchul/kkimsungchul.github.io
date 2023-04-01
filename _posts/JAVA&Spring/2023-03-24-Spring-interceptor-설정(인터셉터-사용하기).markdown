@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring] interceptor 설정(인터셉터 사용하기)"  
 subtitle: "Spring interceptor 설정(인터셉터 사용하기)"  
-date: 2023-03-24 08:40:30 +0900  
+date: 2023-03-24 12:40:26 +0900  
 categories: JAVA&Spring  
 ---  
 {% raw %}  

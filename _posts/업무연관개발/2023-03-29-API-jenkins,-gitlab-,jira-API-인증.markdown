@@ -2,7 +2,7 @@
 layout: post  
 title: "[API] jenkins, gitlab ,jira API 인증"  
 subtitle: "API jenkins, gitlab ,jira API 인증"  
-date: 2023-03-29 00:02:37 +0900  
+date: 2023-03-29 09:58:58 +0900  
 categories: 업무연관개발  
 ---  
 {% raw %}  

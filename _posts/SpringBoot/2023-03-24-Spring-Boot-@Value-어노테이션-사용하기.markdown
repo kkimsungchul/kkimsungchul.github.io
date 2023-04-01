@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] @Value 어노테이션 사용하기"  
 subtitle: "Spring Boot @Value 어노테이션 사용하기"  
-date: 2023-03-24 08:43:19 +0900  
+date: 2023-03-24 12:40:26 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

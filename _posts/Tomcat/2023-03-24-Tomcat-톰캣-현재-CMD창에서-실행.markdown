@@ -2,8 +2,8 @@
 layout: post  
 title: "[Tomcat] 톰캣 현재 CMD창에서 실행"  
 subtitle: "Tomcat 톰캣 현재 CMD창에서 실행"  
-date: 2023-03-24 06:03:40 +0900  
-categories: Tomcat  
+date: 2023-03-24 10:30:35 +0900  
+categories: tomcat  
 ---  
 {% raw %}  
 [ 톰캣 현재 CMD창에서 실행 ]  
