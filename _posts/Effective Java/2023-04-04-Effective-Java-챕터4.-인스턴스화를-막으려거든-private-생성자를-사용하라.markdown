@@ -2,7 +2,7 @@
 layout: post  
 title: "[Effective Java] 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
 subtitle: "Effective Java 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
-date: 2023-03-29 05:55:40 +0900  
+date: 2023-04-04 09:00:54 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  
@@ -10,7 +10,7 @@ categories: EffectiveJava
   
 	정적 메소드와 정적 필드만을 담은 클래스를만들때가 있음  
 		=================================================================================================================  
-		public class StringUril {  
+		public class StringUtil {  
 			public static final String stringValue = "hihi";  
   
 			//생성자가 존재하지 않음  
