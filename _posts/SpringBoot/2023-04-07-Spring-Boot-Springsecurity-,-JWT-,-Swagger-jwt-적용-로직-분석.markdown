@@ -2,22 +2,22 @@
 layout: post  
 title: "[Spring Boot] Springsecurity , JWT , Swagger jwt 적용 로직 분석"  
 subtitle: "Spring Boot Springsecurity , JWT , Swagger jwt 적용 로직 분석"  
-date: 2023-04-07 00:03:34 +0900  
+date: 2023-04-07 16:06:24 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  
-[Spring boot - Springsecurity , JWT , Swagger jwt 적용 로직 분석 ]  
+## Spring boot - Springsecurity , JWT , Swagger jwt 적용 로직 분석  
   
-# 소스파일 경로  
+## 소스파일 경로  
 	https://github.com/kkimsungchul/study/tree/master/Spring%20Boot/SpringSecurity  
 	https://github.com/kkimsungchul/sungchul_ETC/tree/main/src/main/java/com/sungchul/etc/config  
   
-# 해당 파일 작성 사유  
+## 해당 파일 작성 사유  
 	구글링으로 참고한 여러 소스들을 가져다 사용했음  
 	일단 복붙으로 작성하고 내가 원하는 부분만 커스터마이징 했기 때문에 정확히 어떻게 작동하는지에 대해 한번 서술하면서 정리할 필요를 느낌  
 	다 적용하고 나니 간단하긴 한데.. 처음이라 그런지 살짝 복잡한 느낌이 들긴함  
   
-# 작성한 클래스들 목록 및 설명  
+## 작성한 클래스들 목록 및 설명  
   
 	SpringSecurity  
 		csrf  
@@ -49,11 +49,11 @@ categories: SpringBoot
   
 [ SpringSecurity  적용 ]  
   
-		# CustomUserDetailsService.java  
+		## CustomUserDetailsService.java  
 			org.springframework.security.core.userdetails.UserDetailsService 인터페이스를 구현함  
 			DB에서 사용자의 정보를 가져 오는 부분이며, 입력받은 ID로 사용자의 정보를 조회해서 "UserContext" 클래스에 담아서 리턴해주는 역할을 함  
   
-		# SecurityConfig.java  
+		## SecurityConfig.java  
 			스프링시큐리티의 설정파일  
 			어떤 유저가 어떠한 권한이 있는지 체크하고,  
 			비밀번호 암호화를 할 수 있도록 암호화 객체를 제공해줌  
@@ -63,7 +63,7 @@ categories: SpringBoot
 			※ WebSecurityConfig.java 파일을 작성하면서 위에 내용들을 전부다 주석처리하였음  
 			※ 위의 내용은 WebSecurityConfig.java 파일에 포함되어있음  
   
-		# UserContext.java  
+		## UserContext.java  
 			org.springframework.security.core.userdetails.User 를 상속받아서 구현함  
 			넘겨받은 값들을 부모클래스의 생성자에 넣어줌  
 			사용자의 ID , 비밀번호, 권한을 넣어줌  
@@ -72,7 +72,7 @@ categories: SpringBoot
 [ JWT 적용 ]  
 		- config 패키지  
   
-			# JwtAuthenticationEntryPoint.java  
+			## JwtAuthenticationEntryPoint.java  
 				허가되지 않은 사용자라면, 접근 불가 메세지를 띄워 리소스 정보획득을 못하게 막아줌  
 				해당 클래스는 "WebSecurityConfig.java" 파일에서  아래와 같이 선언하여 사용하며.  
 					=================================================================================================================  
@@ -89,7 +89,7 @@ categories: SpringBoot
 					.authenticationEntryPoint(jwtAuthenticationEntryPoint)  
 					=================================================================================================================  
   
-			# JwtRequestFilter.java  
+			## JwtRequestFilter.java  
   
 				프론트에서 request 를 요청할때마다 해당 필터를 거치도록 해야함  
 				해당 필터는 header에 담겨 있는 토큰 정보가 유효한지 확인하는 클래스임  
@@ -98,12 +98,12 @@ categories: SpringBoot
 					=================================================================================================================  
 				위와 같이 헤더에 저장된 값을 꺼내오는 역할을 함  
   
-			# JwtUserDetailsService.java  
+			## JwtUserDetailsService.java  
 				위에서 Springsecurity 만 사용할 때 작성한 클래스 "CustomUserDetailsService.java" 와 똑같이 구현하였음.  
 				여기서도 똑같이 UserContext.java 클래스를 리턴해줌  
   
 		- controller 패키지  
-			# JwtAuthenticationController.java  
+			## JwtAuthenticationController.java  
 				사용자의 인증 요청 처리를 담당할 컨트롤러임  
 				사용자가 보내온 ID / PW 를 가지고 인증처리를 담당함  
   
@@ -114,20 +114,20 @@ categories: SpringBoot
 				JwtTokenUtil 클래스의 generateToken 메소드를 통해 사용자의 토큰을 발급해줌  
   
 		- util 패키지  
-			# JwtTokenUtil.java  
+			## JwtTokenUtil.java  
 				JWT 토큰을 사용할 수 있도록 여러가지 기능들을 구현한 클래스  
 				토큰에 저장된 사용자의 ID , 토큰에 저장된 만료일, 토큰이 만료되었는지, 토큰발급등의 로직을 처리함  
   
 		- vo 패키지  
-			# JwtRequest.java  
+			## JwtRequest.java  
 				VO임. 사용자가 입력한 ID / PW 를 받아오는 역할을 함  
   
-			# JwtResponse.java  
+			## JwtResponse.java  
 				요청에 대한 응답 객체임.  
 				사용자가 ID / PW를 입력하여 요청을 보냈을때, 해당 클래스에 값을 담아서 사용자에게 되돌려줌  
   
 		-security 패키지  
-			# WebSecurityConfig.java  
+			## WebSecurityConfig.java  
 				해당 파일은 "SecurityConfig.java" 에서 구현한 내용과 비슷하지만, "JwtAuthenticationEntryPoint" , "JwtRequestFilter" 두개의 클래스를 주입받아서  
 				매 요청시 "JwtRequestFilter" 가 작동할 수 있도록 구현, 사용자의 인증 정보가 잘못되었을 경우 "JwtAuthenticationEntryPoint" 를 호출하도록 구현하였음  
 					=================================================================================================================  
@@ -153,7 +153,7 @@ categories: SpringBoot
   
 [ Swagger 에 JWT 적용 ]  
   
-		# SwaggerConfig.java  
+		## SwaggerConfig.java  
 			"JwtRequestFilter" 를 구현함으로써 스웨거UI와 로그인을 제외한 요청에 대해서 JWT 토큰을 검증하도록 하였음  
 			헤더값에 매번 jwt 토큰을 넣어 줄 수가 없으니, 스웨거의 authorize 기능을 확용하기로 함  
 			기존에는 api() 메소드에서 빌드 부분에 security 관련 설정을 넣지 않았지만, 여기서는 추가하였음  

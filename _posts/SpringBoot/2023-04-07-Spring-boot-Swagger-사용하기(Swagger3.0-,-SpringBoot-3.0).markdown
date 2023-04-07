@@ -1,24 +1,24 @@
 ---  
 layout: post  
-title: "[Spring boot] Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"  
-subtitle: "Spring boot Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"  
-date: 2023-04-07 00:03:34 +0900  
+title: "[Spring Boot] Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"  
+subtitle: "Spring Boot Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"  
+date: 2023-04-07 16:06:24 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  
-# SpringBoot - Swagger 3.0 버전 사용 (SpringBoot3.0)  
+## SpringBoot - Swagger 3.0 버전 사용 (SpringBoot3.0)  
   
-# SpringBoot 버전  
+## SpringBoot 버전  
 	id 'org.springframework.boot' version '3.0.5'  
 	id 'io.spring.dependency-management' version '1.1.0'  
   
-# 사용이유  
+## 사용이유  
 	SpringBoot3.0으로 프로젝트를 시작하기로 함..  
 	그래서 일단 기본적인 설정부터 하자라고 마음먹고 Swagger 3.0을 세팅하기 시작함  
 	참고링크 :  
 		※ 본인이 정리한 내용임..  
   
-# 오류 발생  
+## 오류 발생  
 	위에 정리한 내용대로 분명히 했음.  
 	근데 안됨 whitelabel error page 에러가뜸  
 	뭐가 문제지 싶어서 2.9.2 버전으로 내려봄  
@@ -31,7 +31,7 @@ categories: SpringBoot
 	is behind an API Gateway. The base url is the root of where all the swagger resources are served.  
 	======================================================================================================  
   
-# 시도방법1(안됨) - 이전에 작성한 내용  
+## 시도방법1(안됨) - 이전에 작성한 내용  
 	1. 아래의 의존성 추가  
 		======================================================================================================  
 		implementation 'io.springfox:springfox-boot-starter:3.0.0'  
@@ -81,17 +81,17 @@ categories: SpringBoot
 	3. 실행  
 		whitelabel error page  
   
-# 시도방법2(안됨) - @EnableSwagger2 추가  
+## 시도방법2(안됨) - @EnableSwagger2 추가  
 	1. SwaggerConfig 상단에 @EnableSwagger2 어노테이션 추가  
   
 	2. 실행 자체에서 오류 발생  
   
-# 시도방법3(안됨) - @EnableWebMvc 추가  
+## 시도방법3(안됨) - @EnableWebMvc 추가  
 	1. SwaggerConfig 상단에 @EnableWebMvc 어노테이션 추가  
   
 	2. 애도 똑같이 오류남 - 오류메시지가 기억이 안남  
   
-# 시도방법4(안됨) - Webconfig 정의  
+## 시도방법4(안됨) - Webconfig 정의  
 	1. Webconfig.java 생성 후 아래와 같이 정의  
 	======================================================================================================  
 	package com.sungchul.recruiter.config;  
@@ -113,7 +113,7 @@ categories: SpringBoot
 	2. 애도 오류남  
 		whitelabel error page  
   
-# 시도방법5(작동함) - springdoc-openapi-starter-webmvc-ui 로 갈아탐  
+## 시도방법5(작동함) - springdoc-openapi-starter-webmvc-ui 로 갈아탐  
 	공식문서URL : https://springdoc.org/  
 				https://springdoc.org/v2/  
   
@@ -134,7 +134,7 @@ categories: SpringBoot
 		======================================================================================================  
   
 	3. 접속  
-		http://localhost:9090/swagger-ui/index.html#/  
+		http://localhost:9090/swagger-ui/index.html##/  
 		성공  
   
 		별다른 설정파일 없이 스웨거에 접근이 가능해짐  
@@ -166,7 +166,7 @@ categories: SpringBoot
 			======================================================================================================  
   
 		4-2. application.yml 파일 설정  
-			https://springdoc.org/#properties  
+			https://springdoc.org/##properties  
 			======================================================================================================  
 			spring:  
 			  mvc:  
@@ -180,9 +180,9 @@ categories: SpringBoot
 			  default-consumes-media-type: application/json;charset=UTF-8  
 			  default-produces-media-type: application/json;charset=UTF-8  
 			  swagger-ui:  
-				path: swagger-ui.html         # Swagger UI 경로 , localhost:9090/swagger-ui/index.html default : swagger-ui/index.html  
-				tags-sorter: alpha            # alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬  
-				operations-sorter: alpha      # alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬  
+				path: swagger-ui.html         ## Swagger UI 경로 , localhost:9090/swagger-ui/index.html default : swagger-ui/index.html  
+				tags-sorter: alpha            ## alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬  
+				operations-sorter: alpha      ## alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬  
 			  api-docs:  
 				path: /api-docs/json  
 				groups:  
@@ -192,7 +192,7 @@ categories: SpringBoot
   
 			======================================================================================================  
   
-# 시도방법6(SpringBoot3미만 가능)  
+## 시도방법6(SpringBoot3미만 가능)  
 	구글에서 검색하면 남들은 다 아래 라이브러리 하나로도 잘되는데 나는 안됨..  
 	다른점은 SpringBoot 버전이 다르다는것 뿐임.  
 	그래서 찾아본 결과 아래의 링크를 보면 SpringBoot3에서는 " springdoc-openapi-ui" 가 "springdoc-openapi-starter-webmvc-ui"로 변경되었다고 함  
@@ -209,7 +209,7 @@ categories: SpringBoot
   
 	3. 실행  
   
-# springfox와 springdoc 비교  
+## springfox와 springdoc 비교  
 	Github URL : https://github.com/springfox/springfox  
 	Github URL : https://github.com/springdoc/springdoc-openapi  
   
@@ -223,7 +223,7 @@ categories: SpringBoot
 		springfox : O  
 		springdoc : X  
   
-# 어노테이션 설명  
+## 어노테이션 설명  
   
 	@Tag  
 		Controller에 대한 설명을 명시하는 어노테이션  

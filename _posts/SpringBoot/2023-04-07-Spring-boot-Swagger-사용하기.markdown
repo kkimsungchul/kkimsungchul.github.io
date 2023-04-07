@@ -1,14 +1,14 @@
 ---  
 layout: post  
-title: "[Spring boot] Swagger 사용하기"  
-subtitle: "Spring boot Swagger 사용하기"  
-date: 2023-04-07 00:03:34 +0900  
+title: "[Spring Boot] Swagger 사용하기"  
+subtitle: "Spring Boot Swagger 사용하기"  
+date: 2023-04-07 16:06:24 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  
-#SpringBoot - swagger 사용하기  
+##SpringBoot - swagger 사용하기  
   
-# 참고링크  
+## 참고링크  
 	https://kim-jong-hyun.tistory.com/49  
 	https://dev-jwblog.tistory.com/20  
   
@@ -22,7 +22,7 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-# swagger 라이브러리 추가  
+## swagger 라이브러리 추가  
   
 	gradle 파일에 아래의 내용을 추가  
 	=================================================================================================================  
@@ -32,7 +32,7 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-# swagger Config 파일 생성  
+## swagger Config 파일 생성  
 	=================================================================================================================  
   
 	@Configuration  
@@ -51,10 +51,10 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-# 접속  
+## 접속  
 	http://localhost:8080/swagger-ui.html  
   
-# 설명 적용  
+## 설명 적용  
   
 	@ApiOperation 어노테이션을 통해서 API에 대한 설명을 작성  
 	@ApiImplicitParam 을 통해서 해당 변수의 설명과 디폴트 값을 작성  
@@ -97,7 +97,7 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-# CSRF 토큰 컨트롤러 생성  
+## CSRF 토큰 컨트롤러 생성  
   
 	swagger 사용시 http://localhost:/csrf 404 오류메시지가 출력되어서 구현함  
   
@@ -124,7 +124,7 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-# 오류발생  
+## 오류발생  
   
 	Spring boot 2.6버전 이후에 spring.mvc.pathmatch.matching-strategy 값이 ant_apth_matcher에서 path_pattern_parser로 변경되면서 몇몇 라이브러리(swagger포함)에 오류가 발생  
   
