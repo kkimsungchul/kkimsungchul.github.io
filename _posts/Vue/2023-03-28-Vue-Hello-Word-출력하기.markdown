@@ -1,0 +1,39 @@
+---  
+layout: post  
+title: "[Vue] Hello Word 출력하기"  
+subtitle: "Vue Hello Word 출력하기"  
+date: 2023-03-28 06:30:06 +0900  
+categories: Vue  
+---  
+{% raw %}  
+[ vue.js - Hellow Vue 출력하기 ]  
+  
+# vue.js 로 Hellow Vue 출력하기  
+	아래의 파일을 작성  
+	=================================================================================================================  
+	<!DOCTYPE html>  
+	<html>  
+  
+	<head>  
+		<meta name="viewport" content="width=device-width , initial-scale=1">  
+	</head>  
+  
+	<body>  
+		<div id="app">  
+			<hi>{{hi}}</hi>  
+		</div>  
+  
+	</body>  
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+	<script>  
+		var app = new Vue({  
+			el: '#app',  
+			data: {  
+				hi: "Hellow Vue"  
+			}  
+		})  
+  
+	</script>  
+	</html>  
+	==========================================================================================================  
+{% endraw %}
