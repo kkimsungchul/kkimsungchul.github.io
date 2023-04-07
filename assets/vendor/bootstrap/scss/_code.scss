@@ -1,7 +1,11 @@
+
+.ksc-custom-content{
+  width: 100%;
+}
 // Inline code
 code {
   @include font-size($code-font-size);
-  color: $code-color;
+  color: #a9b7c6;
   word-wrap: break-word;
 
   // Streamline the style when inside anchors to avoid broken underline and more
@@ -32,11 +36,12 @@ pre {
   display: block;
   @include font-size($code-font-size);
   color: $pre-color;
+  background: #212529;
 
   // Account for some code outputs that place code tags in pre tags
   code {
     @include font-size(inherit);
-    color: inherit;
+//    color: inherit;
     word-break: normal;
   }
 }
