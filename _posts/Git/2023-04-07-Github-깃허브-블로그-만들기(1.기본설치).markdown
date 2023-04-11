@@ -2,7 +2,7 @@
 layout: post  
 title: "[Github] 깃허브 블로그 만들기(1.기본설치)"  
 subtitle: "Github 깃허브 블로그 만들기(1.기본설치)"  
-date: 2023-04-07 16:06:24 +0900  
+date: 2023-04-07 17:07:36 +0900  
 categories: Git  
 ---  
 {% raw %}  
