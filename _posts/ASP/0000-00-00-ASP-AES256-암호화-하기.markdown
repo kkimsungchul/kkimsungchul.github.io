@@ -1,0 +1,24 @@
+---  
+layout: post  
+title: "[ASP] AES256 암호화 하기"  
+subtitle: "ASP AES256 암호화 하기"  
+date: 0000-00-00 00:00:00 +0900  
+categories: ASP  
+---  
+{% raw %}  
+## ASP 에서 AES256 암호화 하기  
+  
+	필요파일 경로 : C:₩Users₩USER₩Desktop₩kimsc₩0.깃허브- 개발공부₩ASP₩[ASP] js파일로 AES256 암호화  
+  
+## 클라이언트 측에서 암호화  
+  
+	파일명 : sample_javascript_aes256_imcore_net.html  
+  
+## 서버측에서 암호화  
+	* ASP로 사용하기 위해서는 아래와 같이 자바스크립트 선언부분에 runat="server" 를 추가해 줘야 함  
+  
+		<script type="text/javascript" language="javascript" runat="server" src="gibberish-aes.js"></script>  
+		<script type="text/javascript" language="javascript" runat="server">  
+  
+	파일명 : sample_asp.asp  
+{% endraw %}

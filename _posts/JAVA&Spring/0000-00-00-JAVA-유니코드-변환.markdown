@@ -1,0 +1,12 @@
+---  
+layout: post  
+title: "[JAVA] 유니코드 변환"  
+subtitle: "JAVA 유니코드 변환"  
+date: 0000-00-00 00:00:00 +0900  
+categories: JAVA&Spring  
+---  
+{% raw %}  
+## JAVA- 유니코드 변환 참고링크  
+	https://huskdoll.tistory.com/39  
+  
+{% endraw %}

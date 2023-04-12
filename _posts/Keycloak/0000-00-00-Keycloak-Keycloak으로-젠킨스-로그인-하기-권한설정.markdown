@@ -1,0 +1,77 @@
+---  
+layout: post  
+title: "[Keycloak] Keycloak으로 젠킨스 로그인 하기-권한설정"  
+subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기-권한설정"  
+date: 0000-00-00 00:00:00 +0900  
+categories: Keycloak  
+---  
+{% raw %}  
+## Keycloak - Keycloak으로 젠킨스 로그인 하기 - 권한 설정( access type - public)  
+	https://oingdaddy.tistory.com/245  
+  
+	Jenkins 파일 문제생겻을 경우  
+		https://oingdaddy.tistory.com/247  
+  
+	그외 오류 관련 링크  
+		https://tech.osci.kr/2020/04/21/k8s%EC%99%80-spinnaker-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/  
+  
+## 중요 참고 사항  
+	이전에 access type 을 public 로 젠킨스와 연동했었으면 새로 클라이언트를 생성하고 할것  
+  
+## keycloak - jenkins 에서 사용할 권한 설정  
+	role 는 클라이언트에서 등록하지 않고, 렐름에서 등록함  
+  
+	1. realm 에서 Demo 선택  
+  
+	2. 좌측 탭에서 Roles 클릭  
+  
+	3. 화면에 표시되는 상단탭에서 Roles 클릭  
+  
+	4. Add Role 버튼 클릭  
+  
+	5. jenkins_user , jenkins_admin 룰 두개를 각각 추가  
+  
+## Jenkins - Role-based Authorization 플러그인 설치  
+  
+	1. Jenkins 접속  
+  
+	2. 좌측의 Jenkins 관리 클릭  
+  
+	3. 플러그인 관리 클릭  
+  
+	4. Role-based Authorization 플러그인 설치  
+		※ 애는 Install without restart 말고 Download now and install after restart 를 선택 후  
+			Jenkins 를 재기동하자  
+  
+##  Jenkins - Role-based Authorization 설정  
+	1. Jenkins 접속  
+  
+	2. Configure Global Security 클릭  
+  
+	3. Authorization 항목에서 Role-Based Strategy 선택 후 저장  
+  
+## Jenkins - Manage and Assign Roles 설정  
+  
+	1. Jenkins 접속  
+  
+	2. 좌측의 Jenkins 관리 클릭  
+  
+	3. Security 에서 Manage and Assign Roles 클릭  
+  
+	4. Manage Roles 클릭  
+  
+	5. Role to add 에 user를 입력 후 Add 클릭  
+  
+	6. user 가 추가되면 적당한 권한을 준 뒤 저장  
+  
+	=================================================================================================================  
+  
+	7. Security 에서 Manage and Assign Roles 클릭  
+  
+	8. Assign Roles 클릭  
+  
+	9. keycloak 에서 생성하였던 jenkins_admin과 jenkins_user Role을 Jenkins의 admin과 user에 각각 매핑  
+		jenkins_user 추가 후 user 체크  
+		jenkins_admin 추가 후 admin 체크  
+  
+{% endraw %}

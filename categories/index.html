@@ -22,10 +22,10 @@ type: page
                 margin-left: 2em;
             ">
               <a class="title" href="{{ post.url | prepend: site.url }}">
-              <time>
-              {{ post.date | date:"%F" }}
-<!--                요일표시임, 주석제거하면 보임{{ post.date | date: "%a" }}.-->
-              </time>
+<!--              <time>-->
+<!--              {{ post.date | date:"%F" }}-->
+<!--&lt;!&ndash;                요일표시임, 주석제거하면 보임{{ post.date | date: "%a" }}.&ndash;&gt;-->
+<!--              </time>-->
               &nbsp; {{ post.title }}</a>
             </li>
             {% endif %}
