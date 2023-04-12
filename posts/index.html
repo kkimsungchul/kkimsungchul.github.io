@@ -22,7 +22,8 @@ background: '/img/bg-post.jpg'
     {% else %}
     {{ site.author }}
     {% endif %}
-    on {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}
+<!--    작성일자 미표시-->
+<!--    on {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}-->
   </p>
 </article>
 
