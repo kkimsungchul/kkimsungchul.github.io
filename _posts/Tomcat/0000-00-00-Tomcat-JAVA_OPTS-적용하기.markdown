@@ -2,7 +2,7 @@
 layout: post  
 title: "[Tomcat] JAVA_OPTS 적용하기"  
 subtitle: "Tomcat JAVA_OPTS 적용하기"  
-date: 2023-04-07 16:06:24 +0900  
+date: 0000-00-00 00:00:00 +0900  
 categories: tomcat  
 ---  
 {% raw %}  
