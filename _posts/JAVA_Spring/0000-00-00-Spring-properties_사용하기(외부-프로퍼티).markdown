@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring] properties_사용하기(외부 프로퍼티)"  
 subtitle: "Spring properties_사용하기(외부 프로퍼티)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

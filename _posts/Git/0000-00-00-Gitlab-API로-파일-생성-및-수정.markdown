@@ -2,7 +2,7 @@
 layout: post  
 title: "[Gitlab] API로 파일 생성 및 수정"  
 subtitle: "Gitlab API로 파일 생성 및 수정"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Git  
 ---  
 {% raw %}  

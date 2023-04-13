@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] OS 명령어 실행하기 - Git Push 하기"  
 subtitle: "JAVA OS 명령어 실행하기 - Git Push 하기"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

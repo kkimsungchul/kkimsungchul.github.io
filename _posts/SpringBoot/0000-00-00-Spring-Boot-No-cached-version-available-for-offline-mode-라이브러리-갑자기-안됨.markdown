@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] No cached version available for offline mode 라이브러리 갑자기 안됨"  
 subtitle: "Spring Boot No cached version available for offline mode 라이브러리 갑자기 안됨"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

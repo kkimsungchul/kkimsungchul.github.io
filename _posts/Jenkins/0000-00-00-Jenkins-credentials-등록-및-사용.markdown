@@ -2,7 +2,7 @@
 layout: post  
 title: "[Jenkins] credentials 등록 및 사용"  
 subtitle: "Jenkins credentials 등록 및 사용"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Jenkins  
 ---  
 {% raw %}  

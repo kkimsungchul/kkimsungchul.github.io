@@ -2,7 +2,7 @@
 layout: post  
 title: "[Jenkins] 젠킨스 배포스크립트 작성(Windows)"  
 subtitle: "Jenkins 젠킨스 배포스크립트 작성(Windows)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Jenkins  
 ---  
 {% raw %}  

@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] ComponentScan 사용 ( main 메소드와 다른 패키지)"  
 subtitle: "Spring Boot ComponentScan 사용 ( main 메소드와 다른 패키지)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

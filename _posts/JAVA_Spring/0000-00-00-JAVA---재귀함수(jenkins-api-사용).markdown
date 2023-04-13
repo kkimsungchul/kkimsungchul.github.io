@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] - 재귀함수(jenkins api 사용)"  
 subtitle: "JAVA - 재귀함수(jenkins api 사용)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

@@ -2,7 +2,7 @@
 layout: post  
 title: "[Jenkins] Jenkins 플러그인 수동 설치"  
 subtitle: "Jenkins Jenkins 플러그인 수동 설치"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Jenkins  
 ---  
 {% raw %}  

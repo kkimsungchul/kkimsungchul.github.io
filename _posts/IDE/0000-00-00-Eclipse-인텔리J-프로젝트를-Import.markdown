@@ -2,7 +2,7 @@
 layout: post  
 title: "[Eclipse] 인텔리J 프로젝트를 Import"  
 subtitle: "Eclipse 인텔리J 프로젝트를 Import"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: IDE  
 ---  
 {% raw %}  

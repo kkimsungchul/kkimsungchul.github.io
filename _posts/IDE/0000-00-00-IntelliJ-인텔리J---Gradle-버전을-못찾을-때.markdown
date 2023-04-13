@@ -2,7 +2,7 @@
 layout: post  
 title: "[IntelliJ] 인텔리J - Gradle 버전을 못찾을 때"  
 subtitle: "IntelliJ 인텔리J - Gradle 버전을 못찾을 때"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: IDE  
 ---  
 {% raw %}  

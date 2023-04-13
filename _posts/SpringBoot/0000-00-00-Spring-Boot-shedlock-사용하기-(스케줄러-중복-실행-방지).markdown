@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] shedlock 사용하기 (스케줄러 중복 실행 방지)"  
 subtitle: "Spring Boot shedlock 사용하기 (스케줄러 중복 실행 방지)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

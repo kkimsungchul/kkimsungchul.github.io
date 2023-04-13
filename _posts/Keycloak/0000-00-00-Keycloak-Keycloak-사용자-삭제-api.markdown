@@ -2,7 +2,7 @@
 layout: post  
 title: "[Keycloak] Keycloak 사용자 삭제 api"  
 subtitle: "Keycloak Keycloak 사용자 삭제 api"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Keycloak  
 ---  
 {% raw %}  

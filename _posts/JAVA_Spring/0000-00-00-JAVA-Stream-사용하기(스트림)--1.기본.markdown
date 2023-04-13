@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] Stream 사용하기(스트림)- 1.기본"  
 subtitle: "JAVA Stream 사용하기(스트림)- 1.기본"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

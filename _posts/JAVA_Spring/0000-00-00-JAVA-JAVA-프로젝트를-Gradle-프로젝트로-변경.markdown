@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] JAVA 프로젝트를 Gradle 프로젝트로 변경"  
 subtitle: "JAVA JAVA 프로젝트를 Gradle 프로젝트로 변경"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

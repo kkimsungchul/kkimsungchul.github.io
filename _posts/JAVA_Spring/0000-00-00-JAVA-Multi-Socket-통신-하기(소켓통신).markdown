@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] Multi Socket 통신 하기(소켓통신)"  
 subtitle: "JAVA Multi Socket 통신 하기(소켓통신)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

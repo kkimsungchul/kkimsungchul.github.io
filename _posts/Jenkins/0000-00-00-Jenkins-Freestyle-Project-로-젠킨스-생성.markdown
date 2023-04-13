@@ -2,7 +2,7 @@
 layout: post  
 title: "[Jenkins] Freestyle Project 로 젠킨스 생성"  
 subtitle: "Jenkins Freestyle Project 로 젠킨스 생성"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Jenkins  
 ---  
 {% raw %}  

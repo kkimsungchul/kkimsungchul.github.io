@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] DAO , DTO , VO , Entity 차이"  
 subtitle: "Spring Boot DAO , DTO , VO , Entity 차이"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] Junit5 사용-1(2022년 정리)"  
 subtitle: "Spring Boot Junit5 사용-1(2022년 정리)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

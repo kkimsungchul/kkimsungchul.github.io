@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] Optional 사용하기(옵셔널)"  
 subtitle: "JAVA Optional 사용하기(옵셔널)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

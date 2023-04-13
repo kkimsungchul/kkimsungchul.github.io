@@ -2,7 +2,7 @@
 layout: post  
 title: "[GitLab] 신규 브런치 생성"  
 subtitle: "GitLab 신규 브런치 생성"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Git  
 ---  
 {% raw %}  

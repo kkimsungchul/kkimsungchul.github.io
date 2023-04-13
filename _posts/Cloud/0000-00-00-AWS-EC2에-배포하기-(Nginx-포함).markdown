@@ -2,7 +2,7 @@
 layout: post  
 title: "[AWS] EC2에 배포하기 (Nginx 포함)"  
 subtitle: "AWS EC2에 배포하기 (Nginx 포함)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Cloud  
 ---  
 {% raw %}  

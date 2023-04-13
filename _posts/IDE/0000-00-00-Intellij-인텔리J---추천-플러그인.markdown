@@ -2,7 +2,7 @@
 layout: post  
 title: "[Intellij] 인텔리J - 추천 플러그인"  
 subtitle: "Intellij 인텔리J - 추천 플러그인"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: IDE  
 ---  
 {% raw %}  

@@ -2,7 +2,7 @@
 layout: post  
 title: "[Effective Java] 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"  
 subtitle: "Effective Java 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  

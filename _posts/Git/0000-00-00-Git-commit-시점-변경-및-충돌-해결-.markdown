@@ -2,7 +2,7 @@
 layout: post  
 title: "[Git] commit 시점 변경 및 충돌 해결 "  
 subtitle: "Git commit 시점 변경 및 충돌 해결 "  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Git  
 ---  
 {% raw %}  

@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] CORS(크로스 도메인이슈) 해결하기"  
 subtitle: "Spring Boot CORS(크로스 도메인이슈) 해결하기"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

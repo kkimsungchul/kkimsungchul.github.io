@@ -2,7 +2,7 @@
 layout: post  
 title: "[Git] Git 시작하기- Git 오류 해결 방법"  
 subtitle: "Git Git 시작하기- Git 오류 해결 방법"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Git  
 ---  
 {% raw %}  

@@ -2,7 +2,7 @@
 layout: post  
 title: "[Keycloak] Keycloak으로 젠킨스 로그인 하기-권한설정-confidential"  
 subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기-권한설정-confidential"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Keycloak  
 ---  
 {% raw %}  

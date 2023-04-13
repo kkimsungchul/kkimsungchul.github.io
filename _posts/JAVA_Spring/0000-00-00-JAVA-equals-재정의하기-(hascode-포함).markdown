@@ -2,7 +2,7 @@
 layout: post  
 title: "[JAVA] equals 재정의하기 (hascode 포함)"  
 subtitle: "JAVA equals 재정의하기 (hascode 포함)"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: JAVA_Spring  
 ---  
 {% raw %}  

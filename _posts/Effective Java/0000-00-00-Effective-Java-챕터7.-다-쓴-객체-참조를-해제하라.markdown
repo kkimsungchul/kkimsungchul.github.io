@@ -2,7 +2,7 @@
 layout: post  
 title: "[Effective Java] 챕터7. 다 쓴 객체 참조를 해제하라"  
 subtitle: "Effective Java 챕터7. 다 쓴 객체 참조를 해제하라"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  

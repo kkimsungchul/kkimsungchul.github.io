@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] 그래들 프로젝트 임포트"  
 subtitle: "Spring Boot 그래들 프로젝트 임포트"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

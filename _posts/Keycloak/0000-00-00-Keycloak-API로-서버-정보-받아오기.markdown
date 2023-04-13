@@ -2,7 +2,7 @@
 layout: post  
 title: "[Keycloak] API로 서버 정보 받아오기"  
 subtitle: "Keycloak API로 서버 정보 받아오기"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Keycloak  
 ---  
 {% raw %}  

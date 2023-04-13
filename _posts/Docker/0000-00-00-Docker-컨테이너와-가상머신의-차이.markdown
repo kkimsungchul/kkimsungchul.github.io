@@ -2,7 +2,7 @@
 layout: post  
 title: "[Docker] 컨테이너와 가상머신의 차이"  
 subtitle: "Docker 컨테이너와 가상머신의 차이"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Docker  
 ---  
 {% raw %}  

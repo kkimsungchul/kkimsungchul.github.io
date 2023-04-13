@@ -2,7 +2,7 @@
 layout: post  
 title: "[AWS] EC2에서 실행중인 jar 파일 재기동하기"  
 subtitle: "AWS EC2에서 실행중인 jar 파일 재기동하기"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Cloud  
 ---  
 {% raw %}  

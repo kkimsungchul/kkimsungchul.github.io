@@ -2,7 +2,7 @@
 layout: post  
 title: "[Effective Java] 챕터6. 불필요한 객체 생성을 피하라"  
 subtitle: "Effective Java 챕터6. 불필요한 객체 생성을 피하라"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: EffectiveJava  
 ---  
 {% raw %}  

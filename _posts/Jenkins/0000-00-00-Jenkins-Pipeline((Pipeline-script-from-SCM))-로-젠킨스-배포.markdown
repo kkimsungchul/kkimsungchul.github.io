@@ -2,7 +2,7 @@
 layout: post  
 title: "[Jenkins] Pipeline((Pipeline script from SCM)]) 로 젠킨스 배포"  
 subtitle: "Jenkins Pipeline((Pipeline script from SCM)) 로 젠킨스 배포"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: Jenkins  
 ---  
 {% raw %}  

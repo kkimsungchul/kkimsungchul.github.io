@@ -2,7 +2,7 @@
 layout: post  
 title: "[Spring Boot] JWT 기반 로그인"  
 subtitle: "Spring Boot JWT 기반 로그인"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: SpringBoot  
 ---  
 {% raw %}  

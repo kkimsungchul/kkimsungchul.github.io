@@ -2,7 +2,7 @@
 layout: post  
 title: "[Camping] SpringBoot와 텔레그램 연동"  
 subtitle: "Camping SpringBoot와 텔레그램 연동"  
-date: 0000-00-00 00:00:00 +0900  
+date: 2023-01-01 00:00:00 +0900  
 categories: 캠핑장예약확인프로그램개발  
 ---  
 {% raw %}  
