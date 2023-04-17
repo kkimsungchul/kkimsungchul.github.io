@@ -33,7 +33,9 @@ layout: default
         {{ content }}
 
         <!-- Home Post List -->
-        {% for post in site.posts limit : 10 %}
+        <!--오름차순 정렬-->
+        {% assign sorted_posts = site.posts | sort %}
+        {% for post in sorted_posts limit : 10 %}
 
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
