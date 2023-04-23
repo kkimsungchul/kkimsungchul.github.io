@@ -35,4 +35,14 @@ categories: Git
   
 ## 등록 후 업데이트까지는 몇일 소요된다고 함  
   
+## 사이트맵 업데이트  
+	https://www.google.com/ping?sitemap=사이트맵URL  
+	ex) https://www.google.com/ping?sitemap=https://kkimsungchul.github.io/sitemap.xml  
+  
+	위와같이 강제로 업데이트를 하자  
+  
+## bing 등록  
+	https://www.bing.com/webmasters/  
+  
+## naver 등록  
 {% endraw %}

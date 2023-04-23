@@ -28,7 +28,37 @@ categories: SpringBoot
 	다양한 데이터베이스 지원: SpringBoot JPA는 다양한 데이터베이스를 지원합니다.  
 	따라서 개발자는 동일한 코드베이스를 사용하여 다양한 데이터베이스에 대해 애플리케이션을 빌드할 수 있습니다.  
   
-## JPA 어노테이션  
+## JPA 패키지 구조  
+	Entity Class Package :  
+		JPA에서 사용하는 Entity 클래스들을 저장하는 패키지입니다.  
+		패키지 이름은 보통 "domain" 또는 "model"과 같은 이름으로 작성합니다.  
+		각 엔티티 클래스는 테이블과 매핑됩니다.  
+  
+	Repository Class Package :  
+		JPA에서 사용하는 Repository 클래스들을 저장하는 패키지입니다.  
+		패키지 이름은 보통 "repository"와 같은 이름으로 작성합니다.  
+		각 Repository 클래스는 데이터베이스와의 상호작용을 담당합니다.  
+  
+	Service Class Package :  
+		비즈니스 로직을 담당하는 서비스 클래스들을 저장하는 패키지입니다.  
+		패키지 이름은 보통 "service"와 같은 이름으로 작성합니다.  
+		각 서비스 클래스는 하나 이상의 Repository 클래스를 사용하여 데이터베이스와 상호작용합니다.  
+  
+## JPA - Domain , Entity 설명  
+  
+	Domain :  비즈니스 도메인을 나타내는 개념  
+	Domain은 비즈니스의 핵심 도메인을 나타내는 객체들의 집합입니다.  
+	예를 들어, 인터넷 쇼핑몰에서의 "상품", "주문", "고객" 등이 비즈니스 도메인에 해당합니다.  
+	이러한 도메인 객체들은 애플리케이션에서 사용되며, 비즈니스 로직을 구현하기 위해 필요한 속성과 메서드를 가지고 있습니다.  
+  
+	Entity :  데이터베이스에 저장되는 개체를 나타내는 개념  
+	Entity는 데이터베이스에서 관리되는 객체를 나타내는 개념입니다.  
+	JPA에서 Entity는 데이터베이스의 테이블과 매핑되며, 데이터베이스의 각 행은 Entity의 인스턴스에 해당합니다.  
+	따라서 Entity는 데이터베이스의 데이터를 객체 지향적으로 다루기 위한 개념이며, 데이터베이스에서 데이터를 가져와 애플리케이션에서 사용할 수 있는 형태로 변환합니다.  
+  
+	JPA에서는 Domain 객체와 Entity 간의 매핑을 통해 데이터베이스와 애플리케이션 간의 변환을 수행합니다. 이를 통해 애플리케이션 개발자는 데이터베이스를 직접 다루는 복잡한 코드를 작성하지 않아도 됩니다.  
+  
+## JPA - Entity 어노테이션  
 	@Entity : JPA 엔티티 클래스를 선언할 때 사용합니다.  
 	JPA는 @Entity가 선언된 클래스를 자동으로 관리하게 됩니다.  
   
@@ -56,7 +86,7 @@ categories: SpringBoot
 	@Version : 엔티티 클래스에서 버전 관리를 위해 사용됩니다.  
 	엔티티가 업데이트될 때마다 버전 값을 증가시키며, 이를 통해 동시성 제어를 수행합니다.  
   
-## JpaRepository - 기본  
+## JpaRepository - 어노테이션  
 	save(S entity): 엔티티를 저장합니다. 새로운 엔티티인 경우에는 새로운 엔티티를 추가하고, 기존 엔티티인 경우에는 업데이트를 수행합니다.  
   
 	deleteById(ID id): 지정된 ID 값을 가진 엔티티를 삭제합니다.  
@@ -109,7 +139,11 @@ categories: SpringBoot
   
 	exists(Example<S> example): 주어진 예제(Example)를 만족하는 엔티티가 존재하는지 여부를 반환합니다.  
   
-## JpaRepository - JOIN  
+## JpaRepository - JOIN 관련 어노테이션  
+	참고링크 : https://private-space.tistory.com/87  
+				https://developer-youngjun.tistory.com/21  
+				https://gofnrk.tistory.com/58  
+  
 	findAll(Specification<T> spec, Pageable pageable): 주어진 조건(Specification)에 따라 엔티티를 조회하고, 페이징(Paging) 처리를 수행합니다.  
 	Specification은 검색 조건을 표현하는 객체로, JPA Criteria API를 사용하여 생성할 수 있습니다. 이 메서드를 사용하면 다수의 엔티티 간의 조인을 처리할 수 있습니다.  
   
@@ -126,6 +160,52 @@ categories: SpringBoot
   
 	findAllBy(Specification<T> spec, Class<R> resultClass, String... selection): 주어진 조건(Specification)에 따라 엔티티를 조회하고,  
 	지정된 결과 클래스(resultClass)와 선택(selection)에 따라 결과를 반환합니다. 이 메서드는 복잡한 조인 쿼리를 처리할 때 유용합니다.  
+  
+## JpaRepository - UPDATE 관련 어노테이션  
+  
+	void flush() :  엔티티 매니저의 캐시를 모두 비우고, 변경된 내용을 데이터베이스에 즉시 반영합니다.  
+  
+	T save(S entity) : 주어진 엔티티를 데이터베이스에 저장하거나, 이미 있는 경우에는 업데이트합니다.  
+  
+	Iterable<T> saveAll(Iterable<S> entities) : 주어진 모든 엔티티들을 데이터베이스에 저장하거나, 이미 있는 경우에는 업데이트합니다.  
+  
+	T saveAndFlush(S entity) : 주어진 엔티티를 데이터베이스에 저장하거나, 이미 있는 경우에는 업데이트하고, 이후에는 즉시 flush() 메서드를 호출하여 데이터베이스에 변경 내용을 반영합니다.(변경 내용을 즉시 데이터베이스에 반영)  
+  
+	@Modifying, @Query : JPA에서 제공하는 JPQL(QueryDSL) 또는 Native SQL을 사용하여, 데이터베이스에 직접적인 update 쿼리를 실행하는 메서드입니다.  
+	@Modifying 어노테이션을 사용하여 해당 메서드가 데이터베이스를 수정하는 쿼리임을 명시하고, @Query 어노테이션을 사용하여 실행할 쿼리를 정의합니다.  
+  
+	※ saveAndFlush() 메서드 외에 다른 메서들은 변경 내용을 캐시에 저장한 뒤, flush() 메서드를 호출하여 변경 내용을 데이터베이스에 일괄적으로 반영합니다.  
+  
+## JpaRepository - DELETE 관련 어노테이션  
+  
+	void deleteById(ID id) : 주어진 ID에 해당하는 엔티티를 삭제합니다.  
+  
+	void delete(T entity) : 주어진 엔티티를 삭제합니다.  
+  
+	void deleteAll() : 모든 엔티티를 삭제합니다.  
+  
+	void deleteAll(Iterable<? extends T> entities) : 주어진 모든 엔티티를 삭제합니다.  
+  
+	void deleteInBatch(Iterable<T> entities) : 주어진 모든 엔티티를 데이터베이스에서 삭제합니다. 이 메서드는 삭제 작업을 일괄 처리(batch processing)하여 성능을 향상시킵니다.  
+  
+	void deleteAllInBatch() : 모든 엔티티를 데이터베이스에서 삭제합니다. 이 메서드는 삭제 작업을 일괄 처리(batch processing)하여 성능을 향상시킵니다.  
+  
+	※ 각각의 메서드들은 주어진 인자들을 기반으로 데이터베이스에서 엔티티를 삭제하며, deleteInBatch()와 deleteAllInBatch() 메서드는 일괄 처리(batch processing)하여 성능을 향상시킵니다.  
+	※ JpaRepository에서는 @Query 어노테이션과 함께 Native SQL이나 JPQL(QueryDSL)을 사용하여 직접적인 삭제 쿼리를 실행할 수 있는 메서드도 제공합니다.  
+	이 경우, @Modifying 어노테이션을 함께 사용하여 해당 메서드가 데이터베이스를 수정하는 쿼리임을 명시해주어야 합니다.  
+  
+## JpaRepository - CREATE 관련 어노테이션  
+  
+	<S extends T> S save(S entity) : 주어진 엔티티를 저장하거나 업데이트합니다. 만약 엔티티가 이미 데이터베이스에 존재한다면 업데이트하고, 그렇지 않다면 새로운 엔티티를 생성합니다.  
+  
+	<S extends T> List<S> saveAll(Iterable<S> entities) : 주어진 모든 엔티티를 저장하거나 업데이트합니다. save() 메서드와 달리, saveAll()은 Iterable로 받은 모든 엔티티를 일괄 처리하여 저장합니다.  
+  
+	※  save() 메서드는 단일 엔티티를 저장하거나 업데이트하며, saveAll() 메서드는 Iterable로 받은 모든 엔티티를 일괄 처리하여 저장합니다.  
+  
+	※ JpaRepository에서는 save() 메서드를 호출하지 않아도, 엔티티를 데이터베이스에 자동으로 저장할 수 있는 기능을 제공합니다.  
+	이를 위해 엔티티 클래스에 @Entity 어노테이션과 @Id 어노테이션으로 ID 필드를 명시해주어야 합니다.  
+	그리고, Spring Data JPA에서는 EntityManager를 이용하여 엔티티를 자동으로 저장하는데, 이는 JPA의 영속성 컨텍스트(Persistence Context)를 이용하여 엔티티의 상태를 추적하고,  
+	변경사항이 있을 경우에만 데이터베이스에 자동으로 반영합니다. 이러한 기능을 Dirty Checking이라고 합니다.  
   
 ## 버전  
 	SpringBoot : 3.0.5  
@@ -195,8 +275,9 @@ categories: SpringBoot
 	* spring.jpa.database-platform  
 		JPA 데이터베이스 플랫폼을 지정합니다.  
 	* 예제에서는 MySQL InnoDB를 사용하도록 설정했습니다.  
-		spring.jpa.open-in-view  
-	* OSIV(Open Session In View)는 웹 요청이 완료될 때까지 동일한 EntityManager를 갖도록 해줍니다.  
+  
+	* spring.jpa.open-in-view (OSIV - Open Session In View)  
+		웹 요청이 완료될 때까지 동일한 EntityManager를 갖도록 해줍니다.  
 		스프링부트에서 OSIV가 기본값으로 true인데, 성능과 확장상 면에서 안좋다고 해서 false로 설정을 껏습니다. ( 참고 )  
 			참고링크 : https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot  
 	* spring.jpa.show-sql  
