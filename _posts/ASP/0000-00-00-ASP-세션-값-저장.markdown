@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[ASP] 세션 값 저장"  
-subtitle: "ASP 세션 값 저장"  
-date: 2023-01-01 00:00:00 +0900  
-categories: ASP  
----  
-{% raw %}  
+---
+layout: post
+title: "[ASP] 세션 값 저장"
+subtitle: "ASP 세션 값 저장"
+date: 2023-01-01 00:00:00 +0900
+categories: ASP
+---
+{% raw %}
 ## ASP 세션에 값 저장 삭제  
   
 ## 값 저장  
@@ -16,4 +16,5 @@ Session("searchStrBoardValue")=searchStrBoardValue
   
 Session.Contents.Remove("searchStrBoardValue")  
   
+
 {% endraw %}

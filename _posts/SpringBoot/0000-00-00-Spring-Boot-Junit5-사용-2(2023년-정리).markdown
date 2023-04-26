@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Junit5 사용-2(2023년 정리)"  
-subtitle: "Spring Boot Junit5 사용-2(2023년 정리)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Junit5 사용-2(2023년 정리)"
+subtitle: "Spring Boot Junit5 사용-2(2023년 정리)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - JUnit5 사용하기 - 2 (2023년 정리)  
   
 ## 공식 문서  
@@ -331,4 +331,5 @@ categories: SpringBoot
 	}  
 	=================================================================================================================  
   
+
 {% endraw %}

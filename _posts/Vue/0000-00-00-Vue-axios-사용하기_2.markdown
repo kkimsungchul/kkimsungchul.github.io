@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Vue] axios 사용하기_2"  
-subtitle: "Vue axios 사용하기_2"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Vue  
----  
-{% raw %}  
+---
+layout: post
+title: "[Vue] axios 사용하기_2"
+subtitle: "Vue axios 사용하기_2"
+date: 2023-01-01 00:00:00 +0900
+categories: Vue
+---
+{% raw %}
 ## Vue - axios 사용하기  
   
 ## Vue 코드  
@@ -97,4 +97,5 @@ categories: Vue
 	}  
   
 	=================================================================================================================  
+
 {% endraw %}

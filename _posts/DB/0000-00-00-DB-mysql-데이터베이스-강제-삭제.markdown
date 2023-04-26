@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[DB] mysql 데이터베이스 강제 삭제"  
-subtitle: "DB mysql 데이터베이스 강제 삭제"  
-date: 2023-01-01 00:00:00 +0900  
-categories: DB  
----  
-{% raw %}  
+---
+layout: post
+title: "[DB] mysql 데이터베이스 강제 삭제"
+subtitle: "DB mysql 데이터베이스 강제 삭제"
+date: 2023-01-01 00:00:00 +0900
+categories: DB
+---
+{% raw %}
 ## 데이터베이스 강제 삭제  
   
 	* 쿼리문이나 테이블 구조 적으로 변경하다가,, 뭔가 잘못되면 해당 테이블이 열리지도 않고,  
@@ -22,4 +22,5 @@ categories: DB
   
 	ex) 데이터베이스명 : securus_ciim  
 	C:\ProgramData\MySQL\MySQL Server 5.7\Data\securus_ciim 삭제  
+
 {% endraw %}

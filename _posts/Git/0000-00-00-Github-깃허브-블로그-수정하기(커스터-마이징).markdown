@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Github] 깃허브 블로그 수정하기(커스터 마이징)"  
-subtitle: "Github 깃허브 블로그 수정하기(커스터 마이징)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Github] 깃허브 블로그 수정하기(커스터 마이징)"
+subtitle: "Github 깃허브 블로그 수정하기(커스터 마이징)"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## Github - 깃허브 블로그 수정하기(커스터 마이징)  
   
 ## 화면에 표시되는 텍스트 수정  
@@ -30,4 +30,5 @@ categories: Git
   
 ## 사이드바 추가  
 	https://jhlov.github.io/jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%97%90-%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/  
+
 {% endraw %}

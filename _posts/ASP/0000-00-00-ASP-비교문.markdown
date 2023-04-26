@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[ASP] 비교문"  
-subtitle: "ASP 비교문"  
-date: 2023-01-01 00:00:00 +0900  
-categories: ASP  
----  
-{% raw %}  
+---
+layout: post
+title: "[ASP] 비교문"
+subtitle: "ASP 비교문"
+date: 2023-01-01 00:00:00 +0900
+categories: ASP
+---
+{% raw %}
 ## ASP - 비교문  
   
 If 비교할값 = 비교할 값 Then  
@@ -89,4 +89,5 @@ Request("변수명") 으로 받아온 값들은 숫자형이 아니라서 오류
   
 		 사용법 : Fix(변수)  
   
+
 {% endraw %}

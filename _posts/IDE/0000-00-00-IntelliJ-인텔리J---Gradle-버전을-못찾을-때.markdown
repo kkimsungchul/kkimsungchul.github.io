@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[IntelliJ] 인텔리J - Gradle 버전을 못찾을 때"  
-subtitle: "IntelliJ 인텔리J - Gradle 버전을 못찾을 때"  
-date: 2023-01-01 00:00:00 +0900  
-categories: IDE  
----  
-{% raw %}  
+---
+layout: post
+title: "[IntelliJ] 인텔리J - Gradle 버전을 못찾을 때"
+subtitle: "IntelliJ 인텔리J - Gradle 버전을 못찾을 때"
+date: 2023-01-01 00:00:00 +0900
+categories: IDE
+---
+{% raw %}
 ## IntelliJ - Gradle 버전을 못찾을 때  
   
 	다운로드 링크 : https://services.gradle.org/distributions/gradle-6.7-all.zip  
@@ -57,4 +57,5 @@ categories: IDE
 		##distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-all.zip  
 		distributionUrl=dists/gradle-6.7-all.zip  
   
+
 {% endraw %}

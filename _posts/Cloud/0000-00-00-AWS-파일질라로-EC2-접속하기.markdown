@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[AWS] 파일질라로 EC2 접속하기"  
-subtitle: "AWS 파일질라로 EC2 접속하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Cloud  
----  
-{% raw %}  
+---
+layout: post
+title: "[AWS] 파일질라로 EC2 접속하기"
+subtitle: "AWS 파일질라로 EC2 접속하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Cloud
+---
+{% raw %}
 ## AWS - 파일질라로 EC2 접속하기  
 	참고링크 : https://boansecurity.blogspot.com/2016/07/aws-filezilla-ftp.html  
 			https://app-developer.tistory.com/93  
@@ -42,4 +42,5 @@ categories: Cloud
 		사용자 : ec2-user  
   
 	4. 위 정보 입력 후 연결 클릭 시 연결완료됨  
+
 {% endraw %}

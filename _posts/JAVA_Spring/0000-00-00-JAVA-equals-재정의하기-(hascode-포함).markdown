@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] equals 재정의하기 (hascode 포함)"  
-subtitle: "JAVA equals 재정의하기 (hascode 포함)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] equals 재정의하기 (hascode 포함)"
+subtitle: "JAVA equals 재정의하기 (hascode 포함)"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - equals 재정의 하기  
   
 ## 사용 이유  
@@ -105,4 +105,5 @@ categories: JAVA_Spring
   
 	=================================================================================================================  
   
+
 {% endraw %}

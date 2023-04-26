@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] CORS(크로스 도메인이슈) 해결하기"  
-subtitle: "Spring Boot CORS(크로스 도메인이슈) 해결하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] CORS(크로스 도메인이슈) 해결하기"
+subtitle: "Spring Boot CORS(크로스 도메인이슈) 해결하기"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - CORS 이슈 해결하기  
   
 	Cross-Origin Resource Sharing,CORS 란 다른 출처의 자원을 공유할 수 있도록 설정하는 권한임  
@@ -193,4 +193,5 @@ categories: SpringBoot
 	}  
   
 	=================================================================================================================  
+
 {% endraw %}

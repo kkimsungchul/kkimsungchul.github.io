@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[AWS] EC2에서 Gradle 빌드하기"  
-subtitle: "AWS EC2에서 Gradle 빌드하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Cloud  
----  
-{% raw %}  
+---
+layout: post
+title: "[AWS] EC2에서 Gradle 빌드하기"
+subtitle: "AWS EC2에서 Gradle 빌드하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Cloud
+---
+{% raw %}
 ## AWS - 아마존 EC2에서 그래들 프로젝트 컴파일 하기  
   
 	https://may9noy.tistory.com/546  
@@ -142,4 +142,5 @@ categories: Cloud
 	$ git reset --hard origin/master  
 	=================================================================================================================  
   
+
 {% endraw %}

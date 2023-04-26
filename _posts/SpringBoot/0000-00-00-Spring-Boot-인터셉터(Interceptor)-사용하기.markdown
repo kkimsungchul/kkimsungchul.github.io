@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] 인터셉터(Interceptor) 사용하기"  
-subtitle: "Spring Boot 인터셉터(Interceptor) 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] 인터셉터(Interceptor) 사용하기"
+subtitle: "Spring Boot 인터셉터(Interceptor) 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## 스프링 부트 - 인터셉터 사용하기  
 	https://eastglow.github.io/back-end/2019/08/01/Spring-Interceptor-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EA%B2%BD%EC%9A%B0.html  
   
@@ -249,4 +249,5 @@ categories: SpringBoot
   
 	=====================================================================================================================================================  
                                                                                                                                         
+
 {% endraw %}

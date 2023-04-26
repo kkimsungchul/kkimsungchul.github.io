@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] ssh key 를 사용하여 원격 서버에 배포"  
-subtitle: "Jenkins ssh key 를 사용하여 원격 서버에 배포"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] ssh key 를 사용하여 원격 서버에 배포"
+subtitle: "Jenkins ssh key 를 사용하여 원격 서버에 배포"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - ssh key를 사용하여 원격 서버에 배포  
   
 	참고링크 :  
@@ -58,4 +58,5 @@ categories: Jenkins
   
 		11-3. 바로 하단의 Command 부분에 실행할 스크립트 작성  
   
+
 {% endraw %}

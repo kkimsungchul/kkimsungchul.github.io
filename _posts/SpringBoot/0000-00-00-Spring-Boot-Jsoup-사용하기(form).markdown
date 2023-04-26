@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Jsoup 사용하기(form)"  
-subtitle: "Spring Boot Jsoup 사용하기(form)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Jsoup 사용하기(form)"
+subtitle: "Spring Boot Jsoup 사용하기(form)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - Jsoup 사용하기  
   
 ## 참고링크 :  
@@ -36,4 +36,5 @@ categories: SpringBoot
         return "";  
     }  
 	======================================================================================================  
+
 {% endraw %}

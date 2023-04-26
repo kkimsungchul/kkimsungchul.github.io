@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Keycloak] Keycloak으로 젠킨스 로그인 하기"  
-subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Keycloak  
----  
-{% raw %}  
+---
+layout: post
+title: "[Keycloak] Keycloak으로 젠킨스 로그인 하기"
+subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Keycloak
+---
+{% raw %}
 ## Keycloak - Keycloak으로 젠킨스 로그인 하기  
 	https://kmaster.tistory.com/115  
 	https://oingdaddy.tistory.com/244  
@@ -93,4 +93,5 @@ categories: Keycloak
 	4. Security Realm 에서 "Jenkins own user database" 로 되어있는 것을  
 		"Keycloak Authentication Plugin" 로 변경  
   
+
 {% endraw %}

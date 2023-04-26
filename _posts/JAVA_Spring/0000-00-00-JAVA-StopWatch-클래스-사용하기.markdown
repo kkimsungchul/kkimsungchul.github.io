@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] StopWatch 클래스 사용하기"  
-subtitle: "JAVA StopWatch 클래스 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] StopWatch 클래스 사용하기"
+subtitle: "JAVA StopWatch 클래스 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - StopWatch 클래스 사용하기  
   
 	일단 해당 클래스는 Spring Core 2.5.6 에 포함되어 있음  
@@ -405,4 +405,5 @@ public class StopWatch {
   
 }  
 ==================================================================================================================================================  
+
 {% endraw %}

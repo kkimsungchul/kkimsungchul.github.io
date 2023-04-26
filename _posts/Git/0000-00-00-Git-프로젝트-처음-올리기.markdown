@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] 프로젝트 처음 올리기"  
-subtitle: "Git 프로젝트 처음 올리기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] 프로젝트 처음 올리기"
+subtitle: "Git 프로젝트 처음 올리기"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## git - 프로젝트 처음 올리기  
   
 	//로컬 저장소 생성  
@@ -28,4 +28,5 @@ categories: Git
   
 	//원격 저장소에 push  
 	git push -u origin main  
+
 {% endraw %}

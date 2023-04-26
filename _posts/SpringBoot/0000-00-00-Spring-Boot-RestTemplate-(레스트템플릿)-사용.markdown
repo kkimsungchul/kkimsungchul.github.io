@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] RestTemplate (레스트템플릿) 사용"  
-subtitle: "Spring Boot RestTemplate (레스트템플릿) 사용"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] RestTemplate (레스트템플릿) 사용"
+subtitle: "Spring Boot RestTemplate (레스트템플릿) 사용"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## 스프링부트 - 레스트템플릿 (RestTemplate)  
   
 	다른사이트에서 제공해주는 레스트풀API(restful api)에 접속하여 값 가져올 때 사용함.  
@@ -202,4 +202,5 @@ categories: SpringBoot
 		}  
 	}  
 	=================================================================================================================  
+
 {% endraw %}

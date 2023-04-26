@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JavaScript] ajax로 map 주고받기"  
-subtitle: "JavaScript ajax로 map 주고받기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JSP_javascript  
----  
-{% raw %}  
+---
+layout: post
+title: "[JavaScript] ajax로 map 주고받기"
+subtitle: "JavaScript ajax로 map 주고받기"
+date: 2023-01-01 00:00:00 +0900
+categories: JSP_javascript
+---
+{% raw %}
 ## ajax 로 map 타입 주고받기  
   
 [ 컨트롤러 -> 화면단 ]  
@@ -49,4 +49,5 @@ categories: JSP_javascript
 			}  
 =================================================================================================================  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] mysql 연동(SpringBoot3.0)"  
-subtitle: "Spring Boot mysql 연동(SpringBoot3.0)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] mysql 연동(SpringBoot3.0)"
+subtitle: "Spring Boot mysql 연동(SpringBoot3.0)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - Mysql 연동하기  
   
 ## build.gradle 파일  
@@ -32,4 +32,5 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
+
 {% endraw %}

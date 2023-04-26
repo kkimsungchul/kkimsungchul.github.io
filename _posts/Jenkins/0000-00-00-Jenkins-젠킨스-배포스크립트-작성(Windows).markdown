@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] 젠킨스 배포스크립트 작성(Windows)"  
-subtitle: "Jenkins 젠킨스 배포스크립트 작성(Windows)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] 젠킨스 배포스크립트 작성(Windows)"
+subtitle: "Jenkins 젠킨스 배포스크립트 작성(Windows)"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins 배포 스크립트 작성  
   
 	윈도우 환경에서 실제 사용할 배포 스크립트를 작성함  
@@ -124,4 +124,5 @@ categories: Jenkins
 				}  
 			}  
 			======================================================================================================  
+
 {% endraw %}

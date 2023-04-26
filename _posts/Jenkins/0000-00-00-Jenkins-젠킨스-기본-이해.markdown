@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] 젠킨스 기본 이해"  
-subtitle: "Jenkins 젠킨스 기본 이해"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] 젠킨스 기본 이해"
+subtitle: "Jenkins 젠킨스 기본 이해"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - 기본 이해  
   https://ict-nroo.tistory.com/31  
   https://krksap.tistory.com/1377  
@@ -61,4 +61,5 @@ categories: Jenkins
   https://logical-code.tistory.com/179  
   블루오션은 UX에 중점을 두고 좀더 시각화 해서 사용하기 편하게 해줌  
   
+
 {% endraw %}

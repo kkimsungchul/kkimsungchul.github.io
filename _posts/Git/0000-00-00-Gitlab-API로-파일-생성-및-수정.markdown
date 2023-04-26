@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Gitlab] API로 파일 생성 및 수정"  
-subtitle: "Gitlab API로 파일 생성 및 수정"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Gitlab] API로 파일 생성 및 수정"
+subtitle: "Gitlab API로 파일 생성 및 수정"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## gitlab - API로 파일 생성 및 수정  
   
 [ Create new file in repository - git 원격지에서 파일 생성 , 커밋 ]  
@@ -135,4 +135,5 @@ categories: Git
 		"file_path": "Jenkinsfile",  
 		"branch": "master"  
 	}  
+
 {% endraw %}

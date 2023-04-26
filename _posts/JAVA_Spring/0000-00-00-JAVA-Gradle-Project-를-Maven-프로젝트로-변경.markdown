@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] Gradle Project 를 Maven 프로젝트로 변경"  
-subtitle: "JAVA Gradle Project 를 Maven 프로젝트로 변경"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] Gradle Project 를 Maven 프로젝트로 변경"
+subtitle: "JAVA Gradle Project 를 Maven 프로젝트로 변경"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - Gradle Project 를 Maven 프로젝트로 변경  
   
 ## 이유  
@@ -223,4 +223,5 @@ categories: JAVA_Spring
 	  </build>  
 	</project>  
 	=================================================================================================================  
+
 {% endraw %}

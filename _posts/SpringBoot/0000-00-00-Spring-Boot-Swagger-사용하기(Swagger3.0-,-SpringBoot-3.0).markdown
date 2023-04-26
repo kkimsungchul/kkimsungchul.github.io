@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"  
-subtitle: "Spring Boot Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"
+subtitle: "Spring Boot Swagger 사용하기(Swagger3.0 , SpringBoot 3.0)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - Swagger 3.0 버전 사용 (SpringBoot3.0)  
   
 ## SpringBoot 버전  
@@ -252,4 +252,5 @@ categories: SpringBoot
 	@Schema  
 		속성 : description  
 		모델 자체 혹은 컬럼에 대한 설명을 하는 속성  
+
 {% endraw %}

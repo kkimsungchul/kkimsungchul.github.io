@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[InteliJ]인텔리J_스프링프로젝트_생성_및_설정"  
-subtitle: "InteliJ인텔리J_스프링프로젝트_생성_및_설정"  
-date: 2023-01-01 00:00:00 +0900  
-categories: IDE  
----  
-{% raw %}  
+---
+layout: post
+title: "[InteliJ]인텔리J_스프링프로젝트_생성_및_설정"
+subtitle: "InteliJ인텔리J_스프링프로젝트_생성_및_설정"
+date: 2023-01-01 00:00:00 +0900
+categories: IDE
+---
+{% raw %}
 ## InteliJ - 인텔리J 스프링프로젝트 생성 및 설정  
   
 ## 참고링크 :  
@@ -401,4 +401,5 @@ public class MainController {
   
 ## 트랜잭션 처리  
   
+
 {% endraw %}

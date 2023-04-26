@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] OS 명령어 실행하기 - Git Push 하기"  
-subtitle: "JAVA OS 명령어 실행하기 - Git Push 하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] OS 명령어 실행하기 - Git Push 하기"
+subtitle: "JAVA OS 명령어 실행하기 - Git Push 하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - OS명령어로 gitlab push 하기  
   
 	gitlab에서 특정 코드를 내려받아서 다른 프로젝트에 푸쉬하기.  
@@ -293,4 +293,5 @@ categories: JAVA_Spring
     }  
   
 =================================================================================================================  
+
 {% endraw %}

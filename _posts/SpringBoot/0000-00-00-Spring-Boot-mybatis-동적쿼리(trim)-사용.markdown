@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] mybatis 동적쿼리(trim) 사용"  
-subtitle: "Spring Boot mybatis 동적쿼리(trim) 사용"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] mybatis 동적쿼리(trim) 사용"
+subtitle: "Spring Boot mybatis 동적쿼리(trim) 사용"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Mybatis - trim 사용하기  
   
 	https://velog.io/@joyfuljoyful/MyBatis-%EB%8F%99%EC%A0%81%EC%BF%BC%EB%A6%AC-trimwhereset  
@@ -255,4 +255,5 @@ categories: SpringBoot
 	WHERE A=##{A}  
   
 	=================================================================================================================  
+
 {% endraw %}

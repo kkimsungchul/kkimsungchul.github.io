@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] 오류처리-RestControllerAdvice 사용하기"  
-subtitle: "Spring Boot 오류처리-RestControllerAdvice 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] 오류처리-RestControllerAdvice 사용하기"
+subtitle: "Spring Boot 오류처리-RestControllerAdvice 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Spring Boot - RestControllerAdvice 사용하기  
   
 참고 URL :  
@@ -138,4 +138,5 @@ categories: SpringBoot
 		 }  
 	}  
 	=================================================================================================================  
+
 {% endraw %}

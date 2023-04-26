@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] implementation Compile 차이"  
-subtitle: "Spring Boot implementation Compile 차이"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] implementation Compile 차이"
+subtitle: "Spring Boot implementation Compile 차이"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - implementation Compile 차이  
   
 	참고링크 :  
@@ -70,4 +70,5 @@ categories: SpringBoot
 		그런데, compile을 사용하게 되면 연결된 모든 모듈의 API가 exposed(노출)된다도 함  
 		implementation을 사용하게 되면 이런 일이 없어진다.  
   
+
 {% endraw %}

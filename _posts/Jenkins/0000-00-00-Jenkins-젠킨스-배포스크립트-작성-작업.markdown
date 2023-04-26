@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] 젠킨스 배포스크립트 작성 작업"  
-subtitle: "Jenkins 젠킨스 배포스크립트 작성 작업"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] 젠킨스 배포스크립트 작성 작업"
+subtitle: "Jenkins 젠킨스 배포스크립트 작성 작업"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jnekins - 배포스크립트 작성  
   
 ※ 2021-12-27  
@@ -586,4 +586,5 @@ ERROR: script returned exit code 1
 Finished: FAILURE  
 ====================================================================================================  
   
+
 {% endraw %}

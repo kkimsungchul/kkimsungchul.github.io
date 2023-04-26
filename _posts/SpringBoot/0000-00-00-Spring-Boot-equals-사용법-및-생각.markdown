@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] equals 사용법 및 생각"  
-subtitle: "Spring Boot equals 사용법 및 생각"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] equals 사용법 및 생각"
+subtitle: "Spring Boot equals 사용법 및 생각"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## java -  equals 사용  
   
 ## 2023.03.08 에 작성한 내용  
@@ -155,4 +155,5 @@ categories: SpringBoot
 	뭐 전자나 후자나 결국 값이 다 있다면 같은 로직이지만  
 	Null 체크가 필요없다면 case1로 해서 하는게 더 편의성이 좋다  
   
+
 {% endraw %}

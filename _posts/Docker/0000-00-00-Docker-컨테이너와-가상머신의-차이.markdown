@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Docker] 컨테이너와 가상머신의 차이"  
-subtitle: "Docker 컨테이너와 가상머신의 차이"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Docker  
----  
-{% raw %}  
+---
+layout: post
+title: "[Docker] 컨테이너와 가상머신의 차이"
+subtitle: "Docker 컨테이너와 가상머신의 차이"
+date: 2023-01-01 00:00:00 +0900
+categories: Docker
+---
+{% raw %}
 ## Docker - 컨테이너와 가상머신의 차이  
 	참고 링크  :  
 		https://born-dev.tistory.com/39  
@@ -127,4 +127,5 @@ categories: Docker
 			컨테이너는 호스트 운영체제의 커널을 공유하기 때문에 호스트 운영체제 환경을 그대로 가져감  
 				ex) 리눅스에 컨테이너를 띄어서 윈도우즈 실행환경을 만들 수 없음  
   
+
 {% endraw %}

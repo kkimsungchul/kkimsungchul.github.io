@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Docker] Nginx 실행해보기"  
-subtitle: "Docker Nginx 실행해보기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Docker  
----  
-{% raw %}  
+---
+layout: post
+title: "[Docker] Nginx 실행해보기"
+subtitle: "Docker Nginx 실행해보기"
+date: 2023-01-01 00:00:00 +0900
+categories: Docker
+---
+{% raw %}
 ## Docker - Nginx 테스트  
 	참고링크 : https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/  
   
@@ -38,4 +38,5 @@ categories: Docker
   
 	※ 컨테이너 아이디는 docker ps 명령어로 가져온 아이디를 적어주면 됨  
   
+
 {% endraw %}

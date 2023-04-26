@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[jenkins] Jenkins 에서 사용할수 있는 restAPI 정리"  
-subtitle: "jenkins Jenkins 에서 사용할수 있는 restAPI 정리"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[jenkins] Jenkins 에서 사용할수 있는 restAPI 정리"
+subtitle: "jenkins Jenkins 에서 사용할수 있는 restAPI 정리"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins API 정리  
   
 	API url 호출  
@@ -59,4 +59,5 @@ categories: Jenkins
 ## Jenkins API  
 	http://cdancy.github.io/jenkins-rest/docs/javadoc/com/cdancy/jenkins/rest/features/JobsApi.html  
   
+
 {% endraw %}

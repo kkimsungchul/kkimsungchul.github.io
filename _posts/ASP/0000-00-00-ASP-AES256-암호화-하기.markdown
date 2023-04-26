@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[ASP] AES256 암호화 하기"  
-subtitle: "ASP AES256 암호화 하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: ASP  
----  
-{% raw %}  
+---
+layout: post
+title: "[ASP] AES256 암호화 하기"
+subtitle: "ASP AES256 암호화 하기"
+date: 2023-01-01 00:00:00 +0900
+categories: ASP
+---
+{% raw %}
 ## ASP 에서 AES256 암호화 하기  
   
 	필요파일 경로 : C:₩Users₩USER₩Desktop₩kimsc₩0.깃허브- 개발공부₩ASP₩[ASP] js파일로 AES256 암호화  
@@ -21,4 +21,5 @@ categories: ASP
 		<script type="text/javascript" language="javascript" runat="server">  
   
 	파일명 : sample_asp.asp  
+
 {% endraw %}

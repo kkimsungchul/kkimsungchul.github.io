@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Cloud] 클라우드의 이해"  
-subtitle: "Cloud 클라우드의 이해"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Cloud  
----  
-{% raw %}  
+---
+layout: post
+title: "[Cloud] 클라우드의 이해"
+subtitle: "Cloud 클라우드의 이해"
+date: 2023-01-01 00:00:00 +0900
+categories: Cloud
+---
+{% raw %}
 ## 클라우드의 이해  
 	참고링크 :  
 		https://library.gabia.com/contents/infrahosting/9114/  
@@ -86,4 +86,5 @@ categories: Cloud
 		클라우드 사이의 워크로드 이식성, 상호연결, 오케스트레이션, 통합관리를 통해  
 		퍼블릭 클라우드와 프라이빗 클라우드, 퍼블릭클라우드와 프라이빗 클라우드를 상호 운용적으로 사용  
   
+
 {% endraw %}

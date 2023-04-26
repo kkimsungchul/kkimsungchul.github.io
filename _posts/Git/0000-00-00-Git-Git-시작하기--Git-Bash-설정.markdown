@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- Git Bash 설정"  
-subtitle: "Git Git 시작하기- Git Bash 설정"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- Git Bash 설정"
+subtitle: "Git Git 시작하기- Git Bash 설정"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## Git - Git Bash 설정  
   
 ## 참고 URL :  
@@ -118,4 +118,5 @@ categories: Git
   
 	git config credential.helper store  
 	git config credential.helper store --global  
+
 {% endraw %}

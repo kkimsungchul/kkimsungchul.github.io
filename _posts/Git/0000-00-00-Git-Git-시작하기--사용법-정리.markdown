@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- 사용법 정리"  
-subtitle: "Git Git 시작하기- 사용법 정리"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- 사용법 정리"
+subtitle: "Git Git 시작하기- 사용법 정리"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## 참고 URL  
 	https://blog.hjf.pe.kr/57  
 	https://backlog.com/git-tutorial/kr/intro/intro4_1.html  
@@ -138,4 +138,5 @@ categories: Git
 	ex) CIIM 매니저 프로젝트 - 작동함  
 		git clone https://securusgit1:tlzbfjtm1@github.com/securusgit1/securus_ciim  
   
+
 {% endraw %}

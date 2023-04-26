@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JavaScript] 클릭된 위치 이벤트"  
-subtitle: "JavaScript 클릭된 위치 이벤트"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JSP_javascript  
----  
-{% raw %}  
+---
+layout: post
+title: "[JavaScript] 클릭된 위치 이벤트"
+subtitle: "JavaScript 클릭된 위치 이벤트"
+date: 2023-01-01 00:00:00 +0900
+categories: JSP_javascript
+---
+{% raw %}
 ## 클릭한 위치 이벤트  
   
 ## 전체 페이지에서 좌표 가져오기  
@@ -35,4 +35,5 @@ categories: JSP_javascript
 	document.getElementById(obj).style.left = event.clientX + document.body.scrollLeft + ‘px’;  
 	document.getElementById(obj).style.top = event.clientY + document.body.scrollTop + ‘px’;  
   
+
 {% endraw %}

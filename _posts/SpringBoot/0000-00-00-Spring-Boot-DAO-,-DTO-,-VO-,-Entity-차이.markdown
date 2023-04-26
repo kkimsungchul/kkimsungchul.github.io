@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] DAO , DTO , VO , Entity 차이"  
-subtitle: "Spring Boot DAO , DTO , VO , Entity 차이"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] DAO , DTO , VO , Entity 차이"
+subtitle: "Spring Boot DAO , DTO , VO , Entity 차이"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - DAO , DTO , VO , Entity 차이  
 	https://velog.io/@ha0kim/DAO-DTO-VO-%EC%B0%A8%EC%9D%B4  
 	https://dkswnkk.tistory.com/500  
@@ -88,4 +88,5 @@ categories: SpringBoot
 			엔터티는 데이터베이스의 데이터를 객체화한 것으로, 데이터베이스와 직접 상호작용하며, CRUD 작업을 수행합니다.  
 			요약하면, DAO는 데이터베이스에 대한 작업을 처리하는 객체, DTO는 계층 간 데이터 전송을 위한 객체, VO는 비즈니스 로직 계층에서 사용되는 불변 객체, Entity는 데이터베이스의 데이터를 객체화한 객체입니다. 이들은 각각의 역할과 책임을 가지고, 소프트웨어 개발에서 다양한 목적으로 사용됩니다.  
   
+
 {% endraw %}

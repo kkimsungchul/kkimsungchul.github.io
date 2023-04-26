@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] Spring Framework 5 에 추가된 기능"  
-subtitle: "JAVA Spring Framework 5 에 추가된 기능"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] Spring Framework 5 에 추가된 기능"
+subtitle: "JAVA Spring Framework 5 에 추가된 기능"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## Spring - Spring Framework 5 에 추가된 기능  
 	Spring Framework 5는 2017년 9월에 릴리스된 버전으로, 이전 버전의 Spring Framework와 비교하여 여러 가지 새로운 기능들을 포함하고 있습니다.  
 	몇 가지 주요 기능은 다음과 같습니다.  
@@ -36,4 +36,5 @@ categories: JAVA_Spring
 	- 멀티파트 파일 업로드: 멀티파트 파일 업로드를 지원합니다.  
   
 출처 : Chat GPT  
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-2"  
-subtitle: "Effective Java 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-2"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-2"
+subtitle: "Effective Java 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-2"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라 - 2  
   
 	여태까지의 내용을 참고하여 실제로 사용하는 코드를 작성해보자  
@@ -194,4 +194,5 @@ categories: EffectiveJava
     }  
 	=================================================================================================================  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
-subtitle: "Effective Java 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"
+subtitle: "Effective Java 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터4. 인스턴스화를 막으려거든 private 생성자를 사용하라  
   
 	정적 메소드와 정적 필드만을 담은 클래스를만들때가 있음  
@@ -63,4 +63,5 @@ categories: EffectiveJava
   
 	또한 상속을 불가능하게 함, 모든 생성자는 명시적이든 묵시적이든 상위클래스의 생성자를 호출하게 되는데,  
 	이를 private 로 선언하면 하위클래스에서 상위클래스의 생성자에 접근할수 있는 방법이 막힘  
+
 {% endraw %}

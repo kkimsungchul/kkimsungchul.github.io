@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Vue] eslint 끄기"  
-subtitle: "Vue eslint 끄기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Vue  
----  
-{% raw %}  
+---
+layout: post
+title: "[Vue] eslint 끄기"
+subtitle: "Vue eslint 끄기"
+date: 2023-01-01 00:00:00 +0900
+categories: Vue
+---
+{% raw %}
 ## Vue - eslint 끄기  
   
 	해당 옵션이 켜저있으면 이것저것 개짱남  
@@ -22,4 +22,5 @@ categories: Vue
   
 	})  
 	=================================================================================================================  
+
 {% endraw %}

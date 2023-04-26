@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Docker] 윈도우 Home에 도커 설치하기"  
-subtitle: "Docker 윈도우 Home에 도커 설치하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Docker  
----  
-{% raw %}  
+---
+layout: post
+title: "[Docker] 윈도우 Home에 도커 설치하기"
+subtitle: "Docker 윈도우 Home에 도커 설치하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Docker
+---
+{% raw %}
 ## Docker - 윈도우 Home 버전에 도커 설치하기  
   
 ## WSL(Windows Subsystem for Linux 2) 설치  
@@ -122,4 +122,5 @@ categories: Docker
 	7. 실행중인 컨테이너 확인  
 		docker ps  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- Git Intellij 연동"  
-subtitle: "Git Git 시작하기- Git Intellij 연동"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- Git Intellij 연동"
+subtitle: "Git Git 시작하기- Git Intellij 연동"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## Git - Git Intellij 연동  
   
 ## 참고 URL :  
@@ -87,4 +87,5 @@ categories: Git
   
 	4. 팝업창이 나오면 Git Repository URL , Parent Directory , Directory Nmae 을 입력  
   
+
 {% endraw %}

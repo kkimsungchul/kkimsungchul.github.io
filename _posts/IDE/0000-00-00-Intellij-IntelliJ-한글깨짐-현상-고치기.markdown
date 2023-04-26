@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Intellij] IntelliJ 한글깨짐 현상 고치기"  
-subtitle: "Intellij IntelliJ 한글깨짐 현상 고치기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: IDE  
----  
-{% raw %}  
+---
+layout: post
+title: "[Intellij] IntelliJ 한글깨짐 현상 고치기"
+subtitle: "Intellij IntelliJ 한글깨짐 현상 고치기"
+date: 2023-01-01 00:00:00 +0900
+categories: IDE
+---
+{% raw %}
 ## IntelliJ - IntelliJ 한글깨짐 현상 고치기  
   
 ## 설정 변경  
@@ -25,4 +25,5 @@ categories: IDE
 	나같은 경우 위 두개를 다 했는데도 증상 해결이 안됨.  
 	구글링해본 결과 Gradle 프로젝트에서 빌드한 결과물이 문제일수있다고 함.  
 	그래서 clean 후 다시 빌드를 하니 정상적으로 표시가 되었음  
+
 {% endraw %}

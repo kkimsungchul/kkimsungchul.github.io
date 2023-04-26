@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- Git 디폴트 저장소 변경하기"  
-subtitle: "Git Git 시작하기- Git 디폴트 저장소 변경하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- Git 디폴트 저장소 변경하기"
+subtitle: "Git Git 시작하기- Git 디폴트 저장소 변경하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## 깃허브 디폴트 저장소 변경하기  
   
 	참고 URL : https://dalya-tech.tistory.com/16  
@@ -26,4 +26,5 @@ categories: Git
   
 6. 팝업창이 뜨면 해당 페이지에서 디폴트 저장소를 바꾸고 확인 클릭 (경고가 뜸)  
   
+
 {% endraw %}

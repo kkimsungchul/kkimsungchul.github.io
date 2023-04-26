@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Burp Suite] 버프스위트 사용하기"  
-subtitle: "Burp Suite 버프스위트 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 개발지식  
----  
-{% raw %}  
+---
+layout: post
+title: "[Burp Suite] 버프스위트 사용하기"
+subtitle: "Burp Suite 버프스위트 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: 개발지식
+---
+{% raw %}
 ## Buro Suite - 사용하기  
   
 	버프스위트는 클라이언트와 서버가 주고받는 데이터를 분석하는 도구임  
@@ -53,4 +53,5 @@ categories: 개발지식
 	5. Forward 로 다음 데이터로 넘겨볼수 있음  
 	6. 프록시 내역은 바로 옆의 탭의 HTTP history 에서 확인할 수 있음  
   
+
 {% endraw %}

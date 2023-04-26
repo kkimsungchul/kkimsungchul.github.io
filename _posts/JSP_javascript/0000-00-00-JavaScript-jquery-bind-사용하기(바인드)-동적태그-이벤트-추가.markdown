@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JavaScript] jquery-bind 사용하기(바인드) 동적태그 이벤트 추가"  
-subtitle: "JavaScript jquery-bind 사용하기(바인드) 동적태그 이벤트 추가"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JSP_javascript  
----  
-{% raw %}  
+---
+layout: post
+title: "[JavaScript] jquery-bind 사용하기(바인드) 동적태그 이벤트 추가"
+subtitle: "JavaScript jquery-bind 사용하기(바인드) 동적태그 이벤트 추가"
+date: 2023-01-01 00:00:00 +0900
+categories: JSP_javascript
+---
+{% raw %}
 ## JavaScript - jquery-bind 사용하기(바인드) 동적태그 이벤트 추가  
   
 ## 참고 링크  
@@ -99,4 +99,5 @@ $(".buttonClass").click(function(){
         });  
   
 =================================================================================================================  
+
 {% endraw %}

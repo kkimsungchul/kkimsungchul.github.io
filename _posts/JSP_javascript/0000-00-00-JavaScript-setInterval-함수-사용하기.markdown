@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JavaScript] setInterval 함수 사용하기"  
-subtitle: "JavaScript setInterval 함수 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JSP_javascript  
----  
-{% raw %}  
+---
+layout: post
+title: "[JavaScript] setInterval 함수 사용하기"
+subtitle: "JavaScript setInterval 함수 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JSP_javascript
+---
+{% raw %}
 ## Javascript - setInterval 함수 사용하기  
   
 	화면단에서 몇초마다, 일정 간격으로 실행하고싶은 함수가 있을경우 setInterval 를 통해서 할수 있음  
@@ -64,4 +64,5 @@ categories: JSP_javascript
 	</html>  
   
 	=================================================================================================================  
+
 {% endraw %}

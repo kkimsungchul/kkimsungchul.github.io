@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"  
-subtitle: "Effective Java 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"
+subtitle: "Effective Java 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터1. 생성자 대신 정적 팩토리 메서드를 고려하라  
 	https://hudi.blog/effective-java-static-factory-method/  
 	※ 아래에서 예기하는 정적 팩토리 메소드는 다지안 패턴에서의 팩토리 메소드와는 다르며, 디자인 패턴중에는 이와 일치하는 패턴은 없다.  
@@ -277,4 +277,5 @@ categories: EffectiveJava
 ## 정리  
 	정적 팩토리 메소드와 public 생성자는 각자의 쓰임새가 있으니 상대적인 장단점을 이해하고 사용하는 것이 좋다.  
 	그렇다고 하더라도 정적 팩토리 를 사용하는게 유리한 경우가 더 많으므로 무작정 public 생성자를 제공하던 습관이 있다면 고치자.  
+
 {% endraw %}

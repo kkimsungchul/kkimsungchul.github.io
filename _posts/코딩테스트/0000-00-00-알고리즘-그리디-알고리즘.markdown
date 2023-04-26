@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[알고리즘] 그리디 알고리즘"  
-subtitle: "알고리즘 그리디 알고리즘"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 코딩테스트  
----  
-{% raw %}  
+---
+layout: post
+title: "[알고리즘] 그리디 알고리즘"
+subtitle: "알고리즘 그리디 알고리즘"
+date: 2023-01-01 00:00:00 +0900
+categories: 코딩테스트
+---
+{% raw %}
 ## 그리디 알고리즘  
 	https://www.acmicpc.net/problem/11047  
 	https://www.acmicpc.net/problem/1541  
@@ -92,4 +92,5 @@ categories: 코딩테스트
 	}  
   
 	======================================================================================================  
+
 {% endraw %}

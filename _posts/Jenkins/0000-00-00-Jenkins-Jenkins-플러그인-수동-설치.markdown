@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] Jenkins 플러그인 수동 설치"  
-subtitle: "Jenkins Jenkins 플러그인 수동 설치"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] Jenkins 플러그인 수동 설치"
+subtitle: "Jenkins Jenkins 플러그인 수동 설치"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - 플러그인 수동 설치  
   
 	참고 URL : https://server-engineer.tistory.com/763  
@@ -33,4 +33,5 @@ categories: Jenkins
   
 	젠킨스 서비스를 재시작하면, 자동으로 해당 플러그인이 설치되어 있음  
   
+
 {% endraw %}

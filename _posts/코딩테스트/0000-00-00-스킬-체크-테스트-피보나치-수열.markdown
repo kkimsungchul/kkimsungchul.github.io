@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[스킬 체크 테스트] 피보나치 수열"  
-subtitle: "스킬 체크 테스트 피보나치 수열"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 코딩테스트  
----  
-{% raw %}  
+---
+layout: post
+title: "[스킬 체크 테스트] 피보나치 수열"
+subtitle: "스킬 체크 테스트 피보나치 수열"
+date: 2023-01-01 00:00:00 +0900
+categories: 코딩테스트
+---
+{% raw %}
 ## 코딩테스트 - 피보나치 수열  
   
 문제 설명  
@@ -45,4 +45,5 @@ class Solution {
         return answer;  
     }  
 }  
+
 {% endraw %}

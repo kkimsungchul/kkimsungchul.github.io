@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터12. toString을 항상 재정의 하라"  
-subtitle: "Effective Java 챕터12. toString을 항상 재정의 하라"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터12. toString을 항상 재정의 하라"
+subtitle: "Effective Java 챕터12. toString을 항상 재정의 하라"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터12. toString을 항상 재정의 하라  
   
 	Object의 기본 toString 메서드가 우리가 작성한 클래스에 적합한 문자열을 반환하는 경우는 거의 없다.  
@@ -51,4 +51,5 @@ categories: EffectiveJava
 	상위 클래스에서 이미 알맞게 재정의한 경우는 예외다.  
 	toString을 재정의한 클래스는 사용하기도 쉽고 그 클래스를 사용한 시스템을 디버깅하기 쉽게 해준다.  
 	toString은 해당 객체에 관한 명확하고 유용한 정보를 읽기 좋은 형태로 반환해야 한다.  
+
 {% endraw %}

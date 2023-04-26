@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Springsecurity 사용하기"  
-subtitle: "Spring Boot Springsecurity 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Springsecurity 사용하기"
+subtitle: "Spring Boot Springsecurity 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Spring Boot  - Springsecurity 사용하기  
   
 	스프링에서 제공해주는 스프링시큐리티로 로그인 및 권한부분 구현  
@@ -157,4 +157,5 @@ categories: SpringBoot
   
 ##hasPermission(Object targetId, String targetType, Object permission)  
 	사용자가 주어진 권한으로 제공된 대상에 액세스 할 수 있으면 true 를 반환합니다. 예, hasPermission(1, 'com.example.domain.Message', 'read')  
+
 {% endraw %}

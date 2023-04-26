@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Vue] Props , Emit 사용하기"  
-subtitle: "Vue Props , Emit 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Vue  
----  
-{% raw %}  
+---
+layout: post
+title: "[Vue] Props , Emit 사용하기"
+subtitle: "Vue Props , Emit 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Vue
+---
+{% raw %}
 ## Vue - props 사용하기  
   
 	props는 부모컴포넌트에서 자식 컴포넌트로 데이터를 전달할때 사용되는 단방향 데이터 전달 방식  
@@ -162,4 +162,5 @@ categories: Vue
 	=================================================================================================================  
   
 vue props emit  
+
 {% endraw %}

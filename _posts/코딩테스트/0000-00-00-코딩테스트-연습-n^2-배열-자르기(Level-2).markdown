@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[코딩테스트 연습] n^2 배열 자르기(Level-2)"  
-subtitle: "코딩테스트 연습 n^2 배열 자르기(Level-2)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 코딩테스트  
----  
-{% raw %}  
+---
+layout: post
+title: "[코딩테스트 연습] n^2 배열 자르기(Level-2)"
+subtitle: "코딩테스트 연습 n^2 배열 자르기(Level-2)"
+date: 2023-01-01 00:00:00 +0900
+categories: 코딩테스트
+---
+{% raw %}
 ## 코딩테스트 - n^2 배열 자르기  
 문제 설명  
 정수 n, left, right가 주어집니다. 다음 과정을 거쳐서 1차원 배열을 만들고자 합니다.  
@@ -107,4 +107,5 @@ class Solution {
         return answer;  
     }  
 }  
+
 {% endraw %}

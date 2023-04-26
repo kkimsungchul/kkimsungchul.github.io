@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[javaScript] javascript_undefined 검사"  
-subtitle: "javaScript javascript_undefined 검사"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JSP_javascript  
----  
-{% raw %}  
+---
+layout: post
+title: "[javaScript] javascript_undefined 검사"
+subtitle: "javaScript javascript_undefined 검사"
+date: 2023-01-01 00:00:00 +0900
+categories: JSP_javascript
+---
+{% raw %}
 ## javaScript - javascript_undefined 검사  
 	자바스크립트 사용중에 정의되지않은 변수 또는 빈값을 체크할때 사용하면 되는 함수  
   
@@ -40,4 +40,5 @@ categories: JSP_javascript
   
 	</script>  
 	======================================================================================================  
+
 {% endraw %}

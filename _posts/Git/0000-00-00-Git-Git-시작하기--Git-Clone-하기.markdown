@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- Git Clone 하기"  
-subtitle: "Git Git 시작하기- Git Clone 하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- Git Clone 하기"
+subtitle: "Git Git 시작하기- Git Clone 하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## 프로젝트 가져오기  
   
 	프로젝트를 생성할 디렉토리에서 Git bash를 실행 한 후 아래의 명령어 입력  
@@ -62,4 +62,5 @@ categories: Git
 		제일 하단의 Application context 경로를 /ciim_manager_Web_exploded 로 하지말고  
 		아무것도 없는 공백으로 변경  
   
+
 {% endraw %}

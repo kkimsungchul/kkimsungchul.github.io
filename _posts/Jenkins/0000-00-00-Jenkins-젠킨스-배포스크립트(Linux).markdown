@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] 젠킨스 배포스크립트(Linux)"  
-subtitle: "Jenkins 젠킨스 배포스크립트(Linux)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] 젠킨스 배포스크립트(Linux)"
+subtitle: "Jenkins 젠킨스 배포스크립트(Linux)"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - 젠킨스 배포스크립트  
   
 pipeline {  
@@ -53,4 +53,5 @@ pipeline {
         }  
     }  
 }  
+
 {% endraw %}

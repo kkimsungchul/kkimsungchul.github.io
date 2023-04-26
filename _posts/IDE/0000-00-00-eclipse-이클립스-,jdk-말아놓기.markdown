@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[eclipse] 이클립스 ,jdk 말아놓기"  
-subtitle: "eclipse 이클립스 ,jdk 말아놓기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: IDE  
----  
-{% raw %}  
+---
+layout: post
+title: "[eclipse] 이클립스 ,jdk 말아놓기"
+subtitle: "eclipse 이클립스 ,jdk 말아놓기"
+date: 2023-01-01 00:00:00 +0900
+categories: IDE
+---
+{% raw %}
 ## eclipse - 이클립스 ,jdk 말아놓기  
   
 ## 현재 말려있는 버전  
@@ -41,4 +41,5 @@ categories: IDE
 6. 실행시키면 끝  
   
 참고 : https://blog.naver.com/gooclo/150142516986  
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[카카오 인턴] 수식 최대화"  
-subtitle: "카카오 인턴 수식 최대화"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 코딩테스트  
----  
-{% raw %}  
+---
+layout: post
+title: "[카카오 인턴] 수식 최대화"
+subtitle: "카카오 인턴 수식 최대화"
+date: 2023-01-01 00:00:00 +0900
+categories: 코딩테스트
+---
+{% raw %}
 ## 카카오 인턴 수식 최대화  
 	URL : https://school.programmers.co.kr/learn/courses/30/lessons/67257  
   
@@ -126,4 +126,5 @@ class Solution {
     }  
   
 }  
+
 {% endraw %}

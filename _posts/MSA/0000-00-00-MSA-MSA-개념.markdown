@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[MSA] MSA 개념"  
-subtitle: "MSA MSA 개념"  
-date: 2023-01-01 00:00:00 +0900  
-categories: MSA  
----  
-{% raw %}  
+---
+layout: post
+title: "[MSA] MSA 개념"
+subtitle: "MSA MSA 개념"
+date: 2023-01-01 00:00:00 +0900
+categories: MSA
+---
+{% raw %}
 ## MSA - MSA란  
   
 코드 테스트  
@@ -42,4 +42,5 @@ categories: MSA
 			전체 프로젝트를 배포해야하기에 항상 부담이 따름  
 			작은 단위 기능만 독립적인 배포가 어려우며 이에 따라 DevOps 환경 혹은 지속적인 배포에 어려움이 따름  
   
+
 {% endraw %}

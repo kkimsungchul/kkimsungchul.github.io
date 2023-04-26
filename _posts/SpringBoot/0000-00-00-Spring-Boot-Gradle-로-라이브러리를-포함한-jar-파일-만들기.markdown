@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Gradle 로 라이브러리를 포함한 jar 파일 만들기"  
-subtitle: "Spring Boot Gradle 로 라이브러리를 포함한 jar 파일 만들기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Gradle 로 라이브러리를 포함한 jar 파일 만들기"
+subtitle: "Spring Boot Gradle 로 라이브러리를 포함한 jar 파일 만들기"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - Gradle 로 라이브러리를 포함한 jar 파일 만들기  
   
 	참고 링크 :  
@@ -77,4 +77,5 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] No cached version available for offline mode 라이브러리 갑자기 안됨"  
-subtitle: "Spring Boot No cached version available for offline mode 라이브러리 갑자기 안됨"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] No cached version available for offline mode 라이브러리 갑자기 안됨"
+subtitle: "Spring Boot No cached version available for offline mode 라이브러리 갑자기 안됨"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Spring boot - No cached version available for offline mode 라이브러리 갑자기 안됨  
   
 ## 오류메시지  
@@ -20,4 +20,5 @@ categories: SpringBoot
 ## 해결  
   
 	IntelliJ 를 사용하다가 실수로 오프라인 모드를 눌렀나봄.. 이걸 해체 하니까 됨  
+
 {% endraw %}

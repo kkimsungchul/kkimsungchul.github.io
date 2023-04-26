@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] lombok 사용"  
-subtitle: "Spring Boot lombok 사용"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] lombok 사용"
+subtitle: "Spring Boot lombok 사용"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## 스프링 부트 - lombok 사용  
   
 ## 사용 이유  
@@ -105,4 +105,5 @@ categories: SpringBoot
 		VM Options 에 javaagent:lombok.jar 추가  
 		https://stackoverflow.com/questions/24006937/lombok-annotations-do-not-compile-under-intellij-idea/30125507##30125507  
 		https://stackoverflow.com/questions/9424364/cant-compile-project-when-im-using-lombok-under-intellij-idea  
+
 {% endraw %}

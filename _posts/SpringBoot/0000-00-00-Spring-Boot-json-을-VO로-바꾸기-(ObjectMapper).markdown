@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] json 을 VO로 바꾸기 (ObjectMapper)"  
-subtitle: "Spring Boot json 을 VO로 바꾸기 (ObjectMapper)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] json 을 VO로 바꾸기 (ObjectMapper)"
+subtitle: "Spring Boot json 을 VO로 바꾸기 (ObjectMapper)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Spring boot - JSONObject 를 VO로 변경하기  
   
 	참고링크 : https://interconnection.tistory.com/137  
@@ -77,4 +77,5 @@ categories: SpringBoot
 	}  
   
 	=================================================================================================================  
+
 {% endraw %}

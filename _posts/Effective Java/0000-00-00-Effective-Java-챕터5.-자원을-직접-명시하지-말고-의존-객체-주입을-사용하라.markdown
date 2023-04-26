@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라"  
-subtitle: "Effective Java 챕터5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라"
+subtitle: "Effective Java 챕터5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터2. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라  
   
 	많은 클래스가 하나 이상의 자원에 의존을 함  
@@ -79,4 +79,5 @@ categories: EffectiveJava
 	이 자원들을 클래스가 직접 만들게 해서도 안된다.  
 	대신 필요한 자원을 생성자에 넘겨주는 의존 객체 주입 기법을 사용하자  
 	해당 기법은 클래스의 유연성, 재사용성, 테스트 용이성을 개선해준다.  
+
 {% endraw %}

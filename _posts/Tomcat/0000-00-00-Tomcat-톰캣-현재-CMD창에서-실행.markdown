@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Tomcat] 톰캣 현재 CMD창에서 실행"  
-subtitle: "Tomcat 톰캣 현재 CMD창에서 실행"  
-date: 2023-01-01 00:00:00 +0900  
-categories: tomcat  
----  
-{% raw %}  
+---
+layout: post
+title: "[Tomcat] 톰캣 현재 CMD창에서 실행"
+subtitle: "Tomcat 톰캣 현재 CMD창에서 실행"
+date: 2023-01-01 00:00:00 +0900
+categories: tomcat
+---
+{% raw %}
 ## 톰캣 현재 CMD창에서 실행  
   
 ## 설명  
@@ -29,4 +29,5 @@ categories: tomcat
   
 위와같이 실행하면 해당 창에서 실행됨  
 종료는 컨트롤+C를 하면 종료가 됨  
+
 {% endraw %}

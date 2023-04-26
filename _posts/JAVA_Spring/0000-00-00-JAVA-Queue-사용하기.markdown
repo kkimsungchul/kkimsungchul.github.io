@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] Queue 사용하기"  
-subtitle: "JAVA Queue 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] Queue 사용하기"
+subtitle: "JAVA Queue 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - Queue 사용하기  
   
 ## Queue 선언  
@@ -108,4 +108,5 @@ public class QueueTest {
 }  
   
 =================================================================================================================  
+
 {% endraw %}

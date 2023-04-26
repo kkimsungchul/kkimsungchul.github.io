@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] OS 명령어 실행하기"  
-subtitle: "JAVA OS 명령어 실행하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] OS 명령어 실행하기"
+subtitle: "JAVA OS 명령어 실행하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - OS 명령어 자바에서 실행하기  
   
 ## 코드 - 1  
@@ -488,4 +488,5 @@ public class ShellCommand {
 }  
   
 =================================================================================================================  
+
 {% endraw %}

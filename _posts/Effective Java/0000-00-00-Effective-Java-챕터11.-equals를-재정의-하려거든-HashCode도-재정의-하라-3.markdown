@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-3"  
-subtitle: "Effective Java 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-3"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-3"
+subtitle: "Effective Java 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-3"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라 - 3  
   
 ## 성능을 높인답시고 해시코드를 계산할 때 핵심 필드를 생략해서는 안된다  
@@ -32,4 +32,5 @@ categories: EffectiveJava
   
 	쉽게 IntelliJ나 Eclipse 에서 제공해주는 것을 사용해도 된다.  
   
+
 {% endraw %}

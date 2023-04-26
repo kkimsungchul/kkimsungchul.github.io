@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Keycloak] API로 서버 정보 받아오기"  
-subtitle: "Keycloak API로 서버 정보 받아오기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Keycloak  
----  
-{% raw %}  
+---
+layout: post
+title: "[Keycloak] API로 서버 정보 받아오기"
+subtitle: "Keycloak API로 서버 정보 받아오기"
+date: 2023-01-01 00:00:00 +0900
+categories: Keycloak
+---
+{% raw %}
 ## Keycloak - API 로 서버정보 받아오기  
   
 	API로 키클락에서 사용하는 메모리의 정보를 확인해야 했음  
@@ -43,4 +43,5 @@ categories: Keycloak
 	Total Memory :  
 		"totalFormated": "455 MB",  
   
+
 {% endraw %}

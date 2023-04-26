@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] 테스트를 위한 테이블 생성 쿼리문"  
-subtitle: "Spring Boot 테스트를 위한 테이블 생성 쿼리문"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] 테스트를 위한 테이블 생성 쿼리문"
+subtitle: "Spring Boot 테스트를 위한 테이블 생성 쿼리문"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - 테스트를 위한 테이블 생성 쿼리문  
   
 CREATE TABLE `board` (  
@@ -21,4 +21,5 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB  
 AUTO_INCREMENT=2  
 ;  
+
 {% endraw %}

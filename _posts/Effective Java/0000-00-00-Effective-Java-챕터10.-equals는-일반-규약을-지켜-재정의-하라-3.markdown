@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터10. equals는 일반 규약을 지켜 재정의 하라-3"  
-subtitle: "Effective Java 챕터10. equals는 일반 규약을 지켜 재정의 하라-3"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터10. equals는 일반 규약을 지켜 재정의 하라-3"
+subtitle: "Effective Java 챕터10. equals는 일반 규약을 지켜 재정의 하라-3"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -3  
   
 	지금까지의 내용을 종합해서 양질의 equals 메소드를 구현하는 방법을 정리하면 아래와 같다.  
@@ -201,4 +201,5 @@ categories: EffectiveJava
 	}  
   
 	=================================================================================================================  
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] JAVA로 URL 호출하여 데이터 주고 받기"  
-subtitle: "JAVA JAVA로 URL 호출하여 데이터 주고 받기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] JAVA로 URL 호출하여 데이터 주고 받기"
+subtitle: "JAVA JAVA로 URL 호출하여 데이터 주고 받기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - JAVA로 URL 호출하여 데이터 주고 받기  
   
 ## Get으로 호출할때의 내용  
@@ -375,4 +375,5 @@ public class Test {
     }  
 }  
   
+
 {% endraw %}

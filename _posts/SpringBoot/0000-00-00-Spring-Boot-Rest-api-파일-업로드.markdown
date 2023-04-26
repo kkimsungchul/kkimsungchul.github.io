@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Rest api 파일 업로드"  
-subtitle: "Spring Boot Rest api 파일 업로드"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Rest api 파일 업로드"
+subtitle: "Spring Boot Rest api 파일 업로드"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Spring boot - RestAPI 방식으로 파일 업로드  
   
 	Spring Boot 2.6.6 버전에서는 아래와 같이 두개의 오류가 남..  
@@ -53,4 +53,5 @@ categories: SpringBoot
 		  max-request-size: 10MB  
 		  location: C:\\IntellijProject\\sungchul_ETC\\file  
 	=================================================================================================================  
+
 {% endraw %}

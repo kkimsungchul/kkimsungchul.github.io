@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] JAVA 프로젝트를 Gradle 프로젝트로 변경"  
-subtitle: "JAVA JAVA 프로젝트를 Gradle 프로젝트로 변경"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] JAVA 프로젝트를 Gradle 프로젝트로 변경"
+subtitle: "JAVA JAVA 프로젝트를 Gradle 프로젝트로 변경"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - JAVA 프로젝트에 Gradle 추가하기  
   
 	공식문서 : https://docs.gradle.org/current/userguide/userguide.html  
@@ -49,4 +49,5 @@ categories: JAVA_Spring
 ## IntelliJ에서 자동으로 Gradle 파일을 인식하고 load 하겠냐는 알림을 띄어줌  
 	- 혹여나 자동으로 import 가 안된다고 하면 프로젝트 우클릭 후 Import Gradle Project 버튼 클릭  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Github] 깃허브 블로그 만들기(3.구글등록)"  
-subtitle: "Github 깃허브 블로그 만들기(3.구글등록)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Github] 깃허브 블로그 만들기(3.구글등록)"
+subtitle: "Github 깃허브 블로그 만들기(3.구글등록)"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## 구글 서치 콘솔에 등록  
 	https://search.google.com/search-console/welcome?utm_source=about-page  
   
@@ -45,4 +45,5 @@ categories: Git
 	https://www.bing.com/webmasters/  
   
 ## naver 등록  
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Keycloak] Keycloak으로 젠킨스 로그인 하기-권한설정"  
-subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기-권한설정"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Keycloak  
----  
-{% raw %}  
+---
+layout: post
+title: "[Keycloak] Keycloak으로 젠킨스 로그인 하기-권한설정"
+subtitle: "Keycloak Keycloak으로 젠킨스 로그인 하기-권한설정"
+date: 2023-01-01 00:00:00 +0900
+categories: Keycloak
+---
+{% raw %}
 ## Keycloak - Keycloak으로 젠킨스 로그인 하기 - 권한 설정( access type - public)  
 	https://oingdaddy.tistory.com/245  
   
@@ -74,4 +74,5 @@ categories: Keycloak
 		jenkins_user 추가 후 user 체크  
 		jenkins_admin 추가 후 admin 체크  
   
+
 {% endraw %}

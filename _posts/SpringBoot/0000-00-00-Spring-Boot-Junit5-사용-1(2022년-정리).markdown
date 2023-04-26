@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Junit5 사용-1(2022년 정리)"  
-subtitle: "Spring Boot Junit5 사용-1(2022년 정리)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Junit5 사용-1(2022년 정리)"
+subtitle: "Spring Boot Junit5 사용-1(2022년 정리)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - JUnit5 사용하기 - 1 (2022년 정리)  
 	https://www.youtube.com/watch?v=SFVWo0Z5Ppo&t=589s  
   
@@ -223,4 +223,5 @@ categories: SpringBoot
   
 		@webMvcTest를 사용하여 컨트롤러를 테스트하는 경우를 제외하면 MockBean보다는 Mock을 사용하는게 좋을것 같습니다.  
 	====================================================================================================  
+
 {% endraw %}

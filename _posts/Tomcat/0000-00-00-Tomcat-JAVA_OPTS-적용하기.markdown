@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Tomcat] JAVA_OPTS 적용하기"  
-subtitle: "Tomcat JAVA_OPTS 적용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: tomcat  
----  
-{% raw %}  
+---
+layout: post
+title: "[Tomcat] JAVA_OPTS 적용하기"
+subtitle: "Tomcat JAVA_OPTS 적용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: tomcat
+---
+{% raw %}
 ## Tomcat - JAVA_OPTS 적용하기  
 	개발을 하다보면 로컬 서버와 개발서버, 운영서버가 각각 다 설정이 다른경우가 대다수이다.  
 		로컬서버에서는 DB를 192.168.0.100, 포트를 3306  
@@ -75,4 +75,5 @@ categories: tomcat
 	set "JAVA_OPTS=%JAVA_OPTS% -Dspring.profiles.active=test"		## 추가한 부분  
 	==================================================================================================================================================  
   
+
 {% endraw %}

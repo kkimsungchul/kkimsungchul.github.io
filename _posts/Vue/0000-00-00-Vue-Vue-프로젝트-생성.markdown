@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Vue] Vue 프로젝트 생성"  
-subtitle: "Vue Vue 프로젝트 생성"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Vue  
----  
-{% raw %}  
+---
+layout: post
+title: "[Vue] Vue 프로젝트 생성"
+subtitle: "Vue Vue 프로젝트 생성"
+date: 2023-01-01 00:00:00 +0900
+categories: Vue
+---
+{% raw %}
 ## Vue - 프로젝트 생성  
   
 	참고링크 : https://www.youtube.com/watch?v=b0ImUEsqaAA&t=1s  
@@ -170,4 +170,5 @@ categories: Vue
 	  },  
   
 	=================================================================================================================  
+
 {% endraw %}

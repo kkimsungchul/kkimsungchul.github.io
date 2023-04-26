@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Eclipse] 인텔리J 프로젝트를 Import"  
-subtitle: "Eclipse 인텔리J 프로젝트를 Import"  
-date: 2023-01-01 00:00:00 +0900  
-categories: IDE  
----  
-{% raw %}  
+---
+layout: post
+title: "[Eclipse] 인텔리J 프로젝트를 Import"
+subtitle: "Eclipse 인텔리J 프로젝트를 Import"
+date: 2023-01-01 00:00:00 +0900
+categories: IDE
+---
+{% raw %}
 ## Eclipse - 이클립스에서 stock 프로젝트 import 하기  
   
 ## 현재 stock 프로젝트에서 사용하는 환경설정  
@@ -97,4 +97,5 @@ categories: IDE
   
 	그래도 안되면 프로젝트 삭제 후 재임포트  
   
+
 {% endraw %}

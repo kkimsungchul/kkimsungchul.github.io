@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] Swagger 사용하기(Swagger3.0)"  
-subtitle: "Spring Boot Swagger 사용하기(Swagger3.0)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] Swagger 사용하기(Swagger3.0)"
+subtitle: "Spring Boot Swagger 사용하기(Swagger3.0)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Spring Boot - Swagger 3.0 버전 사용  
   
 	※ Spring boot 2.6.6 버전, swagger 3.0 버전을 사용할 경우 파일 업로드 부분에서 오류가 발생함  
@@ -127,4 +127,5 @@ swagger : 3.0.0
   
 	http://localhost/swagger-ui/index.html  
   
+
 {% endraw %}

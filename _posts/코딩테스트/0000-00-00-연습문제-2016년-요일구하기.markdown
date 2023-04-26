@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[연습문제] 2016년 요일구하기"  
-subtitle: "연습문제 2016년 요일구하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 코딩테스트  
----  
-{% raw %}  
+---
+layout: post
+title: "[연습문제] 2016년 요일구하기"
+subtitle: "연습문제 2016년 요일구하기"
+date: 2023-01-01 00:00:00 +0900
+categories: 코딩테스트
+---
+{% raw %}
 ## 코딩테스트 - 요일구하기  
   
 2016년  
@@ -49,4 +49,5 @@ class Solution {
         return day[temp];  
     }  
 }  
+
 {% endraw %}

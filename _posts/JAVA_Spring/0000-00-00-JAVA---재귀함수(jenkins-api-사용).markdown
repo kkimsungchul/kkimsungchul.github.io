@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] - 재귀함수(jenkins api 사용)"  
-subtitle: "JAVA - 재귀함수(jenkins api 사용)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] - 재귀함수(jenkins api 사용)"
+subtitle: "JAVA - 재귀함수(jenkins api 사용)"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - 재귀함수  
 	재귀함수란 자기자신을 호출하는 함수  
   
@@ -265,4 +265,5 @@ add를 하게되면 본인 하위에 본인이 또 추가되서 두개씩 출력
   
 		====================================================================================================  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] 젠킨스 설치(Windows)"  
-subtitle: "Jenkins 젠킨스 설치(Windows)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] 젠킨스 설치(Windows)"
+subtitle: "Jenkins 젠킨스 설치(Windows)"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - 윈도우 설치  
   
 	참고링크 : https://lock.tistory.com/2  
@@ -43,4 +43,5 @@ categories: Jenkins
   
 	5. Jenkins URL 부분에서는 http://localhost:7070 입력 후 Save and Finish 클릭  
   
+
 {% endraw %}

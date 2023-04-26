@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Keycloak] Keycloak과 Spring Boot 연동"  
-subtitle: "Keycloak Keycloak과 Spring Boot 연동"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Keycloak  
----  
-{% raw %}  
+---
+layout: post
+title: "[Keycloak] Keycloak과 Spring Boot 연동"
+subtitle: "Keycloak Keycloak과 Spring Boot 연동"
+date: 2023-01-01 00:00:00 +0900
+categories: Keycloak
+---
+{% raw %}
 ## Keycloak과 Spring Boot 연동  
   
 ## 프로젝트 생성  
@@ -310,4 +310,5 @@ curl -X POST "http://localhost:8080/auth/realms/demo/protocol/openid-connect/tok
 --data-urlencode "username=sungchul" ^  
 --data-urlencode "password=admin"  
   
+
 {% endraw %}

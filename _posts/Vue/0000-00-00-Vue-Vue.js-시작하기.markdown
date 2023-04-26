@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Vue] Vue.js 시작하기"  
-subtitle: "Vue Vue.js 시작하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Vue  
----  
-{% raw %}  
+---
+layout: post
+title: "[Vue] Vue.js 시작하기"
+subtitle: "Vue Vue.js 시작하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Vue
+---
+{% raw %}
 ## Vue.js 시작하기  
 	참고 링크 : https://ojava.tistory.com/185  
   
@@ -57,4 +57,5 @@ categories: Vue
 	또는 (컨트롤 + 시프트 + P) 후 Command Palette 를 켜서  
 	Extensions: install Extensions 를 켜도 됨  
   
+
 {% endraw %}

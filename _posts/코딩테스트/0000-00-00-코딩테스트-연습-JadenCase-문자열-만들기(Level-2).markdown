@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[코딩테스트 연습] JadenCase 문자열 만들기(Level-2)"  
-subtitle: "코딩테스트 연습 JadenCase 문자열 만들기(Level-2)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 코딩테스트  
----  
-{% raw %}  
+---
+layout: post
+title: "[코딩테스트 연습] JadenCase 문자열 만들기(Level-2)"
+subtitle: "코딩테스트 연습 JadenCase 문자열 만들기(Level-2)"
+date: 2023-01-01 00:00:00 +0900
+categories: 코딩테스트
+---
+{% raw %}
 ## 코딩테스트 - JadenCase 문자열 만들기  
 문제 설명  
 JadenCase란 모든 단어의 첫 문자가 대문자이고, 그 외의 알파벳은 소문자인 문자열입니다. 단, 첫 문자가 알파벳이 아닐 때에는 이어지는 알파벳은 소문자로 쓰면 됩니다. (첫 번째 입출력 예 참고)  
@@ -46,4 +46,5 @@ class Solution {
         return answer;  
     }  
 }  
+
 {% endraw %}

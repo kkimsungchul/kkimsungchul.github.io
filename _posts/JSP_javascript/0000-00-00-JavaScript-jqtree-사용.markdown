@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JavaScript] jqtree 사용"  
-subtitle: "JavaScript jqtree 사용"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JSP_javascript  
----  
-{% raw %}  
+---
+layout: post
+title: "[JavaScript] jqtree 사용"
+subtitle: "JavaScript jqtree 사용"
+date: 2023-01-01 00:00:00 +0900
+categories: JSP_javascript
+---
+{% raw %}
 ## jqTree  
   
 ※ 문제발생  
@@ -236,4 +236,5 @@ categories: JSP_javascript
                     autoOpen: true  
                 });*/  
         /*$("##deptTree").load("tree_sample/tree_sample.html");*/                                                                                                                                                                                                                                                                                                  
+
 {% endraw %}

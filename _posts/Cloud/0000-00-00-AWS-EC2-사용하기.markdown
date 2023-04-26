@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[AWS] EC2 사용하기"  
-subtitle: "AWS EC2 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Cloud  
----  
-{% raw %}  
+---
+layout: post
+title: "[AWS] EC2 사용하기"
+subtitle: "AWS EC2 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: Cloud
+---
+{% raw %}
 ## AWS - EC2 사용하기  
   
 ## 참고 링크  
@@ -67,4 +67,5 @@ categories: Cloud
   
 ## 패키지 업데이트  
 	sudo yum update -y  
+
 {% endraw %}

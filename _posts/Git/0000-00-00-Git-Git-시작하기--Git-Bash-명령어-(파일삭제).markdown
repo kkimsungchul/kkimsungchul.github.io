@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- Git Bash 명령어 (파일삭제)"  
-subtitle: "Git Git 시작하기- Git Bash 명령어 (파일삭제)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- Git Bash 명령어 (파일삭제)"
+subtitle: "Git Git 시작하기- Git Bash 명령어 (파일삭제)"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## 파일삭제  
   
 	깃 저장소에 .idea , target , 등의 디렉토리가 업로드 되어있을 때 해당 파일들을 삭제  
@@ -46,4 +46,5 @@ categories: Git
 	git push origin master  
 	=================================================================================================================  
   
+
 {% endraw %}

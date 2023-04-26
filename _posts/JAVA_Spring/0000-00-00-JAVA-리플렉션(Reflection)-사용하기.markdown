@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] 리플렉션(Reflection) 사용하기"  
-subtitle: "JAVA 리플렉션(Reflection) 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] 리플렉션(Reflection) 사용하기"
+subtitle: "JAVA 리플렉션(Reflection) 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - 리플렉션(Reflection) 사용하기  
   
 ## 참고 링크 :  
@@ -327,4 +327,5 @@ categories: JAVA_Spring
 		}  
   
 		=================================================================================================================  
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Github] 깃허브 블로그 카테고리 만들기"  
-subtitle: "Github 깃허브 블로그 카테고리 만들기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Github] 깃허브 블로그 카테고리 만들기"
+subtitle: "Github 깃허브 블로그 카테고리 만들기"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## Github - 깃허브 블로그 카테고리 만들기  
   
 ## 참고 링크  
@@ -114,4 +114,5 @@ categories: Git
 </div>  
 	======================================================================================================  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] Multi Socket 통신 하기(소켓통신)"  
-subtitle: "JAVA Multi Socket 통신 하기(소켓통신)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] Multi Socket 통신 하기(소켓통신)"
+subtitle: "JAVA Multi Socket 통신 하기(소켓통신)"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - Multi Socket 통신하기  
   
 	https://kadosholy.tistory.com/126  
@@ -216,4 +216,5 @@ categories: JAVA_Spring
   
 	}  
 	=================================================================================================================  
+
 {% endraw %}

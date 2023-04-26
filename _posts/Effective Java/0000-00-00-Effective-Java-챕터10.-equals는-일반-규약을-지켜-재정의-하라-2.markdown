@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터10. equals는 일반 규약을 지켜 재정의 하라-2"  
-subtitle: "Effective Java 챕터10. equals는 일반 규약을 지켜 재정의 하라-2"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터10. equals는 일반 규약을 지켜 재정의 하라-2"
+subtitle: "Effective Java 챕터10. equals는 일반 규약을 지켜 재정의 하라-2"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터10. equals는 일반 규약을 지켜 재정의 하라 -2  
   
 	- 추이성(transitivity) :  
@@ -228,4 +228,5 @@ categories: EffectiveJava
 		그런데 instanceof 는 첫 번째 피연산자가 null 이면 false를 반환한다.  
 		따라서 입력이 null 이면 타입 확인 단계에서 false를 반환하기 때문에 null 검사를 명시적으로 하지 않아도 된다.  
   
+
 {% endraw %}

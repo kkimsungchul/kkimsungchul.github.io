@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] 오류처리-AbstractErrorController 사용하기"  
-subtitle: "Spring Boot 오류처리-AbstractErrorController 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] 오류처리-AbstractErrorController 사용하기"
+subtitle: "Spring Boot 오류처리-AbstractErrorController 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - AbstractErrorController 사용하기  
   
 	참고링크 : https://giantdwarf.tistory.com/24  
@@ -141,4 +141,5 @@ categories: SpringBoot
 		  enabled: true  
   
 	=================================================================================================================  
+
 {% endraw %}

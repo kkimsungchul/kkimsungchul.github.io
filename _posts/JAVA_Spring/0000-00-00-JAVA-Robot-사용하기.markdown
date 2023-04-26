@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] Robot 사용하기"  
-subtitle: "JAVA Robot 사용하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] Robot 사용하기"
+subtitle: "JAVA Robot 사용하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - robot 사용하기  
   
 	API  
@@ -56,4 +56,5 @@ categories: JAVA_Spring
             e.printStackTrace();  
         }  
 	======================================================================================================  
+
 {% endraw %}

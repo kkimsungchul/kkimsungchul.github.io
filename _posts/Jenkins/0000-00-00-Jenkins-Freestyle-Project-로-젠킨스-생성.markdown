@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] Freestyle Project 로 젠킨스 생성"  
-subtitle: "Jenkins Freestyle Project 로 젠킨스 생성"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] Freestyle Project 로 젠킨스 생성"
+subtitle: "Jenkins Freestyle Project 로 젠킨스 생성"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - Freestyle Project 생성  
   
 ## Freestyle Project 작성  
@@ -46,4 +46,5 @@ categories: Jenkins
   
 	ROOT로 나오는 이유는 내가 프로젝트에서 ROOT 로 설정해놔서 그럼  
   
+
 {% endraw %}

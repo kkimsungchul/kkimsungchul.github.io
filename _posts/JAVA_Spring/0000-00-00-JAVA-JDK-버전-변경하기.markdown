@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[JAVA] JDK 버전 변경하기"  
-subtitle: "JAVA JDK 버전 변경하기"  
-date: 2023-01-01 00:00:00 +0900  
-categories: JAVA_Spring  
----  
-{% raw %}  
+---
+layout: post
+title: "[JAVA] JDK 버전 변경하기"
+subtitle: "JAVA JDK 버전 변경하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
 ## JAVA - JDK 버전 변경하기  
 	기존JDK가 1.8 버전이였는데, 스프링부트 3.0 부터는 최소 JDK 요구사항이 17임.  
 	17으로 올릴까 했는데 이왕 최신으로 올려서 쓰자라는 생각으로 20으로 올림  
@@ -61,4 +61,5 @@ categories: JAVA_Spring
 	환경변수설정, 오라클 변수를 삭제 해도 java -version 에서는 예전 버전이 표시되었음.  
 	재부팅을 해도 똑같음.  
 	이럴 경우에는 2번항목 환경변수 설정에서 JAVA_HOME을 제일 위로 끌고오면 해결됨  
+
 {% endraw %}

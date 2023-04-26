@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] ComponentScan 사용 ( main 메소드와 다른 패키지)"  
-subtitle: "Spring Boot ComponentScan 사용 ( main 메소드와 다른 패키지)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] ComponentScan 사용 ( main 메소드와 다른 패키지)"
+subtitle: "Spring Boot ComponentScan 사용 ( main 메소드와 다른 패키지)"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## SpringBoot - ComponentScan 사용  
   
 	스프링에서는 config.xml 파일에 아래와 같이 ComponentScane 을 설정해줬었음  
@@ -80,4 +80,5 @@ categories: SpringBoot
 	디폴트는 메인클래스가 위치한 패키지지만 위와같이 설정을 할경우에는 설정한 패키지들을 전부다 읽어드림  
   
 	또한 메인클래스가 위치한 패키지도 같이 basePackages 에 추가해줘야 함, 추가하지 않으면 메인클래스와 같다고 해서 읽어오지 않음  
+
 {% endraw %}

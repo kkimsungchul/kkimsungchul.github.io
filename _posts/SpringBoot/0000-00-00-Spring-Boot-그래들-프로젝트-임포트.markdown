@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] 그래들 프로젝트 임포트"  
-subtitle: "Spring Boot 그래들 프로젝트 임포트"  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] 그래들 프로젝트 임포트"
+subtitle: "Spring Boot 그래들 프로젝트 임포트"
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## 스프링부트 - 그래들 프로젝트 임포트  
   
 ## 임포트 하기  
@@ -39,4 +39,5 @@ categories: SpringBoot
 	distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.4-all.zip  
   
 https://ooz.co.kr/420  
+
 {% endraw %}

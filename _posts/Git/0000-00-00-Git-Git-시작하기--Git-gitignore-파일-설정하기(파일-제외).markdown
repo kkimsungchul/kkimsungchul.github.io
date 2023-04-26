@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Git] Git 시작하기- Git gitignore 파일 설정하기(파일 제외)"  
-subtitle: "Git Git 시작하기- Git gitignore 파일 설정하기(파일 제외)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Git  
----  
-{% raw %}  
+---
+layout: post
+title: "[Git] Git 시작하기- Git gitignore 파일 설정하기(파일 제외)"
+subtitle: "Git Git 시작하기- Git gitignore 파일 설정하기(파일 제외)"
+date: 2023-01-01 00:00:00 +0900
+categories: Git
+---
+{% raw %}
 ## Git - Git gitignore 파일 설정하기(파일 제외)  
   
 ## 참고 URL :  
@@ -220,4 +220,5 @@ $RECYCLE.BIN/
 *.lnk  
   
 ## End of https://www.gitignore.io/api/java,maven,windows,intellij  
+
 {% endraw %}

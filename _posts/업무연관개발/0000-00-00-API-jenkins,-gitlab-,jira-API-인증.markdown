@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[API] jenkins, gitlab ,jira API 인증"  
-subtitle: "API jenkins, gitlab ,jira API 인증"  
-date: 2023-01-01 00:00:00 +0900  
-categories: 업무연관개발  
----  
-{% raw %}  
+---
+layout: post
+title: "[API] jenkins, gitlab ,jira API 인증"
+subtitle: "API jenkins, gitlab ,jira API 인증"
+date: 2023-01-01 00:00:00 +0900
+categories: 업무연관개발
+---
+{% raw %}
 ## API - jenkins, gitlab ,jira API 인증 방법  
 	지라의 경우 miniOrange OAuth Configuration 플러그인도 설치  
   
@@ -30,4 +30,5 @@ categories: 업무연관개발
 			basic 를 붙여서 전송  
 			ex )Basic OTEyODQASDAWERT3ODM6asdfasdfadMTE4ZDBmYjNlYTBmMmFkYmNkNzAwODZlASDASEYjBmNzU2ZjVjMA==  
   
+
 {% endraw %}

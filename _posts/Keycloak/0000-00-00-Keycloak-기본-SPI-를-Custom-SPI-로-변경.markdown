@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Keycloak] 기본 SPI 를 Custom SPI 로 변경"  
-subtitle: "Keycloak 기본 SPI 를 Custom SPI 로 변경"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Keycloak  
----  
-{% raw %}  
+---
+layout: post
+title: "[Keycloak] 기본 SPI 를 Custom SPI 로 변경"
+subtitle: "Keycloak 기본 SPI 를 Custom SPI 로 변경"
+date: 2023-01-01 00:00:00 +0900
+categories: Keycloak
+---
+{% raw %}
 ## keycloak - 기본 SPI 를 Custom SPI 로 변경  
   
 ## jar 파일 추가  
@@ -53,4 +53,5 @@ categories: Keycloak
 		-> 추가한 SPI명 검색  
   
 	3. 해당페이지에서 keycloak-password 가 보이지 않으면 설정이 완료된것  
+
 {% endraw %}

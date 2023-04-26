@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Spring Boot] 그래들(Gradle) 라이브러리 포함해서 jar 빌드하기 "  
-subtitle: "Spring Boot 그래들(Gradle) 라이브러리 포함해서 jar 빌드하기 "  
-date: 2023-01-01 00:00:00 +0900  
-categories: SpringBoot  
----  
-{% raw %}  
+---
+layout: post
+title: "[Spring Boot] 그래들(Gradle) 라이브러리 포함해서 jar 빌드하기 "
+subtitle: "Spring Boot 그래들(Gradle) 라이브러리 포함해서 jar 빌드하기 "
+date: 2023-01-01 00:00:00 +0900
+categories: SpringBoot
+---
+{% raw %}
 ## Gradle - 라이브러리 포함해서 jar 빌드하기  
 	참고링크 : https://ink1234.tistory.com/12  
   
@@ -22,4 +22,5 @@ categories: SpringBoot
 	}  
 	=================================================================================================================  
   
+
 {% endraw %}

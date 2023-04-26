@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[AWS] EC2에 배포하기 (Nginx 포함)"  
-subtitle: "AWS EC2에 배포하기 (Nginx 포함)"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Cloud  
----  
-{% raw %}  
+---
+layout: post
+title: "[AWS] EC2에 배포하기 (Nginx 포함)"
+subtitle: "AWS EC2에 배포하기 (Nginx 포함)"
+date: 2023-01-01 00:00:00 +0900
+categories: Cloud
+---
+{% raw %}
 ## Chat - 백엔드 배포  
   
 ## 포트 오픈  
@@ -125,4 +125,5 @@ https://github.com/vuejs/eslint-plugin-vue/issues/1931
 	$ git clone https://github.com/kkimsungchul/chat-front.git  
 	$ chmod -R 755 chat-front/  
   
+
 {% endraw %}

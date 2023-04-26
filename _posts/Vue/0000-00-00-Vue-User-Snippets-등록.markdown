@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Vue] User Snippets 등록"  
-subtitle: "Vue User Snippets 등록"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Vue  
----  
-{% raw %}  
+---
+layout: post
+title: "[Vue] User Snippets 등록"
+subtitle: "Vue User Snippets 등록"
+date: 2023-01-01 00:00:00 +0900
+categories: Vue
+---
+{% raw %}
 ## vue - User Snippets 등록  
   
 	VS Code 에서 자주 사용하는 템플릿을 등록해놓아서 편리하게 사용할수 있도록함  
@@ -28,4 +28,5 @@ categories: Vue
 	=================================================================================================================  
   
 4. 생성할 vue 파일에 와서 vue-start 를 입력하면 3번항목에서 입력한 내용이 자동으로 입력됨  
+
 {% endraw %}

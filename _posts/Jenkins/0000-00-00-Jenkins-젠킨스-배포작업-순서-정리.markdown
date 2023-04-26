@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] 젠킨스 배포작업 순서 정리"  
-subtitle: "Jenkins 젠킨스 배포작업 순서 정리"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] 젠킨스 배포작업 순서 정리"
+subtitle: "Jenkins 젠킨스 배포작업 순서 정리"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## 젠킨스 배포 적용 방법  
   
 	서버 구성  
@@ -175,4 +175,5 @@ categories: Jenkins
 	}  
 	====================================================================================================  
   
+
 {% endraw %}

@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Effective Java] 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-1"  
-subtitle: "Effective Java 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-1"  
-date: 2023-01-01 00:00:00 +0900  
-categories: EffectiveJava  
----  
-{% raw %}  
+---
+layout: post
+title: "[Effective Java] 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-1"
+subtitle: "Effective Java 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라-1"
+date: 2023-01-01 00:00:00 +0900
+categories: EffectiveJava
+---
+{% raw %}
 ## Effective Java - 챕터11. equals를 재정의 하려거든 HashCode도 재정의 하라 - 1  
 	equals를 재정의한 클래스 모두에서 hashCode 도 재정의해야 한다.  
 	그렇지 않으면 hashCode 일반 규약을 어기게 되어 해당 클래스의 인스턴스를 HashMap 이나 HashSet 같은 컬렉션의 원소로 사용할 떄 문제를 일으킬 것이다.  
@@ -105,4 +105,5 @@ categories: EffectiveJava
 	소수를 곱하는 이유는 명확하지만 전통적으로 그리 해왔다.  
 	결과적으로 31을 이용하면 이 곱셈을 시프트 연산과 뺄셈으로 대체해 최적화 할 수 있다.	(31 * i 는 (i<<5)-i 와 같다)  
 	요즘 VM들은 이런 최적화를 자동으로 해준다.  
+
 {% endraw %}

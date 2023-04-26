@@ -1,11 +1,11 @@
----  
-layout: post  
-title: "[Jenkins] Freestyle project 로 젠킨스 생성하여 배포"  
-subtitle: "Jenkins Freestyle project 로 젠킨스 생성하여 배포"  
-date: 2023-01-01 00:00:00 +0900  
-categories: Jenkins  
----  
-{% raw %}  
+---
+layout: post
+title: "[Jenkins] Freestyle project 로 젠킨스 생성하여 배포"
+subtitle: "Jenkins Freestyle project 로 젠킨스 생성하여 배포"
+date: 2023-01-01 00:00:00 +0900
+categories: Jenkins
+---
+{% raw %}
 ## Jenkins - Freestyle project 로 배포하기  
   
 	참고 URL : https://hwannny.tistory.com/89  
@@ -191,4 +191,5 @@ categories: Jenkins
 	Caused: java.io.IOException: Cannot run program "mvn" (in directory  
 	====================================================================================================  
   
+
 {% endraw %}
