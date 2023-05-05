@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "[Spring Boot] JPA 강의 정리-9 (요구사항 분석과 기본 매핑)"
-subtitle: "Spring Boot JPA 강의 정리-9 (요구사항 분석과 기본 매핑)"
+title: "[Spring Boot] JPA 강의 정리-9 (요구사항 분석과 기본 매핑)-실전예제1"
+subtitle: "Spring Boot JPA 강의 정리-9 (요구사항 분석과 기본 매핑)-실전예제1"
 date: 2023-01-01 00:00:00 +0900
 categories: SpringBoot
 ---
 {% raw %}
 ## SpringBoot - JPA 강의 정리-9(요구사항 분석과 기본 매핑)  
-  
+	https://github.com/kkimsungchul/study_code/tree/main/jpashop  
 ## 요구사항  
 	회원은 상품을 주문할 수 있다.  
 	주문 시 여러 종류의 상품을 선택할 수 있다.  
