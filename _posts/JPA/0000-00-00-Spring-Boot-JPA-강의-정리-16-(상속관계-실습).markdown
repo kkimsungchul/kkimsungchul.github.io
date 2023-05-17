@@ -3,7 +3,7 @@ layout: post
 title: "[Spring Boot] JPA 강의 정리-16 (상속관계 실습)"
 subtitle: "Spring Boot JPA 강의 정리-16 (상속관계 실습)"
 date: 2023-01-01 00:00:00 +0900
-categories: SpringBoot
+categories: JPA
 ---
 {% raw %}
 ## SpringBoot - JPA 강의 정리-16(상속관계 실습)  
