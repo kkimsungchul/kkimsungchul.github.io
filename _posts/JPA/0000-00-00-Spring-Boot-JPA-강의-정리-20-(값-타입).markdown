@@ -36,8 +36,6 @@ categories: JPA
 		ex) 좌표,  
 	- 컬렉션 값 타입(collection value type)  
   
-## 임베디드 타입(복합 값 타입)  
-  
 ## 값 타입과 불변 객체  
   
 ## 값 타입의 비교  
