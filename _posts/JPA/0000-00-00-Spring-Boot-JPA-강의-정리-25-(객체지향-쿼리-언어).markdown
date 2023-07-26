@@ -6,7 +6,7 @@ date: 2023-01-01 00:00:00 +0900
 categories: JPA
 ---
 {% raw %}
-## SpringBoot - JPA 강의 정리-24(객체지향 쿼리 언어)  
+## SpringBoot - JPA 강의 정리-25(객체지향 쿼리 언어)  
   
 ## JPQL  
 	- 가장 단순한 조회 방법  

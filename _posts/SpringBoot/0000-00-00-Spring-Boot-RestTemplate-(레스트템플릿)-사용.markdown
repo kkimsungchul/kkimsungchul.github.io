@@ -85,7 +85,38 @@ categories: SpringBoot
   
 	=================================================================================================================  
   
-	아래의 소스는 pki 오류를 예방하는 코드, 인증서 오류가 발생해도 무시하고 진행할수 있도록 해줌  
+## 기본적인 설정  
+  
+	=====================================================================  
+	package com.blog.createblogpost.config;  
+  
+	import org.springframework.boot.web.client.RestTemplateBuilder;  
+	import org.springframework.context.annotation.Bean;  
+	import org.springframework.context.annotation.Configuration;  
+	import org.springframework.http.client.BufferingClientHttpRequestFactory;  
+	import org.springframework.http.client.SimpleClientHttpRequestFactory;  
+	import org.springframework.web.client.RestTemplate;  
+  
+	import java.time.Duration;  
+  
+	@Configuration  
+	public class RestTemplateConfig {  
+  
+		@Bean  
+		public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {  
+			return restTemplateBuilder  
+					.requestFactory(() ->  
+							new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory())  
+					)  
+					.setConnectTimeout(Duration.ofMillis(5000)) // connection-timeout  
+					.setReadTimeout(Duration.ofMillis(5000)) // read-timeout  
+					.build();  
+		}  
+  
+	}  
+	=====================================================================  
+  
+## 아래의 소스는 pki 오류를 예방하는 코드, 인증서 오류가 발생해도 무시하고 진행할수 있도록 해줌  
 	=================================================================================================================  
   
 	package com.example.demo.common;  
@@ -202,5 +233,6 @@ categories: SpringBoot
 		}  
 	}  
 	=================================================================================================================  
+  
 
 {% endraw %}
