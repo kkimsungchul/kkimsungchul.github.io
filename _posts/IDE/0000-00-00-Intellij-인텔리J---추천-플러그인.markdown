@@ -17,6 +17,19 @@ atom material icons
 code Glance  
 	코드요약 우측에 작게 나옴  
   
+gitToolBox  
+	브랜치를 프로젝트 옆에 표시해주고  
+	현재 커밋내용이나 이런걸  
+  
+indent Rainbow  
+	인덴트를 색상으로 보여줌  
+  
+Presentation Assistant  
+	사용한 단축키를 보여줌  
+  
+key promoter x  
+	Intellij에서 마우스로 클릭한 버튼이나 행동에 대한 단축키를 보여줌  
+  
 Nyan progress Bar  
 	귀여운 고양이 로딩바  
   
