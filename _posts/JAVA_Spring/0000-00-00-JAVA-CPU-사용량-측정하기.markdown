@@ -1,0 +1,257 @@
+---
+layout: post
+title: "[JAVA] CPU 사용량 측정하기"
+subtitle: "JAVA CPU 사용량 측정하기"
+date: 2023-01-01 00:00:00 +0900
+categories: JAVA_Spring
+---
+{% raw %}
+## JAVA - CPU 사용량 측정하기  
+  
+## 사용 방법  
+	https://mvnrepository.com/artifact/org.hyperic.sigar/sigar/1.6.4  
+	Sigar 라이브러리 추가  
+	implementation 'org.hyperic.sigar:sigar:1.6.4'  
+  
+## 인터넷이 있는 다른 방법  
+	oracle에서 제공해주는 라이브러리를 사용하라그러는데, open jdk에서는 해당 메서드를 제공해주지 않음  
+	그래서 사용할수 없음  
+	=====================================================================  
+	import java.lang.management.ManagementFactory;  
+	import com.sun.management.OperatingSystemMXBean;  
+  
+	public class CpuUsageMonitor {  
+  
+		public static void main(String[] args) {  
+			OperatingSystemMXBean osBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);  
+  
+			// 시스템 전체 CPU 사용량 (0.0 ~ 1.0)  
+			double systemCpuLoad = osBean.getSystemCpuLoad();  
+			System.out.println("System CPU Load: " + systemCpuLoad);  
+  
+			// JVM 프로세스의 CPU 사용량  
+			double processCpuLoad = osBean.getProcessCpuLoad();  
+			System.out.println("Process CPU Load: " + processCpuLoad);  
+		}  
+	}  
+  
+	=====================================================================  
+  
+## 실행 시 오류  
+	no sigar-amd64-winnt.dll in java.library.path  
+	위와같은 오류가 발생하는데 이부분은 아래의 경로에서 zip파일을 다운 받은 후  
+	sigar-amd64-winnt.dll 파일을 라이브러리 경로에 위치시키면 해결됨  
+	https://sourceforge.net/projects/sigar/files/sigar/1.6/hyperic-sigar-1.6.4.zip/download  
+## 코드  
+  
+	=====================================================================  
+	import org.hyperic.sigar.Cpu;  
+	import org.hyperic.sigar.CpuInfo;  
+	import org.hyperic.sigar.Sigar;  
+	import org.hyperic.sigar.SigarException;  
+  
+	public class Main{  
+  
+		public static void main(String[] args) throws SigarException {  
+			Sigar sigar = new Sigar();  
+			CpuInfo[] cpuInfoList = sigar.getCpuInfoList();  
+  
+			for (CpuInfo cpuInfo : cpuInfoList) {  
+				System.out.println("CPU 정보:");  
+				System.out.println("Vendor: " + cpuInfo.getVendor());  
+				System.out.println("Model: " + cpuInfo.getModel());  
+				System.out.println("Mhz: " + cpuInfo.getMhz());  
+				System.out.println("Total CPUs: " + cpuInfo.getTotalCores());  
+				System.out.println();  
+			}  
+  
+			Cpu cpu = sigar.getCpu();  
+			System.out.println("CPU 사용량:");  
+  
+			System.out.println("Idle: " + cpu.getIdle());  
+			System.out.println("User: " + cpu.getUser());  
+			System.out.println("Sys: " + cpu.getSys());  
+		}  
+	}  
+  
+	=====================================================================  
+  
+## 스프링에서 측정하기  
+	https://nangmandeveloper.tistory.com/12  
+	https://velog.io/@limsubin/Spring-Boot%EC%97%90%EC%84%9C-metric%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%98%EC%9E%90  
+## 라이브러리 추가  
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'  
+## application.yml 파일에 설정 추가  
+=====================================================================  
+management:  
+  endpoints:  
+    web:  
+      exposure:  
+        include: "*"  
+=====================================================================  
+## 접속  
+	http://127.0.0.1:8080/actuator  
+  
+## 메트릭 확인  
+	http://127.0.0.1:8080/actuator/metrics  
+	위페이지에서 나오는 값들을 뒤에 붙여서 호출하면 더많은 정보를 볼수 있음  
+	http://127.0.0.1:8080/actuator/metrics/여기  
+	http://127.0.0.1:8080/actuator/metrics/jvm.memory.used  
+  
+######################################################################  
+1. 의존성 추가  
+	먼저 spring-boot-starter-actuator 의존성을 build.gradle 파일에 추가합니다.  
+  
+	dependencies {  
+		implementation 'org.springframework.boot:spring-boot-starter-actuator'  
+	}  
+  
+2. 설정 파일 수정  
+	application.properties 예시:  
+	=====================================================================  
+	management.endpoints.web.exposure.include=*  
+	management.endpoint.health.show-details=always  
+	=====================================================================  
+  
+	application.yml 예시:  
+	=====================================================================  
+	management:  
+	  endpoints:  
+		web:  
+		  exposure:  
+			include: "*"  
+	  endpoint:  
+		health:  
+		  show-details: "always"  
+	=====================================================================  
+  
+3. 애플리케이션 실행 및 메트릭 확인  
+	애플리케이션을 실행한 후, Actuator 엔드포인트를 통해 시스템 자원 사용량을 모니터링할 수 있습니다.  
+	기본적으로 Actuator 엔드포인트는 /actuator 하위 경로에 노출됩니다.  
+	다음과 같은 URL을 통해 다양한 메트릭 정보를 확인할 수 있습니다.  
+  
+	/actuator/health: 애플리케이션의 상태를 확인할 수 있습니다.  
+	/actuator/metrics: 전체 메트릭 목록을 확인할 수 있습니다.  
+	/actuator/metrics/jvm.memory.used: JVM 메모리 사용량을 확인할 수 있습니다.  
+	/actuator/metrics/system.cpu.usage: 시스템 CPU 사용량을 확인할 수 있습니다.  
+	예를 들어, 브라우저 또는 API 클라이언트를 사용하여 http://localhost:8080/actuator/metrics/system.cpu.usage를 요청하면 시스템 CPU 사용량을 확인할 수 있습니다.  
+  
+4. 커스터마이징 - 사용자 정의 메트릭 추가  
+	=====================================================================  
+	import io.micrometer.core.instrument.MeterRegistry;  
+	import org.springframework.beans.factory.annotation.Autowired;  
+	import org.springframework.stereotype.Component;  
+  
+	import javax.annotation.PostConstruct;  
+  
+	@Component  
+	public class CustomMetrics {  
+  
+		private final MeterRegistry meterRegistry;  
+  
+		@Autowired  
+		public CustomMetrics(MeterRegistry meterRegistry) {  
+			this.meterRegistry = meterRegistry;  
+		}  
+  
+		@PostConstruct  
+		public void init() {  
+			meterRegistry.counter("custom.metric.counter").increment();  
+		}  
+	}  
+  
+	=====================================================================  
+  
+5. AOP에서 Actuator 메트릭 추가  
+	=====================================================================  
+	import io.micrometer.core.instrument.MeterRegistry;  
+	import org.aspectj.lang.ProceedingJoinPoint;  
+	import org.aspectj.lang.annotation.Around;  
+	import org.aspectj.lang.annotation.Aspect;  
+	import org.springframework.beans.factory.annotation.Autowired;  
+	import org.springframework.stereotype.Component;  
+  
+	@Aspect  
+	@Component  
+	public class MetricsAspect {  
+  
+		private final MeterRegistry meterRegistry;  
+  
+		@Autowired  
+		public MetricsAspect(MeterRegistry meterRegistry) {  
+			this.meterRegistry = meterRegistry;  
+		}  
+  
+		@Around("@annotation(org.springframework.web.bind.annotation.RequestMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.GetMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.PostMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.PutMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.DeleteMapping)")  
+		public Object trackExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {  
+			long start = System.currentTimeMillis();  
+			try {  
+				return joinPoint.proceed();  
+			} finally {  
+				long duration = System.currentTimeMillis() - start;  
+				meterRegistry.timer("http.requests", "method", joinPoint.getSignature().getName())  
+							 .record(duration, java.util.concurrent.TimeUnit.MILLISECONDS);  
+			}  
+		}  
+	}  
+  
+	=====================================================================  
+  
+6. aop에서 이미 정의된 메트릭 가져오기  
+	=====================================================================  
+	import io.micrometer.core.instrument.MeterRegistry;  
+	import io.micrometer.core.instrument.Meter;  
+	import io.micrometer.core.instrument.Timer;  
+	import org.aspectj.lang.ProceedingJoinPoint;  
+	import org.aspectj.lang.annotation.Around;  
+	import org.aspectj.lang.annotation.Aspect;  
+	import org.springframework.beans.factory.annotation.Autowired;  
+	import org.springframework.stereotype.Component;  
+  
+	@Aspect  
+	@Component  
+	public class MetricsAspect {  
+  
+		private final MeterRegistry meterRegistry;  
+  
+		@Autowired  
+		public MetricsAspect(MeterRegistry meterRegistry) {  
+			this.meterRegistry = meterRegistry;  
+		}  
+  
+		@Around("@annotation(org.springframework.web.bind.annotation.RequestMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.GetMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.PostMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.PutMapping) || "  
+				+ "@annotation(org.springframework.web.bind.annotation.DeleteMapping)")  
+		public Object trackExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {  
+			Timer.Sample sample = Timer.start(meterRegistry);  
+			try {  
+				return joinPoint.proceed();  
+			} finally {  
+				Timer timer = meterRegistry.timer("http.requests", "method", joinPoint.getSignature().getName());  
+				sample.stop(timer);  
+  
+				// 이미 정의된 메트릭 가져오기 예시  
+				Meter cpuUsageMeter = meterRegistry.find("system.cpu.usage").meter();  
+				if (cpuUsageMeter != null) {  
+					double cpuUsage = meterRegistry.get("system.cpu.usage").gauge().value();  
+					System.out.println("Current CPU Usage: " + cpuUsage);  
+				}  
+  
+				Meter memoryUsageMeter = meterRegistry.find("jvm.memory.used").meter();  
+				if (memoryUsageMeter != null) {  
+					double memoryUsage = meterRegistry.get("jvm.memory.used").gauge().value();  
+					System.out.println("Current JVM Memory Usage: " + memoryUsage);  
+				}  
+			}  
+		}  
+	}  
+  
+	=====================================================================  
+
+{% endraw %}
