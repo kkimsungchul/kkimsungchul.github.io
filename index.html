@@ -1,4 +1,280 @@
----
-layout: home
-background: '/img/bg-index.jpg'
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JSON 분석 대시보드</title>
+
+<style>
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; cursor: pointer; }
+    .toggle-btn { cursor: pointer; margin-bottom: 5px; display: inline-block; }
+	h4 {color : red}
+</style>
+
+</head>
+<body>
+
+<h2>Order History.json 파일 업로드</h2>
+<h4>※ 업로드한 파일은 저장하지 않음</h4>
+<input type="file" id="fileInput" accept=".json">
+
+<hr>
+
+<!-- ✅ 게임별 -->
+<h3>
+    📊 게임별 과금 합계
+    <span class="toggle-btn" onclick="toggleTable('gameSummary')">[닫기]</span>
+</h3>
+<table id="gameSummary">
+    <thead>
+        <tr>
+            <th onclick="sortSummary('game')">gameName</th>
+            <th onclick="sortSummary('gameAmount')">totalAmount</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!-- ✅ 월별 -->
+<h3>
+    📅 월별 과금 합계
+    <span class="toggle-btn" onclick="toggleTable('monthSummary')">[닫기]</span>
+</h3>
+<table id="monthSummary">
+    <thead>
+        <tr>
+            <th onclick="sortSummary('month')">month</th>
+            <th onclick="sortSummary('monthAmount')">totalAmount</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<hr>
+
+<h3>📋 상세 데이터</h3>
+<table id="resultTable">
+    <thead>
+        <tr>
+            <th onclick="sortTable('orderId')">orderId</th>
+            <th onclick="sortTable('title')">title</th>
+            <th onclick="sortTable('gameName')">gameName</th>
+            <th onclick="sortTable('creationTime')">creationTime</th>
+            <th onclick="sortTable('totalPrice')">totalPrice</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+
+let globalData = [];
+let gameSummaryData = [];
+let monthSummaryData = [];
+
+let sortDirection = 1;
+
+
+// ✅ 파일 로드
+document.getElementById('fileInput').addEventListener('change', function(e) {
+
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        const json = JSON.parse(event.target.result);
+
+        globalData = json.map(item => {
+            const order = item.orderHistory;
+
+            let title = "";
+            let gameName = "";
+
+            if (order.lineItem && order.lineItem.length > 0) {
+                title = order.lineItem[0].doc.title;
+                gameName = extractGameName(title);
+            }
+
+            return {
+                orderId: order.orderId,
+                title,
+                gameName,
+                creationTime: order.creationTime,
+                totalPrice: order.totalPrice,
+                priceNumber: parsePrice(order.totalPrice)
+            };
+        });
+
+        renderTable(globalData);
+        buildGameSummary();
+        buildMonthSummary();
+    };
+
+    reader.readAsText(file);
+});
+
+
+// ✅ 상세 테이블
+function renderTable(data) {
+    const tbody = document.querySelector("#resultTable tbody");
+    tbody.innerHTML = "";
+
+    data.forEach(d => {
+        tbody.insertAdjacentHTML("beforeend", `
+            <tr>
+                <td>${d.orderId}</td>
+                <td>${d.title}</td>
+                <td>${d.gameName}</td>
+                <td>${d.creationTime}</td>
+                <td>${d.totalPrice}</td>
+            </tr>
+        `);
+    });
+}
+
+
+// ✅ 게임별 집계
+function buildGameSummary() {
+    const map = {};
+
+    globalData.forEach(d => {
+        map[d.gameName] = (map[d.gameName] || 0) + d.priceNumber;
+    });
+
+    gameSummaryData = Object.entries(map).map(([game, total]) => ({
+        game,
+        total
+    }));
+
+    renderGameSummary();
+}
+
+function renderGameSummary() {
+    const tbody = document.querySelector("#gameSummary tbody");
+    tbody.innerHTML = "";
+
+    gameSummaryData.forEach(d => {
+        tbody.insertAdjacentHTML("beforeend", `
+            <tr>
+                <td>${d.game}</td>
+                <td>${d.total.toLocaleString()}</td>
+            </tr>
+        `);
+    });
+}
+
+
+// ✅ 월별 집계
+function buildMonthSummary() {
+    const map = {};
+
+    globalData.forEach(d => {
+        const month = d.creationTime.substring(0, 7);
+        map[month] = (map[month] || 0) + d.priceNumber;
+    });
+
+    monthSummaryData = Object.entries(map).map(([month, total]) => ({
+        month,
+        total
+    }));
+
+    renderMonthSummary();
+}
+
+function renderMonthSummary() {
+    const tbody = document.querySelector("#monthSummary tbody");
+    tbody.innerHTML = "";
+
+    monthSummaryData.forEach(d => {
+        tbody.insertAdjacentHTML("beforeend", `
+            <tr>
+                <td>${d.month}</td>
+                <td>${d.total.toLocaleString()}</td>
+            </tr>
+        `);
+    });
+}
+
+
+// ✅ 정렬 (상세)
+function sortTable(key) {
+    sortDirection *= -1;
+
+    globalData.sort((a, b) => {
+        if (key === "totalPrice") {
+            return (a.priceNumber - b.priceNumber) * sortDirection;
+        }
+        return a[key].localeCompare(b[key]) * sortDirection;
+    });
+
+    renderTable(globalData);
+}
+
+
+// ✅ 정렬 (요약 테이블)
+function sortSummary(type) {
+    sortDirection *= -1;
+
+    if (type === 'game') {
+        gameSummaryData.sort((a, b) =>
+            a.game.localeCompare(b.game) * sortDirection
+        );
+        renderGameSummary();
+    }
+
+    if (type === 'gameAmount') {
+        gameSummaryData.sort((a, b) =>
+            (a.total - b.total) * sortDirection
+        );
+        renderGameSummary();
+    }
+
+    if (type === 'month') {
+        monthSummaryData.sort((a, b) =>
+            a.month.localeCompare(b.month) * sortDirection
+        );
+        renderMonthSummary();
+    }
+
+    if (type === 'monthAmount') {
+        monthSummaryData.sort((a, b) =>
+            (a.total - b.total) * sortDirection
+        );
+        renderMonthSummary();
+    }
+}
+
+
+// ✅ 토글 (열기/닫기)
+function toggleTable(id) {
+    const table = document.getElementById(id);
+    const btn = table.previousElementSibling.querySelector(".toggle-btn");
+
+    if (table.style.display === "none") {
+        table.style.display = "";
+        btn.textContent = "[닫기]";
+    } else {
+        table.style.display = "none";
+        btn.textContent = "[열기]";
+    }
+}
+
+
+// ✅ 유틸
+function parsePrice(price) {
+    return Number(price.replace(/[^\d]/g, ""));
+}
+
+function extractGameName(title) {
+    const start = title.lastIndexOf("(");
+    const end = title.lastIndexOf(")");
+    return (start !== -1 && end !== -1)
+        ? title.substring(start + 1, end).trim()
+        : "";
+}
+
+</script>
+
+</body>
+</html>
