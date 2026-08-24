@@ -273,13 +273,24 @@
 
     <div class="input-group">
         <label for="damageIncrease">
-            7. 피해 증가량 (입력값 2000)
+            7. 일반공격 피해량 증가 (입력값 2000)
             <span class="tooltip">
                 <span class="tooltip-icon">?</span>
-                <span class="tooltip-text">근접,일격보석 및 부두술사 해방스킬의 피해량 증가의 버프량을 입력해주시면 됩니다.</span>
+                <span class="tooltip-text">일격보석, 아이비 유물의 버프 수치를 입력해주시면 됩니다.</span>
             </span>
         </label>
         <input type="number" id="damageIncrease" value="0">
+    </div>
+
+    <div class="input-group">
+        <label for="finalDamageIncrease">
+            8. 최종 피해량 증가 (입력값 2000)
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">부두술사 해방스킬, 근접보석의 최종 피해량 증가량을 입력해주시면 됩니다.</span>
+            </span>
+        </label>
+        <input type="number" id="finalDamageIncrease" value="0">
     </div>
 
     <button class="calculate-btn" onclick="calculate()">계산하기</button>
@@ -322,7 +333,8 @@
                     <th>해방공격력</th>
                     <th>공격력버프</th>
                     <th>치명타 버프</th>
-                    <th>피해증가량</th>
+                    <th>일반공격 피해증가</th>
+                    <th>최종 피해증가</th>
                     <th>인게임 기본공격력</th>
                     <th>인게임 해방공격력</th>
                     <th>최종공격력</th>
@@ -390,21 +402,27 @@
         const critBuffInput = parseFloat(document.getElementById('critBuff').value) || 0;
         const critBuffMultiplier = 1.5 + (critBuffInput / 100);
 
-        // 7. 피해 증가량
+        // 7. 일반공격 피해 증가량
         // 사용자가 2000을 입력하면 21을 곱함 (1 + 2000/100)
         const damageIncreaseInput = parseFloat(document.getElementById('damageIncrease').value) || 0;
         const damageIncreaseMultiplier = 1 + (damageIncreaseInput / 100);
+
+        // 8. 최종 피해량 증가
+        const finalDamageIncreaseInput = parseFloat(document.getElementById('finalDamageIncrease').value) || 0;
+        const finalDamageIncreaseMultiplier = 1 + (finalDamageIncreaseInput / 100);
+
         console.log("attackBuffMultiplier : " + attackBuffMultiplier);
         console.log("critBuffMultiplier : " + critBuffMultiplier);
         console.log("damageIncreaseMultiplier : " + damageIncreaseMultiplier);
+        console.log("finalDamageIncreaseMultiplier : " + finalDamageIncreaseMultiplier);
 
 
         // 최종 대미지 계산
-        // "인게임 해방 공격력" * 5. 공격력 버프 * 6. 치명타 버프 * 7. 피해 증가량
-        const finalDamage = inGameLiberationAttack * attackBuffMultiplier * critBuffMultiplier * damageIncreaseMultiplier;
+        // "인게임 해방 공격력" * 5. 공격력 버프 * 6. 치명타 버프 * 7. 일반공격 피해 증가량 * 8. 최종피해증가량
+        const finalDamage = inGameLiberationAttack * attackBuffMultiplier * critBuffMultiplier * damageIncreaseMultiplier * finalDamageIncreaseMultiplier;
         document.getElementById('finalDamage').innerText = Math.floor(finalDamage).toLocaleString();
 
-        // 8. 계산 기록 추가
+        // 9. 계산 기록 추가
         addHistoryRow({
             baseAttack,
             sourceGemAttack,
@@ -414,6 +432,7 @@
             attackBuffInput,
             critBuffInput,
             damageIncreaseInput,
+            finalDamageIncreaseInput,
             inGameBaseAttack,
             inGameLiberationAttack,
             finalDamage
@@ -433,6 +452,7 @@
             <td>${data.attackBuffInput.toLocaleString()}</td>
             <td>${data.critBuffInput.toLocaleString()}</td>
             <td>${data.damageIncreaseInput.toLocaleString()}</td>
+            <td>${data.finalDamageIncreaseInput.toLocaleString()}</td>
             <td>${Math.floor(data.inGameBaseAttack).toLocaleString()}</td>
             <td>${Math.floor(data.inGameLiberationAttack).toLocaleString()}</td>
             <td>${Math.floor(data.finalDamage).toLocaleString()}</td>
