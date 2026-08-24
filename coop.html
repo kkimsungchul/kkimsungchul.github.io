@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>협타디 마신 데미지 계산기</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .gem-group, .input-row {
+            display: flex;
+            gap: 10px;
+        }
+        .gem-item, .input-item {
+            flex: 1;
+        }
+        .calculate-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .calculate-btn:hover {
+            background-color: #45a049;
+        }
+        .result-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #eef;
+            border-radius: 8px;
+        }
+        .result-item {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .result-value {
+            color: #d32f2f;
+        }
+        /* 기록 표 스타일 */
+        .history-section {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            background-color: #fff;
+        }
+        .history-table th, .history-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .history-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .history-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        /* 툴팁 스타일 */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            margin-left: 5px;
+            cursor: help;
+        }
+        .tooltip .tooltip-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #999;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 16px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85em;
+            font-weight: normal;
+            word-break: keep-all;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>초마신 데미지 계산기</h2>
+
+    <div class="input-group">
+        <div class="input-row">
+            <div class="input-item">
+                <label for="baseAttack">
+                    1. 마신 기본공격력
+                    <span class="tooltip">
+                        <span class="tooltip-icon">?</span>
+                        <span class="tooltip-text">대기실의 마신 상태창에서 보이는 공격력 입니다. 풀/풀아이비의 경우 458,262 입니다. </span>
+                    </span>
+                </label>
+                <input type="number" id="baseAttack" value="0">
+            </div>
+            <div class="input-item">
+                <label for="sourceGemAttack">
+                    근원보석 공격력
+                    <span class="tooltip">
+                        <span class="tooltip-icon">?</span>
+                        <span class="tooltip-text">근원 보석으로 증가하는 공격력 입니다. 없으실 경우 0을 넣어주시고, SSS의경우 100000을 넣어주시면 됩니다</span>
+                    </span>
+                </label>
+                <input type="number" id="sourceGemAttack" value="0">
+            </div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>
+            2. 보석종류 및 수량
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">착용한 보석 수량을 입력해주시면 됩니다.</span>
+            </span>
+        </label>
+        <div class="gem-group">
+            <div class="gem-item">
+                <label for="gemSSS">SSS (0.5)</label>
+                <select id="gemSSS">
+                    <option value="0">0개</option>
+                    <option value="1">1개</option>
+                    <option value="2">2개</option>
+                    <option value="3">3개</option>
+                </select>
+            </div>
+            <div class="gem-item">
+                <label for="gemSS">SS (0.25)</label>
+                <select id="gemSS">
+                    <option value="0">0개</option>
+                    <option value="1">1개</option>
+                    <option value="2">2개</option>
+                    <option value="3">3개</option>
+                </select>
+            </div>
+            <div class="gem-item">
+                <label for="gemS">S (0.1)</label>
+                <select id="gemS">
+                    <option value="0">0개</option>
+                    <option value="1">1개</option>
+                    <option value="2">2개</option>
+                    <option value="3">3개</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="axeBreak">
+            3. 도끼 돌파
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">도끼 돌파 레벨을 입력해주시면 됩니다. </span>
+            </span>
+        </label>
+        <select id="axeBreak">
+            <option value="none">없음</option>
+            <script>
+                for (let i = 0; i <= 20; i++) {
+                    document.write(`<option value="${i}">${i}돌파</option>`);
+                }
+            </script>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="liberationAttack">
+            4. 해방 공격력 (입력값 3000)
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">대기실의 마신 상태창의 해방탭에 보이는 "해방 시 추가 공격력"입니다, 풀해방 아이비 기준 3000입니다.</span>
+            </span>
+        </label>
+        <input type="number" id="liberationAttack" value="0">
+    </div>
+
+    <div class="input-group">
+        <label for="attackBuff">
+            5. 공격력 버프 (입력값 2000)
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">보석과 청룡등으로 얻는 버프의 수치를 입력해주시면 됩니다.</span>
+            </span>
+        </label>
+        <input type="number" id="attackBuff" value="0">
+    </div>
+
+    <div class="input-group">
+        <label for="critBuff">
+            6. 치명타 버프 (입력값 3000)
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">보석과 청룡등으로 얻는 버프의 수치를 입력해주시면 됩니다.</span>
+            </span>
+        </label>
+        <input type="number" id="critBuff" value="0">
+    </div>
+
+    <div class="input-group">
+        <label for="damageIncrease">
+            7. 피해 증가량 (입력값 2000)
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">근접,일격보석 및 부두술사 해방스킬의 피해량 증가의 버프량을 입력해주시면 됩니다.</span>
+            </span>
+        </label>
+        <input type="number" id="damageIncrease" value="0">
+    </div>
+
+    <button class="calculate-btn" onclick="calculate()">계산하기</button>
+
+    <div class="result-section">
+        <div class="result-item">
+            인게임 기본 공격력: <span id="inGameBaseAttack" class="result-value">0</span>
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">인게임 진입 시 표시되는 공격력 입니다.</span>
+            </span>
+        </div>
+        <div class="result-item">
+            인게임 해방 공격력: <span id="inGameLiberationAttack" class="result-value">0</span>
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">해방 시 적용되는 공격력 입니다 (기본 공격력 * 해방 배율).</span>
+            </span>
+        </div>
+        
+        <div class="result-item">
+            최종 대미지: <span id="finalDamage" class="result-value">0</span>
+            <span class="tooltip">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-text">인게임에서 최종적으로 적용되는 대미지 입니다.</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="history-section">
+        <h3>계산 기록</h3>
+        <h4>※ 데이터는 별도로 저장되지 않으며 새로고침 시 삭제됩니다.</h4>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>마신 기본공격력</th>
+                    <th>근원보석 공격력</th>
+                    <th>보석공격력 배율</th>
+                    <th>도끼공격력 배율</th>
+                    <th>해방공격력</th>
+                    <th>공격력버프</th>
+                    <th>치명타 버프</th>
+                    <th>피해증가량</th>
+                    <th>인게임 기본공격력</th>
+                    <th>인게임 해방공격력</th>
+                    <th>최종공격력</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody">
+                <!-- 여기에 기록이 추가됨 -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function calculate() {
+        // 1. 마신 기본공격력 및 근원보석 공격력
+        const baseAttack = parseFloat(document.getElementById('baseAttack').value) || 0;
+        const sourceGemAttack = parseFloat(document.getElementById('sourceGemAttack').value) || 0;
+        const totalBaseAttack = baseAttack + sourceGemAttack;
+
+        // 2. 보석 보너스 계산
+        const sssCount = parseInt(document.getElementById('gemSSS').value);
+        const ssCount = parseInt(document.getElementById('gemSS').value);
+        const sCount = parseInt(document.getElementById('gemS').value);
+        // SSS의 숫자 1당 0.5, SS의 숫자 1당 0.25, S의 숫자 1당 0.1
+        // 곱해질때의 배율로 해석 (기본 1 + 보너스)
+        const gemMultiplier = 1 + (sssCount * 0.5) + (ssCount * 0.25) + (sCount * 0.1);
+
+        // 3. 도끼 돌파
+        // =IF(H13="",1,1+(5%+H13*0.5%))
+        // 없음(none)일 경우 1배
+        // 0돌파일 경우 1.05, 1돌파일 경우 1.055, 2돌파일 경우 1.06...
+        let axeVal = document.getElementById('axeBreak').value;
+        let axeMultiplier = 1;
+        if (axeVal !== 'none') {
+            const axeLevel = parseInt(axeVal);
+            axeMultiplier = 1 + (0.05 + axeLevel * 0.005);
+        }
+
+        // 4. 해방 공격력
+        // 사용자가 3000을 입력하면 31을 곱함 (1 + 3000/100)
+        const liberationAttackInput = parseFloat(document.getElementById('liberationAttack').value) || 0;
+        const liberationAttackMultiplier = 1 + (liberationAttackInput / 100);
+
+        // 인게임 기본 공격력 계산 (해방 전)
+        const inGameBaseAttack = totalBaseAttack * gemMultiplier * axeMultiplier;
+        
+        // 인게임 해방 공격력 계산
+        const inGameLiberationAttack = inGameBaseAttack * liberationAttackMultiplier;
+        
+        console.log("totalBaseAttack (base + sourceGem) : " + totalBaseAttack);
+        console.log("gemMultiplier : " + gemMultiplier);
+        console.log("axeMultiplier : " + axeMultiplier);
+        console.log("liberationAttackMultiplier : " + liberationAttackMultiplier);
+        
+        document.getElementById('inGameBaseAttack').innerText = Math.floor(inGameBaseAttack).toLocaleString();
+        document.getElementById('inGameLiberationAttack').innerText = Math.floor(inGameLiberationAttack).toLocaleString();
+
+        // 5. 공격력 버프 배율 계산
+        // 사용자가 2000을 입력하면 21을 곱함 (1 + 2000/100)
+        const attackBuffInput = parseFloat(document.getElementById('attackBuff').value) || 0;
+        const attackBuffMultiplier = 1 + (attackBuffInput / 100);
+
+        // 6. 치명타 버프 배율 계산
+        // 기본 150%(1.5) 적용, 3000 입력 시 31.5배 (1.5 + 3000/100)
+        const critBuffInput = parseFloat(document.getElementById('critBuff').value) || 0;
+        const critBuffMultiplier = 1.5 + (critBuffInput / 100);
+
+        // 7. 피해 증가량
+        // 사용자가 2000을 입력하면 21을 곱함 (1 + 2000/100)
+        const damageIncreaseInput = parseFloat(document.getElementById('damageIncrease').value) || 0;
+        const damageIncreaseMultiplier = 1 + (damageIncreaseInput / 100);
+        console.log("attackBuffMultiplier : " + attackBuffMultiplier);
+        console.log("critBuffMultiplier : " + critBuffMultiplier);
+        console.log("damageIncreaseMultiplier : " + damageIncreaseMultiplier);
+
+
+        // 최종 대미지 계산
+        // "인게임 해방 공격력" * 5. 공격력 버프 * 6. 치명타 버프 * 7. 피해 증가량
+        const finalDamage = inGameLiberationAttack * attackBuffMultiplier * critBuffMultiplier * damageIncreaseMultiplier;
+        document.getElementById('finalDamage').innerText = Math.floor(finalDamage).toLocaleString();
+
+        // 8. 계산 기록 추가
+        addHistoryRow({
+            baseAttack,
+            sourceGemAttack,
+            gemMultiplier,
+            axeMultiplier,
+            liberationAttackInput,
+            attackBuffInput,
+            critBuffInput,
+            damageIncreaseInput,
+            inGameBaseAttack,
+            inGameLiberationAttack,
+            finalDamage
+        });
+    }
+
+    function addHistoryRow(data) {
+        const tbody = document.getElementById('historyBody');
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${data.baseAttack.toLocaleString()}</td>
+            <td>${data.sourceGemAttack.toLocaleString()}</td>
+            <td>${data.gemMultiplier.toFixed(2)}</td>
+            <td>${data.axeMultiplier.toFixed(3)}</td>
+            <td>${data.liberationAttackInput.toLocaleString()}</td>
+            <td>${data.attackBuffInput.toLocaleString()}</td>
+            <td>${data.critBuffInput.toLocaleString()}</td>
+            <td>${data.damageIncreaseInput.toLocaleString()}</td>
+            <td>${Math.floor(data.inGameBaseAttack).toLocaleString()}</td>
+            <td>${Math.floor(data.inGameLiberationAttack).toLocaleString()}</td>
+            <td>${Math.floor(data.finalDamage).toLocaleString()}</td>
+        `;
+
+        // 새로운 기록을 가장 위에 추가
+        if (tbody.firstChild) {
+            tbody.insertBefore(row, tbody.firstChild);
+        } else {
+            tbody.appendChild(row);
+        }
+    }
+
+
+    // 초기 계산 실행 제거 (사용자 요청)
+    // calculate();
+</script>
+
+</body>
+</html>
